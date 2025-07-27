@@ -1,9 +1,6 @@
 # Open ghostty terminal config
 abbr -a cghost "lvima ~/.config/ghostty/config"
 
-# Open temux config
-abbr -a ctmux "lvima ~/.config/tmux/tmux.conf"
-
 # Open gameverse project in lazyvim
 abbr -a lvgv "lvima ~/Documents/dev/projects/gameverse"
 

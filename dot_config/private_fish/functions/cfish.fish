@@ -1,5 +1,5 @@
-# Open fish configurations files
-function cfish -d 'Open fish configurations file'
+# Open specified fish configurations files
+function cfish -d 'Open specified fish configurations files'
     set subcommand $argv[1]
     set config_path ~/.config/fish/conf.d
     switch $subcommand
