@@ -44,7 +44,6 @@ shell-integration-features = no-cursor
 
 # -- Backgroud
 
-# background = #1E1E2E
 background-opacity = 0.50
 background-blur-radius = 20
 
