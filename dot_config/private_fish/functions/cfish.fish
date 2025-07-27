@@ -13,6 +13,8 @@ function cfish -d 'Open fish configurations file'
             lvima $config_path/tools/ssh.fish
         case python
             lvima $config_path/tools/python.fish
+        case tmux
+            lvima $config_path/tools/tmux.fish
         case nav
             lvima $config_path/navigation.fish
         case shortcuts
