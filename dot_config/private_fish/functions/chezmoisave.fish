@@ -1,5 +1,13 @@
 function chezmoisave
     set -l chezdir (chezmoi source-path)
+
+    chezmoi add --recursive ~/.config/ghostty
+    chezmoi add --recursive ~/.config/fish
+    chezmoi add --recursive ~/.config/lsd
+    chezmoi add --recursive ~/.config/tmux/tmux.conf
+    chezmoi add --recursive ~/.config/fastfetch
+    chezmoi add --recursive ~/Documents/dev/scripts
+
     if test -d "$chezdir"
         cd $chezdir
 
