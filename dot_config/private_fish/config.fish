@@ -20,7 +20,7 @@ if not string match -q -- "*$PNPM_HOME*" "$PATH"
     set -gx PATH "$PNPM_HOME" $PATH
 end
 
-# Source files from conf.d/tools
+# Source fish config files from conf.d/tools
 for file in ~/.config/fish/conf.d/tools/*.fish
     source $file
 end
