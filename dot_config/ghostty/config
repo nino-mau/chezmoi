@@ -1,0 +1,62 @@
+
+# -- Keybinds
+
+keybind = ctrl+shift+s=close_surface
+keybind = CapsLock=esc:
+keybind = performable:ctrl+n=goto_split:next
+
+
+# -- Themes
+
+# theme = catppuccin-mocha
+theme = catppuccin-macchiato
+# theme = catppuccin-latte
+# theme = catppuccin-frappe
+# theme = catppuccin-mocha
+
+# -- Window
+
+window-width = 170
+window-height = 40
+
+# -- Font configuration
+
+# font-family = JetBrainsMonoNerdFont
+# font-family = SourceCodePro
+# font-family = GeistMonoNerdFont
+# font-family = IosevkaNerdFontPropo
+font-family = FiraCodeNerdFont
+
+font-size = 11
+
+# Line height equivalent
+adjust-cell-height = 1
+
+# -- Cursor
+
+# Change cursor style
+cursor-style = block
+
+# -- Shell
+
+shell-integration = fish
+shell-integration-features = no-cursor 
+
+# -- Backgroud
+
+# background = #1E1E2E
+background-opacity = 0.50
+background-blur-radius = 20
+
+# -- Shaders
+# custom-shader = shaders/cursor_smear_fade.glsl
+# custom-shader = shaders/cursor_smear.glsl
+# custom-shader = shaders/cursor_blaze_no_trail.glsl
+# custom-shader = shaders/cursor_blaze.glsl
+custom-shader = shaders/cursor_smear_custom.glsl
+custom-shader = shaders/cursor_blaze_notrail_custom.glsl
+
+
+
+
+
