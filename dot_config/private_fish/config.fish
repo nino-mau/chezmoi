@@ -14,6 +14,9 @@ set -g fish_key_bindings fish_vi_key_bindings
 set -x SSH_ASKPASS /usr/bin/ksshaskpass
 set -x SSH_ASKPASS_REQUIRE prefer
 
+# Set up fnm
+fnm env --use-on-cd | source
+
 # Set up pnpm 
 set -gx PNPM_HOME "/home/nino/.local/share/pnpm"
 if not string match -q -- "*$PNPM_HOME*" "$PATH"
