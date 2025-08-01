@@ -23,9 +23,9 @@ window-height = 40
 
 # font-family = JetBrainsMonoNerdFont
 # font-family = SourceCodePro
-# font-family = GeistMonoNerdFont
+font-family = GeistMonoNerdFont
 # font-family = IosevkaNerdFontPropo
-font-family = FiraCodeNerdFont
+# font-family = FiraCodeNerdFont
 
 font-size = 11
 
