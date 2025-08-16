@@ -19,6 +19,8 @@ function cfish -d 'Open specified fish configurations files'
             lvima $config_path/navigation.fish
         case shortcuts
             lvima $config_path/shortcuts.fish
+        case projects
+            lvima $config_path/projects.fish
         case utils
             lvima $config_path/utils.fish
         case functions
