@@ -1,5 +1,6 @@
 function chezmoisave
     set -l chezdir (chezmoi source-path)
+    set -l machine (hostname)
 
     chezmoi add --recursive ~/.config/ghostty
     chezmoi add --recursive ~/.config/fish
