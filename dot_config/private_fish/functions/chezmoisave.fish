@@ -6,7 +6,7 @@ function chezmoisave
     chezmoi add --recursive ~/.config/lsd
     chezmoi add --recursive ~/.config/tmux/tmux.conf
     chezmoi add --recursive ~/.config/fastfetch
-    chezmoi add --recursive --ignore ~/Documents/dev/scripts
+    chezmoi add --recursive ~/Documents/dev/scripts
 
     if test -d "$chezdir"
         cd $chezdir
