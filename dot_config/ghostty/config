@@ -4,6 +4,7 @@
 keybind = ctrl+shift+s=close_surface
 keybind = CapsLock=esc:
 keybind = performable:ctrl+n=goto_split:next
+unbind ctrl+x
 
 
 # -- Themes
