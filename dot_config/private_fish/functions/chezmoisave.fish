@@ -16,7 +16,7 @@ function chezmoisave
         if git diff --cached --quiet
             echo "✅ No changes to commit."
         else
-            set -l msg "chore: auto commit on (date '+%Y-%m-%d %H:%M:%S')"
+            set -l msg "chore: auto commit on (date '+%Y-%m-%d %H:%M:%S') from $machine"
             git commit -m $msg
             git push origin HEAD
             echo "✅ Changes committed and pushed."
