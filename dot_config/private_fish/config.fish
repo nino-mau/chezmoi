@@ -1,5 +1,5 @@
 # Set up oh-my-posh theme
-oh-my-posh init fish --config $HOME/.poshthemes/catppuccin_mocha.omp.json | source
+oh-my-posh init fish --config $HOME/.poshthemes/catppuccin_macchiato.omp.json | source
 
 # Run fastfetch
 fastfetch

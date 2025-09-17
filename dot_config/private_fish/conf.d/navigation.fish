@@ -4,6 +4,9 @@ abbr -a cdconf "cd ~/.config"
 # Open dev folder
 abbr -a cddev "cd ~/Documents/dev"
 
+# Open handigital folder
+abbr -a cdhandi "cd ~/Documents/dev/handigital/"
+
 # Go to projects folder
 abbr -a cdproj "cd ~/Documents/dev/projects"
 
