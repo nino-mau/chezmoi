@@ -8,7 +8,7 @@ keybind = performable:ctrl+n=goto_split:next
 # -- Themes
 
 # theme = catppuccin-mocha
-theme = catppuccin-macchiato
+# theme = catppuccin-macchiato
 # theme = catppuccin-latte
 # theme = catppuccin-frappe
 # theme = catppuccin-mocha
