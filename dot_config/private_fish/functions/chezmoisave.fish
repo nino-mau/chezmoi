@@ -7,7 +7,9 @@ function chezmoisave
     chezmoi add --recursive ~/.config/lsd
     chezmoi add --recursive ~/.config/tmux/tmux.conf
     chezmoi add --recursive ~/.config/fastfetch
+    chezmoi add --recursive ~/.config/zellij
     chezmoi add --recursive ~/Documents/dev/scripts
+    chezmoi add ~/.local/bin/gpu_info.py
 
     if test -d "$chezdir"
         cd $chezdir

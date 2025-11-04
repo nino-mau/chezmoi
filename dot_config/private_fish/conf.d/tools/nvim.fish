@@ -1,8 +1,8 @@
 # Use nvim as ni
-abbr -a nv lvim
+abbr -a nv "NVIM_APPNAME=lazyvim nvim"
 
 # Open nvim using the lazyvim config version
-abbr -a lvim "NVIM_APPNAME=lazyvim nvim"
+abbr -a nvim="NVIM_APPNAME=lazyvim nvim"
 
 # Open nvim using the lazyvim config version
 alias lvima="NVIM_APPNAME=lazyvim nvim"

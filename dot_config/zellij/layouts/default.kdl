@@ -1,0 +1,79 @@
+layout {
+    pane size=1 borderless=true {
+      plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
+        format_left   "{mode} #[fg=#8aadf4,bold]{session} {tabs}"
+        format_center "{datetime}"
+        format_right  "{command_ryzen} {command_git_branch}"
+        format_space  ""
+
+        border_enabled  "false"
+        border_char     ""
+        border_format   "#[fg=#6C7086,bold]{char}"
+        border_position "bottom"
+
+        // hide_frame_for_single_pane "true"
+
+        mode_locked        "#[bg=#a5adcb,fg=#24273a,bold] LOCKED  #[bg=#00FFFFFF,fg=#a5adcb]"
+        mode_normal        "#[bg=#8aadf4,fg=#24273a,bold] NORMAL  #[bg=#00FFFFFF,fg=#8aadf4]"
+        mode_resize        "#[bg=#f5a97f,fg=#24273a,bold] RESIZE 󰊔 #[bg=#00FFFFFF,fg=#f5a97f]"
+        mode_pane          "#[bg=#f5a97f,fg=#24273a,bold] PANE  #[bg=#00FFFFFF,fg=#f5a97f]"
+        mode_tab           "#[bg=#f5a97f,fg=#24273a,bold] TAB 󰓩 #[bg=#00FFFFFF,fg=#f5a97f]"
+        mode_scroll        "#[bg=#f5a97f,fg=#24273a,bold] SCROLL 󱕒 #[bg=#00FFFFFF,fg=#f5a97f]"
+        mode_enter_search  "#[bg=#f5a97f,fg=#24273a,bold,blink] ENTERSEARCH  #[bg=#00FFFFFF,fg=#f5a97f]"
+        mode_search        "#[bg=#f5a97f,fg=#24273a,bold,blink] SEARCH  #[bg=#00FFFFFF,fg=#f5a97f]"
+        mode_rename_tab    "#[bg=#f5a97f,fg=#24273a,bold,blink] RENAME  #[bg=#00FFFFFF,fg=#f5a97f]"
+        mode_rename_pane   "#[bg=#f5a97f,fg=#24273a,bold,blink] RENAME  #[bg=#00FFFFFF,fg=#f5a97f]"
+        mode_session       "#[bg=#f5a97f,fg=#24273a,bold] SESSION  #[bg=#00FFFFFF,fg=#f5a97f]"
+        mode_move          "#[bg=#f5a97f,fg=#24273a,bold] MOVE  #[bg=#00FFFFFF,fg=#f5a97f]"
+        mode_prompt        "#[bg=#f5a97f,fg=#24273a,bold] PROMPT 󰞷 #[bg=#00FFFFFF,fg=#f5a97f]"
+        mode_tmux          "#[bg=#f5a97f,fg=#24273a,bold] TMUX 󰆍 #[bg=#00FFFFFF,fg=#f5a97f]"
+
+        mode_default_to_mode "locked"
+
+        // formatting for inactive tabs
+        tab_normal              "#[bg=#00FFFFFF,fg=#b7bdf8,bold]#[bg=#b7bdf8,fg=#24273a,bold] {name} {floating_indicator}#[bg=#00FFFFFF,fg=#b7bdf8,bold]"
+        tab_normal_fullscreen   "#[bg=#00FFFFFF,fg=#b7bdf8,bold]#[bg=#b7bdf8,fg=#24273a,bold] {name} {fullscreen_indicator}#[bg=#00FFFFFF,fg=#b7bdf8,bold]"
+        tab_normal_sync         "#[bg=#00FFFFFF,fg=#b7bdf8,bold]#[bg=#b7bdf8,fg=#24273a,bold] {name} {sync_indicator}#[bg=#00FFFFFF,fg=#b7bdf8,bold]"
+
+        // formatting for the current active ,tab
+        tab_active              "#[bg=#00FFFFFF,fg=#c6a0f6,bold]#[bg=#c6a0f6,fg=#24273a,bold] {name} {floating_indicator}#[bg=#00FFFFFF,fg=#c6a0f6,bold]"
+        tab_active_fullscreen   "#[bg=#00FFFFFF,fg=#c6a0f6,bold]#[bg=#c6a0f6,fg=#24273a,bold] {name} {fullscreen_indicator}#[bg=#00FFFFFF,fg=#c6a0f6,bold]"
+        tab_active_sync         "#[bg=#00FFFFFF,fg=#c6a0f6,bold]#[bg=#c6a0f6,fg=#24273a,bold] {name} {sync_indicator}#[bg=#00FFFFFF,fg=#c6a0f6,bold]"
+
+        // separator between the tabs
+        tab_separator           "#[bg=#00FFFFFF] "
+
+        // format when renaming a tab
+        tab_rename              "#[bg=#00FFFFFF,fg=#f5a97f,bold]#[bg=#f5a97f,fg=#24273a, bold,blink] #{index} {name} {floating_indicator} #[bg=#00FFFFFF,fg=#f5a97f,bold]"
+
+        // indicators
+        tab_sync_indicator       "󱘖>"
+        tab_fullscreen_indicator "󰊓"
+        tab_floating_indicator   " "
+
+        // limit tab display count
+        tab_display_count         "5"  // limit to showing 3 tabs
+        tab_truncate_start_format "#[fg=#ee99a0,bg=#00FFFFFF]   {count} ..."
+        tab_truncate_end_format   "#[fg=#ee99a0,bg=#00FFFFFF] ...  {count} "
+
+        command_git_branch_command     "git rev-parse --abbrev-ref HEAD"
+        command_git_branch_format      "#[bg=#00FFFFFF,fg=#8aadf4,bold]#[bg=#8aadf4,fg=#24273a,bold]  {stdout} "
+        command_git_branch_interval    "10"
+        command_git_branch_rendermode  "static"
+
+        // display everything about my ryzen cpu
+        command_ryzen_command  "/home/nino/.local/bin/gpu_info.py"
+        command_ryzen_format   "#[fg=#939ab7,bold] {stdout} "
+        command_ryzen_interval "2"
+        command_ryzen_rendermode "static"
+
+        command_mem_command "tmux-mem --no-color --ascii --width 7"
+        command_mem "#[fg=#939ab7,bold] {command_mem_command}"
+
+        datetime        "#[fg=#939ab7,bold] {format} "
+        datetime_format "  %Y/%m/%d ::: %I:%M:%S %p  "
+        datetime_timezone "America/Lima"
+      }
+    }
+  pane
+  }
