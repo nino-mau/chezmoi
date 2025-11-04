@@ -9,5 +9,3 @@ alias fzfclip="fish ~/Documents/dev/scripts/utils/clipboard_history_fzf.fish"
 
 # Print clipboard history
 alias cliph="qdbus org.kde.klipper /klipper org.kde.klipper.klipper.getClipboardHistoryMenu"
-
-alias rmrf="sudo trash-put"

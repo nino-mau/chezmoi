@@ -11,7 +11,7 @@ keybind = performable:ctrl+n=goto_split:next
 theme = catppuccin-macchiato
 # theme = catppuccin-latte
 # theme = catppuccin-frappe
-theme = catppuccin-mocha
+# theme = catppuccin-mocha
 
 # -- Window
 
