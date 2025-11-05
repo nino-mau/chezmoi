@@ -63,7 +63,7 @@ layout {
 
         // display everything about my ryzen cpu
         command_ryzen_command  "/home/nino/.local/bin/gpu_info.py"
-        command_ryzen_format   "#[fg=#939ab7,bold] {stdout} "
+        command_ryzen_format   "#[fg=#939ab7,bold] {stdout}"
         command_ryzen_interval "2"
         command_ryzen_rendermode "static"
 
