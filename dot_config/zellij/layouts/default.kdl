@@ -67,9 +67,6 @@ layout {
         command_ryzen_interval "2"
         command_ryzen_rendermode "static"
 
-        command_mem_command "tmux-mem --no-color --ascii --width 7"
-        command_mem "#[fg=#939ab7,bold] {command_mem_command}"
-
         datetime        "#[fg=#939ab7,bold] {format} "
         datetime_format "  %Y/%m/%d ::: %I:%M:%S %p  "
         datetime_timezone "America/Lima"
@@ -77,3 +74,4 @@ layout {
     }
   pane
   }
+
