@@ -5,6 +5,9 @@ keybind = ctrl+shift+s=close_surface
 keybind = CapsLock=esc:
 keybind = performable:ctrl+n=goto_split:next
 
+# toggle quick terminal
+keybind = global:cmd+backquote=toggle_quick_terminal
+
 # -- Themes
 
 # theme = catppuccin-mocha

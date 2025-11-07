@@ -2,12 +2,14 @@ function chezmoisave
     set -l chezdir (chezmoi source-path)
     set -l machine (hostname)
 
+    # Folder saved by chezmoi
     chezmoi add --recursive ~/.config/ghostty
     chezmoi add --recursive ~/.config/fish
     chezmoi add --recursive ~/.config/lsd
     chezmoi add --recursive ~/.config/tmux/tmux.conf
     chezmoi add --recursive ~/.config/fastfetch
     chezmoi add --recursive ~/.config/zellij
+    chezmoi add --recursive ~/.config/lazygit
     chezmoi add --recursive ~/Documents/dev/scripts
     chezmoi add ~/.local/bin/gpu_info.py
 

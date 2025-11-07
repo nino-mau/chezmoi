@@ -68,8 +68,8 @@ layout {
         command_ryzen_rendermode "static"
 
         datetime        "#[fg=#939ab7,bold] {format} "
-        datetime_format "  %Y/%m/%d ::: %I:%M:%S %p  "
-        datetime_timezone "America/Lima"
+        datetime_format " %d/%m/%Y ::: %I:%M:%S"
+        datetime_timezone "Europe/Paris"
       }
     }
   pane

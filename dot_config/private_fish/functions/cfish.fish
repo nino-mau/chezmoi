@@ -4,30 +4,30 @@ function cfish -d 'Open specified fish configurations files'
     set config_path ~/.config/fish/conf.d
     switch $subcommand
         case nvim
-            lvima $config_path/tools/nvim.fish
+            nvim $config_path/tools/nvim.fish
         case docker
-            lvima $config_path/tools/docker.fish
+            nvim $config_path/tools/docker.fish
         case lsd
-            lvima $config_path/tools/lsd.fish
+            nvim $config_path/tools/lsd.fish
         case ssh
-            lvima $config_path/tools/ssh.fish
+            nvim $config_path/tools/ssh.fish
         case python
-            lvima $config_path/tools/python.fish
+            nvim $config_path/tools/python.fish
         case tmux
-            lvima $config_path/tools/tmux.fish
+            nvim $config_path/tools/tmux.fish
         case nav
-            lvima $config_path/navigation.fish
+            nvim $config_path/navigation.fish
         case shortcuts
-            lvima $config_path/shortcuts.fish
+            nvim $config_path/shortcuts.fish
         case projects
-            lvima $config_path/projects.fish
+            nvim $config_path/projects.fish
         case utils
-            lvima $config_path/utils.fish
+            nvim $config_path/utils.fish
         case functions
-            lvima (realpath $config_path/../functions)
+            nvim (realpath $config_path/../functions)
         case all
-            lvima (realpath $config_path/../)
+            nvim (realpath $config_path/../)
         case '*'
-            lvima (realpath $config_path/../config.fish)
+            nvim (realpath $config_path/../config.fish)
     end
 end

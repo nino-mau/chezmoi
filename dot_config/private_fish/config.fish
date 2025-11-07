@@ -27,3 +27,6 @@ end
 for file in ~/.config/fish/conf.d/tools/*.fish
     source $file
 end
+
+# opencode
+fish_add_path /home/nino/.opencode/bin
