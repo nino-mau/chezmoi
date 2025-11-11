@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Service
+X-KDE-ServiceTypes=KonqPopupMenu/Plugin
+MimeType=application/octet-stream;text/plain;  # adjust MIME types if needed
+Actions=OpenWithNeovim
+X-KDE-Priority=TopLevel
+Icon=utilities-terminal
+
+[Desktop Action OpenWithNeovim]
+Name=Open With Neovim
+Exec=sh -c '~/.local/share/kio/servicemenus/open-with-neovim.sh "%f"'
+Icon=io.neovim.nvim
+

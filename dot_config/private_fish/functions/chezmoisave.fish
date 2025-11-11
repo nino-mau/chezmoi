@@ -11,6 +11,7 @@ function chezmoisave
     chezmoi add --recursive ~/.config/zellij
     chezmoi add --recursive ~/.config/lazygit
     chezmoi add --recursive ~/Documents/dev/scripts
+    chezmoi add --recursive ~/.local/share/kio/servicemenus/
     chezmoi add ~/.local/bin/gpu_info.py
 
     if test -d "$chezdir"
