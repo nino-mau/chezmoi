@@ -11,6 +11,7 @@ function chezmoisave
     chezmoi add --recursive ~/.config/zellij
     chezmoi add --recursive ~/.config/lazygit
     chezmoi add --recursive ~/.local/share/kio/servicemenus/
+    chezmoi add --recursive ~/.config/hypr
 
     # Scripts
     chezmoi add ~/.local/bin/gpu_info.py
