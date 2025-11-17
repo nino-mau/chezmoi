@@ -2,7 +2,8 @@ layout {
     pane size=1 borderless=true {
       plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
         format_left   "{mode} #[fg=#8aadf4,bold]{session} {tabs}"
-        format_center "{datetime}"
+        format_center ""
+        // format_center "{datetime}"
         format_right  "{command_ryzen} {command_git_branch}"
         format_space  ""
 
