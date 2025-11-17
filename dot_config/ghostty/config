@@ -47,7 +47,7 @@ shell-integration-features = no-cursor
 
 # -- Backgroud
 
-background-opacity = 0.65
+background-opacity = 0.90
 background-blur-radius = 20
 
 # -- Shaders

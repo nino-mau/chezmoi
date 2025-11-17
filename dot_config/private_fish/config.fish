@@ -1,3 +1,7 @@
+if uwsm check may-start
+	uwsm start hyprland.desktop
+end
+
 # Set up oh-my-posh theme
 oh-my-posh init fish --config $HOME/.poshthemes/catppuccin_macchiato.omp.json | source
 
