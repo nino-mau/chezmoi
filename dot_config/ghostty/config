@@ -23,14 +23,14 @@ window-height = 40
 
 # -- Font configuration
 
-# font-family = JetBrainsMonoNerdFont
+font-family = JetBrainsMonoNerdFont
 # font-family = SourceCodePro
 # font-family = GeistMonoNerdFont
 # font-family = IosevkaNerdFontPropo
-font-family = FiraCodeNerdFont
+# font-family = FiraCodeNerdFont
 
 # font-size = 15
-font-size = 11
+font-size = 12
 
 # Line height equivalent
 adjust-cell-height = 1

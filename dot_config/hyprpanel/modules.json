@@ -1,1 +1,21 @@
-{}
+{
+  "custom/clock": {
+    "icon": "",
+    "label": "{label}",
+    "tooltip": "{tooltip}",
+    "truncationSize": -1,
+    "execute": "~/.config/hyprpanel/scripts/clock.py",
+    "executeOnAction": "",
+    "interval": 1000,
+    "hideOnEmpty": false,
+    "scrollThreshold": 1,
+    "actions": {
+      "onLeftClick": "menu:calendar",
+      "onRightClick": "",
+      "onMiddleClick": "",
+      "onScrollUp": "",
+      "onScrollDown": ""
+    }
+  }
+}
+

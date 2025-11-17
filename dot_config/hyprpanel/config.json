@@ -432,7 +432,7 @@
         "windowtitle"
       ],
       "middle": [
-        "clock"
+        "custom/clock"
       ],
       "right": [
         "volume",
@@ -440,7 +440,6 @@
         "bluetooth",
         "battery",
         "systray",
-        "clock",
         "notifications"
       ]
     },
@@ -481,5 +480,13 @@
   ],
   "theme.bar.buttons.modules.worldclock.enableBorder": false,
   "bar.clock.showIcon": true,
-  "bar.clock.format": "%A %d %b  %H:%M:%S"
+  "bar.clock.format": "%A %d %b  %H:%M:%S",
+  "bar.workspaces.show_icons": false,
+  "bar.workspaces.showWsIcons": true,
+  "bar.workspaces.showApplicationIcons": true,
+  "bar.workspaces.applicationIconOncePerWorkspace": true,
+  "bar.workspaces.showAllActive": true,
+  "bar.workspaces.numbered_active_indicator": "color",
+  "theme.font.name": "JetBrainsMonoNL Nerd Font Mono",
+  "theme.font.label": "JetBrainsMonoNL Nerd Font Mono"
 }
