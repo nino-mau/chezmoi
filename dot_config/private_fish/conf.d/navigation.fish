@@ -1,3 +1,6 @@
+# Open ~/.local/share folder
+abbr -a cdshare "cd ~/.local/share"
+
 # Open .config folder
 abbr -a cdconf "cd ~/.config"
 

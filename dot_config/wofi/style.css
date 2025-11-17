@@ -6,27 +6,29 @@
 }
 
 window {
-  border: 3px solid #90cdfa;
-  background: #1e2030;
+  border: 2px solid #90cdfa;
+  overflow: hidden;
+  /* background: #1e2030; */
+  background-color: rgba(30, 30, 46, 0.8);
   border-radius: 15px;
 }
 
 #input {
   margin: 1.5em;
-  margin-bottom: 0em;
+  margin-bottom: 1em;
   padding: 1em;
   border: none;
   font-weight: bold;
   background: #1e2030;
   color: #c4d3da;
-  border-radius: 15px;
+  border-radius: 8px;
+}
+
+#input image {
+  margin-right: 10px;
 }
 
 #input:focus {
-  border: 1px solid #90cdfa;
-}
-
-#input {
   border: 1px solid #90cdfa;
 }
 
@@ -45,7 +47,9 @@ window {
 }
 
 #text {
-  margin-left: 0.5em;
+  font-size: 15px;
+  font-weight: medium;
+  margin-left: 10px;
   color: #c4d3da;
 }
 
@@ -55,7 +59,8 @@ window {
 
 #entry {
   margin-top: 0.5em;
-  border-radius: 15px;
+  padding: 8px;
+  border-radius: 8px;
 }
 
 #entry:selected {

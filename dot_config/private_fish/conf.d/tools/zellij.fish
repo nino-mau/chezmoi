@@ -1,2 +1,2 @@
 # Open zellij config
-abbr -a czellij "nvim ~/.config/zellij/"
+alias czellij="nvim ~/.config/zellij/"

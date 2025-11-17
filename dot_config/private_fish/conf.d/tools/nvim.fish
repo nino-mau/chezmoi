@@ -2,4 +2,4 @@
 abbr -a nv nvim
 
 # Open default nvim config in nvim
-abbr -a nvconf "nvim ~/.config/nvim"
+alias cnvim="nvim ~/.config/nvim"

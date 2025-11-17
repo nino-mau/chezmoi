@@ -15,6 +15,9 @@ function chezmoisave
     chezmoi add --recursive ~/.config/hyprpanel
     chezmoi add --recursive ~/.config/wofi
 
+    # Assets
+    chezmoi add --recursive ~/.local/share/wallpapers/
+
     # Scripts
     chezmoi add ~/.local/bin/gpu_info.py
     chezmoi add ~/.local/bin/focus_ghostty.sh
