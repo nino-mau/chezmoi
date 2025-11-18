@@ -450,7 +450,7 @@
         "windowtitle"
       ],
       "middle": [
-        "clock"
+        "custom/clock"
       ],
       "right": [
         "volume",
