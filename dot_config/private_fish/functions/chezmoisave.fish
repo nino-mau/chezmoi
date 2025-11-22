@@ -14,6 +14,8 @@ function chezmoisave
     chezmoi add --recursive ~/.config/hypr
     chezmoi add --recursive ~/.config/hyprpanel
     chezmoi add --recursive ~/.config/wofi
+    chezmoi add --recursive ~/.config/greetd
+    chezmoi add --recursive ~/.config/sysc-greet
 
     # Assets
     chezmoi add --recursive ~/.local/share/wallpapers/
