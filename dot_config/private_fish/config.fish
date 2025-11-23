@@ -10,6 +10,14 @@ oh-my-posh init fish --config $HOME/.poshthemes/catppuccin_macchiato.omp.json | 
 clear
 fastfetch
 
+# Set default apps
+xdg-mime default com.mitchellh.ghostty.desktop inode/directory
+xdg-mime default com.mitchellh.ghostty.desktop x-scheme-handler/terminal
+
+# Set default video player to MPV
+xdg-mime default mpv.desktop video/mp4
+xdg-mime default mpv.desktop video/mkv
+
 # Set up fzf key bindings
 fzf --fish | source
 

@@ -16,14 +16,14 @@ function chezmoisave
     chezmoi add --recursive ~/.config/wofi
     chezmoi add --recursive ~/.config/greetd
     chezmoi add --recursive ~/.config/sysc-greet
+    chezmoi add --recursive ~/.config/systemd
+    chezmoi add --recursive ~/.config/mimeapps
 
     # Assets
     chezmoi add --recursive ~/.local/share/wallpapers/
 
     # Scripts
-    chezmoi add ~/.local/bin/gpu_info.py
-    chezmoi add ~/.local/bin/focus_ghostty.sh
-    chezmoi add ~/.local/bin/focus_zen.sh
+    chezmoi add --recursive ~/.local/bin
 
     if test -d "$chezdir"
         cd $chezdir

@@ -1,0 +1,11 @@
+[Unit]
+Description=Run wallpaper changer every 15 minutes
+
+[Timer]
+OnBootSec=60
+OnUnitActiveSec=60
+Unit=random-wallpaper.service
+
+[Install]
+WantedBy=default.target
+

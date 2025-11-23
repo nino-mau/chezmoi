@@ -405,7 +405,7 @@
   "theme.bar.menus.monochrome": false,
   "theme.bar.buttons.enableBorders": false,
   "theme.bar.border.location": "none",
-  "theme.bar.buttons.radius": "0.5em",
+  "theme.bar.buttons.radius": "1em",
   "theme.bar.buttons.separator.margins": "0.15em",
   "theme.bar.buttons.workspaces.enableBorder": false,
   "wallpaper.image": "/home/nino/tmp/tmp2/WallRizz/mountain_waterfalls_sky_moon_fantacy.jpeg",
@@ -488,5 +488,7 @@
   "bar.workspaces.showAllActive": true,
   "bar.workspaces.numbered_active_indicator": "color",
   "theme.font.name": "JetBrainsMonoNL Nerd Font Mono",
-  "theme.font.label": "JetBrainsMonoNL Nerd Font Mono"
+  "theme.font.label": "JetBrainsMonoNL Nerd Font Mono",
+  "theme.bar.menus.card_radius": "0.4em",
+  "theme.bar.menus.border.radius": "0.7em"
 }

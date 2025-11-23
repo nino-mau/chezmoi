@@ -1,0 +1,7 @@
+[Unit]
+Description=Randomize wallpaper with swww
+
+[Service]
+Type=oneshot
+ExecStart=%h/.config/hypr/scripts/random_wallpaper.sh
+
