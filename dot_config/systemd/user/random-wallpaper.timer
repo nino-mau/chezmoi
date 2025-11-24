@@ -2,8 +2,8 @@
 Description=Run wallpaper changer every 15 minutes
 
 [Timer]
-OnBootSec=60
-OnUnitActiveSec=60
+OnBootSec=15m
+OnUnitActiveSec=15m
 Unit=random-wallpaper.service
 
 [Install]

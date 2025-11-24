@@ -454,7 +454,10 @@
       ],
       "right": [
         "volume",
-        "media",
+        "network",
+        "bluetooth",
+        "battery",
+        "systray",
         "notifications"
       ]
     },

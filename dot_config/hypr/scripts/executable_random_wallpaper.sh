@@ -6,4 +6,4 @@ WALLDIR="$HOME/.local/share/wallpapers/"
 PIC=$(find "$WALLDIR" -type f | shuf -n 1)
 
 # set wallpaper
-swww img "$PIC" --transition-type any --transition-duration 2
+swww img "$PIC"
