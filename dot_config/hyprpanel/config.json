@@ -409,7 +409,7 @@
   "theme.bar.buttons.separator.margins": "0.15em",
   "theme.bar.buttons.workspaces.enableBorder": false,
   "wallpaper.image": "/home/nino/tmp/tmp2/WallRizz/mountain_waterfalls_sky_moon_fantacy.jpeg",
-  "wallpaper.enable": true,
+  "wallpaper.enable": false,
   "theme.matugen": false,
   "menus.clock.weather.location": "Los Angeles",
   "menus.clock.weather.unit": "imperial",
