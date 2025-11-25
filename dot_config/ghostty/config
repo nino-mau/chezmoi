@@ -21,6 +21,10 @@ theme = catppuccin-macchiato
 window-width = 140
 window-height = 40
 
+window-padding-x = 7        
+window-padding-y = 7        
+window-padding-balance = true
+
 # -- Font configuration
 
 font-family = JetBrainsMonoNerdFont
@@ -57,8 +61,3 @@ background-opacity = 0.50
 # custom-shader = shaders/cursor_blaze.glsl
 custom-shader = shaders/cursor_smear_custom.glsl
 custom-shader = shaders/cursor_blaze_notrail_custom.glsl
-
-
-
-
-
