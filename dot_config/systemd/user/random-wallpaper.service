@@ -3,6 +3,8 @@ WantedBy=default.target
 
 [Unit]
 Description=Randomize wallpaper with swww
+After=swww-daemon.service
+Requires=swww-daemon.service
 
 [Service]
 Type=oneshot
