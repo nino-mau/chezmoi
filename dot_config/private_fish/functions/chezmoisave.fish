@@ -19,6 +19,7 @@ function chezmoisave
     chezmoi add --recursive ~/.config/systemd
     chezmoi add --recursive ~/.config/mimeapps
     chezmoi add --recursive ~/.config/ohmyposh
+    chezmoi add --recursive ~/.config/fuzzel
 
     # Assets
     chezmoi add --recursive ~/.local/share/wallpapers/
