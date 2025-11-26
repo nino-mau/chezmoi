@@ -4,7 +4,7 @@ if uwsm check may-start
 end
 
 # Set up oh-my-posh theme
-oh-my-posh init fish --config $HOME/.poshthemes/catppuccin_macchiato.omp.json | source
+oh-my-posh init fish --config $HOME/.config/ohmyposh/themes/catppuccin_macchiato.omp.json | source
 
 # Run fastfetch
 clear
@@ -23,6 +23,10 @@ fzf --fish | source
 
 # Set fish vim mode
 set -g fish_key_bindings fish_vi_key_bindings
+
+# Remove vim mode indicator
+function fish_mode_prompt
+end
 
 # Set up kwallet to remember ssh keys
 set -x SSH_ASKPASS
