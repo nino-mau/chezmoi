@@ -296,7 +296,7 @@
   "theme.bar.buttons.workspaces.hover": "#c5a0f6",
   "theme.bar.buttons.workspaces.background": "#24273a",
   "theme.bar.buttons.dashboard.icon": "#24273a",
-  "theme.bar.buttons.dashboard.background": "#eed49f",
+  "theme.bar.buttons.dashboard.background": "#91d7e3",
   "theme.bar.buttons.icon": "#242438",
   "theme.bar.buttons.text": "#b7bdf8",
   "theme.bar.buttons.hover": "#494d64",
@@ -462,9 +462,9 @@
   "theme.bar.menus.card_radius": "0.4em",
   "theme.bar.menus.border.radius": "0.7em",
   "bar.workspaces.workspaceIconMap": {
-    "1": "",
-    "2": "󰨝",
-    "3": "",
+    "1": "",
+    "2": "",
+    "3": "",
     "4": "",
     "5": ""
   },
