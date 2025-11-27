@@ -2,8 +2,8 @@
   "$schema": "https://opencode.ai/theme.json",
   "defs": {
     "darkBg": "#FFFFFF00",
-    "darkBgAlt": "#010409",
-    "darkBgPanel": "#161b22",
+    "darkBgAlt": "#FFFFFF00",
+    "darkBgPanel": "#FFFFFF00",
     "darkFg": "#c9d1d9",
     "darkFgMuted": "#8b949e",
     "darkBlue": "#58a6ff",
