@@ -1,46 +1,21 @@
 function chezmoisave
-    set -l chezdir (chezmoi source-path)
-    set -l machine (hostname)
+    # Re-add all managed files to capture changes
+    echo "📝 Re-adding all managed files..."
+    chezmoi re-add
 
-    # Folder saved by chezmoi
-    chezmoi add --recursive ~/.config/ghostty
-    chezmoi add --recursive ~/.config/fish
-    chezmoi add --recursive ~/.config/lsd
-    chezmoi add --recursive ~/.config/tmux/tmux.conf
-    chezmoi add --recursive ~/.config/fastfetch
-    chezmoi add --recursive ~/.config/zellij
-    chezmoi add --recursive ~/.config/lazygit
-    chezmoi add --recursive ~/.local/share/kio/servicemenus/
-    chezmoi add --recursive ~/.config/hypr
-    chezmoi add --recursive ~/.config/hyprpanel
-    chezmoi add --recursive ~/.config/wofi
-    chezmoi add --recursive ~/.config/greetd
-    chezmoi add --recursive ~/.config/sysc-greet
-    chezmoi add --recursive ~/.config/systemd
-    chezmoi add --recursive ~/.config/mimeapps
-    chezmoi add --recursive ~/.config/ohmyposh
-    chezmoi add --recursive ~/.config/fuzzel
+    # Stage all changes
+    chezmoi git -- add -A
 
-    # Assets
-    chezmoi add --recursive ~/.local/share/wallpapers/
-
-    # Scripts
-    chezmoi add --recursive ~/.local/bin
-
-    if test -d "$chezdir"
-        cd $chezdir
-
-        git add -A
-
-        if git diff --cached --quiet
-            echo "✅ No changes to commit."
-        else
-            set -l msg "chore: auto commit on (date '+%Y-%m-%d %H:%M:%S') from $machine"
-            git commit -m $msg
-            git push origin HEAD
-            echo "✅ Changes committed and pushed."
-        end
+    # Check if there are changes to commit
+    if chezmoi git -- diff --cached --quiet
+        echo "✅ No changes to commit."
     else
-        echo "❌ chezmoi source directory not found."
+        # Create commit with timestamp and hostname
+        set -l timestamp (date '+%Y-%m-%d %H:%M:%S')
+        set -l machine (hostname)
+        chezmoi git -- commit -m "chore: auto commit on $timestamp from $machine"
+        and chezmoi git -- push
+        and echo "✅ Changes committed and pushed."
+        or echo "❌ Failed to push changes."
     end
 end
