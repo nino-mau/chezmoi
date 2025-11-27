@@ -1,0 +1,10 @@
+session_name: pi
+windows:
+  - ssh:
+    shell_command_before:
+      - sshpi
+  - ssh:
+    shell_command_before:
+      - sshpi
+  - local:
+    root: ~

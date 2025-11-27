@@ -1,0 +1,17 @@
+session_name: stackboard
+windows:
+  - neovim:
+    root: ~/Documents/dev/projects/stackboard
+    shell_command_before:
+      - nvim .
+
+  - cmd:
+    root: ~/Documents/dev/projects/stackboard
+
+  - cmd:
+    root: ~/Documents/dev/projects/stackboard
+
+  - opencode:
+    root: ~/Documents/dev/projects/stackboard
+    shell_command_before:
+      - opencode
