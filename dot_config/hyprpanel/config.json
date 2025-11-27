@@ -293,7 +293,7 @@
   "theme.bar.buttons.workspaces.active": "#c5a0f6",
   "theme.bar.buttons.workspaces.occupied": "#c5a0f6",
   "theme.bar.buttons.workspaces.available": "#c5a0f6",
-  "theme.bar.buttons.workspaces.hover": "#494d64",
+  "theme.bar.buttons.workspaces.hover": "#c5a0f6",
   "theme.bar.buttons.workspaces.background": "#24273a",
   "theme.bar.buttons.dashboard.icon": "#24273a",
   "theme.bar.buttons.dashboard.background": "#eed49f",
@@ -401,7 +401,7 @@
   "theme.bar.buttons.modules.worldclock.icon_background": "#f5bde6",
   "theme.bar.buttons.modules.worldclock.icon": "#24273a",
   "theme.bar.buttons.modules.worldclock.border": "#f5bde6",
-  "theme.font.size": "1.1rem",
+  "theme.font.size": "16px",
   "theme.bar.menus.monochrome": false,
   "theme.bar.buttons.enableBorders": false,
   "theme.bar.border.location": "none",
@@ -476,6 +476,8 @@
   "theme.bar.buttons.workspaces.pill.width": "4em",
   "theme.bar.buttons.workspaces.pill.active_width": "12em",
   "bar.workspaces.spacing": 1,
-  "theme.bar.buttons.spacing": "0.5em",
-  "theme.bar.buttons.padding_y": "0.2rem"
+  "theme.bar.buttons.spacing": "0.4em",
+  "theme.bar.buttons.padding_y": "0.2rem",
+  "menus.transition": "crossfade",
+  "theme.bar.buttons.workspaces.numbered_inactive_padding": "6px"
 }

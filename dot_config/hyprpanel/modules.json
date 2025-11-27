@@ -1,6 +1,6 @@
 {
   "custom/clock": {
-    "icon": "",
+    "icon": "󰥔",
     "label": "{label}",
     "tooltip": "{tooltip}",
     "truncationSize": -1,
