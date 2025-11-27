@@ -290,9 +290,9 @@
   "theme.bar.buttons.windowtitle.background": "#24273a",
   "theme.bar.buttons.workspaces.numbered_active_underline_color": "#f5c2e7",
   "theme.bar.buttons.workspaces.numbered_active_highlighted_text_color": "#181825",
-  "theme.bar.buttons.workspaces.active": "#f5bde6",
-  "theme.bar.buttons.workspaces.occupied": "#f0c6c6",
-  "theme.bar.buttons.workspaces.available": "#91d7e3",
+  "theme.bar.buttons.workspaces.active": "#c5a0f6",
+  "theme.bar.buttons.workspaces.occupied": "#c5a0f6",
+  "theme.bar.buttons.workspaces.available": "#c5a0f6",
   "theme.bar.buttons.workspaces.hover": "#494d64",
   "theme.bar.buttons.workspaces.background": "#24273a",
   "theme.bar.buttons.dashboard.icon": "#24273a",
@@ -405,7 +405,7 @@
   "theme.bar.menus.monochrome": false,
   "theme.bar.buttons.enableBorders": false,
   "theme.bar.border.location": "none",
-  "theme.bar.buttons.radius": "1em",
+  "theme.bar.buttons.radius": "5em",
   "theme.bar.buttons.separator.margins": "0.15em",
   "theme.bar.buttons.workspaces.enableBorder": false,
   "wallpaper.image": "/home/nino/tmp/tmp2/WallRizz/mountain_waterfalls_sky_moon_fantacy.jpeg",
@@ -425,14 +425,14 @@
   "theme.bar.margin_top": "1em",
   "theme.bar.margin_sides": "1em",
   "bar.layouts": {
-    "0": {
+    "*": {
       "left": [
         "dashboard",
-        "workspaces",
+        "custom/clock",
         "windowtitle"
       ],
       "middle": [
-        "custom/clock"
+        "workspaces"
       ],
       "right": [
         "volume",
@@ -440,39 +440,6 @@
         "bluetooth",
         "battery",
         "systray",
-        "notifications"
-      ]
-    },
-    "1": {
-      "left": [
-        "dashboard",
-        "workspaces",
-        "windowtitle"
-      ],
-      "middle": [
-        "custom/clock"
-      ],
-      "right": [
-        "volume",
-        "network",
-        "bluetooth",
-        "battery",
-        "systray",
-        "notifications"
-      ]
-    },
-    "2": {
-      "left": [
-        "dashboard",
-        "workspaces",
-        "windowtitle"
-      ],
-      "middle": [
-        "media"
-      ],
-      "right": [
-        "volume",
-        "clock",
         "notifications"
       ]
     }
@@ -486,12 +453,29 @@
   "bar.clock.format": "%A %d %b  %H:%M:%S",
   "bar.workspaces.show_icons": false,
   "bar.workspaces.showWsIcons": true,
-  "bar.workspaces.showApplicationIcons": true,
+  "bar.workspaces.showApplicationIcons": false,
   "bar.workspaces.applicationIconOncePerWorkspace": true,
-  "bar.workspaces.showAllActive": true,
-  "bar.workspaces.numbered_active_indicator": "color",
+  "bar.workspaces.showAllActive": false,
+  "bar.workspaces.numbered_active_indicator": "highlight",
   "theme.font.name": "JetBrainsMonoNL Nerd Font Mono",
   "theme.font.label": "JetBrainsMonoNL Nerd Font Mono",
   "theme.bar.menus.card_radius": "0.4em",
-  "theme.bar.menus.border.radius": "0.7em"
+  "theme.bar.menus.border.radius": "0.7em",
+  "bar.workspaces.workspaceIconMap": {
+    "1": "",
+    "2": "󰨝",
+    "3": "",
+    "4": "",
+    "5": ""
+  },
+  "bar.workspaces.monitorSpecific": false,
+  "theme.bar.buttons.workspaces.numbered_active_highlight_padding": "2em",
+  "bar.workspaces.show_numbered": false,
+  "theme.bar.buttons.workspaces.smartHighlight": true,
+  "theme.bar.buttons.workspaces.numbered_active_highlight_border": "2em",
+  "theme.bar.buttons.workspaces.pill.width": "4em",
+  "theme.bar.buttons.workspaces.pill.active_width": "12em",
+  "bar.workspaces.spacing": 1,
+  "theme.bar.buttons.spacing": "0.5em",
+  "theme.bar.buttons.padding_y": "0.2rem"
 }
