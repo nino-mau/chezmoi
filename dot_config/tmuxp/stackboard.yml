@@ -1,25 +1,27 @@
 session_name: stackboard
+start_directory: /home/nino/Documents/dev/projects/stackboard
 windows:
-  - name: neovim
-    start_directory: /home/nino/Documents/dev/projects/stackboard
-    shell_command_before:
-      - nvim .
+  - window_name: neovim
+    panes:
+      - shell_command:
+          - nvim .
 
-  - name: cmd
-    start_directory: /home/nino/Documents/dev/projects/stackboard
-    shell_command_before:
-      - pnpm install
-      - docker compose up -d --build
+  - window_name: cmd
+    panes:
+      - shell_command:
+          - pnpm install
+          - docker compose down && docker compose up -d --build
 
-  - name: cmd2
-    start_directory: /home/nino/Documents/dev/projects/stackboard
+  - window_name: cmd2
+    panes:
+      -
 
-  - name: opencode
-    start_directory: /home/nino/Documents/dev/projects/stackboard
-    shell_command_before:
-      - opencode
+  - window_name: opencode
+    panes:
+      - shell_command:
+          - opencode
 
-  - name: drizzle-studio
-    start_directory: /home/nino/Documents/dev/projects/stackboard
-    shell_command_before:
-      - pnpm drizzle-studio
+  - window_name: drizzle-studio
+    panes:
+      - shell_command:
+          - pnpm drizzle-studio
