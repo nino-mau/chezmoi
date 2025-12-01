@@ -21,8 +21,8 @@ theme = catppuccin-macchiato
 window-width = 140
 window-height = 40
 
-window-padding-x = 7        
-window-padding-y = 7        
+window-padding-x = 7
+window-padding-y = 7
 window-padding-balance = true
 
 # -- Font configuration
@@ -33,8 +33,11 @@ window-padding-balance = true
 # font-family = IosevkaNerdFontPropo
 font-family = FiraCode Nerd Font Mono
 
-# font-size = 15
+{{ if eq .chezmoi.os "darwin" }}
+font-size = 15
+{{ else }}
 font-size = 13
+{{ end }}
 
 # Line height equivalent
 adjust-cell-height = 1
@@ -52,7 +55,11 @@ shell-integration-features = no-cursor
 # -- Backgroud
 
 background-opacity = 0.50
+{{ if eq .chezmoi.os "darwin" }}
 background-blur-radius = 50
+{{ else }}
+# background-blur-radius = 50
+{{ end }}
 
 # -- Shaders
 # custom-shader = shaders/cursor_smear_fade.glsl
