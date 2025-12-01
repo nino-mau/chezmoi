@@ -446,7 +446,7 @@
   "bar.workspaces.applicationIconOncePerWorkspace": true,
   "bar.workspaces.showAllActive": false,
   "bar.workspaces.numbered_active_indicator": "highlight",
-  "theme.font.name": "JetBrainsMonoNerdFont",
+  "theme.font.name": "SpaceMonoNerdFont",
   "theme.font.label": "JetBrainsMonoNerdFont",
   "theme.bar.menus.card_radius": "0.4em",
   "theme.bar.menus.border.radius": "0.7em",
