@@ -12,3 +12,6 @@ alias cliph="qdbus org.kde.klipper /klipper org.kde.klipper.klipper.getClipboard
 
 # Display image
 alias icat="kitten icat"
+
+# Display images in a grid
+abbr --add lsimg "timg --grid=3x2 --title *.{jpg,JPG,png,jpeg,webp}"
