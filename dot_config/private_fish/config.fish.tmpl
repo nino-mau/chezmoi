@@ -1,7 +1,9 @@
+{{ if eq .chezmoi.os "linux" }}
 # Start hyprland
 if uwsm check may-start
     uwsm start hyprland.desktop
 end
+{{ end }}
 
 # Set up oh-my-posh theme
 oh-my-posh init fish --config $HOME/.config/ohmyposh/themes/catppuccin_macchiato.omp.json | source

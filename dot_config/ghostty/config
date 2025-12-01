@@ -27,14 +27,14 @@ window-padding-balance = true
 
 # -- Font configuration
 
-font-family = JetBrainsMonoNerdFont
+# font-family = JetBrainsMono NF
 # font-family = SourceCodePro
 # font-family = GeistMonoNerdFont
 # font-family = IosevkaNerdFontPropo
-# font-family = FiraCodeNerdFont
+font-family = FiraCode Nerd Font Mono
 
 # font-size = 15
-font-size = 12
+font-size = 14
 
 # Line height equivalent
 adjust-cell-height = 1
@@ -52,7 +52,7 @@ shell-integration-features = no-cursor
 # -- Backgroud
 
 background-opacity = 0.50
-# background-blur-radius = 20
+background-blur-radius = 50
 
 # -- Shaders
 # custom-shader = shaders/cursor_smear_fade.glsl
