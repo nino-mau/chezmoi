@@ -1,2 +1,10 @@
 venv/
 scrapJJKTranscript/
+
+{{- if eq .chezmoi.os "darwin" }}
+~/.config/hypr
+~/.config/wofi
+~/.config/hyprpanel
+~/.config/hypremoji/
+{{- end }}
+

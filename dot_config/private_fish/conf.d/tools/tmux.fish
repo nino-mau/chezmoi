@@ -2,4 +2,7 @@
 abbr -a ctmux "nvim ~/.config/tmux/tmux.conf"
 
 # Kill all session but current
-abbr -a txka "tmux kill-session -a"
+abbr -a tmka "tmux kill-session -a"
+
+# Load a session with tmuxp 
+abbr -a tml "tmuxp load"
