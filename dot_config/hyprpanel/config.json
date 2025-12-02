@@ -1,5 +1,7 @@
 {
-  "bar.customModules.storage.paths": ["/"],
+  "bar.customModules.storage.paths": [
+    "/"
+  ],
   "theme.bar.floating": true,
   "theme.bar.enableShadow": false,
   "theme.bar.menus.background": "#11111b",
@@ -424,8 +426,14 @@
   "theme.bar.margin_sides": "1em",
   "bar.layouts": {
     "*": {
-      "left": ["dashboard", "custom/clock", "windowtitle"],
-      "middle": ["workspaces"],
+      "left": [
+        "dashboard",
+        "custom/clock",
+        "windowtitle"
+      ],
+      "middle": [
+        "workspaces"
+      ],
       "right": [
         "volume",
         "network",
@@ -436,7 +444,10 @@
       ]
     }
   },
-  "bar.customModules.worldclock.tz": ["Europe/Paris", "Asia/Tokyo"],
+  "bar.customModules.worldclock.tz": [
+    "Europe/Paris",
+    "Asia/Tokyo"
+  ],
   "theme.bar.buttons.modules.worldclock.enableBorder": false,
   "bar.clock.showIcon": true,
   "bar.clock.format": "%A %d %b  %H:%M:%S",
@@ -471,4 +482,3 @@
   "theme.bar.buttons.workspaces.numbered_inactive_padding": "6px",
   "theme.matugen_settings.variation": "standard_1"
 }
-
