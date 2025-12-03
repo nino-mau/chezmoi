@@ -14,8 +14,12 @@ abbr -a cddoc "cd ~/Documents"
 
 abbr -a cdtmp "cd ~/tmp"
 
-abbr -a cdnl "cd ~/Documents/dev/projects/navilab"
-
 abbr -a cdnvim "cd ~/.config/nvim"
+
+abbr -a cdhypr "cd ~/.config/hypr"
+
+abbr -a cdhyprpanel "cd ~/.config/hyprpanel"
+
+abbr -a cdbin "cd ~/.local/bin"
 
 abbr -a cdexb "cd ~/Documents/dev/exb"

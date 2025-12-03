@@ -28,6 +28,6 @@ function cfish -d 'Open specified fish configurations files'
         case all
             nvim (realpath $config_path/../)
         case '*'
-            nvim (realpath $config_path/../config.fish)
+            chezmoi edit (realpath $config_path/../config.fish)
     end
 end
