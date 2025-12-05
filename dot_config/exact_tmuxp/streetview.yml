@@ -1,0 +1,35 @@
+session_name: streetview
+start_directory: $HOME/Documents/dev/exb
+windows:
+  - window_name: editor
+    panes:
+      - shell_command:
+          - cd $HOME/Documents/dev/exb/client/your-extensions/widgets/street-view/
+          - nvim .
+
+  - window_name: repo
+    panes:
+      - shell_command:
+          - cd $HOME/Documents/dev/projects/so-street-view-exb-widget/
+
+  - window_name: cmd
+    panes:
+      - shell_command:
+          - cd $HOME/Documents/dev/exb/client/your-extensions/widgets/
+
+  - window_name: client
+    panes:
+      - shell_command:
+          - cd $HOME/Documents/dev/exb/client
+          - pnpm start
+
+  - window_name: server
+    panes:
+      - shell_command:
+          - cd $HOME/Documents/dev/exb/server
+          - pnpm start
+
+  - window_name: sync
+    panes:
+      - shell_command:
+          - syncwatch $HOME/Documents/dev/exb/client/your-extensions/widgets/street-view/ $HOME/Documents/dev/projects/so-street-view-exb-widget/src/street-view/

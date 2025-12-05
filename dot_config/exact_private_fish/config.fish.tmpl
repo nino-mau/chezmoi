@@ -1,18 +1,26 @@
 # Set up oh-my-posh theme
+{{ if eq .chezmoi.os "darwin" }}
+oh-my-posh init fish --config $HOME/.config/ohmyposh/themes/catppuccin_light.omp.json | source
+{{ else }}
 oh-my-posh init fish --config $HOME/.config/ohmyposh/themes/catppuccin_macchiato.omp.json | source
+{{ end }}
 
 # Set up fzf key bindings
 fzf --fish | source
-
-# Set up fnm
-fnm env --use-on-cd | source
 
 # Set up opencode
 fish_add_path $HOME/.opencode/bin
 
 if status is-interactive
     clear
+    {{ if eq .chezmoi.os "darwin" }}
+    fastfetch --config $HOME/.config/fastfetch/config-macos.jsonc
+    {{ else }}
     fastfetch
+    {{ end }}
+
+    # Set up fnm
+    fnm env --use-on-cd | source
 end
 
 #
