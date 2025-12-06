@@ -462,11 +462,11 @@
   "theme.bar.menus.card_radius": "0.4em",
   "theme.bar.menus.border.radius": "0.7em",
   "bar.workspaces.workspaceIconMap": {
-    "1": "",
-    "2": "",
-    "3": "",
-    "4": "",
-    "5": ""
+    "1": "",
+    "2": "",
+    "3": "",
+    "4": "",
+    "5": ""
   },
   "bar.workspaces.monitorSpecific": false,
   "theme.bar.buttons.workspaces.numbered_active_highlight_padding": "2em",
