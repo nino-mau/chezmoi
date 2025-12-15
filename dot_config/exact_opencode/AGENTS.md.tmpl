@@ -1,0 +1,53 @@
+{{ if eq .chezmoi.os "darwin" }}
+
+## System Context
+
+Informations on the computer you're running on
+
+- OS: MacOS
+- CPU: Intel
+- Package Manager: brew
+- Shell: fish
+- Terminal Emulator: wezterm
+- Editor: neovim
+- Browser: zen-browser
+- Dot Files: ~/.config
+
+to get more detailed informations run:
+
+~~~bash
+fastfetch
+~~~
+
+## General Guideline
+
+- Focus on teaching and be pedagogic
+- Avoid unecessary flavour text, go to the point
+
+{{ else }}
+
+## System Context
+
+Informations on the computer you're running on
+
+- OS: Archlinux
+- Desktop Environment: Hyprland/Wayland
+- Package Manager: paru
+- Shell: fish
+- Terminal Emulator: ghostty
+- Editor: neovim
+- Browser: zen-browser
+- Dot Files: ~/.config
+
+to get more detailed informations run:
+
+~~~bash
+fastfetch
+~~~
+
+## General Guideline
+
+- Focus on teaching and be pedagogic
+- Avoid unecessary flavour text, go to the point
+
+{{ end }}

@@ -1,5 +1,5 @@
 // --- CONFIGURATION ---
-vec4 TRAIL_COLOR = iCurrentCursorColor; // can change to eg: vec4(0.2, 0.6, 1.0, 0.5);
+vec4 TRAIL_COLOR = vec4(0.79216, 0.82745, 0.96078, 1.0); // Text #cad3f5 / rgb(202, 211, 245)
 const float DURATION = 0.2; // total animation time
 const float TRAIL_SIZE = 0.8; // 0.0 = all corners move together. 1.0 = max smear (leading corners jump instantly)
 const float THRESHOLD_MIN_DISTANCE = 1.5; // min distance to show trail (units of cursor height)
@@ -289,14 +289,20 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord){
             trail.a *= easedProgress;
         }
 
-        float finalAlpha = trail.a * shapeAlpha;
+        float trailOpacity = 1.0; // Assume full opacity for the solid part of the trail
 
-        // newColor.a to preserve the background alpha.
-        newColor = mix(newColor, vec4(trail.rgb, newColor.a), finalAlpha);
+        if (FADE_ENABLED > 0.5) {
+            // Apply the fade gradient to the opacity
+            trailOpacity *= pow(fadeProgress, FADE_EXPONENT);
+        }
 
-        // punch hole on the trail, so current cursor is drawn on top
-        newColor = mix(newColor, fragColor, step(sdfCurrentCursor, 0.));
+        // Combine the trail opacity (from fade) with the antialiasing shape alpha
+        float finalAlpha = trailOpacity * shapeAlpha;
 
+        // Apply the blend. This mix operation is the key:
+        // It ensures that where finalAlpha is 1.0, newColor becomes exactly TRAIL_COLOR.rgb
+        newColor.rgb = mix(newColor.rgb, TRAIL_COLOR.rgb, finalAlpha);
+        newColor.a = mix(newColor.a, trail.a, finalAlpha); // Keep background alpha logic simple
     }
 
     fragColor = newColor;

@@ -48,7 +48,7 @@ adjust-cell-height = 1
 # -- Cursor
 
 # Change cursor style
-cursor-style = block
+# cursor-style = block
 cursor-color = #cad3f5
 
 # -- Shell
@@ -74,9 +74,9 @@ background-blur-radius = 50
 # custom-shader = shaders/yourshader2.glsl
 
 {{ if eq .chezmoi.os "darwin" }}
-custom-shader = shaders/cursor_sweep.glsl
+custom-shader = shaders/cursor_warp.glsl
 {{ else }}
-custom-shader = shaders/cursor_sweep.glsl
+custom-shader = shaders/cursor_warp.glsl
 # custom-shader = shaders/cursor_smear_custom.glsl
 # custom-shader = shaders/cursor_blaze_notrail_custom.glsl
 {{ end }}

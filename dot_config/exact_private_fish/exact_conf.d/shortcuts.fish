@@ -10,6 +10,8 @@ abbr -a rconfig "source ~/.config/fish/config.fish"
 
 abbr -a nv nvim
 
+alias mvim="NVIM_APPNAME=mvim nvim"
+
 #
 # TMUX
 #
