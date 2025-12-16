@@ -47,7 +47,7 @@ show_actions = ["alt j"]
 default = [
   "desktopapplications",
   "calc",
-  # "runner",
+  "menu",
   "websearch",
 ] # providers to be queried by default
 empty = ["desktopapplications"] # providers to be queried when query is empty
@@ -79,10 +79,6 @@ provider = "symbols"
 [[providers.prefixes]]
 prefix = "!"
 provider = "todo"
-
-[[providers.prefixes]]
-prefix = "%"
-provider = "bookmarks"
 
 [[providers.prefixes]]
 prefix = "="
