@@ -2,8 +2,8 @@
 # -- Keybinds
 
 keybind = ctrl+shift+s=close_surface
-# keybind = CapsLock=esc:
 keybind = performable:ctrl+n=goto_split:next
+keybind = performable:ctrl+c=copy_to_clipboard
 
 # toggle quick terminal
 keybind = global:cmd+backquote=toggle_quick_terminal
@@ -23,18 +23,18 @@ window-height = 40
 
 macos-titlebar-style = hidden
 
-window-padding-x = 7
-window-padding-y = 7
+window-padding-x = 20
+window-padding-y = 20
 window-padding-balance = true
 
 # -- Font configuration
 
-# font-family = JetBrainsMono NF
+font-family = JetBrainsMono NF
 # font-family = SourceCodePro
 # font-family = GeistMonoNerdFont
 # font-family = IosevkaNerdFontPropo
 # font-family = FiraCode Nerd Font Mono
-font-family = SpaceMono Nerd Font
+# font-family = SpaceMono Nerd Font
 
 {{ if eq .chezmoi.os "darwin" }}
 font-size = 15
