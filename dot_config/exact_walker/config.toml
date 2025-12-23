@@ -47,7 +47,6 @@ show_actions = ["alt j"]
 default = [
   "desktopapplications",
   "calc",
-  "menu",
   "websearch",
 ] # providers to be queried by default
 empty = ["desktopapplications"] # providers to be queried when query is empty
@@ -59,6 +58,10 @@ runner = " "
 
 [providers.sets] # define your own defaults/empty sets of providers
 [providers.max_results_provider] # define max results per provider in here
+
+[[providers.prefixes]]
+prefix = "$"
+provider = "menus:wallpapers"
 
 [[providers.prefixes]]
 prefix = ";"

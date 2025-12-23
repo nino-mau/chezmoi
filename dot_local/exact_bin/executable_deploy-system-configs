@@ -1,0 +1,158 @@
+#!/usr/bin/env bash
+# Deploy configs from ~/.config to /etc (requires sudo)
+# Source of truth: ~/.config
+# Use --dry-run to preview changes
+
+set -euo pipefail
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+BLUE='\033[0;34m'
+NC='\033[0m'
+
+log_info()  { echo -e "${GREEN}[✓]${NC} $1"; }
+log_warn()  { echo -e "${YELLOW}[!]${NC} $1"; }
+log_error() { echo -e "${RED}[✗]${NC} $1"; }
+log_diff()  { echo -e "${BLUE}[~]${NC} $1"; }
+
+CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
+DRY_RUN=false
+RELOAD=false
+
+usage() {
+    cat <<EOF
+Usage: $(basename "$0") [OPTIONS]
+
+Deploy configs from ~/.config to /etc
+
+Options:
+    -n, --dry-run    Preview changes without applying
+    -r, --reload     Reload services after sync
+    -h, --help       Show this help
+EOF
+}
+
+parse_args() {
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            -n|--dry-run) DRY_RUN=true ;;
+            -r|--reload)  RELOAD=true ;;
+            -h|--help)    usage; exit 0 ;;
+            *) log_error "Unknown option: $1"; usage; exit 1 ;;
+        esac
+        shift
+    done
+}
+
+show_diff() {
+    local src="$1" dest="$2"
+    echo
+    diff --color=always -u "$dest" "$src" 2>/dev/null || true
+    echo
+}
+
+sync_file() {
+    local src="$1"
+    local dest="$2"
+    local name="$3"
+
+    if [[ ! -f "$src" ]]; then
+        log_error "$name: source not found at $src"
+        return 1
+    fi
+
+    # Create parent dir if needed
+    local dest_dir
+    dest_dir=$(dirname "$dest")
+    if [[ ! -d "$dest_dir" ]]; then
+        if $DRY_RUN; then
+            log_warn "$name: would create $dest_dir"
+        else
+            sudo mkdir -p "$dest_dir"
+        fi
+    fi
+
+    if [[ -f "$dest" ]] && diff -q "$src" "$dest" > /dev/null 2>&1; then
+        log_info "$name: already in sync"
+        return 0
+    fi
+
+    if [[ -f "$dest" ]]; then
+        log_diff "$name: changes detected"
+        show_diff "$src" "$dest"
+    else
+        log_warn "$name: $dest does not exist, will create"
+    fi
+
+    if $DRY_RUN; then
+        log_warn "$name: would copy $src → $dest"
+    else
+        sudo cp "$src" "$dest"
+        log_info "$name: deployed $src → $dest"
+    fi
+}
+
+sync_earlyoom() {
+    sync_file \
+        "$CONFIG_DIR/earlyoom/earlyoom" \
+        "/etc/default/earlyoom" \
+        "earlyoom"
+}
+
+sync_keyd() {
+    local src_dir="$CONFIG_DIR/keyd"
+    local dest_dir="/etc/keyd"
+
+    if [[ ! -d "$src_dir" ]]; then
+        log_error "keyd: source dir not found at $src_dir"
+        return 1
+    fi
+
+    for src_file in "$src_dir"/*.conf; do
+        [[ -f "$src_file" ]] || continue
+        local filename
+        filename=$(basename "$src_file")
+        sync_file "$src_file" "$dest_dir/$filename" "keyd/$filename"
+    done
+}
+
+reload_services() {
+    if $DRY_RUN; then
+        log_warn "Would reload: keyd, earlyoom"
+        return
+    fi
+
+    echo
+    echo "Reloading services..."
+    
+    if command -v keyd &>/dev/null; then
+        sudo keyd reload && log_info "keyd reloaded"
+    fi
+    
+    sudo systemctl restart earlyoom && log_info "earlyoom restarted"
+}
+
+main() {
+    parse_args "$@"
+
+    if $DRY_RUN; then
+        echo -e "${YELLOW}=== DRY RUN ===${NC}"
+        echo
+    fi
+
+    echo "Deploying configs from $CONFIG_DIR to /etc..."
+    echo
+
+    sync_earlyoom
+    sync_keyd
+
+    if $RELOAD; then
+        reload_services
+    fi
+
+    echo
+    echo "Done."
+}
+
+main "$@"

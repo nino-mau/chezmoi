@@ -15,3 +15,6 @@ alias icat="kitten icat"
 
 # Display images in a grid
 abbr --add lsimg "timg --grid=3x2 --title *.{jpg,JPG,png,jpeg,webp}"
+
+# Generate random string with openssl
+alias rand="openssl rand -base64 32 | tr -d '/+='"
