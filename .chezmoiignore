@@ -1,7 +1,7 @@
 venv/
 scrapJJKTranscript/
-node_modules/
-exact_node_modules/
+*node_modules/*
+exact_node_modules/*
 
 {{- if eq .chezmoi.os "darwin" }}
 ~/.config/hypr
