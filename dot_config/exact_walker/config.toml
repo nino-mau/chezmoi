@@ -59,9 +59,15 @@ runner = " "
 [providers.sets] # define your own defaults/empty sets of providers
 [providers.max_results_provider] # define max results per provider in here
 
+# Custom wallpaper menu 
 [[providers.prefixes]]
 prefix = "$"
 provider = "menus:wallpapers"
+
+# Custom iconify menu 
+[[providers.prefixes]]
+prefix = "?"
+provider = "menus:iconify"
 
 [[providers.prefixes]]
 prefix = ";"
