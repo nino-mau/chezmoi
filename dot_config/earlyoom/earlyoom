@@ -2,8 +2,7 @@
 # /etc/init.d/earlyoom or by systemd from earlyoom.service.
 
 # Options to pass to earlyoom
-EARLYOOM_ARGS="-r 3600 -n --avoid '(^|/)(init|systemd|Xorg|sshd|Hyprland|Steam|Overwatch|Overwatch.exe|uwsm|pipewire|xdg-desktop-portal|dbus-broker-launch)$'"
-EARLYOOM_ARGS="-r 3600 --avoid '(^|/)(init|systemd|Xorg|sshd|Hyprland|Steam|Overwatch|Overwatch.exe|uwsm|pipewire|elephant|xdg-desktop-portal.*|dbus-broker.*)$'"
+EARLYOOM_ARGS="-m 5 -r 3600 -n --avoid '(^|/)(init|systemd|Xorg|sshd|Hyprland|Steam|Main|Overwatch|Overwatch.exe|uwsm|pipewire|elephant|xdg-desktop-portal.*|dbus-broker.*)$' --prefer '(^|/)(zen|zen-browser|Isolated Web Co)$'"
 
 # Examples:
 
