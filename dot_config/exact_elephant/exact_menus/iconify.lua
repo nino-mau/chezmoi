@@ -6,6 +6,7 @@ Action = "wl-copy %VALUE%"
 HideFromProviderlist = false
 Description = "Search iconify icon and copy name to clipboard"
 SearchName = true
+MinScore = 0
 
 local ICON_LIBRARY = "hugeicons"
 local CACHE_DIR = os.getenv("HOME") .. "/.cache/elephant/iconify"
@@ -41,67 +42,104 @@ function CacheSvg(icon_name, svg_content)
 	return nil
 end
 
-function print_r(arr, indentLevel)
-	local str = ""
-	local indentStr = "#"
-
-	if indentLevel == nil then
-		print(print_r(arr, 0))
-		return
+function tprint(tbl, indent)
+	if not indent then
+		indent = 0
 	end
-
-	for i = 0, indentLevel do
-		indentStr = indentStr .. "\t"
-	end
-
-	for index, value in pairs(arr) do
-		if type(value) == "table" then
-			str = str .. indentStr .. index .. ": \n" .. print_r(value, (indentLevel + 1))
+	for k, v in pairs(tbl) do
+		local formatting = string.rep("  ", indent) .. k .. ": "
+		if type(v) == "table" then
+			print(formatting)
+			tprint(v, indent + 1)
+		elseif type(v) == "boolean" then
+			print(formatting .. tostring(v))
 		else
-			str = str .. indentStr .. index .. ": " .. value .. "\n"
+			print(formatting .. v)
 		end
 	end
-	return str
 end
 
-function GetEntries()
-	tt = state()
-	print_r(tt)
-	print(tt[0])
-	local entries = {}
-
-	local file = "cat ~/.local/share/iconify/" .. ICON_LIBRARY .. ".json"
-	local handle = io.popen("cat " .. file .. "")
-
+local function fetchJson(url)
+	local handle = io.popen('curl -sL "' .. url .. '"')
 	if handle then
-		local json_string = handle:read("*a")
+		local body = handle:read("*a")
 		handle:close()
-		local data = jsonDecode(json_string)
+		return jsonDecode(body)
+	end
+end
 
-		for k, v in pairs(data.icons) do
-			-- Fetch SVG from API and cache it
-			local cache_path = CACHE_DIR .. "/" .. ICON_LIBRARY .. "_" .. v.name .. ".svg"
+function GetEntries(query)
+	local entries = {}
+	local icon_data = {}
 
-			-- Check if already cached, otherwise fetch from API
-			local svg_exists = io.open(cache_path, "r")
-			if not svg_exists then
-				local api_url = "https://api.iconify.design/" .. ICON_LIBRARY .. "/" .. v.name .. ".svg"
-				os.execute("curl -s '" .. api_url .. "' -o '" .. cache_path .. "' 2>/dev/null")
-			else
-				svg_exists:close()
-			end
-
-			table.insert(entries, {
-				Text = v.name,
-				Subtext = "Copy icon name",
-				Value = v.name,
-				Icon = cache_path,
-				IconPreview = cache_path,
-				Preview = cache_path,
-				PreviewType = "file",
-			})
+	print(query)
+	if query:find("/") then
+		local query_collection, query_icon_name = query:match("([^/]+)/%s*(.*)")
+		print(query_collection, query_icon_name)
+		if query_icon_name and query_icon_name ~= "" then
+			icon_data = fetchJson(
+				"https://api.iconify.design/search?query=" .. query_icon_name .. "&prefix=" .. query_collection
+			)
+		else
+			return entries
 		end
+	else
+		icon_data = fetchJson("https://api.iconify.design/search?query=" .. query)
 	end
 
+	if icon_data == nil then
+		print("Request to iconify API failed")
+		return entries
+	end
+	if icon_data.total == 0 then
+		print("No icons found")
+		return entries
+	end
+
+	tprint(icon_data)
+
+	for icon_key, icon in pairs(icon_data["icons"]) do
+		local icon_collection, icon_name = icon:match("([^:]+):%s*(.*)")
+
+		-- Fetch SVG from API and cache it
+		local cache_path = CACHE_DIR .. "/" .. icon_collection .. "_" .. icon_name .. ".svg"
+
+		-- Check if already cached, otherwise fetch from API and scale
+		local svg_exists = io.open(cache_path, "r")
+		if svg_exists then
+			svg_exists:close()
+		else
+			local icon_svg_url = "https://api.iconify.design/" .. icon_collection .. "/" .. icon_name .. ".svg"
+			local handle = io.popen('curl -sL "' .. icon_svg_url .. '"')
+			if handle then
+				local svg_content = handle:read("*a")
+				handle:close()
+				if svg_content and svg_content ~= "" then
+					-- Scale SVG from 1em to 256px for proper preview display
+					local scaled_svg = svg_content:gsub('width="[^"]*em"', 'width="256"')
+					scaled_svg = scaled_svg:gsub('height="[^"]*em"', 'height="256"')
+					local file = io.open(cache_path, "w")
+					if file then
+						file:write(scaled_svg)
+						file:close()
+					end
+				end
+			end
+		end
+
+		print(cache_path)
+
+		-- Use / instead of : for Text to match query pattern for fuzzy filtering
+		local display_icon = icon_collection .. "/" .. icon_name
+
+		table.insert(entries, {
+			Text = display_icon,
+			Subtext = icon,
+			Value = icon,
+			Icon = cache_path,
+		})
+	end
+
+	print("Returning " .. #entries .. " entries")
 	return entries
 end
