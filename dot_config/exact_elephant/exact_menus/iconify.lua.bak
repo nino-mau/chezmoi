@@ -41,33 +41,7 @@ function CacheSvg(icon_name, svg_content)
 	return nil
 end
 
-function print_r(arr, indentLevel)
-	local str = ""
-	local indentStr = "#"
-
-	if indentLevel == nil then
-		print(print_r(arr, 0))
-		return
-	end
-
-	for i = 0, indentLevel do
-		indentStr = indentStr .. "\t"
-	end
-
-	for index, value in pairs(arr) do
-		if type(value) == "table" then
-			str = str .. indentStr .. index .. ": \n" .. print_r(value, (indentLevel + 1))
-		else
-			str = str .. indentStr .. index .. ": " .. value .. "\n"
-		end
-	end
-	return str
-end
-
 function GetEntries()
-	tt = state()
-	print_r(tt)
-	print(tt[0])
 	local entries = {}
 
 	local file = "cat ~/.local/share/iconify/" .. ICON_LIBRARY .. ".json"
@@ -79,26 +53,14 @@ function GetEntries()
 		local data = jsonDecode(json_string)
 
 		for k, v in pairs(data.icons) do
-			-- Fetch SVG from API and cache it
-			local cache_path = CACHE_DIR .. "/" .. ICON_LIBRARY .. "_" .. v.name .. ".svg"
-
-			-- Check if already cached, otherwise fetch from API
-			local svg_exists = io.open(cache_path, "r")
-			if not svg_exists then
-				local api_url = "https://api.iconify.design/" .. ICON_LIBRARY .. "/" .. v.name .. ".svg"
-				os.execute("curl -s '" .. api_url .. "' -o '" .. cache_path .. "' 2>/dev/null")
-			else
-				svg_exists:close()
-			end
+			-- Cache SVG to file for preview
+			local svg_path = CacheSvg(v.name, v.svg)
 
 			table.insert(entries, {
 				Text = v.name,
 				Subtext = "Copy icon name",
 				Value = v.name,
-				Icon = cache_path,
-				IconPreview = cache_path,
-				Preview = cache_path,
-				PreviewType = "file",
+				Icon = svg_path,
 			})
 		end
 	end
