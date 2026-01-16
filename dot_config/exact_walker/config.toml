@@ -46,8 +46,6 @@ show_actions = ["alt j"]
 [providers]
 default = [
   "desktopapplications",
-  "calc",
-  "websearch",
 ] # providers to be queried by default
 empty = ["desktopapplications"] # providers to be queried when query is empty
 ignore_preview = [] # providers that should not show previews
@@ -102,7 +100,7 @@ prefix = ":"
 provider = "clipboard"
 
 [[providers.prefixes]]
-prefix = "$"
+prefix = "à"
 provider = "windows"
 
 [[providers.prefixes]]
