@@ -1,3 +1,6 @@
+# Install with paru
+alias i="paru -S"
+
 # Reload ghostty terminal config
 abbr -a rghost "source ~/.config/ghostty/config"
 
