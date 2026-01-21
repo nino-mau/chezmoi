@@ -10,7 +10,7 @@ windows:
   - window_name: repo
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/projects/so-street-view-exb-widget/
+          - cd $HOME/Documents/dev/projects/streetview-exb-widget/
 
   - window_name: cmd
     panes:
@@ -32,4 +32,4 @@ windows:
   - window_name: sync
     panes:
       - shell_command:
-          - syncwatch $HOME/Documents/dev/exb/client/your-extensions/widgets/street-view/ $HOME/Documents/dev/projects/so-street-view-exb-widget/src/street-view/
+          - syncwatch $HOME/Documents/dev/exb/client/your-extensions/widgets/street-view/ $HOME/Documents/dev/projects/streetview-exb-widget/src/street-view/
