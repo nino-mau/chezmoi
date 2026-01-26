@@ -3,6 +3,7 @@
 SETUVAR --export EDITOR:nvim
 SETUVAR --export TERM:ghostty
 SETUVAR --export TERMINAL:ghostty
-SETUVAR __fish_initialized:4300
+SETUVAR __fish_initialized:3800
 SETUVAR _fisher_upgraded_to_4_4:\x1d
-SETUVAR fish_user_paths:/home/nino/\x2ecargo/bin\x1e/home/nino/\x2eopencode/bin\x1e/usr/bin
+SETUVAR fish_greeting:\x1d
+SETUVAR fish_user_paths:/usr/local/opt/ruby\x403\x2e1/bin\x1e/usr/local/opt/ruby\x403\x2e2/bin\x1e/usr/local/lib/ruby/gems/4\x2e0\x2e0/bin\x1e/usr/local/opt/ruby/bin\x1e/home/nino/\x2ecargo/bin\x1e/home/nino/\x2eopencode/bin\x1e/usr/bin

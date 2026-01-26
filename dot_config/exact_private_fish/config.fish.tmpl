@@ -15,12 +15,14 @@ fish_add_path $HOME/.opencode/bin
 zoxide init fish | source
 
 if status is-interactive
-    clear
-    {{ if eq .chezmoi.os "darwin" }}
-    fastfetch --config $HOME/.config/fastfetch/config-macos.jsonc
-    {{ else }}
-    fastfetch
-    {{ end }}
+    if not set -q TMUX
+        clear
+        {{ if eq .chezmoi.os "darwin" }}
+        fastfetch --config $HOME/.config/fastfetch/config-macos.jsonc
+        {{ else }}
+        fastfetch
+        {{ end }}
+    end
 
     # Set up fnm
     fnm env --use-on-cd | source
