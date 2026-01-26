@@ -1,0 +1,29 @@
+session_name: exb16
+start_directory: $HOME/Documents/dev/exb16
+windows:
+  - window_name: cmd
+    panes:
+      - shell_command:
+          - cd $HOME/Documents/dev/exb16/client/your-extensions/widgets
+
+  - window_name: cmd
+    panes:
+      - shell_command:
+          - cd $HOME/Documents/dev/exb16/client/your-extensions/widgets
+
+  - window_name: cmd
+    panes:
+      - shell_command:
+          - cd $HOME/Documents/dev/projects
+
+  - window_name: client
+    panes:
+      - shell_command:
+          - cd $HOME/Documents/dev/exb16/client
+          - pnpm start
+
+  - window_name: server
+    panes:
+      - shell_command:
+          - cd $HOME/Documents/dev/exb16/server
+          - pnpm start
