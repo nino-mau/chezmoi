@@ -3,9 +3,10 @@
   "palette": {
     "blue": "#8AADF4",
     "closer": "p:os",
+    "text": "#cad3f5",
     "lavender": "#B7BDF8",
     "os": "#c6a0f6",
-    "pink": "#c6a0f6"
+    "mauve": "#c6a0f6"
   },
   "blocks": [
     {
@@ -14,12 +15,12 @@
       "segments": [
         {
           "template": "\uf303 ",
-          "foreground": "p:os",
+          "foreground": "p:blue",
           "type": "os",
           "style": "plain"
         },
         {
-          "template": "{{ .UserName }}@{{ .HostName }} ",
+          "template": "{{ .UserName }} ",
           "foreground": "p:blue",
           "type": "session",
           "style": "plain"
@@ -31,7 +32,7 @@
             "style": "agnoster_short"
           },
           "template": "{{ .Path }} ",
-          "foreground": "p:pink",
+          "foreground": "p:mauve",
           "type": "path",
           "style": "plain"
         },
@@ -52,6 +53,28 @@
           "foreground": "p:lavender",
           "type": "git",
           "style": "plain"
+        },
+        {
+          "foreground": "p:text",
+          "properties": {
+            "fetch_version": true
+          },
+          "style": "plain",
+          "template": " {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "type": "node"
+        },
+        {
+          "foreground": "p:mauve",
+          "style": "plain",
+          "template": "x ",
+          "type": "status"
+        },
+        {
+          "foreground": "p:text",
+          "properties": {},
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#7a7a7a> ",
+          "style": "plain",
+          "type": "python"
         },
         {
           "template": "\uf105",

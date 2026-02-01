@@ -67,7 +67,7 @@
         {
           "foreground": "p:text",
           "properties": {},
-          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}<#7a7a7a> ",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}<#7a7a7a> ",
           "style": "plain",
           "type": "python"
         },
