@@ -118,7 +118,11 @@ time_format = "%d.%m. - %H:%M" # format for the clipboard item date
 "menus:iconify" = [
   { action = "copy_name", label = "Copy name", bind = "Return", default = true },
   { action = "copy_svg", label = "Copy svg", bind = "ctrl s"  },
-  { action = "toggle_search_all", label = "Search All", bind = "ctrl a", after = "AsyncReload" },
+  { action = "toggle_search_all", label = "All", bind = "ctrl a", after = "AsyncReload" },
+  { action = "toggle_search_lucide", label = "Lucide", bind = "ctrl l", after = "AsyncReload" },
+  { action = "toggle_search_hugeicons", label = "Hugeicons", bind = "ctrl h", after = "AsyncReload" },
+  { action = "toggle_search_phosphor", label = "Phosphor", bind = "ctrl p", after = "AsyncReload" },
+  { action = "toggle_search_tabler", label = "Tabler", bind = "ctrl t", after = "AsyncReload" },
 ]
 
 fallback = [
