@@ -5,6 +5,16 @@ scrapJJKTranscript/
 
 {{- if eq .chezmoi.os "darwin" }}
 ~/.config/hypr
+~/.config/matugen
+~/.config/walker
+~/.config/elephant
+~/.config/gtk-4.0
+~/.config/gtk-3.0
+~/.config/sysc-greet
+~/.config/greetd
+~/.config/earlyoom
+~/.config/waybar
+~/.config/vesktop
 ~/.config/wofi
 ~/.config/hyprpanel
 ~/.config/hypremoji/
