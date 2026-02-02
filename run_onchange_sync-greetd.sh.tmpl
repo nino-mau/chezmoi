@@ -1,0 +1,16 @@
+{{ if ne .chezmoi.os "darwin" -}}
+#!/bin/bash
+# Sync greetd configs from ~/.config/greetd to /etc/greetd
+# Triggered when: {{ include "dot_config/exact_greetd/config.toml" | sha256sum }}
+
+set -e
+
+echo "Syncing greetd configuration to /etc/greetd..."
+
+# Copy only the configs we actively manage (targeted sync)
+sudo cp ~/.config/greetd/config.toml /etc/greetd/
+sudo cp ~/.config/greetd/hyprland-greeter-config.conf /etc/greetd/
+sudo cp ~/.config/greetd/kitty.conf /etc/greetd/
+
+echo "Greetd configuration synced successfully"
+{{ end -}}

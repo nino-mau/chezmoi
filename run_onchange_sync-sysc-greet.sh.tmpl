@@ -1,0 +1,17 @@
+{{ if ne .chezmoi.os "darwin" -}}
+#!/bin/bash
+# Sync sysc-greet configs from ~/.config/sysc-greet to /usr/share/sysc-greet
+# Triggered when: {{ include "dot_config/exact_sysc-greet/exact_ascii_configs/hyprland.conf" | sha256sum }}
+
+set -e
+
+echo "Syncing sysc-greet configuration to /usr/share/sysc-greet..."
+
+# Copy ascii configs
+sudo cp -r ~/.config/sysc-greet/ascii_configs/* /usr/share/sysc-greet/ascii_configs/
+
+# Copy fonts
+sudo cp -r ~/.config/sysc-greet/fonts/* /usr/share/sysc-greet/fonts/
+
+echo "Sysc-greet configuration synced successfully"
+{{ end -}}
