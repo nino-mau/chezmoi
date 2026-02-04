@@ -8,5 +8,5 @@ Requires=swww-daemon.service
 
 [Service]
 Type=oneshot
-ExecStart=%h/.config/hypr/scripts/random_wallpaper.sh
+ExecStart=%h/.local/bin/random_wallpaper_systemd
 
