@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+WALLDIR="$HOME/.local/share/wallpapers/"
+
+# pick a random image
+PIC=$(find "$WALLDIR" -maxdepth 1 -type f | shuf -n 1)
+
+# set wallpaper
+"$HOME"/.local/bin/set_wallpaper "$PIC"
+
+swww img "$PIC" --transition-type center --transition-fps 60 --transition-step 255
