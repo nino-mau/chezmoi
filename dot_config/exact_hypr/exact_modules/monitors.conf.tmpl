@@ -1,0 +1,20 @@
+{{ if eq .chezmoi.hostname "nino-20n3s37900" }}
+monitor=HDMI-A-2,1920x1080@60,0x0,1
+monitor = eDP-1, 1920x1080, -1920x0, 1
+
+# Assign workspaces to monitors
+workspace = 1, monitor:HDMI-A-2
+workspace = 2, monitor:HDMI-A-2
+workspace = 3, monitor:eDP-1
+workspace = 4, monitor:HDMI-A-2
+{{ else }}
+# See https://wiki.hypr.land/Configuring/Monitors/
+monitor=HDMI-A-2,1920x1080@60,0x1920,1
+monitor=eDP-1,1920x1080@60,0x0,1
+
+# Assign workspaces to monitors
+workspace = 1, monitor:DP-1
+workspace = 2, monitor:DP-1
+workspace = 3, monitor:DP-2
+workspace = 4, monitor:DP-1
+{{ end }}
