@@ -1,7 +1,7 @@
 ---
 description: Write a commit message
 agent: chat
-model: github-copilot/claude-haiku-4.5
+model: opencode/kimi-k2.5
 ---
 
 # Instructions
