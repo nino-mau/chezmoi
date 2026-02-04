@@ -1,7 +1,7 @@
 {{ if ne .chezmoi.os "darwin" -}}
 #!/bin/bash
 # Sync greetd configs from ~/.config/greetd to /etc/greetd
-# Triggered when: {{ include "dot_config/exact_greetd/config.toml" | sha256sum }}
+# Triggered when: {{ include "dot_config/exact_greetd/config.toml" | sha256sum }} {{ include "dot_config/exact_greetd/hyprland-greeter-config.conf.tmpl" | sha256sum }}
 
 set -e
 
