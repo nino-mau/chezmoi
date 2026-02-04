@@ -1,0 +1,21 @@
+session_name: fil-rouge-2026
+start_directory: /home/nino/Documents/dev/projects/fil-rouge-2026/
+windows:
+  - window_name: frontend
+    panes:
+      - shell_command:
+          - cd ./frontend && nvim .
+
+  - window_name: backend
+    panes:
+      - shell_command:
+          - cd ./backend && svenv && nvim .
+
+  - window_name: cmd
+    panes:
+      - shell_command:
+          - docker compose down && docker compose up -d --build
+
+  - window_name: cmd2
+    panes:
+      - cd ./backend && svenv
