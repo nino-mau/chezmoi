@@ -3,6 +3,8 @@ alias i="paru -S"
 
 alias oc="opencode"
 
+alias chz="chezmoi"
+
 alias lg="lazygit"
 
 # Reload ghostty terminal config
