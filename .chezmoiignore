@@ -2,6 +2,9 @@ venv/
 scrapJJKTranscript/
 **/node_modules/**
 **/exact_node_modules/**
+~/.config/gtk-3.0/gtk.css
+~/.config/gtk-4.0/gtk.css
+~/.config/hypr/colors.conf
 
 {{- if eq .chezmoi.os "darwin" }}
 ~/.config/hypr
