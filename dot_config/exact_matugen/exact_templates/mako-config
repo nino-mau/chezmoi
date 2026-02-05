@@ -1,0 +1,23 @@
+# Global Settings
+font=SpaceMono Nerd Font 11
+width=350
+height=150
+margin=10
+padding=15
+border-size=2
+border-radius=10
+icons=1
+max-icon-size=64
+
+# Colors (Format: #RRGGBBAA)
+background-color=#{{colors.surface.default.hex_stripped}}99
+text-color={{colors.on_surface.default.hex}}
+border-color={{colors.primary.default.hex}}
+progress-color=over {{colors.surface_container_high.default.hex}}
+
+# Behavior
+default-timeout=4000
+ignore-timeout=0
+anchor=top-right
+max-visible=3
+sort=-time

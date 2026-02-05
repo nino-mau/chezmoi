@@ -39,3 +39,8 @@ output_path = '~/.config/gtk-4.0/gtk.css'
 input_path = '~/.config/matugen/templates/hyprpanel.json'
 output_path = '~/.config/hyprpanel/themes/matugen-theme.json'
 post_hook = 'hyprpanel useTheme ~/.config/hyprpanel/themes/matugen-theme.json'
+
+[templates.mako]
+input_path = '~/.config/matugen/templates/mako-config'
+output_path = '~/.config/mako/config'
+post_hook = 'makoctl reload'
