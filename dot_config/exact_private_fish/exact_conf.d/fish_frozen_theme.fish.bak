@@ -13,7 +13,7 @@ set --global fish_color_cwd 8839ef
 set --global fish_color_cwd_quote 8839ef
 set --global fish_color_cwd_root ed8796
 set --global fish_color_cwd_status d20f39
-set --global fish_color_end ff0000
+set --global fish_color_end 000000
 set --global fish_color_error ee99a0
 set --global fish_color_escape brcyan
 set --global fish_color_history_current --bold
@@ -25,7 +25,7 @@ set --global fish_color_operator brcyan
 set --global fish_color_option 
 set --global fish_color_param 8aadf4
 set --global fish_color_quote c6a0f6
-set --global fish_color_redirection b7bdf8 --bold
+set --global fish_color_redirection 000000 --bold
 set --global fish_color_search_match white --background=brblack
 set --global fish_color_selection white --bold --background=brblack
 set --global fish_color_status red

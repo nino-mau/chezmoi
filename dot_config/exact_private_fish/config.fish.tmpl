@@ -1,9 +1,12 @@
 # Set up oh-my-posh theme
 {{ if eq .chezmoi.os "darwin" }}
-oh-my-posh init fish --config $HOME/.config/ohmyposh/themes/catppuccin_light.omp.json | source
+# oh-my-posh init fish --config $HOME/.config/ohmyposh/themes/catppuccin_light.omp.json | source
 {{ else }}
-oh-my-posh init fish --config $HOME/.config/ohmyposh/themes/catppuccin_macchiato.omp.json | source
+# oh-my-posh init fish --config $HOME/.config/ohmyposh/themes/catppuccin_macchiato.omp.json | source
 {{ end }}
+
+# Set up theme
+fish_theme $HOME/.config/fish/themes/catppuccin.fish
 
 # Set up fzf key bindings
 fzf --fish | source
@@ -13,6 +16,9 @@ fish_add_path $HOME/.opencode/bin
 
 # Set up zoxide
 zoxide init fish | source
+
+# Set up starship
+starship init fish | source
 
 if status is-interactive
     if not set -q TMUX
