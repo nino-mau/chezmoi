@@ -1,0 +1,16 @@
+# PATH setup
+
+# opencode
+fish_add_path $HOME/.opencode/bin
+
+# pnpm
+set -gx PNPM_HOME "$HOME/.local/share/pnpm"
+if not string match -q -- "*$PNPM_HOME*" "$PATH"
+    set -gx PATH "$PNPM_HOME" $PATH
+end
+
+# fnm
+set FNM_PATH "$HOME/.local/share/fnm"
+if test -d "$FNM_PATH"
+    set PATH "$FNM_PATH" $PATH
+end
