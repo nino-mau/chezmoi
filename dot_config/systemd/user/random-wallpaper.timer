@@ -1,9 +1,9 @@
 [Unit]
-Description=Run wallpaper changer every 15 minutes
+Description=Run wallpaper changer every 45 minutes
 
 [Timer]
 OnBootSec=0
-OnUnitActiveSec=15m
+OnUnitActiveSec=45m
 Unit=random-wallpaper.service
 
 [Install]
