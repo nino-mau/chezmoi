@@ -20,10 +20,10 @@ windows:
     panes:
       - shell_command:
           - cd $HOME/Documents/dev/exb11/client
-          - pnpm start
+          - npm start
 
   - window_name: server
     panes:
       - shell_command:
           - cd $HOME/Documents/dev/exb11/server
-          - pnpm start
+          - npm start
