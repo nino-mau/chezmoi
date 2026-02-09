@@ -15,6 +15,10 @@ abbr -a pl "paru -Qe"
 # Search packages
 abbr -a ps "paru -Ss"
 
+# Opencode
+
+abbr -a occ "opencode --continue"
+
 alias restart="exec $SHELL"
 alias rand="openssl rand -base64 32 | tr -d '/+='"
 alias icat="kitten icat"
