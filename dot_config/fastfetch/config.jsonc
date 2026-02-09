@@ -17,7 +17,7 @@
       "left": 2
     },
     "color": {
-      "1": "#b7bdf8"
+      "1": "#8aadf4"
     }
   },
   "display": {
@@ -31,6 +31,7 @@
   "modules": [
     "break",
     "break",
+    "break",
     {
       "type": "title",
       "keyWidth": 10
@@ -39,32 +40,27 @@
     {
       "type": "os",
       "key": " ",
-      "keyColor": "#ed8796", // = color3
-      "outputColor": "#ed8796" // = color3
+      "keyColor": "#ed8796" // = color3
     },
     {
       "type": "kernel",
       "key": " ",
-      "keyColor": "#f0c6c6",
-      "outputColor": "#f0c6c6"
+      "keyColor": "#8aadf4"
     },
     {
       "type": "shell",
       "key": " ",
-      "keyColor": "#f5bde6",
-      "outputColor": "#f5bde6"
+      "keyColor": "#8aadf4"
     },
     {
       "type": "terminal",
       "key": " ",
-      "keyColor": "#91d7e3",
-      "outputColor": "#91d7e3"
+      "keyColor": "#8aadf4"
     },
     {
       "type": "wm",
       "key": " ",
-      "keyColor": "#c6a0f6",
-      "outputColor": "#c6a0f6"
+      "keyColor": "#8aadf4"
     },
     {
       "type": "disk",
@@ -89,7 +85,7 @@
     "break",
     {
       "type": "colors",
-      "symbol": "diamond" // Des cercles pour un look plus moderne
+      "symbol": "circle" // Des cercles pour un look plus moderne
     },
     "break",
     "break"
