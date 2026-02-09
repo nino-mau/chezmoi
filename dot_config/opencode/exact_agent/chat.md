@@ -1,6 +1,7 @@
 ---
 description: All permissions except write/editing
 mode: primary
+model: opencode/kimi-k2.5
 tools:
   write: false
   edit: false
