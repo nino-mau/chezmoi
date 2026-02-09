@@ -435,10 +435,10 @@
         "workspaces"
       ],
       "right": [
-        "volume",
         "network",
         "bluetooth",
         "battery",
+        "volume",
         "systray",
         "notifications"
       ]
@@ -457,8 +457,8 @@
   "bar.workspaces.applicationIconOncePerWorkspace": true,
   "bar.workspaces.showAllActive": false,
   "bar.workspaces.numbered_active_indicator": "highlight",
-  "theme.font.name": "SpaceMono Nerd Font Propo",
-  "theme.font.label": "SpaceMono Nerd Font Propo",
+  "theme.font.name": "Maple Mono NF CN",
+  "theme.font.label": "Maple Mono NF CN",
   "theme.bar.menus.card_radius": "0.4em",
   "theme.bar.menus.border.radius": "0.7em",
   "bar.workspaces.workspaceIconMap": {
@@ -482,5 +482,11 @@
   "theme.bar.buttons.workspaces.numbered_inactive_padding": "6px",
   "theme.matugen_settings.variation": "standard_1",
   "theme.bar.buttons.workspaces.pill.height": "4em",
-  "theme.bar.buttons.workspaces.fontSize": "1.2em"
+  "theme.bar.buttons.workspaces.fontSize": "1.2em",
+  "theme.notification.opacity": 0,
+  "bar.battery.label": true,
+  "bar.battery.hideLabelWhenFull": false,
+  "theme.bar.buttons.innerRadiusMultiplier": "0.4",
+  "bar.launcher.autoDetectIcon": false,
+  "theme.bar.buttons.padding_x": "0.8rem"
 }
