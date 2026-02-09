@@ -54,6 +54,9 @@ iris = '#c4a7e7'
 style = "bold mauve"
 symbol = " "
 
+[git_status]
+disabled = true
+
 [directory]
 truncation_length = 4
 style = "bold text"
