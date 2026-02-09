@@ -86,10 +86,9 @@ set -ga status-left "#[bg=default,fg=#{@thm_yellow}]#{?window_zoomed_flag,  z
 # status right look and  feel
 set -g status-right-length 100
 set -g status-right ""
-# set -g status-right '#[bg=default, fg=#{@thm_mauve}] #(tmux-mem --no-color --ascii --width 7) #[default]'
-# set -ga status-right "#[bg=default,fg=#{@thm_overlay_0}, none]│"
-# set -ga status-right "#[bg=default]#{?#{==:#{online_status},ok},#[fg=#{@thm_mauve}] 󰖩 on ,#[fg=#{@thm_red},bold]#[reverse] 󰖪 off }"
-# set -ga status-right "#[bg=default,fg=#{@thm_overlay_0}, none]│"
+
+{{ if eq .chezmoi.os "darwin" }}
+{{ else }}
 set -ga status-right "#[bg=default,fg=#{@thm_mauve}] 󰢮 #($HOME/.local/bin/gpu_name.sh)"
 set -ga status-right "#[bg=default,fg=#{@thm_overlay_0}, none] │"
 set -ga status-right "#[bg=default,fg=#{@thm_blue}] #($HOME/.local/bin/mem_percent.py)"
@@ -97,6 +96,7 @@ set -ga status-right "#[bg=default,fg=#{@thm_overlay_0}, none] │"
 set -ga status-right "#[bg=default,fg=#{@thm_blue}] #($HOME/.local/bin/cpu_percent.py)"
 set -ga status-right "#[bg=default,fg=#{@thm_overlay_0}, none] │"
 set -ga status-right "#[bg=default,fg=#{@thm_blue}] #($HOME/.local/bin/cpu_temp.py)"
+{{ end }}
 
 # bootstrap tpm
 if "test ! -d ~/.tmux/plugins/tpm" \
