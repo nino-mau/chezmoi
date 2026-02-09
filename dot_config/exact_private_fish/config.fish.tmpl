@@ -8,10 +8,6 @@ end
 if status is-interactive
     if not set -q TMUX
         clear
-        {{ if eq .chezmoi.os "darwin" }}
-        fastfetch --config $HOME/.config/fastfetch/config-macos.jsonc
-        {{ else }}
         fastfetch
-        {{ end }}
     end
 end
