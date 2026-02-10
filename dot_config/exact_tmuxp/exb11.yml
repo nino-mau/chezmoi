@@ -20,6 +20,7 @@ windows:
     panes:
       - shell_command:
           - cd $HOME/Documents/dev/exb11/client
+          - fnm use 16
           - npm start
 
   - window_name: server
