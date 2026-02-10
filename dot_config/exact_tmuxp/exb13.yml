@@ -1,15 +1,15 @@
-session_name: exb15
-start_directory: $HOME/Documents/dev/exb15
+session_name: exb13
+start_directory: $HOME/Documents/dev/exb13
 windows:
   - window_name: cmd
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/exb15/client/your-extensions/widgets
+          - cd $HOME/Documents/dev/exb13/client/your-extensions/widgets
 
   - window_name: cmd
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/exb15/client/your-extensions/widgets
+          - cd $HOME/Documents/dev/exb13/client/your-extensions/widgets
 
   - window_name: cmd
     panes:
@@ -19,12 +19,12 @@ windows:
   - window_name: client
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/exb15/client
-          - fnm use 20
+          - cd $HOME/Documents/dev/exb13/client
+          - fnm use 16
           - npm start
 
   - window_name: server
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/exb15/server
+          - cd $HOME/Documents/dev/exb13/server
           - npm start
