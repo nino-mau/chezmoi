@@ -1,22 +1,42 @@
-@define-color window_bg_color #24273a;
-@define-color input_bg_color #1e2030;
-@define-color accent_bg_color #6e738d;
-@define-color border_color #7686C2;
-@define-color theme_fg_color #cad3f5;
-@define-color error_bg_color #ed8796;
-@define-color error_fg_color #b8c0e0;
+@import './colors.css';
+
+@define-color window_bg_color @surface;
+@define-color input_bg_color @surface_container;
+@define-color accent_bg_color @primary;
+@define-color border_color @inverse_primary;
+@define-color theme_fg_color @on_surface;
+@define-color error_bg_color @error;
+@define-color error_fg_color @on_error;
+
+@define-color text @on_surface;
+@define-color border @outline_variant;
+
+@define-color window_bg @surface;
+@define-color window_border @border;
+
+@define-color input_bg @surface_container;
+
+@define-color item_selected @primary;
+@define-color item_selected_fg @on_primary;
+
+@define-color item_quick_activation_bg @surface_container;
+@define-color item_quick_activation_hover_fg @on_primary_container;
+@define-color item_quick_activation_hover_bg @primary_container;
+
+/* ============================================
+   GENERAL
+   ============================================ */
 
 * {
   all: unset;
 }
 
-popover {
-  background: lighter(@window_bg_color);
-  border: 1px solid @border_color;
-  border-radius: 18px;
-  padding: 10px;
+/* Scrollbar of the window */
+scrollbar {
+  opacity: 0;
 }
 
+/* Icon of a list item */
 .normal-icons {
   -gtk-icon-size: 16px;
 }
@@ -25,28 +45,43 @@ popover {
   -gtk-icon-size: 42px;
 }
 
-scrollbar {
-  opacity: 0;
+.preview-box,
+.elephant-hint,
+.placeholder {
+  color: @text;
+}
+
+.list {
+  color: @text;
+}
+
+/* ============================================
+   WINDOW
+   ============================================ */
+
+popover {
+  background: @window_bg;
+  border: 1px solid @window_border;
+  border-radius: 18px;
+  padding: 10px;
 }
 
 .box-wrapper {
   box-shadow:
     0 19px 38px rgba(0, 0, 0, 0.3),
     0 15px 12px rgba(0, 0, 0, 0.22);
-  background: @window_bg_color;
+  background: @window_bg;
   padding: 20px;
   border-radius: 20px;
-  border: 1.5px solid @border_color;
-}
-
-.preview-box,
-.elephant-hint,
-.placeholder {
-  color: @theme_fg_color;
+  border: 1.5px solid @window_border;
 }
 
 .box {
 }
+
+/* ============================================
+   SEARCH INPUT
+   ============================================ */
 
 .search-container {
   border-radius: 10px;
@@ -57,14 +92,14 @@ scrollbar {
 }
 
 .input selection {
-  background: lighter(lighter(lighter(@window_bg_color)));
+  background: @input_bg;
 }
 
 .input {
-  caret-color: @theme_fg_color;
-  background: @input_bg_color;
+  caret-color: @text;
+  background: @input_bg;
   padding: 10px;
-  color: @theme_fg_color;
+  color: @text;
 }
 
 .input:focus,
@@ -80,12 +115,12 @@ scrollbar {
 .scroll {
 }
 
-.list {
-  color: @theme_fg_color;
-}
-
 child {
 }
+
+/* ============================================
+   LIST ITEM
+   ============================================ */
 
 .item-box {
   border-radius: 10px;
@@ -93,14 +128,15 @@ child {
 }
 
 .item-quick-activation {
-  background: alpha(@accent_bg_color, 0.25);
+  background: @item_quick_activation_bg;
   border-radius: 5px;
   padding: 10px;
 }
 
 /* child:hover .item-box, */
 child:selected .item-box {
-  background: alpha(@accent_bg_color, 0.25);
+  background: @item_selected;
+  color: @item_selected_fg;
 }
 
 .item-text-box {
@@ -120,11 +156,11 @@ child:selected .item-box {
   font-size: 28px;
 }
 
-.preview {
-  border: 1px solid alpha(@accent_bg_color, 0.25);
-  /* padding: 10px; */
-  border-radius: 10px;
-  color: @theme_fg_color;
+child:selected .item-quick-activation {
+  background: @item_quick_activation_hover_bg;
+  color: @item_quick_activation_hover_fg;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .calc .item-text {
@@ -140,6 +176,17 @@ child:selected .item-box {
 
 .todo.done .item-text-box {
   opacity: 0.25;
+}
+
+/* ============================================
+   ITEM PREVIEW
+   ============================================ */
+
+.preview {
+  border: 1px solid @border;
+  /* padding: 10px; */
+  border-radius: 10px;
+  color: @text;
 }
 
 .todo.urgent {
@@ -158,11 +205,15 @@ child:selected .item-box {
   -gtk-icon-size: 64px;
 }
 
+/* ============================================
+   KEYBINDINGS HINT
+   ============================================ */
+
 .keybinds {
   padding-top: 10px;
-  border-top: 1px solid lighter(@window_bg_color);
+  border-top: 1px solid @border;
   font-size: 12px;
-  color: @theme_fg_color;
+  color: @text;
 }
 
 .global-keybinds {
@@ -191,7 +242,7 @@ child:selected .item-box {
 .keybind-label {
   padding: 2px 4px;
   border-radius: 4px;
-  border: 1px solid @theme_fg_color;
+  border: 1px solid @border;
 }
 
 .error {
