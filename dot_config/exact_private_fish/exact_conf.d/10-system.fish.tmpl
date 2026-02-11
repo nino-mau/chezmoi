@@ -1,6 +1,11 @@
 # System & shell utilities
 
-abbr -a i "paru -S"
+{{ if eq .chezmoi.os "darwin" }}
+alias i="brew install"
+{{ else }}
+alias i="paru -S"
+{{ end }}
+
 abbr -a oc opencode
 abbr -a chz chezmoi
 abbr -a rmr "rm -r"
