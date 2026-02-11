@@ -12,7 +12,7 @@ IMAGE="$1"
 notify-send "Changing Theme" "Applying new wallpaper and updating colors, please wait until confirmation..."
 
 # Use Matugen to generate Material You colors
-matugen image "$IMAGE" --type scheme-content
+matugen image "$IMAGE"
 
 # Refresh swaync
 pkill swaync
