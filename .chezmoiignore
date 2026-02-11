@@ -2,10 +2,6 @@ venv/
 scrapJJKTranscript/
 **/node_modules/**
 **/exact_node_modules/**
-~/.config/gtk-3.0/gtk.css
-~/.config/gtk-4.0/gtk.css
-~/.config/hypr/colors.conf
-
 
 # Ignore matugen output files
 gtk.css
@@ -13,6 +9,7 @@ exact_waybar/colors.css
 exact_walker/exact_themes/exact_default/colors.css
 exact_hypr/colors.conf
 
+~/.config/sysc-greet/wallpapers/
 
 {{- if eq .chezmoi.os "darwin" }}
 ~/.config/hypr
