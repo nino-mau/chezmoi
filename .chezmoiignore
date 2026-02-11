@@ -8,6 +8,7 @@ gtk.css
 exact_waybar/colors.css
 exact_walker/exact_themes/exact_default/colors.css
 exact_hypr/colors.conf
+~/.config/waybar/colors.css
 
 ~/.config/sysc-greet/wallpapers/
 
