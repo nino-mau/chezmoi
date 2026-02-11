@@ -1,5 +1,6 @@
 Name = "wallpapers"
 NamePretty = "Wallpapers"
+Layout = "wallpapers"
 Icon = "preferences-desktop-wallpaper"
 Cache = false
 Action = os.getenv("HOME") .. "/.local/bin/set_wallpaper '%VALUE%'"
