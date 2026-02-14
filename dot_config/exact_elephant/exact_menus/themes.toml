@@ -1,10 +1,6 @@
 name = "themes"
 name_pretty = "Themes"
-icon = "color-palette"
-
-[[entries]]
-text = "matugen"
-actions = { "toggle" = "~/.local/bin/set_theme matugen" }
+icon = "style"
 
 [[entries]]
 text = "catppuccin"

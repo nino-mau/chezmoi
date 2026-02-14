@@ -1,0 +1,19 @@
+name = "actions"
+name_pretty = "Actions"
+icon = "action"
+
+[[entries]]
+text = "Themes"
+icon = "/home/nino/.local/share/icons/material/color-palette.svg"
+actions = { "toggle" = "walker --provider menus:themes" }
+
+[[entries]]
+text = "Reboot"
+icon = "/home/nino/.local/share/icons/material/restart.svg"
+actions = { "toggle" = "systemctl reboot" }
+
+[[entries]]
+text = "Shutdown"
+icon = "/home/nino/.local/share/icons/material/power.svg"
+actions = { "toggle" = "systemctl poweroff" }
+
