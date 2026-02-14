@@ -1,0 +1,30 @@
+#!/bin/bash
+
+THEME="$1"
+
+# Send notification to the user
+notify-send "Changing theme to $THEME..." ""
+
+# Switch to main theme wallpaper
+swww img --transition-type top --transition-fps 60 --transition-step 255 "$HOME/.local/share/wallpapers/$THEME/$THEME.png"
+
+# =======================
+# HYPRLAND
+# =======================
+
+ln -sf "$HOME/.config/colorschemes/hypr/$THEME.conf" "$HOME/.config/hypr/colors.conf"
+
+# Reload hyprland
+hyprctl reload
+
+# =======================
+# HYPRPANEL
+# =======================
+
+# Generate the theme in json format
+sh "$HOME/.config/colorschemes/hyprpanel/$THEME/generate.sh"
+
+ln -sf "$HOME/.config/colorschemes/hyprpanel/$THEME/$THEME.json" "$HOME/.config/hyprpanel/theme.json"
+
+# Use the theme in hyprpanel
+hyprpanel useTheme ~/.config/hyprpanel/theme.json
