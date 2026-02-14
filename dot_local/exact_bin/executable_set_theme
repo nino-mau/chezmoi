@@ -2,11 +2,23 @@
 
 THEME="$1"
 
+# Store current theme in config
+echo "$THEME" >"$HOME/.config/current_theme"
+
 # Send notification to the user
 notify-send "Changing theme to $THEME..." ""
 
 # Switch to main theme wallpaper
-swww img --transition-type top --transition-fps 60 --transition-step 255 "$HOME/.local/share/wallpapers/$THEME/$THEME.png"
+swww img --transition-type grow --transition-fps 60 --transition-step 255 "$HOME/.local/share/wallpapers/$THEME/$THEME.png"
+
+# =======================
+# MAKO
+# =======================
+
+ln -sf "$HOME/.config/colorschemes/mako/$THEME.conf" "$HOME/.config/mako/colors.conf"
+
+# Reload mako
+makoctl reload
 
 # =======================
 # HYPRLAND
@@ -21,10 +33,21 @@ hyprctl reload
 # HYPRPANEL
 # =======================
 
-# Generate the theme in json format
-sh "$HOME/.config/colorschemes/hyprpanel/$THEME/generate.sh"
+ln -sf "$HOME/.config/colorschemes/hyprpanel/$THEME.json" "$HOME/.config/hyprpanel/theme.json"
 
-ln -sf "$HOME/.config/colorschemes/hyprpanel/$THEME/$THEME.json" "$HOME/.config/hyprpanel/theme.json"
-
-# Use the theme in hyprpanel
+# Set theme using hyprpanel cli
 hyprpanel useTheme ~/.config/hyprpanel/theme.json
+
+# =======================
+# STARSHIP
+# =======================
+
+# Update palette in starship.toml
+sed -i "s/^palette = .*/palette = '$THEME'/" "$HOME/.config/starship.toml"
+
+# =======================
+# FISH
+# =======================
+
+# Update fish theme
+fish -c "fish_theme \"$HOME/.config/fish/themes/$THEME.fish\""
