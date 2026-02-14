@@ -1,0 +1,20 @@
+name = "themes"
+name_pretty = "Themes"
+icon = "color-palette"
+
+[[entries]]
+text = "matugen"
+actions = { "toggle" = "~/.local/bin/set_theme matugen" }
+
+[[entries]]
+text = "catppuccin"
+actions = { "toggle" = "~/.local/bin/set_theme catppuccin" }
+
+[[entries]]
+text = "rose-pine"
+actions = { "toggle" = "~/.local/bin/set_theme rose-pine" }
+
+[[entries]]
+text = "tokyo-night"
+actions = { "toggle" = "~/.local/bin/set_theme tokyo-night" }
+
