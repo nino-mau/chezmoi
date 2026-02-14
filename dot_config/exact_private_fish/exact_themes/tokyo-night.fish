@@ -1,25 +1,25 @@
-set -g fish_color_quote c6a0f6
-set -g fish_color_command cad3f5
-set -g fish_color_redirection b7bdf8 --bold
-set -g fish_color_end b7bdf8
-set -g fish_color_error ee99a0
-set -g fish_color_param b7bdf8
-set -g fish_color_comment b8c0e0
+set -g fish_color_quote bb9af7
+set -g fish_color_command c8d3f5
+set -g fish_color_redirection 80a8fd --bold
+set -g fish_color_end 80a8fd
+set -g fish_color_error f7768e
+set -g fish_color_param 80a8fd
+set -g fish_color_comment 565f89
 set -g fish_color_selection white --bold --background=brblack
 set -g fish_color_search_match white --background=brblack
 set -g fish_color_history_current --bold
-set -g fish_color_operator b7bdf8
-set -g fish_color_escape c6a0f6
-set -g fish_color_cwd c6a0f6
-set -g fish_color_cwd_root ed8796
+set -g fish_color_operator 80a8fd
+set -g fish_color_escape bb9af7
+set -g fish_color_cwd bb9af7
+set -g fish_color_cwd_root f7768e
 set -g fish_color_option
 set -g fish_color_valid_path --underline=single
-set -g fish_color_autosuggestion 6e738d
-set -g fish_color_user a6da95
+set -g fish_color_autosuggestion 40486a
+set -g fish_color_user 9ece6a
 set -g fish_color_host normal
-set -g fish_color_host_remote eed49f
-set -g fish_color_status ee99a0
-set -g fish_color_cancel ee99a0 --reverse
+set -g fish_color_host_remote ebcb8b
+set -g fish_color_status f7768e
+set -g fish_color_cancel f7768e --reverse
 
 # Pager colors
 set -g fish_pager_color_background
