@@ -4,16 +4,16 @@ icon = "action"
 
 [[entries]]
 text = "Themes"
-icon = "/home/nino/.local/share/icons/material/color-palette.svg"
+icon = "preferences-color-symbolic"
 actions = { "toggle" = "walker --provider menus:themes" }
 
 [[entries]]
 text = "Reboot"
-icon = "/home/nino/.local/share/icons/material/restart.svg"
+icon = "system-reboot-symbolic"
 actions = { "toggle" = "systemctl reboot" }
 
 [[entries]]
 text = "Shutdown"
-icon = "/home/nino/.local/share/icons/material/power.svg"
+icon = "system-shutdown-symbolic"
 actions = { "toggle" = "systemctl poweroff" }
 

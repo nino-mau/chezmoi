@@ -1,6 +1,5 @@
 Name = "theme-wallpapers"
 NamePretty = "Wallpapers"
-Layout = "wallpapers"
 Icon = "preferences-desktop-wallpaper"
 Cache = false
 Action = "swww img --transition-type wipe --transition-angle 30 --transition-fps 60 --transition-step 255 '%VALUE%'"
