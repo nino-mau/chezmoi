@@ -46,8 +46,37 @@ hyprpanel useTheme ~/.config/hyprpanel/theme.json
 sed -i "s/^palette = .*/palette = '$THEME'/" "$HOME/.config/starship.toml"
 
 # =======================
+# GHOSTTY
+# =======================
+
+# Update ghostty theme config
+GHOSTTY_THEME="$THEME"
+case "$THEME" in
+"catppuccin")
+  GHOSTTY_THEME="Catppuccin Mocha"
+  ;;
+"rose-pine")
+  GHOSTTY_THEME="Rose Pine"
+  ;;
+"tokyo-night")
+  GHOSTTY_THEME="TokyoNight Moon"
+  ;;
+esac
+sed -i "s/^theme = .*/theme = ${GHOSTTY_THEME}/" "$HOME/.config/ghostty/theme"
+
+# Reload ghostty
+~/.local/bin/reload_ghostty
+
+# =======================
 # FISH
 # =======================
 
 # Update fish theme
 fish -c "fish_theme \"$HOME/.config/fish/themes/$THEME.fish\""
+
+# =======================
+# FASTFETCH
+# =======================
+
+# Update fastfetch config
+ln -sf "$HOME/.config/colorschemes/fastfetch/$THEME.jsonc" "$HOME/.config/fastfetch/config.jsonc"
