@@ -1,5 +1,6 @@
 Name = "theme-wallpapers"
 NamePretty = "Wallpapers"
+Layout = "menus-theme-wallpapers"
 Icon = "preferences-desktop-wallpaper"
 Cache = false
 Action = "swww img --transition-type wipe --transition-angle 30 --transition-fps 60 --transition-step 255 '%VALUE%'"
@@ -42,8 +43,8 @@ function GetEntries()
 					Subtext = "Set as wallpaper",
 					Value = line,
 					Icon = line,
-					Preview = line,
-					PreviewType = "file",
+					-- Preview = line,
+					-- PreviewType = "file",
 				})
 			end
 		end
