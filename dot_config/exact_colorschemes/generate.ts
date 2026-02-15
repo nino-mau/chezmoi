@@ -1,5 +1,5 @@
 import themes from './themes.json' with { type: 'json' };
-import { writeFileSync } from 'fs';
+import { mkdirSync, writeFileSync } from 'fs';
 
 type Palette = {
   bg0: string;
@@ -241,7 +241,8 @@ function generateHyprpanelTheme(palette: Palette): Record<string, string> {
     'theme.bar.menus.menu.dashboard.controls.wifi.text': p.bg0,
     'theme.bar.menus.menu.dashboard.controls.bluetooth.background': p.aqua,
     'theme.bar.menus.menu.dashboard.controls.bluetooth.text': p.bg0,
-    'theme.bar.menus.menu.dashboard.controls.notifications.background': p.yellow,
+    'theme.bar.menus.menu.dashboard.controls.notifications.background':
+      p.yellow,
     'theme.bar.menus.menu.dashboard.controls.notifications.text': p.bg0,
     'theme.bar.menus.menu.dashboard.controls.volume.background': p.pink,
     'theme.bar.menus.menu.dashboard.controls.volume.text': p.bg0,
@@ -281,7 +282,8 @@ function generateHyprpanelTheme(palette: Palette): Record<string, string> {
     'theme.bar.buttons.workspaces.hover': p.primary,
     'theme.bar.buttons.workspaces.border': p.pink,
     'theme.bar.buttons.workspaces.numbered_active_underline_color': p.pink,
-    'theme.bar.buttons.workspaces.numbered_active_highlighted_text_color': p.bg0,
+    'theme.bar.buttons.workspaces.numbered_active_highlighted_text_color':
+      p.bg0,
     'theme.bar.buttons.windowtitle.background': p.bg0,
     'theme.bar.buttons.windowtitle.icon': p.yellow,
     'theme.bar.buttons.windowtitle.text': p.yellow,
@@ -431,7 +433,7 @@ function generateHyprpanelTheme(palette: Palette): Record<string, string> {
     'theme.bar.buttons.modules.microphone.text': p.green,
     'theme.bar.buttons.modules.microphone.background': p.bg0,
     'theme.bar.buttons.modules.microphone.icon_background': p.bg0,
-    'theme.bar.buttons.modules.microphone.border': p.green,
+    'theme.bar.buttons.modules.microphone.border': p.green
   };
 }
 
@@ -445,23 +447,130 @@ progress-color=over ${p.bg2}
 `;
 }
 
+function generateFastfetchConfig(palette: Palette): string {
+  const p = palette;
+  return `//   _____ _____ _____ _____ _____ _____ _____ _____ _____
+//  |   __|  _  |   __|_   _|   __|   __|_   _|     |  |  |
+//  |   __|     |__   | | | |   __|   __| | | |   --|     |
+//  |__|  |__|__|_____| |_| |__|  |_____| |_| |_____|__|__|  ARCH
+//
+//  by Bina
+//
+// execute with: fastfetch --colors-block-range-start 9 --colors-block-width 3
+//
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "source": "~/.config/fastfetch/ascii/planet",
+    "padding": {
+      "top": 2,
+      "right": 6,
+      "left": 2
+    },
+    "color": {
+      "1": "${p.primary}"
+    }
+  },
+  "display": {
+    "separator": " ",
+    "color": {
+      "title": "${p.primary}",
+      "keys": "${p.primary}",
+      "output": "${p.fg}"
+    }
+  },
+  "modules": [
+    "break",
+    "break",
+    "break",
+    {
+      "type": "title",
+      "keyWidth": 10
+    },
+    "break",
+    {
+      "type": "os",
+      "key": " ",
+      "keyColor": "${p.red}" // = color3
+    },
+    {
+      "type": "kernel",
+      "key": " ",
+      "keyColor": "${p.primary}"
+    },
+    {
+      "type": "shell",
+      "key": " ",
+      "keyColor": "${p.primary}"
+    },
+    {
+      "type": "terminal",
+      "key": " ",
+      "keyColor": "${p.primary}"
+    },
+    {
+      "type": "wm",
+      "key": " ",
+      "keyColor": "${p.primary}"
+    },
+    {
+      "type": "disk",
+      "key": "󰆼 ",
+      "keyColor": "${p.primary}"
+    },
+    {
+      "type": "gpu",
+      "key": "󰢮 ",
+      "keyColor": "${p.primary}"
+    },
+    {
+      "type": "cpu",
+      "key": "󰘚 ",
+      "keyColor": "${p.primary}"
+    },
+    {
+      "type": "media",
+      "key": "󰝚 ",
+      "keyColor": "${p.primary}"
+    },
+    "break",
+    {
+      "type": "colors",
+      "symbol": "circle" // Des cercles pour un look plus moderne
+    },
+    "break",
+    "break"
+  ]
+}
+`;
+}
+
 function main() {
   const themesDir = import.meta.dir;
-  
+  const fastfetchDir = `${themesDir}/fastfetch`;
+  mkdirSync(fastfetchDir, { recursive: true });
+
   for (const [name, palette] of Object.entries(themes)) {
     const hyprConf = generateHyprConf(name, palette as Palette);
     writeFileSync(`${themesDir}/hypr/${name}.conf`, hyprConf);
     console.log(`Generated hypr/${name}.conf`);
 
     const hyprpanelTheme = generateHyprpanelTheme(palette as Palette);
-    writeFileSync(`${themesDir}/hyprpanel/${name}.json`, JSON.stringify(hyprpanelTheme, null, 2));
+    writeFileSync(
+      `${themesDir}/hyprpanel/${name}.json`,
+      JSON.stringify(hyprpanelTheme, null, 2)
+    );
     console.log(`Generated hyprpanel/${name}.json`);
 
     const makoConf = generateMakoConf(palette as Palette);
     writeFileSync(`${themesDir}/mako/${name}.conf`, makoConf);
     console.log(`Generated mako/${name}.conf`);
+
+    const fastfetchConfig = generateFastfetchConfig(palette as Palette);
+    writeFileSync(`${fastfetchDir}/${name}.jsonc`, fastfetchConfig);
+    console.log(`Generated fastfetch/${name}.jsonc`);
   }
-  
+
   console.log('\nAll themes generated successfully!');
 }
 
