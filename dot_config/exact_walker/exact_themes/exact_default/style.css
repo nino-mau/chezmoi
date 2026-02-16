@@ -1,27 +1,4 @@
-@import './colors.css';
-
-@define-color window_bg_color @surface;
-@define-color input_bg_color @surface_container;
-@define-color accent_bg_color @primary;
-@define-color border_color @inverse_primary;
-@define-color theme_fg_color @on_surface;
-@define-color error_bg_color @error;
-@define-color error_fg_color @on_error;
-
-@define-color text @on_surface;
-@define-color border @outline_variant;
-
-@define-color window_bg @surface;
-@define-color window_border @border;
-
-@define-color input_bg @surface_container;
-
-@define-color item_selected @primary;
-@define-color item_selected_fg @on_primary;
-
-@define-color item_quick_activation_bg @surface_container;
-@define-color item_quick_activation_hover_fg @on_primary_container;
-@define-color item_quick_activation_hover_bg @primary_container;
+@import '../tokens.css';
 
 /* ============================================
    GENERAL
@@ -61,7 +38,7 @@ scrollbar {
 
 popover {
   background: @window_bg;
-  border: 1px solid @window_border;
+  border: 1px solid @border;
   border-radius: 18px;
   padding: 10px;
 }
@@ -73,7 +50,7 @@ popover {
   background: @window_bg;
   padding: 20px;
   border-radius: 20px;
-  border: 1.5px solid @window_border;
+  border: 1.5px solid @border;
 }
 
 .box {

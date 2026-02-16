@@ -80,3 +80,10 @@ fish -c "fish_theme \"$HOME/.config/fish/themes/$THEME.fish\""
 
 # Update fastfetch config
 ln -sf "$HOME/.config/colorschemes/fastfetch/$THEME.jsonc" "$HOME/.config/fastfetch/config.jsonc"
+
+# =======================
+# WALKER
+# =======================
+
+# Update walker config
+ln -sf "$HOME/.config/colorschemes/walker/$THEME.css" "$HOME/.config/walker/themes/colors.css"

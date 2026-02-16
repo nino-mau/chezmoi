@@ -1,0 +1,19 @@
+@import './colors.css';
+
+@define-color error_bg_color @bg2;
+@define-color error_fg_color @red;
+
+@define-color text @fg;
+@define-color border_color @border;
+
+@define-color window_bg @bg0;
+@define-color window_border @border;
+
+@define-color input_bg @bg1;
+
+@define-color item_selected @primary;
+@define-color item_selected_fg @bg0;
+
+@define-color item_quick_activation_bg @bg1;
+@define-color item_quick_activation_hover_fg @fg;
+@define-color item_quick_activation_hover_bg @bg1;
