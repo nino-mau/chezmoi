@@ -24,6 +24,7 @@ scrapJJKTranscript/
 ~/.config/vesktop
 ~/.config/wofi
 ~/.config/hyprpanel
-~/.config/hypremoji/
+~/.config/hypremoji
+~/.config/nwg-look
 {{- end }}
 
