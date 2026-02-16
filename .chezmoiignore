@@ -8,7 +8,7 @@ scrapJJKTranscript/
 .config/hypr/colors.conf
 .config/gtk-4.0/gtk.css
 .config/gtk-3.0/gtk.css
-.config/walker/themes/default/colors.css
+.config/walker/themes/colors.css
 
 {{- if eq .chezmoi.os "darwin" }}
 ~/.config/hypr
