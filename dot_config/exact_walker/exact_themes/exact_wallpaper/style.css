@@ -1,0 +1,261 @@
+@import '../tokens.css';
+
+/* ============================================
+   GENERAL
+   ============================================ */
+
+* {
+  all: unset;
+}
+
+/* Scrollbar of the window */
+scrollbar {
+  opacity: 0;
+}
+
+/* Icon of a list item */
+.normal-icons {
+  -gtk-icon-size: 16px;
+}
+
+.large-icons {
+  -gtk-icon-size: 42px;
+}
+
+.preview-box,
+.elephant-hint,
+.placeholder {
+  color: @text;
+}
+
+.list {
+  color: @text;
+}
+
+/* ============================================
+   WINDOW
+   ============================================ */
+
+popover {
+  background: @window_bg;
+  border: 1px solid @border_color;
+  border-radius: 18px;
+  padding: 10px;
+}
+
+.box-wrapper {
+  box-shadow:
+    0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
+  background: @window_bg;
+  padding: 20px;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  border: 1px solid @border_color;
+}
+
+/* ============================================
+   SEARCH INPUT
+   ============================================ */
+
+.search-container {
+  border-radius: 10px;
+}
+
+.input placeholder {
+  opacity: 0.5;
+}
+
+.input selection {
+  background: @input_bg;
+}
+
+.input {
+  caret-color: @text;
+  background: @input_bg;
+  padding: 10px;
+  color: @text;
+}
+
+.input:focus,
+.input:active {
+}
+
+.content-container {
+}
+
+.placeholder {
+}
+
+.scroll {
+}
+
+child {
+}
+
+/* ============================================
+   LIST ITEM
+   ============================================ */
+
+.item-box {
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.item-quick-activation {
+  background: @item_quick_activation_bg;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* child:hover .item-box, */
+child:selected .item-box {
+  background: @item_selected;
+  color: @item_selected_fg;
+}
+
+.item-text-box {
+}
+
+.item-subtext {
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.providerlist .item-subtext {
+  font-size: unset;
+  opacity: 0.75;
+}
+
+.item-image-text {
+  font-size: 28px;
+}
+
+child:selected .item-quick-activation {
+  background: @item_quick_activation_hover_bg;
+  color: @item_quick_activation_hover_fg;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.calc .item-text {
+  font-size: 24px;
+}
+
+.calc .item-subtext {
+}
+
+.symbols .item-image {
+  font-size: 24px;
+}
+
+.item-wallpaper-image {
+  padding: 0px;
+  margin: 0px;
+}
+
+.todo.done .item-text-box {
+  opacity: 0.25;
+}
+
+/* ============================================
+   ITEM PREVIEW
+   ============================================ */
+
+.preview {
+  border: 1px solid @border_color;
+  /* padding: 10px; */
+  border-radius: 10px;
+  color: @text;
+}
+
+.todo.urgent {
+  font-size: 24px;
+}
+
+.todo.active {
+  font-weight: bold;
+}
+
+.bluetooth.disconnected {
+  opacity: 0.5;
+}
+
+.preview .large-icons {
+  -gtk-icon-size: 64px;
+}
+
+/* ============================================
+   KEYBINDINGS HINT
+   ============================================ */
+
+.keybinds {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-size: 0;
+  min-height: 0;
+  color: @text;
+}
+
+.global-keybinds {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
+
+.item-keybinds {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
+
+.keybind {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+  font-size: 0;
+}
+
+.keybind-button {
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+  font-size: 0;
+}
+
+.keybind-button:hover {
+  opacity: 0;
+}
+
+.keybind-bind {
+  text-transform: lowercase;
+  opacity: 0;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
+
+.keybind-label {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-height: 0;
+  font-size: 0;
+}
+
+.error {
+  padding: 10px;
+  background: @error_bg_color;
+  color: @error_fg_color;
+}
+
+:not(.calc).current {
+  font-style: italic;
+}
+
+.preview-content.archlinuxpkgs {
+  font-family: monospace;
+}
