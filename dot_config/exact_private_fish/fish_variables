@@ -1,32 +1,34 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR CURRENT_THEME:catppuccin
 SETUVAR --export EDITOR:nvim
+SETUVAR --export STARSHIP_CONFIG:/home/nino/\x2econfig/starship\x2etoml
 SETUVAR --export TERM:ghostty
 SETUVAR --export TERMINAL:ghostty
 SETUVAR __fish_initialized:4300
 SETUVAR __fish_webconfig_theme_notification:set\x2dtheme\x2dv1\x2d\x235
 SETUVAR _fisher_upgraded_to_4_4:\x1d
-SETUVAR fish_color_autosuggestion:6e738d
-SETUVAR fish_color_cancel:ee99a0\x1e\x2d\x2dreverse
-SETUVAR fish_color_command:cad3f5
-SETUVAR fish_color_comment:b8c0e0
-SETUVAR fish_color_cwd:c6a0f6
-SETUVAR fish_color_cwd_root:ed8796
-SETUVAR fish_color_end:b7bdf8
+SETUVAR fish_color_autosuggestion:6c7086
+SETUVAR fish_color_cancel:eba0ac\x1e\x2d\x2dreverse
+SETUVAR fish_color_command:cdd6f4
+SETUVAR fish_color_comment:bac2de
+SETUVAR fish_color_cwd:cba6f7
+SETUVAR fish_color_cwd_root:f38ba8
+SETUVAR fish_color_end:b4befe
 SETUVAR fish_color_error:ee99a0
-SETUVAR fish_color_escape:c6a0f6
+SETUVAR fish_color_escape:cba6f7
 SETUVAR fish_color_history_current:\x2d\x2dbold
 SETUVAR fish_color_host:normal
-SETUVAR fish_color_host_remote:eed49f
-SETUVAR fish_color_operator:b7bdf8
+SETUVAR fish_color_host_remote:f9e2af
+SETUVAR fish_color_operator:b4befe
 SETUVAR fish_color_option:\x1d
-SETUVAR fish_color_param:b7bdf8
-SETUVAR fish_color_quote:c6a0f6
-SETUVAR fish_color_redirection:b7bdf8\x1e\x2d\x2dbold
-SETUVAR fish_color_search_match:white\x1e\x2d\x2dbackground\x3dbrblack
-SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
-SETUVAR fish_color_status:ee99a0
-SETUVAR fish_color_user:a6da95
+SETUVAR fish_color_param:b4befe
+SETUVAR fish_color_quote:cba6f7
+SETUVAR fish_color_redirection:b4befe\x1e\x2d\x2dbold
+SETUVAR fish_color_search_match:cdd6f4\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_selection:cdd6f4\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_status:eba0ac
+SETUVAR fish_color_user:a6e3a1
 SETUVAR fish_color_valid_path:\x2d\x2dunderline\x3dsingle
 SETUVAR fish_greeting:\x1d
 SETUVAR fish_pager_color_background:\x1d
