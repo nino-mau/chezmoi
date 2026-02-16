@@ -22,6 +22,7 @@ type Palette = {
   grey1: string;
   grey2: string;
   primary: string;
+  border: string;
 };
 
 const stripHash = (hex: string) => hex.replace('#', '');
@@ -52,6 +53,7 @@ $grey1 = rgb(${stripHash(p.grey1)})
 $grey2 = rgb(${stripHash(p.grey2)})
 
 $primary = rgb(${stripHash(p.primary)})
+$border = rgb(${stripHash(p.border)})
 `;
 }
 
@@ -447,6 +449,32 @@ progress-color=over ${p.bg2}
 `;
 }
 
+function generateWalkerColorsCss(palette: Palette): string {
+  const p = palette;
+  return `@define-color bg0 ${p.bg0};
+@define-color bg1 ${p.bg1};
+@define-color bg2 ${p.bg2};
+@define-color bg3 ${p.bg3};
+@define-color bg4 ${p.bg4};
+@define-color fg ${p.fg};
+@define-color fg2 ${p.fg2};
+@define-color red ${p.red};
+@define-color orange ${p.orange};
+@define-color yellow ${p.yellow};
+@define-color green ${p.green};
+@define-color aqua ${p.aqua};
+@define-color blue ${p.blue};
+@define-color purple ${p.purple};
+@define-color pink ${p.pink};
+@define-color lavender ${p.lavender};
+@define-color grey0 ${p.grey0};
+@define-color grey1 ${p.grey1};
+@define-color grey2 ${p.grey2};
+@define-color primary ${p.primary};
+@define-color border ${p.border};
+`;
+}
+
 function generateFastfetchConfig(palette: Palette): string {
   const p = palette;
   return `//   _____ _____ _____ _____ _____ _____ _____ _____ _____
@@ -548,27 +576,39 @@ function generateFastfetchConfig(palette: Palette): string {
 function main() {
   const themesDir = import.meta.dir;
   const fastfetchDir = `${themesDir}/fastfetch`;
+  const walkerDir = `${themesDir}/walker`;
+  const hyprDir = `${themesDir}/hypr`;
+  const hyprpanelDir = `${themesDir}/hyprpanel`;
+  const makoDir = `${themesDir}/mako`;
   mkdirSync(fastfetchDir, { recursive: true });
+  mkdirSync(walkerDir, { recursive: true });
+  mkdirSync(hyprDir, { recursive: true });
+  mkdirSync(hyprpanelDir, { recursive: true });
+  mkdirSync(makoDir, { recursive: true });
 
   for (const [name, palette] of Object.entries(themes)) {
     const hyprConf = generateHyprConf(name, palette as Palette);
-    writeFileSync(`${themesDir}/hypr/${name}.conf`, hyprConf);
+    writeFileSync(`${hyprDir}/${name}.conf`, hyprConf);
     console.log(`Generated hypr/${name}.conf`);
 
     const hyprpanelTheme = generateHyprpanelTheme(palette as Palette);
     writeFileSync(
-      `${themesDir}/hyprpanel/${name}.json`,
+      `${hyprpanelDir}/${name}.json`,
       JSON.stringify(hyprpanelTheme, null, 2)
     );
     console.log(`Generated hyprpanel/${name}.json`);
 
     const makoConf = generateMakoConf(palette as Palette);
-    writeFileSync(`${themesDir}/mako/${name}.conf`, makoConf);
+    writeFileSync(`${makoDir}/${name}.conf`, makoConf);
     console.log(`Generated mako/${name}.conf`);
 
     const fastfetchConfig = generateFastfetchConfig(palette as Palette);
     writeFileSync(`${fastfetchDir}/${name}.jsonc`, fastfetchConfig);
     console.log(`Generated fastfetch/${name}.jsonc`);
+
+    const walkerColorsCss = generateWalkerColorsCss(palette as Palette);
+    writeFileSync(`${walkerDir}/${name}.css`, walkerColorsCss);
+    console.log(`Generated walker/${name}.css`);
   }
 
   console.log('\nAll themes generated successfully!');

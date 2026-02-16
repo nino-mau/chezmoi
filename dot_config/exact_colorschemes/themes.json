@@ -19,29 +19,31 @@
     "grey0": "#6c7086",
     "grey1": "#7f849c",
     "grey2": "#9399b2",
-    "primary": "#89b4fa"
+    "primary": "#89b4fa",
+    "border": "#313244"
   },
   "rose-pine": {
     "bg0": "#191724",
     "bg1": "#1f1d2e",
-    "bg2": "#262431",
+    "bg2": "#26233a",
     "bg3": "#2d2b38",
-    "bg4": "#353340",
-    "fg": "#c8d3f5",
-    "fg2": "#c8d3f5",
+    "bg4": "#6e6a86",
+    "fg": "#e0def4",
+    "fg2": "#908caa",
     "red": "#eb6f92",
     "orange": "#f6c177",
     "yellow": "#f6c177",
     "green": "#ABE9B3",
-    "aqua": "#31748f",
-    "blue": "#9ccfd8",
+    "aqua": "#9ccfd8",
+    "blue": "#31748f",
     "purple": "#c4a7e7",
     "pink": "#ebbcba",
     "lavender": "#6aadc8",
-    "grey0": "#3f3d4a",
-    "grey1": "#474552",
-    "grey2": "#514f5c",
-    "primary": "#cba6f7"
+    "grey0": "#21202e",
+    "grey1": "#403d52",
+    "grey2": "#524f67",
+    "primary": "#6aadc8",
+    "border": "#21202e"
   },
   "tokyo-night": {
     "bg0": "#1a1b26",
@@ -63,7 +65,8 @@
     "grey0": "#40486a",
     "grey1": "#565f89",
     "grey2": "#4f5779",
-    "primary": "#7aa2f7"
+    "primary": "#7aa2f7",
+    "border": "#40486a"
   },
   "anime": {
     "bg0": "#1a1b26",
@@ -85,6 +88,7 @@
     "grey0": "#565f89",
     "grey1": "#7f849c",
     "grey2": "#a6adc8",
-    "primary": "#7aa2f7"
+    "primary": "#7aa2f7",
+    "border": "#565f89"
   }
 }
