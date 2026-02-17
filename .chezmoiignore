@@ -13,23 +13,23 @@ scrapJJKTranscript/
 .config/walker/themes/colors.css
 
 {{- if eq .chezmoi.os "darwin" }}
-~/.config/hypr
-~/.config/matugen
-~/.config/walker
-~/.config/elephant
-~/.config/gtk-4.0
-~/.config/gtk-3.0
-~/.config/sysc-greet
-~/.config/greetd
-~/.config/earlyoom
-~/.config/waybar
-~/.config/walker
+.config/hypr
+.config/matugen
 .config/walker
-~/.config/vesktop
-~/.config/wofi
-~/.config/hyprpanel
-~/.config/hypremoji
-~/.config/nwg-look
+.config/elephant
+.config/gtk-4.0
+.config/gtk-3.0
+.config/sysc-greet
+.config/greetd
+.config/earlyoom
+.config/waybar
+.config/walker
+.config/walker
+.config/vesktop
+.config/wofi
+.config/hyprpanel
+.config/hypremoji
+.config/nwg-look
 {{- end }}
 
 {{ if eq .chezmoi.os "linux" }}
