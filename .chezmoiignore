@@ -21,6 +21,7 @@ scrapJJKTranscript/
 ~/.config/greetd
 ~/.config/earlyoom
 ~/.config/waybar
+~/.config/walker
 ~/.config/vesktop
 ~/.config/wofi
 ~/.config/hyprpanel
