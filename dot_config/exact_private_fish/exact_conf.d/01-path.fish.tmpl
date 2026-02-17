@@ -14,3 +14,9 @@ set FNM_PATH "$HOME/.local/share/fnm"
 if test -d "$FNM_PATH"
     set PATH "$FNM_PATH" $PATH
 end
+
+{{ if eq .chezmoi.os "darwin" }}
+# bun
+set -gx BUN_INSTALL "$HOME/.bun"
+fish_add_path $BUN_INSTALL/bin
+{{ end }}
