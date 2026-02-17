@@ -3,6 +3,8 @@ scrapJJKTranscript/
 **/node_modules/**
 **/exact_node_modules/**
 
+.config/fish/fish_variables
+
 # Ignore matugen output files
 .config/waybar/colors.css
 .config/hypr/colors.conf
@@ -28,4 +30,8 @@ scrapJJKTranscript/
 ~/.config/hypremoji
 ~/.config/nwg-look
 {{- end }}
+
+{{ else if eq .chezmoi.os "linux" }}
+.config/fish/completions/bun.fish
+{{ end }}
 
