@@ -1,14 +1,14 @@
 set -g fish_color_quote cba6f7
 set -g fish_color_command cdd6f4
-set -g fish_color_redirection b4befe --bold
-set -g fish_color_end b4befe
+set -g fish_color_redirection 89b4fa --bold
+set -g fish_color_end 89b4fa
 set -g fish_color_error ee99a0
-set -g fish_color_param b4befe
+set -g fish_color_param 89b4fa
 set -g fish_color_comment bac2de
 set -g fish_color_selection cdd6f4 --bold --background=brblack
 set -g fish_color_search_match cdd6f4 --background=brblack
 set -g fish_color_history_current --bold
-set -g fish_color_operator b4befe
+set -g fish_color_operator 89b4fa
 set -g fish_color_escape cba6f7
 set -g fish_color_cwd cba6f7
 set -g fish_color_cwd_root f38ba8
