@@ -4,7 +4,7 @@ windows:
   - window_name: editor
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/exb/client/your-extensions/widgets/street-view/
+          - cd $HOME/Documents/dev/projects/streetview-exb-widget/
           - nvim .
 
   - window_name: repo
@@ -12,10 +12,10 @@ windows:
       - shell_command:
           - cd $HOME/Documents/dev/projects/streetview-exb-widget/
 
-  - window_name: cmd
+  - window_name: exb
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/exb/client/your-extensions/widgets/
+          - cd $HOME/Documents/dev/exb/client/
 
   - window_name: client
     panes:
@@ -32,4 +32,5 @@ windows:
   - window_name: sync
     panes:
       - shell_command:
-          - syncwatch $HOME/Documents/dev/exb/client/your-extensions/widgets/street-view/ $HOME/Documents/dev/projects/streetview-exb-widget/src/street-view/
+          - cd $HOME/Documents/dev/projects/streetview-exb-widget/
+          - ./dev_livesync.sh street-view ~/Documents/dev/exb
