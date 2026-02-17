@@ -13,6 +13,9 @@ vimcmd_visual_symbol = "[❮](bold fg)"
 vimcmd_replace_symbol = "[❮](bold fg)"
 vimcmd_replace_one_symbol = "[❮](bold fg)"
 
+[cmd_duration]
+style = "bold lavender"
+
 [git_branch]
 style = "bold purple"
 symbol = " "
@@ -100,6 +103,7 @@ symbol = " "
 symbol = " "
 
 [hostname]
+style = "bold green"
 ssh_symbol = " "
 
 [java]
@@ -112,6 +116,7 @@ symbol = " "
 symbol = " "
 
 [lua]
+style = "bold pink"
 symbol = " "
 
 [memory_usage]
