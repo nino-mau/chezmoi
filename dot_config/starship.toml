@@ -5,6 +5,8 @@ format = '[ ](bold primary)$all'
 
 palette = 'catppuccin'
 
+scan_timeout = 1000
+
 [character]
 success_symbol = "[❯](bold fg)"
 error_symbol = "[❯](bold red)"
