@@ -3,6 +3,7 @@
 abbr -a nv nvim
 alias mvim="NVIM_APPNAME=mvim nvim"
 alias nchad="NVIM_APPNAME=nvchad nvim"
+alias nvmin="NVIM_APPNAME=nv nvim"
 
 # Chezmoi-managed config editing
 abbr -a che "chezmoi edit --apply"
