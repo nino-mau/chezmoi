@@ -62,6 +62,11 @@ runner = " "
 prefix = "$"
 provider = "menus:wallpapers"
 
+# Custom nerdfonts menu 
+[[providers.prefixes]]
+prefix = "à"
+provider = "menus:nerd-icons"
+
 # Custom iconify menu 
 [[providers.prefixes]]
 prefix = "?"
