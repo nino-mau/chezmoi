@@ -4,17 +4,17 @@
 //  |__|  |__|__|_____| |_| |__|  |_____| |_| |_____|__|__|  ARCH
 //
 //  by Bina
-
+//
 // execute with: fastfetch --colors-block-range-start 9 --colors-block-width 3
-
+//
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "source": "~/.config/fastfetch/ascii/planet",
+    "source": "~/.local/share/ascii/cat",
     "padding": {
-      "top": 2,
+      "top": 4,
       "right": 6,
-      "left": 2
+      "left": 3
     },
     "color": {
       "1": "#89b4fa"
@@ -29,8 +29,6 @@
     }
   },
   "modules": [
-    "break",
-    "break",
     "break",
     {
       "type": "title",
@@ -87,7 +85,6 @@
       "type": "colors",
       "symbol": "circle" // Des cercles pour un look plus moderne
     },
-    "break",
     "break"
   ]
 }
