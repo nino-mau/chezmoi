@@ -1,0 +1,301 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+format = """
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$fortran\
+$gleam\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$quarto\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$solidity\
+$swift\
+$terraform\
+$typst\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$bun\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$nats\
+$mise\
+$crystal"""
+
+add_newline = false
+
+[git_branch]
+style = ''
+symbol = " "
+format = '[$symbol$branch(:$remote_branch)]($style) '
+
+[directory]
+style = ''
+format = ' [$path]($style)'
+repo_root_format = ' [$repo_root]($repo_root_style)'
+
+[aws]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[buf]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[bun]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[c]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[cpp]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[cmake]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[conda]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[crystal]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[dart]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[deno]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[docker_context]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[elixir]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[elm]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[fennel]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[fortran]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[fossil_branch]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[gcloud]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[golang]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[gradle]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[guix_shell]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[haskell]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[haxe]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[java]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[julia]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[kotlin]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[lua]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[meson]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = "󰔷 "
+
+[nim]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = "󰆥 "
+
+[nix_shell]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[nodejs]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[ocaml]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[package]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = "󰏗 "
+
+[perl]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[php]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[pijul_channel]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[pixi]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = "󰏗 "
+
+[python]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[rlang]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = "󰟔 "
+
+[ruby]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[rust]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = "󱘗 "
+
+[scala]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[status]
+style = ''
+format = '[$symbol($version )]($style)'
+disabled = true
+symbol = " "
+
+[swift]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[xmake]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
+
+[zig]
+style = ''
+format = '[$symbol($version )]($style)'
+symbol = " "
