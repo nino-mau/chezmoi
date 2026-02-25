@@ -4,7 +4,9 @@ end
 
 if status is-interactive
     # Theme
-    fish_theme $HOME/.config/fish/themes/catppuccin.fish
+    {{ if ne .chezmoi.os "darwin" }}
+      fish_theme $HOME/.config/fish/themes/catppuccin.fish
+    {{ end }}
 
     if not set -q TMUX
         clear

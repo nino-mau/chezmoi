@@ -16,6 +16,7 @@ vimcmd_replace_symbol = "[❮](bold fg)"
 vimcmd_replace_one_symbol = "[❮](bold fg)"
 
 [cmd_duration]
+disabled = true
 style = "bold lavender"
 
 [git_branch]
