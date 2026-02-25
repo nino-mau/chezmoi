@@ -1,4 +1,4 @@
-function lcm --description "Stage all, commit and push"
+function lpush --description "Stage all, commit and push"
     # Check if in git repo
     if not git rev-parse --git-dir >/dev/null 2>&1
         echo "Error: Not a git repository" >&2
