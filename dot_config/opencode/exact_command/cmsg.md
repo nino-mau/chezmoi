@@ -1,7 +1,7 @@
 ---
 description: Write a commit message
 agent: chat
-model: opencode/kimi-k2.5
+model: openai/gpt-5.3-codex
 ---
 
 # Instructions
@@ -10,8 +10,8 @@ You are for the next prompt git commit message generator. Analyze the staged cha
 
 ## Task
 
-1. Review the staged diff provided
-1. Review the previous commit messages
+1. Obtain staged diff then review it
+1. Obtain then review the previous commit messages
 1. Identify the primary change type and scope
 1. Write a commit message following the specification below
 
@@ -20,73 +20,205 @@ You are for the next prompt git commit message generator. Analyze the staged cha
 - Output ONLY the commit message, no explanations or markdown formatting
 - Use exactly one type from the allowed types
 - Keep the description under 72 characters
+- No body/description
 - Use imperative mood ("add" not "added")
 - Do not capitalize the first letter of the description
 - Do not end with a period
-- Add a body only if the change requires explanation
-- Reference issues in the footer if applicable
 
 ## Specification
 
-### Conventional Commit Messages
+### feat – New Feature or Functionality
 
-## Commit Message Formats
+`feat` is used for adding new features or functionality.
 
-### General Commit
+#### When to Use
 
-<pre>
-<b><a href="#types">&lt;type&gt;</a></b></font>(<b><a href="#scopes">&lt;optional scope&gt;</a></b>): <b><a href="#description">&lt;description&gt;</a></b>
-<sub>empty line as separator</sub>
-<b><a href="#body">&lt;optional body&gt;</a></b>
-<sub>empty line as separator</sub>
-<b><a href="#footer">&lt;optional footer&gt;</a></b>
-</pre>
+- Adding a brand-new feature
+- Implementing new functionality that wasn’t there before
+- Introducing a new behavior (e.g., a new UI component)
+- Adding a new configuration option or parameter to an existing system
 
-### Initial Commit
+#### Examples
 
-```
-chore: init
-```
+- `feat: provide google sheets adapter`
+- `feat(ui): add dark mode to the user interface`
+- `feat(api): add support for pagination in user endpoint`
 
-### Merge Commit
+### fix – Fix a Bug
 
-<pre>
-Merge branch '<b>&lt;branch name&gt;</b>'
-</pre>
+`fix` is used to address actual bugs that cause incorrect behavior in production code.
 
-<sup>Follows default git merge message</sup>
+#### When to Use
 
-### Revert Commit
+- Correcting unintentional or erroneous behavior
+- Fixing a known bug
+- Correcting invalid or malfunctioning visual styles (e.g., fixing incorrect color values)
+- Resolving crashes or runtime errors
 
-<pre>
-Revert "<b>&lt;reverted commit subject line&gt;</b>"
-</pre>
+#### Examples
 
-<sup>Follows default git revert message</sup>
+- `fix: correct CSS color for button background`
+- `fix: null pointer handling`
+- `fix(frontend): remove flickering effect on page refresh`
 
-### Types
+### perf – Performance Improvements
 
-- Changes relevant to the API or UI:
-  - `feat` Commits that add, adjust or remove a new feature to the API or UI
-  - `fix` Commits that fix an API or UI bug of a preceded `feat` commit
-- `refactor` Commits that rewrite or restructure code without altering API or UI behavior
-  - `perf` Commits are special type of `refactor` commits that specifically improve performance
-- `style` Commits that address code style (e.g., white-space, formatting, missing semi-colons) and do not affect application behavior
-- `test` Commits that add missing tests or correct existing ones
-- `docs` Commits that exclusively affect documentation
-- `build` Commits that affect build-related components such as build tools, dependencies, project version, CI/CD pipelines, ...
-- `ops` Commits that affect operational components like infrastructure, deployment, backup, recovery procedures, ...
-- `chore` Commits that represent tasks like initial commit, modifying `.gitignore`, ...
+`perf` is used for changes that bring measurable performance improvements.
 
-### Scopes
+#### When to Use
 
-The `scope` provides additional contextual information.
+- Optimizing existing code for speed or memory usage
+- Reducing overhead in database queries or API calls
+- Improving rendering or load times
+- Adding caching mechanisms to frequently accessed data
 
-- The scope is an **optional** part
-- Allowed scopes vary and are typically defined by the specific project
-- **Do not** use issue identifiers as scopes
+#### Examples
 
-### Breaking Changes Indicator
+- `perf: reduce number of redundant API calls`
+- `perf(ui): improve table rendering performance`
+- `perf: add caching for user session data`
 
-- A commit that introduce breaking changes **must** be indicated by an `!` before the `:` in the subject line e.g. `feat(api)!: remove status endpoint`
-- Breaking changes **should** be described in the [commit footer section](#footer), if the [commit description](#description) isn't sufficiently informative
+### refactor – Code Refactoring without Changing Behavior
+
+`refactor` is for structural improvements to the code without changing its behavior. Unlike `style`, `refactor` focuses on enhancing the internal structure, logic, or organization of the code without altering its external behavior.
+
+#### When to Use
+
+- Restructuring or reorganizing code for clarity, maintainability, or scalability
+- Extracting common logic into utility functions
+- Splitting large modules into smaller, more focused ones
+- Making a code section fail-safe without changing functionality
+- Adding `Optional` to handle potential null values gracefully
+- Simplifying complex conditions or loops
+- Adding a `@Nullable` annotation to indicate that a value can be null, helping static analysis tools warn developers and reduce the risk of `NullPointerExceptions`.
+- Renaming variables or methods for readability and clarity
+
+#### Examples
+
+- `refactor: extract utility functions for data validation`
+- `refactor(ui): separate styling logic from component logic`
+- `refactor: use Optional to handle potential null values in data processing`
+- `refactor: simplify nested loops`
+- `refactor: rename variable temp to temperature`
+
+### style – Code Formatting and Style-Only Changes
+
+`style` is for cosmetic changes to code that do not affect its behavior. Key Difference from `refactor`: `style` changes are purely superficial and do not affect the structure, semantics, or functionality of the code.
+
+#### When to Use
+
+- Formatting the codebase (e.g., via Prettier, ESLint)
+- Adjusting whitespace, indentation, line breaks, or punctuation
+- Making purely cosmetic changes that do **not** affect behavior
+
+#### Examples
+
+- `style: reformat code with ESLint rules`
+- `style: change indentation from 2 to 4 spaces`
+- `style: fix formatting inconsistencies across multiple files`
+
+`test` is used for adding, modifying, fixing or improving tests.
+
+#### When to Use
+
+- Adding or updating unit, integration, or end-to-end tests
+- Refactoring test code or changing test data
+- Fixing broken test scripts
+- Adding quality assurance scripts
+- Covering edge cases in existing tests
+
+#### Examples
+
+- `test: add integration tests for checkout process`
+- `test(auth): improve token validation tests`
+- `test: add load testing script for performance checks`
+- `test: cover edge cases for user registration validation`
+
+### docs – Documentation
+
+`docs` is used for changes to documentation, comments, or API descriptions.
+
+#### When to Use
+
+- Making changes to documentation files (e.g., `README.md`, `CHANGELOG.md`)
+- Adding or updating inline code comments, docstrings, or usage guides
+- Writing API documentation
+- Updating setup instructions
+
+#### Examples
+
+- `docs: update README to include installation steps`
+- `docs: add comments to public methods`
+- `docs: document API usage examples for new endpoints`
+
+### build – Build Process or Dependencies
+
+`build` should be used for changes that impact the build process or production dependencies, including tools and configurations necessary for application deployment or runtime.
+
+#### When to Use
+
+- Updating build scripts (Webpack, Rollup, etc.)
+- Changing or upgrading dependencies (npm, Maven, Gradle, etc.) that affect production code
+- Modifying how the application is bundled or deployed
+- Adjusting Docker or Kubernetes configurations
+
+#### Examples
+
+- `build: upgrade webpack to version 5`
+- `build(deps): update express to v4.18.1` ← (Dependency for production code)
+- `build: update Dockerfile for multi-stage builds`
+
+### ci – Continuous Integration
+
+`ci` is used for changes to CI/CD configurations or workflows.
+
+#### When to Use
+
+- Changing CI/CD configuration files or scripts
+- Updating workflows for GitHub Actions, GitLab CI, Jenkins, etc.
+- Adding new CI steps (e.g., code coverage, automated security scans)
+
+#### Examples
+
+- `ci: add code quality checks in GitHub Actions`
+- `ci: configure Jenkins pipeline for integration tests`
+- `ci: add security scan step in GitLab pipeline`
+
+### chore – Maintenance and Routine Tasks
+
+`chore` is used for administrative or supportive tasks that do not impact production code.
+
+#### When to Use
+
+- Miscellaneous tasks or project administration that doesn’t fit other types
+- Updating `.gitignore`, adjusting package scripts, or other project settings
+- Renaming or moving files/folders without changing actual code logic
+- Adjusting or creating scripts that help with local/manual testing or make development easier
+- Adding `@SuppressWarnings` annotations to resolve build or IDE warnings
+- Updating development dependencies (e.g., `eslint`, `jest`)
+
+#### Examples
+
+- `chore: update .gitignore to exclude .idea files`
+- `chore: reorganize folder structure for better clarity`
+- `chore: adjust local test script for manual QA`
+- `chore: suppress unchecked cast warnings in legacy code`
+- `chore(deps): update eslint to v8.14.0`
+
+### revert – Revert a Previous Commit
+
+`revert` is used to roll back a previous commit.
+
+#### When to Use
+
+- Undoing or rolling back a previous commit when necessary
+- Typically references the commit hash that is being reverted
+
+#### Examples
+
+- `revert: "feat: add social login feature"`
+- `revert: "fix: correct CSS color for button background"`
+
+## My last words for today
+
+I started using this cheatsheet in my daily workflow. I’m not a master yet, but it has already reduced my cognitive load when creating commit messages. Hopefully, it will do the same for you. Happy committing!

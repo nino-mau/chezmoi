@@ -1,5 +1,3 @@
-
-
 ## System Context
 
 Informations on the computer you're running on
@@ -15,9 +13,9 @@ Informations on the computer you're running on
 
 to get more detailed informations run:
 
-~~~bash
+```bash
 fastfetch
-~~~
+```
 
 ## General Guideline
 
@@ -26,5 +24,3 @@ fastfetch
 - Avoid unecessary flavour text, go to the point
 - Keep the code simple and understandable
 - Be challenging, not agreeable
-
-
