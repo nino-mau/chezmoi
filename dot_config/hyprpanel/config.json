@@ -428,8 +428,7 @@
     "*": {
       "left": [
         "dashboard",
-        "clock",
-        "windowtitle"
+        "clock"
       ],
       "middle": [
         "workspaces"
@@ -488,5 +487,8 @@
   "bar.battery.hideLabelWhenFull": false,
   "theme.bar.buttons.innerRadiusMultiplier": "0.4",
   "bar.launcher.autoDetectIcon": false,
-  "theme.bar.buttons.padding_x": "0.8rem"
+  "theme.bar.buttons.padding_x": "0.8rem",
+  "bar.workspaces.workspaceMask": false,
+  "bar.workspaces.reverse_scroll": false,
+  "bar.workspaces.ignored": "^-\\d+$"
 }
