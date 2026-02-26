@@ -7,20 +7,76 @@ Informations on the computer you're running on
 - Package Manager: paru
 - Shell: fish
 - Terminal Emulator: ghostty
-- Editor: neovim
+- Editor: neovim (~/.config/nvim)
 - Browser: zen-browser
 - Dot Files: ~/.config
 
-to get more detailed informations run:
+to get more detailed system informations run:
 
 ```bash
 fastfetch
 ```
 
-## General Guideline
+Other tools/software I use:
 
-- Absolutely never under any circumstances run an rm -rf command, this command is blacklisted NEVER USE IT
+- Coding Agent Interface: OpencodeCLI <https://opencode.ai/docs/>
+- Note Taking: Obsidian (at ~/.obsidian/Main)
+- Terminal Multiplexer: Tmux
+- Git Interface: Lazygit
+- Grep replacement: ripgrep (used with `rg` command)
+- Find replacement: fd (used with `fd` command)
+- Dotfile Versionning/Management: chezmoi
+- Application Launcher: walker <https://github.com/abenz1267/walker> with elephant data provider <https://github.com/abenz1267/elephant>
+
+## Guidelines
+
+### Behaviour
+
+- Be challenging, not agreeable, when I say something I want your opinion not your validation
 - Focus on teaching and be pedagogic
 - Avoid unecessary flavour text, go to the point
+- If possible websearch/webfetch for a documentation
+
+### Coding
+
+#### General
+
+- Don't make too much comment, write self explicatory code
 - Keep the code simple and understandable
-- Be challenging, not agreeable
+
+#### Typescript/Javascript
+
+- Always prefer Typescript unless explicitly stated otherwise
+- Avoid using the "any" type
+- Prefer bun over node/npm/pnpm
+- Switch node version using fnm
+
+#### Python
+
+- Prefer uv over pip
+
+### Writing
+
+- Avoid using emoji when writing, only had them if it's really pertinent
+- Avoid giving commercial feel to READMEs and other user facing docs, keep it to the point and technical
+
+## Other Ressources
+
+### Useful Commands
+
+- To search for available aur packages: paru -Ss
+
+### Useful Paths
+
+- Contains my custom scripts ~/.local/bin
+- Contains my wallpapers ~/.local/share/wallappers
+- Contains my colorschemes configuration ~/.config/colorschemes/
+- Contains my custom launcher menu ~/.config/elephant/menus
+- Contains my dev projects ~/.config/elephant/menus
+
+### Links
+
+- hyprland doc: <https://wiki.hypr.land/Configuring/>
+- neovim doc: <https://neovim.io/doc/>
+- fish shell doc: <https://fishshell.com/docs/current/index.html>
+- bun doc: <https://bun.com/docs>
