@@ -3,4 +3,4 @@
 import psutil
 
 mem = psutil.virtual_memory()
-print(f" {mem.percent}%")
+print(mem.percent)

@@ -53,4 +53,4 @@ else:
     else:
         cpu_temp = temps["amdgpu"][0].current or 0
 
-print(f" {round(cpu_temp):2}°C")
+print(f"{round(cpu_temp):2}")
