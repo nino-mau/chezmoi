@@ -1,0 +1,126 @@
+# vim: set ft=tmux:
+
+set -g @catppuccin_flavour 'mocha' 
+# set -g @catppuccin_window_status_style "rounded"
+# set -g @catppuccin_status_background "none"
+# set -g @catppuccin_window_status_style "none"
+# set -g @catppuccin_pane_status_enabled "off"
+# set -g @catppuccin_pane_border_status "off"
+#
+# Configure Online
+set -g @online_icon "ok"
+set -g @offline_icon "nok"
+
+# status left look and feel
+set -g status-left-length 100
+set -g status-left ""
+set -ga status-left "#{?client_prefix,#{#[bg=#{@thm_red},fg=#{@thm_bg},bold]  #S },#{#[bg=default,fg=#{@thm_mauve}]  #S }}"
+set -ga status-left "#[bg=default,fg=#{@thm_overlay_0},none]│"
+set -ga status-left "#[bg=default,fg=#{@thm_maroon}]  #{pane_current_command} "
+set -ga status-left "#[bg=default,fg=#{@thm_overlay_0},none]│"
+set -ga status-left "#[bg=default,fg=#{@thm_blue}]  #{=/-32/...:#{s|$USER|~|:#{b:pane_current_path}}} "
+set -ga status-left "#[bg=default,fg=#{@thm_overlay_0},none]#{?window_zoomed_flag,│,}"
+set -ga status-left "#[bg=default,fg=#{@thm_yellow}]#{?window_zoomed_flag,  zoom ,}"
+
+# status right look and  feel
+set -g status-right-length 100
+set -g status-right ""
+
+{{ if ne .chezmoi.os "darwin" }}
+set -ga status-right "#[bg=default,fg=#{@thm_red}] 󰹑 #($HOME/.local/bin/gpu_name.sh)"
+set -ga status-right "#[bg=default,fg=#{@thm_overlay_0}, none] │"
+set -ga status-right "#[bg=default,fg=#{@thm_teal}] 󰓅 #($HOME/.local/bin/mem_percent.py)%"
+set -ga status-right "#[bg=default,fg=#{@thm_overlay_0}, none] │"
+set -ga status-right "#[bg=default,fg=#{@thm_yellow}] 󰍛 #($HOME/.local/bin/cpu_percent.py)%"
+set -ga status-right "#[bg=default,fg=#{@thm_overlay_0}, none] │"
+set -ga status-right "#[bg=default,fg=#{@thm_blue}]  #($HOME/.local/bin/cpu_temp.py)°C"
+{{ end }}
+
+# bootstrap tpm
+if "test ! -d ~/.tmux/plugins/tpm" \
+   "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
+
+# Configure Tmux
+set -g status-position top
+set -g status-style "bg=default"
+set -g status-justify "absolute-centre"
+
+# pane border look and feel
+setw -g pane-border-status off
+setw -g pane-border-format ""
+setw -g pane-active-border-style "bg=default,fg=#{@thm_overlay_0}"
+setw -g pane-border-style "bg=default,fg=#{@thm_surface_0}"
+setw -g pane-border-lines single
+
+# window content (icon)
+
+set -g @term_icon ""
+set -g @nvim_icon ""
+set -g @git_icon ""
+set -g @btop_icon "󰄦"
+set -g @python_icon ""
+set -g @bash_icon ""
+set -g @ssh_icon ""
+set -g @node_icon "󰎙"
+set -g @bun_icon ""
+set -g @cargo_icon ""
+set -g @lua_icon ""
+set -g @fzf_icon "󱩾"
+set -g @opencode_icon "󱜙"
+set -g @rustc_icon ""
+set -g @docker_icon "󰡨"
+set -g @default_icon "󰝣"
+
+set -g automatic-rename off
+set -g allow-rename off
+set -g window-status-format '\
+#{?#{==:#{pane_current_command},zsh}, #{@term_icon} ,\
+#{?#{==:#{pane_current_command},fish}, #{@term_icon} ,\
+#{?#{==:#{pane_current_command},nvim}, #{@nvim_icon} ,\
+#{?#{==:#{pane_current_command},git}, #{@git_icon} ,\
+#{?#{==:#{pane_current_command},lazygit}, #{@git_icon} ,\
+#{?#{==:#{pane_current_command},btop},#{@btop_icon} ,\
+#{?#{==:#{pane_current_command},docker}, #{@docker_icon} ,\
+#{?#{==:#{pane_current_command},docker-compose}, #{@docker_icon} ,\
+#{?#{==:#{pane_current_command},python}, #{@python_icon} ,\
+#{?#{==:#{pane_current_command},bash}, #{@bash_icon} ,\
+#{?#{==:#{pane_current_command},ssh}, #{@ssh_icon} ,\
+#{?#{==:#{pane_current_command},node}, #{@node_icon} ,\
+#{?#{==:#{pane_current_command},bun}, #{@bun_icon} ,\
+#{?#{==:#{pane_current_command},cargo}, #{@cargo} ,\
+#{?#{==:#{pane_current_command},rustc}, #{@rustc_icon} ,\
+#{?#{==:#{pane_current_command},fzf}, #{@fzf_icon} ,\
+#{?#{==:#{pane_current_command},lua}, #{@lua_icon} ,\
+#{?#{==:#{pane_current_command},opencode}, #{@opencode_icon} ,\
+ #{@default_icon} }}}}}}}}}}}}}}}}}}'
+set -g window-status-current-format '\
+#{?#{==:#{pane_current_command},zsh}, #{@term_icon} ,\
+#{?#{==:#{pane_current_command},fish}, #{@term_icon} ,\
+#{?#{==:#{pane_current_command},nvim}, #{@nvim_icon} ,\
+#{?#{==:#{pane_current_command},git}, #{@git_icon} ,\
+#{?#{==:#{pane_current_command},lazygit}, #{@git_icon} ,\
+#{?#{==:#{pane_current_command},btop}, #{@btop_icon} ,\
+#{?#{==:#{pane_current_command},docker}, #{@docker_icon} ,\
+#{?#{==:#{pane_current_command},docker_compose}, #{@docker_icon} ,\
+#{?#{==:#{pane_current_command},python}, #{@python_icon} ,\
+#{?#{==:#{pane_current_command},bash}, #{@bash_icon} ,\
+#{?#{==:#{pane_current_command},ssh}, #{@ssh_icon} ,\
+#{?#{==:#{pane_current_command},node}, #{@node_icon} ,\
+#{?#{==:#{pane_current_command},bun}, #{@bun_icon} ,\
+#{?#{==:#{pane_current_command},cargo}, #{@cargo_icon} ,\
+#{?#{==:#{pane_current_command},rustc}, #{@rustc_icon} ,\
+#{?#{==:#{pane_current_command},fzf}, #{@fzf_icon} ,\
+#{?#{==:#{pane_current_command},lua}, #{@lua_icon} ,\
+#{?#{==:#{pane_current_command},opencode}, #{@opencode_icon} ,\
+ #{@default_icon} }}}}}}}}}}}}}}}}}}'
+ 
+# window style
+set -g window-status-style "bg=default,fg=#{@thm_surface_2}"
+set -g window-status-last-style "bg=default,fg=#{@thm_surface_2}"
+set -g window-status-current-style "bg=default,fg=#{@thm_blue},bold"
+set -g window-status-activity-style "bg=default,fg=#{@thm_pink},bold"
+set -g window-status-bell-style "bg=default,fg=#{@thm_red},bold"
+# set -gF window-status-separator "#[bg=default,fg=#{@thm_overlay2}]│"
