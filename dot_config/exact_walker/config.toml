@@ -64,8 +64,13 @@ provider = "menus:wallpapers"
 
 # Custom nerdfonts menu 
 [[providers.prefixes]]
-prefix = "à"
+prefix = "nf:"
 provider = "menus:nerd-icons"
+
+# Custom commit messages menu 
+[[providers.prefixes]]
+prefix = "cm:"
+provider = "menus:commit-message"
 
 # Custom iconify menu 
 [[providers.prefixes]]
