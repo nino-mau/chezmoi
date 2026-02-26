@@ -1,27 +1,47 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": ["opencode-antigravity-auth@beta"],
   "provider": {},
   "permission": {
     "external_directory": "allow",
-    "read": "allow",
-    "glob": "allow",
-    "grep": "allow",
-    "list": "allow",
-    "edit": "ask"
+    "edit": "ask",
+    "bash": {
+      "*": "allow",
+      "rm *": "ask",
+      "rm -rf *": "deny",
+      "sed *": "ask",
+      "touch *": "ask"
+    }
   },
   "agent": {
-    "full-build": {
+    "build": {
       "mode": "primary",
+      "color": "primary",
+      "model": "openai/gpt-5.3-codex"
+    },
+    "worker": {
+      "mode": "primary",
+      "color": "error",
       "model": "openai/gpt-5.3-codex",
-      "tools": { "*": true },
       "permission": {
         "external_directory": "allow",
         "read": "allow",
-        "edit": {
-          "*": "ask",
-          "{env:PWD}/*": "allow"
-        }
+        "glob": "allow",
+        "grep": "allow",
+        "list": "allow",
+        "edit": "allow"
+      }
+    },
+    "chat": {
+      "mode": "primary",
+      "color": "secondary",
+      "model": "openai/gpt-5.3-codex",
+      "permission": {
+        "external_directory": "allow",
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "list": "allow",
+        "edit": "deny"
       }
     }
   },
@@ -114,5 +134,5 @@
     "terminal_title_toggle": "none",
     "tips_toggle": "<leader>h"
   },
-  "default_agent": "chat"
+  "default_agent": "build"
 }
