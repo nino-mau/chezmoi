@@ -130,6 +130,11 @@ time_format = "%d.%m. - %H:%M" # format for the clipboard item date
   { action = "toggle_search_tabler", label = "Tabler", bind = "ctrl t", after = "AsyncReload" },
 ]
 
+"menus:nerd-icons" = [
+  { action = "copy_glyph", label = "Copy", bind = "Return", default = true },
+  { action = "type_glyph", label = "Insert", bind = "ctrl i"  },
+]
+
 fallback = [
   { action = "menus:open", label = "open", after = "Nothing" },
   { action = "menus:default", label = "run", after = "Close" },
