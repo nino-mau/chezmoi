@@ -4,8 +4,13 @@ icon = "action"
 
 [[entries]]
 text = "Themes"
-icon = "preferences-color-symbolic"
+icon = "color-fill-symbolic"
 actions = { "toggle" = "walker --provider menus:themes" }
+
+[[entries]]
+text = "Color Picker"
+icon = "color-picker-symbolic"
+actions = { "toggle" = "sh -c 'sleep 0.15 && hyprpicker'" }
 
 [[entries]]
 text = "Reboot"
@@ -16,4 +21,3 @@ actions = { "toggle" = "systemctl reboot" }
 text = "Shutdown"
 icon = "system-shutdown-symbolic"
 actions = { "toggle" = "systemctl poweroff" }
-
