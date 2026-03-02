@@ -218,7 +218,3 @@ You are for the next prompt git commit message generator. Analyze the staged cha
 
 - `revert: "feat: add social login feature"`
 - `revert: "fix: correct CSS color for button background"`
-
-## My last words for today
-
-I started using this cheatsheet in my daily workflow. I’m not a master yet, but it has already reduced my cognitive load when creating commit messages. Hopefully, it will do the same for you. Happy committing!
