@@ -19,7 +19,7 @@ scrollbar {
 }
 
 .large-icons {
-  -gtk-icon-size: 42px;
+  -gtk-icon-size: 38px;
 }
 
 .preview-box,
@@ -37,10 +37,10 @@ scrollbar {
    ============================================ */
 
 popover {
-  background: @window_bg;
-  border: 1px solid @border;
-  border-radius: 18px;
-  padding: 10px;
+  /* background: alpha(@window_bg, 0.5); */
+  /* border: 1px solid @border; */
+  /* border-radius: 18px; */
+  /* padding: 0px; */
 }
 
 .box-wrapper {
@@ -48,12 +48,13 @@ popover {
     0 19px 38px rgba(0, 0, 0, 0.3),
     0 15px 12px rgba(0, 0, 0, 0.22);
   background: @window_bg;
-  padding: 20px;
-  border-radius: 20px;
-  border: 1.5px solid @border;
+  padding: 0px;
+  border-radius: 12px;
+  border: 1px solid @border;
 }
 
-.box {
+.content-container {
+  padding: 0px;
 }
 
 /* ============================================
@@ -61,7 +62,8 @@ popover {
    ============================================ */
 
 .search-container {
-  border-radius: 10px;
+  padding: 10px;
+  border-bottom: 1px solid @border;
 }
 
 .input placeholder {
@@ -73,6 +75,7 @@ popover {
 }
 
 .input {
+  font-size: 18px;
   caret-color: @text;
   background: @input_bg;
   padding: 10px;
@@ -80,43 +83,54 @@ popover {
 }
 
 .input:focus,
-.input:active {
-}
+.input:active {}
 
-.content-container {
-}
+.content-container {}
 
-.placeholder {
-}
+.placeholder {}
 
-.scroll {
-}
+.scroll {}
 
-child {
-}
+child {}
 
 /* ============================================
    LIST ITEM
    ============================================ */
 
+.list {
+  padding-top: 10px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
 .item-box {
   border-radius: 10px;
-  padding: 10px;
+  padding: 5px;
+}
+
+.textonly-item-box {
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .item-quick-activation {
   background: @item_quick_activation_bg;
-  border-radius: 5px;
+  font-size: 13px;
+  border-radius: 10px;
   padding: 10px;
 }
+
+.item-text {
+  font-size: 14px;
+}
+
 
 /* child:hover .item-box, */
 child:selected .item-box {
   background: @item_selected;
   color: @item_selected_fg;
-}
-
-.item-text-box {
 }
 
 .item-subtext {
@@ -130,7 +144,7 @@ child:selected .item-box {
 }
 
 .item-image-text {
-  font-size: 28px;
+  font-size: 10px;
 }
 
 child:selected .item-quick-activation {
@@ -144,11 +158,10 @@ child:selected .item-quick-activation {
   font-size: 24px;
 }
 
-.calc .item-subtext {
-}
+.calc .item-subtext {}
 
 .symbols .item-image {
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .item-wallpaper-image {
@@ -165,9 +178,9 @@ child:selected .item-quick-activation {
    ============================================ */
 
 .preview {
-  border: 1px solid @border;
-  /* padding: 10px; */
-  border-radius: 10px;
+  border-left: 1px solid @border;
+  padding: 10px;
+  /* border-radius: 12px; */
   color: @text;
 }
 
@@ -192,20 +205,18 @@ child:selected .item-quick-activation {
    ============================================ */
 
 .keybinds {
-  padding-top: 10px;
+  padding: 10px;
+  background-color: @keybind_hints_bg;
   border-top: 1px solid @border;
   font-size: 12px;
   color: @text;
 }
 
-.global-keybinds {
-}
+.global-keybinds {}
 
-.item-keybinds {
-}
+.item-keybinds {}
 
-.keybind {
-}
+.keybind {}
 
 .keybind-button {
   opacity: 0.5;
