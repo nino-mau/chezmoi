@@ -6,16 +6,25 @@ windows:
       - shell_command:
           - cd ./frontend && nvim .
 
+  - window_name: frontend-cmd
+    panes:
+      - shell_command:
+          - cd frontend
+
   - window_name: backend
     panes:
       - shell_command:
           - cd ./backend && svenv && nvim .
 
-  - window_name: cmd
+  - window_name: backend-cmd
     panes:
       - shell_command:
-          - docker compose down && docker compose up -d --build
+          - cd ./backend && svenv
 
-  - window_name: cmd2
+  - window_name: cmd
     panes:
-      - cd ./backend && svenv
+      - docker compose down && docker compose up -d --build
+
+  - window_name: opencode
+    panes:
+      - opencode --continue
