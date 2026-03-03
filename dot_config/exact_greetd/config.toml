@@ -2,5 +2,5 @@
 vt = 1
 
 [default_session]
-command = "start-hyprland -- --config /etc/greetd/hyprland-greeter-config.conf"
+command = "start-hyprland -- --config /etc/greetd/hyprland-greeter-config.conf >>/var/log/start-hyprland.log 2>&1"
 user = "greeter"
