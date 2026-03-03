@@ -1,0 +1,304 @@
+input {
+    keyboard {
+        xkb {
+            layout "fr"
+            variant "mac"
+        }
+        numlock
+    }
+    focus-follows-mouse
+    touchpad {
+        tap
+    }
+    mouse {
+        accel-speed 0.0
+    }
+}
+output "DP-1" {
+    position x=0 y=0
+    focus-at-startup
+}
+output "DP-2" {
+    position x=2560 y=0
+}
+output "eDP-1" {
+    scale 1
+    position x=0 y=0
+}
+output "HDMI-A-2" {
+    scale 1
+    position x=0 y=1920
+    focus-at-startup
+}
+workspace "ws1" {
+    open-on-output "DP-1"
+}
+workspace "ws2" {
+    open-on-output "DP-1"
+}
+workspace "ws3" {
+    open-on-output "DP-2"
+}
+workspace "ws4" {
+    open-on-output "DP-1"
+}
+workspace "ws5" {
+    open-on-output "DP-1"
+}
+layout {
+    gaps 12
+    default-column-width {
+        proportion 0.7
+    }
+    focus-ring {
+        width 1
+        active-color "#7aa2f7"
+        inactive-color "#414868"
+    }
+    border {
+        off
+    }
+    shadow {
+        on
+        softness 25
+        spread 5
+        color "#1a1b2699"
+    }
+}
+spawn-at-startup "mako"
+spawn-at-startup "waybar"
+spawn-at-startup "swww-daemon"
+spawn-at-startup "walker" "--gapplication-service"
+spawn-at-startup "elephant"
+spawn-at-startup "ghostty"
+spawn-at-startup "ghostty" "-e" "opencode"
+spawn-at-startup "ghostty" "-e" "btop"
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+animations {
+    workspace-switch {
+        spring damping-ratio=1.0 stiffness=1300 epsilon=0.01
+    }
+}
+window-rule {
+    match app-id="zen"
+    open-on-workspace "ws2"
+}
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+}
+window-rule {
+    match app-id="^(steam|Steam|steam_app_.*|net\\.lutris\\.Lutris)$"
+    open-on-workspace "10"
+    open-fullscreen true
+}
+window-rule {
+    match app-id="obsidian"
+    open-on-workspace "9"
+}
+window-rule {
+    match app-id="^org\\.gnome\\.Nautilus$"
+    opacity 0.9
+}
+window-rule {
+    match app-id="^(org\\.gnome\\..*)$"
+    opacity 0.9
+}
+binds {
+    Super+C {
+        close-window
+    }
+    Super+O {
+        toggle-overview
+    }
+    Super+Q {
+        spawn "ghostty"
+    }
+    Super+E {
+        spawn "nautilus"
+    }
+    Super+B {
+        spawn "zen-browser"
+    }
+    Super+Space {
+        spawn "nc" "-U" "/run/user/1000/walker/walker.sock"
+    }
+    Super+Equal {
+        spawn "walker" "--provider" "clipboard"
+    }
+    Super+dead_grave {
+        spawn "walker" "--provider" "symbols"
+    }
+    Super+P {
+        spawn "walker" "--provider" "providerlist"
+    }
+    Super+A {
+        spawn "walker" "--provider" "menus:actions"
+    }
+    Super+dollar {
+        spawn "~/.local/bin/walker-theme-wallpapers"
+    }
+    Super+Shift+S {
+        spawn "~/.local/bin/screenshot-focused.sh"
+    }
+    Super+M {
+        spawn "hyprlock"
+    }
+    Super+V {
+        toggle-window-floating
+    }
+    Super+F {
+        fullscreen-window
+    }
+    Super+H {
+        focus-column-left
+    }
+    Super+L {
+        focus-column-right
+    }
+    Super+K {
+        focus-window-up
+    }
+    Super+J {
+        focus-window-down
+    }
+    Super+Shift+H {
+        move-column-left
+    }
+    Super+Shift+L {
+        move-column-right
+    }
+    Super+Shift+K {
+        move-window-up
+    }
+    Super+Shift+J {
+        move-window-down
+    }
+    Super+Ctrl+H {
+        move-column-left
+    }
+    Super+Ctrl+L {
+        move-column-right
+    }
+    Super+Shift+Up {
+        set-column-width "+10%"
+    }
+    Super+Shift+Down {
+        set-column-width "-10%"
+    }
+    Super+Shift+F {
+        maximize-column
+    }
+    Super+Shift+P {
+        consume-window-into-column
+    }
+    Super+ampersand {
+        focus-workspace "ws1"
+    }
+    Super+eacute {
+        focus-workspace "ws2"
+    }
+    Super+quotedbl {
+        focus-workspace "ws3"
+    }
+    Super+apostrophe {
+        focus-workspace "ws4"
+    }
+    Super+parenleft {
+        focus-workspace "ws5"
+    }
+    Super+minus {
+        focus-workspace 6
+    }
+    Super+egrave {
+        focus-workspace 7
+    }
+    Super+underscore {
+        focus-workspace 8
+    }
+    Super+ccedilla {
+        focus-workspace 9
+    }
+    Super+agrave {
+        focus-workspace 10
+    }
+    Super+Shift+ampersand {
+        move-column-to-workspace "ws1"
+    }
+    Super+Shift+eacute {
+        move-column-to-workspace "ws2"
+    }
+    Super+Shift+quotedbl {
+        move-column-to-workspace "ws3"
+    }
+    Super+Shift+apostrophe {
+        move-column-to-workspace "ws4"
+    }
+    Super+Shift+parenleft {
+        move-column-to-workspace "ws5"
+    }
+    Super+Shift+minus {
+        move-column-to-workspace 6
+    }
+    Super+Shift+egrave {
+        move-column-to-workspace 7
+    }
+    Super+Shift+underscore {
+        move-column-to-workspace 8
+    }
+    Super+Shift+ccedilla {
+        move-column-to-workspace 9
+    }
+    Super+Shift+agrave {
+        move-column-to-workspace 10
+    }
+    Super+WheelScrollDown cooldown-ms=150 {
+        focus-workspace-down
+    }
+    Super+WheelScrollUp cooldown-ms=150 {
+        focus-workspace-up
+    }
+    Super+Alt+L {
+        focus-workspace-down
+    }
+    Super+Alt+H {
+        focus-workspace-up
+    }
+    XF86AudioRaiseVolume allow-when-locked=true {
+        spawn-sh "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+    }
+    XF86AudioLowerVolume allow-when-locked=true {
+        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+    }
+    XF86AudioMute allow-when-locked=true {
+        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    }
+    XF86AudioMicMute allow-when-locked=true {
+        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+    }
+    XF86MonBrightnessUp allow-when-locked=true {
+        spawn-sh "brightnessctl -e4 -n2 set 5%+"
+    }
+    XF86MonBrightnessDown allow-when-locked=true {
+        spawn-sh "brightnessctl -e4 -n2 set 5%-"
+    }
+    XF86AudioNext allow-when-locked=true {
+        spawn-sh "playerctl next"
+    }
+    XF86AudioPause allow-when-locked=true {
+        spawn-sh "playerctl play-pause"
+    }
+    XF86AudioPlay allow-when-locked=true {
+        spawn-sh "playerctl play-pause"
+    }
+    XF86AudioPrev allow-when-locked=true {
+        spawn-sh "playerctl previous"
+    }
+    Mod5+L {
+        spawn-sh "wtype '|'"
+    }
+    Mod5+at {
+        spawn-sh "wtype '~'"
+    }
+}
+
