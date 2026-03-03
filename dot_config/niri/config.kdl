@@ -87,6 +87,9 @@ window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
     draw-border-with-background false
+    background-effect {
+        blur true
+    }
 }
 window-rule {
     match app-id="^(steam|Steam|steam_app_.*|net\\.lutris\\.Lutris)$"
