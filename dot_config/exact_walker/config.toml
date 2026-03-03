@@ -26,7 +26,9 @@ anchor_right = true
 "symbols" = 3
 
 [placeholders]
-"default" = { input = "Search", list = "No Results" } # placeholders for input and empty list, key is the providers name, so f.e. "desktopapplications" or "menus:other"
+"default" = { input = "Search...", list = "No Results" } # placeholders for input and empty list, key is the providers name, so f.e. "desktopapplications" or "menus:other"
+"menus:actions" = { input = "Search action...", list = "No Actions" } # placeholders for input and empty list, key is the providers name, so f.e. "desktopapplications" or "menus:other"
+"menus:iconify" = { input = "Search icon...", list = "No icons yet" } # placeholders for input and empty list, key is the providers name, so f.e. "desktopapplications" or "menus:other"
 
 [keybinds]
 close = ["Escape"]
