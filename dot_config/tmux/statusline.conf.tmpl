@@ -58,6 +58,7 @@ setw -g pane-border-lines single
 # window content (icon)
 
 set -g @term_icon ""
+set -g @paru_icon "󱑢"
 set -g @nvim_icon ""
 set -g @git_icon ""
 set -g @btop_icon "󰄦"
@@ -79,6 +80,8 @@ set -g allow-rename off
 set -g window-status-format '\
 #{?#{==:#{pane_current_command},zsh}, #{@term_icon} ,\
 #{?#{==:#{pane_current_command},fish}, #{@term_icon} ,\
+#{?#{==:#{pane_current_command},paru}, #{@paru_icon} ,\
+#{?#{==:#{pane_current_command},pacman}, #{@paru_icon} ,\
 #{?#{==:#{pane_current_command},nvim}, #{@nvim_icon} ,\
 #{?#{==:#{pane_current_command},git}, #{@git_icon} ,\
 #{?#{==:#{pane_current_command},lazygit}, #{@git_icon} ,\
@@ -95,10 +98,12 @@ set -g window-status-format '\
 #{?#{==:#{pane_current_command},fzf}, #{@fzf_icon} ,\
 #{?#{==:#{pane_current_command},lua}, #{@lua_icon} ,\
 #{?#{==:#{pane_current_command},opencode}, #{@opencode_icon} ,\
- #{@default_icon} }}}}}}}}}}}}}}}}}}'
+ #{@default_icon} }}}}}}}}}}}}}}}}}}}}'
 set -g window-status-current-format '\
 #{?#{==:#{pane_current_command},zsh}, #{@term_icon} ,\
 #{?#{==:#{pane_current_command},fish}, #{@term_icon} ,\
+#{?#{==:#{pane_current_command},paru}, #{@paru_icon} ,\
+#{?#{==:#{pane_current_command},pacman}, #{@paru_icon} ,\
 #{?#{==:#{pane_current_command},nvim}, #{@nvim_icon} ,\
 #{?#{==:#{pane_current_command},git}, #{@git_icon} ,\
 #{?#{==:#{pane_current_command},lazygit}, #{@git_icon} ,\
@@ -115,7 +120,7 @@ set -g window-status-current-format '\
 #{?#{==:#{pane_current_command},fzf}, #{@fzf_icon} ,\
 #{?#{==:#{pane_current_command},lua}, #{@lua_icon} ,\
 #{?#{==:#{pane_current_command},opencode}, #{@opencode_icon} ,\
- #{@default_icon} }}}}}}}}}}}}}}}}}}'
+ #{@default_icon} }}}}}}}}}}}}}}}}}}}}'
  
 # window style
 set -g window-status-style "bg=default,fg=#{@thm_surface_2}"
