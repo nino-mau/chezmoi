@@ -1,20 +1,14 @@
 {
   "position": "top",
-  "margin-top": 5,
-  "modules-left": [
-    "custom/launcher",
-    "clock",
-    "custom/pacman",
-    "niri/submap",
-    "custom/media"
-  ],
+  "margin-top": 18,
   "modules-center": [
-    "niri/workspaces"
-  ],
-  "modules-right": [
+    "tray",
+    "clock",
+    "custom/media",
+    "hyprland/workspaces",
     "pulseaudio",
     "network",
-    "tray"
+    "battery"
   ],
   "hyprland/submap": {
     "format": "{}",
@@ -23,13 +17,18 @@
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "󰓓",
-      "4": "󰑊",
-      "5": "󰓇",
-      "default": "",
-      "urgent": ""
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+      "default": "",
+      "urgent": ""
     },
     "persistent-workspaces": {
       "*": 5
@@ -39,25 +38,24 @@
     "on-scroll-up": "hyprctl dispatch workspace e-1"
   },
   "custom/weather": {
-    "exec": "${HOME}/.config/waybar/scripts/get-weather.sh Bangalore+India",
+    "exec": "~/.config/waybar/scripts/get-weather.sh 2>/dev/null",
     "return-type": "json",
-    "format": "{}",
-    "tooltip": true,
-    "interval": 3600
+    "interval": 1800,
+    "format": "{}"
   },
   "custom/notification": {
     "tooltip": true,
-    "tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
+    "tooltip-format": "Left Click: Launch Overwatch\nRight Click: D",
     "format": "{icon}",
     "format-icons": {
-      "notification": "",
-      "none": "",
-      "dnd-notification": "",
-      "dnd-none": "",
-      "inhibited-notification": "",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "",
-      "dnd-inhibited-none": ""
+      "notification": "",
+      "none": "",
+      "dnd-notification": "",
+      "dnd-none": "",
+      "inhibited-notification": "",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "",
+      "dnd-inhibited-none": ""
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
@@ -67,9 +65,17 @@
     "escape": true
   },
   "custom/launcher": {
-    "format": "",
-    "on-click": "swaync-client -t",
+    "format": "",
+    "on-click": "bash $HOME/.config/waybar/scripts/app-launcher.sh",
     "tooltip-format": "Launch your favorite apps"
+  },
+  "custom/pacman": {
+    "format": " {}",
+    "interval": "once",
+    "exec": "checkupdates | wc -l",
+    "on-click": "kitty --hold paru -Syu",
+    "signal": 8,
+    "tooltip-format": "{} updates available"
   },
   "custom/media": {
     "format": "{}",
@@ -78,113 +84,75 @@
     "max-length": 40,
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl stop",
-    "smooth-scrolling-threshold": 1, // This value was tested using a trackpad, it should be lowered if using a mouse.
+    "smooth-scrolling-threshold": 1,
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous",
-    "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" // Script in resources/custom_modules folder
-  },
-  "custom/pacman": {
-    "format": "󰅢  {}",
-    "interval": "once",
-    "exec": "checkupdates | wc -l",
-    "on-click": "kitty --hold yay -Syu",
-    "signal": 8,
-    "tooltip-format": "{} updates available"
+    "exec": "$HOME/.config/waybar/scripts/mediaplayer.py"
   },
   "custom/home-folder": {
-    "format": "󱧶  {}",
+    "format": " ",
     "interval": "once",
-    "exec": "ls -l | wc -l",
-    "on-click": "kitty --hold ls -l",
-    "tooltip-format": "{} total files and folders in /"
+    "exec": "echo",
+    "on-click": "xdg-open $HOME",
+    "tooltip": true,
+    "tooltip-format": "Open home folder"
   },
   "battery": {
-    "format": "{icon}   {capacity}%",
-    "format-charging": "󰂄  {capacity}%",
+    "format": "{icon}",
+    "format-charging": " {capacity} %",
     "format-icons": [
-      "󰁺",
-      "󰁻",
-      "󰁼",
-      "󰁽",
-      "󰁾",
-      "󰁿",
-      "󰂀",
-      "󰂁",
-      "󰂂",
-      "󰁹"
+      "",
+      "",
+      ""
     ],
     "tooltip-format": "Battery is at {capacity}%"
   },
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "format-bluetooth": "󰂱 {volume}%",
-    "format-muted": "󰖁",
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "format-muted": "{icon}",
     "scroll-step": 1,
     "on-click": "pavucontrol",
     "ignored-sinks": [
-      "Easy Effects Sink"
+      "Easy effect sink"
     ],
     "format-icons": {
       "headphone": "",
-      "hands-free": "",
-      "headset": "󰋎",
+      "hands-free": "",
+      "headset": "",
       "phone": "",
       "portable": "",
       "car": "",
       "default": [
-        "󰖀",
-        "󰕾"
+        "",
+        "",
+        ""
       ]
-    },
-    "tooltip-format": "Volume: {volume}%"
+    }
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": " {volume}%",
+    "format-source-muted": " Muted",
+    "on-click": "pamixer --default-source -t",
+    "on-scroll-up": "pamixer --default-source -i 5",
+    "on-scroll-down": "pamixer --default-source -d 5",
+    "scroll-step": 5
   },
   "network": {
-    "interface": "wlan0",
-    "format": "{ifname}",
-    "format-wifi": "{icon}  {essid}",
-    "format-ethernet": "󰈀  {ipaddr}/{cidr}",
-    "format-disconnected": "󰤭  Disconnected",
-    "max-length": 50,
-    "format-icons": [
-      "󰤯",
-      "󰤟",
-      "󰤢",
-      "󰤥",
-      "󰤨"
-    ],
-    "tooltip-format": "Connected to {essid}"
+    "format-wifi": "  {signalStrength}%",
+    "format-ethernet": "{ipaddr}/{cidr}",
+    "tooltip-format": "{essid} - {ifname} via {gwaddr}",
+    "format-linked": "{ifname} (No IP)",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}:{essid} {ipaddr}/{cidr}"
   },
-  "clock": {
-    "format": "󰥔  {:%I:%M %p}",
-    "interval": 1,
-    "tooltip-format": "<tt>{calendar}</tt>",
-    "calendar": {
-      "format": {
-        "today": "<span color='#ff0000'><b>{}</b></span>"
-      }
-    },
-    "actions": {
-      "on-click-right": "shift_up",
-      "on-click": "shift_down"
-    }
-  },
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power mode: {profile}",
-    "tooltip": true,
-    "format-icons": {
-      "default": "",
-      "performance": "󰠠",
-      "balanced": "󰚀",
-      "power-saver": "󰌪"
-    }
-  },
-  "tray": {
-    "icon-size": 21,
-    "spacing": 10,
-    "icons": {
-      "blueman": "bluetooth",
-      "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-    }
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": "", // an empty format will hide the module
+    "format-connected": " {num_connections}",
+    "tooltip-format": "{device_alias}",
+    "tooltip-format-connected": " {device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}"
   }
 }
