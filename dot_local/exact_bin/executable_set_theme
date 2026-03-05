@@ -39,6 +39,13 @@ ln -sf "$HOME/.config/colorschemes/hyprpanel/$THEME.json" "$HOME/.config/hyprpan
 hyprpanel useTheme ~/.config/hyprpanel/theme.json
 
 # =======================
+# WALKER
+# =======================
+
+# Update waybar colors
+ln -sf "$HOME/.config/colorschemes/waybar/$THEME.css" "$HOME/.config/waybar/colors.css"
+
+# =======================
 # STARSHIP
 # =======================
 

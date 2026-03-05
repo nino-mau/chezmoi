@@ -11,10 +11,10 @@
 }
 
 .modules-center {
-  background: @bg1;
+  background: @bg0;
   padding: 6px 12px;
   border-radius: 28px;
-  border: 1px solid @bg3;
+  border: 1px solid @bg0;
   box-shadow: 0px 4px 12px alpha(@bg0, 0.45);
 }
 
@@ -45,13 +45,13 @@ tooltip label {
   padding: 0 6px;
   margin: 0 2px;
   border-radius: 16px;
-  color: @grey0;
+  color: @bg4;
   background: transparent;
   transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-  background: linear-gradient(135deg, @primary 0%, @lavender 100%);
+  background: linear-gradient(135deg, @primary 0%, @purple 100%);
   color: @bg0;
   min-width: 40px;
   transition: all 0.3s ease-in-out;
@@ -86,6 +86,10 @@ tooltip label {
   border-radius: 0;
   border: none;
   box-shadow: none;
+}
+
+#custom-media {
+  color: @aqua;
 }
 
 #submap {

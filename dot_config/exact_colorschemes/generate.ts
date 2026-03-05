@@ -449,7 +449,7 @@ progress-color=over ${p.bg2}
 `;
 }
 
-function generateWalkerColorsCss(palette: Palette): string {
+function generateColorsCss(palette: Palette): string {
 	const p = palette;
 	return `@define-color bg0 ${p.bg0};
 @define-color bg1 ${p.bg1};
@@ -574,11 +574,13 @@ function main() {
 	const themesDir = import.meta.dir;
 	const fastfetchDir = `${themesDir}/fastfetch`;
 	const walkerDir = `${themesDir}/walker`;
+	const waybarDir = `${themesDir}/waybar`;
 	const hyprDir = `${themesDir}/hypr`;
 	const hyprpanelDir = `${themesDir}/hyprpanel`;
 	const makoDir = `${themesDir}/mako`;
 	mkdirSync(fastfetchDir, { recursive: true });
 	mkdirSync(walkerDir, { recursive: true });
+	mkdirSync(waybarDir, { recursive: true });
 	mkdirSync(hyprDir, { recursive: true });
 	mkdirSync(hyprpanelDir, { recursive: true });
 	mkdirSync(makoDir, { recursive: true });
@@ -603,8 +605,12 @@ function main() {
 		writeFileSync(`${fastfetchDir}/${name}.jsonc`, fastfetchConfig);
 		console.log(`Generated fastfetch/${name}.jsonc`);
 
-		const walkerColorsCss = generateWalkerColorsCss(palette as Palette);
+		const walkerColorsCss = generateColorsCss(palette as Palette);
 		writeFileSync(`${walkerDir}/${name}.css`, walkerColorsCss);
+		console.log(`Generated walker/${name}.css`);
+
+		const waybarColorsCss = generateColorsCss(palette as Palette);
+		writeFileSync(`${waybarDir}/${name}.css`, waybarColorsCss);
 		console.log(`Generated walker/${name}.css`);
 	}
 

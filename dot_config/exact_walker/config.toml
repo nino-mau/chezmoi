@@ -64,6 +64,11 @@ runner = " "
 prefix = "$"
 provider = "menus:wallpapers"
 
+# Custom translate menu 
+[[providers.prefixes]]
+prefix = "tr:"
+provider = "menus:translate"
+
 # Custom nerdfonts menu 
 [[providers.prefixes]]
 prefix = "nf:"
@@ -76,7 +81,7 @@ provider = "menus:commit-message"
 
 # Custom iconify menu 
 [[providers.prefixes]]
-prefix = "?"
+prefix = "ic:"
 provider = "menus:iconify"
 
 [[providers.prefixes]]

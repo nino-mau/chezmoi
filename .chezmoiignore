@@ -2,6 +2,7 @@ venv/
 scrapJJKTranscript/
 **/node_modules/**
 **/exact_node_modules/**
+.env
 
 .config/fish/fish_variables
 
@@ -11,6 +12,7 @@ scrapJJKTranscript/
 .config/gtk-4.0/gtk.css
 .config/gtk-3.0/gtk.css
 .config/walker/themes/colors.css
+.config/elephant/menus/.env
 
 {{- if eq .chezmoi.os "darwin" }}
 .config/hypr
