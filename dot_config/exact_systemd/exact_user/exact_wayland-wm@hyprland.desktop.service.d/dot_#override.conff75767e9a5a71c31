@@ -1,0 +1,42 @@
+### Editing /home/nino/.config/systemd/user/wayland-wm@hyprland.desktop.service.d/override.conf
+### Anything between here and the comment below will become the contents of the drop-in file
+
+[Service]
+OOMScoreAdjust=-1000
+
+### Edits below this comment will be discarded
+
+
+### /usr/lib/systemd/user/wayland-wm@.service
+# [Unit]
+# Description=Main service for %I
+# Documentation=man:uwsm(1)
+# Requires=wayland-session-pre@%i.target
+# BindsTo=wayland-session@%i.target
+# Before=wayland-session@%i.target graphical-session.target
+# PropagatesStopTo=wayland-session@%i.target graphical-session.target
+# After=wayland-session-pre@%i.target graphical-session-pre.target
+# OnSuccess=wayland-session-shutdown.target
+# OnSuccessJobMode=replace-irreversibly
+# OnFailure=wayland-session-shutdown.target
+# OnFailureJobMode=replace-irreversibly
+# Conflicts=wayland-session-shutdown.target
+# Before=wayland-session-shutdown.target
+# CollectMode=inactive-or-failed
+# [Service]
+# # awaits for ready state notification from compositor's child
+# # should be issued by 'uwsm finalize'
+# Type=notify
+# NotifyAccess=all
+# ExecStart=/usr/bin/uwsm aux exec -- %I
+# Restart=no
+# TimeoutStartSec=30
+# TimeoutStopSec=10
+# SyslogIdentifier=uwsm_%I
+# Slice=session.slice
+
+### /run/user/1000/systemd/user/wayland-wm@hyprland.desktop.service.d/50_custom.conf
+# # injected by uwsm, do not edit
+# [Unit]
+# X-UWSMMark=hyprland.desktop
+# Description=Main service for Hyprland, An intelligent dynamic tiling Wayland compositor
