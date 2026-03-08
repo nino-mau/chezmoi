@@ -30,19 +30,16 @@ output "HDMI-A-2" {
     position x=0 y=1920
     focus-at-startup
 }
-workspace "ws1" {
+workspace "w1" {
     open-on-output "DP-1"
 }
-workspace "ws2" {
+workspace "w2" {
     open-on-output "DP-1"
 }
-workspace "ws3" {
-    open-on-output "DP-2"
-}
-workspace "ws4" {
+workspace "w3" {
     open-on-output "DP-1"
 }
-workspace "ws5" {
+workspace "w4" {
     open-on-output "DP-1"
 }
 layout {
@@ -66,7 +63,7 @@ layout {
     }
 }
 spawn-at-startup "mako"
-spawn-at-startup "waybar"
+spawn-at-startup "waybar" "-c" "/home/nino/.config/waybar/config-niri.jsonc"
 spawn-at-startup "swww-daemon"
 spawn-at-startup "walker" "--gapplication-service"
 spawn-at-startup "elephant"
@@ -80,10 +77,6 @@ animations {
     }
 }
 window-rule {
-    match app-id="zen"
-    open-on-workspace "ws2"
-}
-window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
     draw-border-with-background false
@@ -92,13 +85,9 @@ window-rule {
     }
 }
 window-rule {
-    match app-id="^(steam|Steam|steam_app_.*|net\\.lutris\\.Lutris)$"
-    open-on-workspace "10"
-    open-fullscreen true
-}
-window-rule {
-    match app-id="obsidian"
-    open-on-workspace "9"
+    match app-id="zen"
+    open-on-workspace "w2"
+    open-maximized-to-edges false
 }
 window-rule {
     match app-id="^org\\.gnome\\.Nautilus$"
@@ -151,6 +140,9 @@ binds {
     Super+V {
         toggle-window-floating
     }
+    Super+S {
+        toggle-column-tabbed-display
+    }
     Super+F {
         fullscreen-window
     }
@@ -167,10 +159,10 @@ binds {
         focus-window-down
     }
     Super+Shift+H {
-        move-column-left
+        consume-or-expel-window-left
     }
     Super+Shift+L {
-        move-column-right
+        consume-or-expel-window-right
     }
     Super+Shift+K {
         move-window-up
@@ -197,64 +189,34 @@ binds {
         consume-window-into-column
     }
     Super+ampersand {
-        focus-workspace "ws1"
+        focus-workspace "w1"
     }
     Super+eacute {
-        focus-workspace "ws2"
+        focus-workspace "w2"
     }
     Super+quotedbl {
-        focus-workspace "ws3"
+        focus-workspace "w3"
     }
     Super+apostrophe {
-        focus-workspace "ws4"
+        focus-workspace "w4"
     }
     Super+parenleft {
-        focus-workspace "ws5"
-    }
-    Super+minus {
-        focus-workspace 6
-    }
-    Super+egrave {
-        focus-workspace 7
-    }
-    Super+underscore {
-        focus-workspace 8
-    }
-    Super+ccedilla {
-        focus-workspace 9
-    }
-    Super+agrave {
-        focus-workspace 10
+        focus-workspace 5
     }
     Super+Shift+ampersand {
-        move-column-to-workspace "ws1"
+        move-column-to-workspace "w1"
     }
     Super+Shift+eacute {
-        move-column-to-workspace "ws2"
+        move-column-to-workspace "w2"
     }
     Super+Shift+quotedbl {
-        move-column-to-workspace "ws3"
+        move-column-to-workspace "w3"
     }
     Super+Shift+apostrophe {
-        move-column-to-workspace "ws4"
+        move-column-to-workspace "w4"
     }
     Super+Shift+parenleft {
-        move-column-to-workspace "ws5"
-    }
-    Super+Shift+minus {
-        move-column-to-workspace 6
-    }
-    Super+Shift+egrave {
-        move-column-to-workspace 7
-    }
-    Super+Shift+underscore {
-        move-column-to-workspace 8
-    }
-    Super+Shift+ccedilla {
-        move-column-to-workspace 9
-    }
-    Super+Shift+agrave {
-        move-column-to-workspace 10
+        move-column-to-workspace 5
     }
     Super+WheelScrollDown cooldown-ms=150 {
         focus-workspace-down

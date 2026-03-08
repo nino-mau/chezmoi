@@ -1,7 +1,7 @@
 ---
 description: Write a commit message
 agent: chat
-model: openai/gpt-5.3-codex
+model: openai/gpt-5.4
 ---
 
 # Instructions

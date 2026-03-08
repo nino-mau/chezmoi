@@ -1,80 +1,63 @@
 {
-  "layer": "top",
   "position": "top",
-  "height": 34,
-  "margin-top": 12,
-  "margin-left": 12,
-  "margin-right": 12,
-
+  "margin-top": 5,
   "modules-left": [
     "custom/launcher",
-    "custom/home-folder",
+    "clock",
+    "custom/pacman",
+    "hyprland/submap",
     "custom/media"
   ],
   "modules-center": [
-    "hyprland/workspaces"
+    "niri/workspaces"
   ],
   "modules-right": [
-    "custom/notification",
-    "custom/pacman",
-    "network",
     "pulseaudio",
-    "battery",
-    "tray",
-    "clock"
+    "network",
+    "tray"
   ],
-
   "hyprland/submap": {
     "format": "{}",
     "tooltip": false
   },
-  "hyprland/workspaces": {
+  "niri/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "1": "1",
-      "2": "2",
-      "3": "3",
-      "4": "4",
-      "5": "5",
-      "default": ""
+      "1": "",
+      "2": "",
+      "3": "󰓓",
+      "4": "󰑊",
+      "5": "󰓇",
+      "default": "",
+      "urgent": ""
     },
-    "all-outputs": true,
     "persistent-workspaces": {
-      "*": [
-        1,
-        2,
-        3,
-        4,
-        5
-      ]
+      "*": 5
     },
-    "ignore-workspaces": [
-      "^([6-9]|10)$",
-      "special"
-    ],
     "on-click": "activate",
     "on-scroll-down": "hyprctl dispatch workspace e+1",
     "on-scroll-up": "hyprctl dispatch workspace e-1"
   },
-
-  "clock": {
-    "format": "{:%a %d %b  %H:%M}",
-    "tooltip-format": "{:%A, %d %B %Y | %H:%M:%S}"
+  "custom/weather": {
+    "exec": "${HOME}/.config/waybar/scripts/get-weather.sh Bangalore+India",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600
   },
-
   "custom/notification": {
     "tooltip": true,
-    "tooltip-format": "Left Click: Launch Overwatch\nRight Click: D",
+    "tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
     "format": "{icon}",
     "format-icons": {
-      "notification": "",
-      "none": "",
-      "dnd-notification": "",
-      "dnd-none": "",
-      "inhibited-notification": "",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "",
-      "dnd-inhibited-none": ""
+      "notification": "",
+      "none": "",
+      "dnd-notification": "",
+      "dnd-none": "",
+      "inhibited-notification": "",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "",
+      "dnd-inhibited-none": ""
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
@@ -84,75 +67,81 @@
     "escape": true
   },
   "custom/launcher": {
-    "format": "",
-    "on-click": "bash $HOME/.config/waybar/scripts/app-launcher.sh",
+    "format": "",
+    "on-click": "swaync-client -t",
     "tooltip-format": "Launch your favorite apps"
-  },
-  "custom/pacman": {
-    "format": " {}",
-    "interval": "once",
-    "exec": "checkupdates | wc -l",
-    "on-click": "kitty --hold paru -Syu",
-    "signal": 8,
-    "tooltip-format": "{} updates available"
   },
   "custom/media": {
     "format": "{}",
     "escape": true,
     "return-type": "json",
-    "max-length": 20,
+    "max-length": 40,
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl stop",
-    "smooth-scrolling-threshold": 1,
+    "smooth-scrolling-threshold": 1, // This value was tested using a trackpad, it should be lowered if using a mouse.
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous",
-    "exec": "$HOME/.config/waybar/scripts/mediaplayer.py"
+    "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" // Script in resources/custom_modules folder
+  },
+  "custom/pacman": {
+    "format": "󰅢  {}",
+    "interval": "once",
+    "exec": "checkupdates | wc -l",
+    "on-click": "kitty --hold yay -Syu",
+    "signal": 8,
+    "tooltip-format": "{} updates available"
   },
   "custom/home-folder": {
-    "format": " ",
+    "format": "󱧶  {}",
     "interval": "once",
-    "exec": "echo",
-    "on-click": "xdg-open $HOME",
-    "tooltip": true,
-    "tooltip-format": "Open home folder"
+    "exec": "ls -l | wc -l",
+    "on-click": "kitty --hold ls -l",
+    "tooltip-format": "{} total files and folders in /"
   },
   "battery": {
-    "format": "{icon}",
-    "format-charging": " {capacity} %",
+    "format": "{icon}   {capacity}%",
+    "format-charging": "󰂄  {capacity}%",
     "format-icons": [
-      "",
-      "",
-      ""
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
     ],
     "tooltip-format": "Battery is at {capacity}%"
   },
   "pulseaudio": {
-    "format": "{icon}",
-    "format-bluetooth": "{icon}",
-    "format-muted": "{icon}",
+    "format": "{icon}  {volume}%",
+    "format-bluetooth": "󰂱 {volume}%",
+    "format-muted": "󰖁",
     "scroll-step": 1,
     "on-click": "pavucontrol",
     "ignored-sinks": [
-      "Easy effect sink"
+      "Easy Effects Sink"
     ],
     "format-icons": {
       "headphone": "",
-      "hands-free": "",
-      "headset": "",
+      "hands-free": "",
+      "headset": "󰋎",
       "phone": "",
       "portable": "",
       "car": "",
       "default": [
-        "",
-        "",
-        ""
+        "󰖀",
+        "󰕾"
       ]
-    }
+    },
+    "tooltip-format": "Volume: {volume}%"
   },
   "network": {
     "interface": "wlan0",
     "format": "{ifname}",
-    "format-wifi": "{icon}",
+    "format-wifi": "{icon}  {essid}",
     "format-ethernet": "󰈀  {ipaddr}/{cidr}",
     "format-disconnected": "󰤭  Disconnected",
     "max-length": 50,
@@ -164,5 +153,38 @@
       "󰤨"
     ],
     "tooltip-format": "Connected to {essid}"
+  },
+  "clock": {
+    "format": "󰥔  {:%I:%M %p}",
+    "interval": 1,
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "format": {
+        "today": "<b>{}</b>"
+      }
+    },
+    "actions": {
+      "on-click-right": "shift_up",
+      "on-click": "shift_down"
+    }
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power mode: {profile}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "󰠠",
+      "balanced": "󰚀",
+      "power-saver": "󰌪"
+    }
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10,
+    "icons": {
+      "blueman": "bluetooth",
+      "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
+    }
   }
 }
