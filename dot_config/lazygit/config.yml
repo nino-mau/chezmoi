@@ -1,39 +1,41 @@
 gui:
   # Show nerd icons (notably for files in staged list)
-  showIcons: true
   mouseEvents: true
+  nerdFontsVersion: "3"
 
   # Color theme
   theme:
     activeBorderColor:
-      - '#89b4fa'
+      - blue
+      - "#89b4fa"
       - bold
     inactiveBorderColor:
-      - '#a6adc8'
+      - "#a6adc8"
     optionsTextColor:
-      - '#89b4fa'
+      - "#89b4fa"
     selectedLineBgColor:
-      - '#313244'
+      - "#313244"
     cherryPickedCommitBgColor:
-      - '#45475a'
+      - "#45475a"
     cherryPickedCommitFgColor:
-      - '#89b4fa'
+      - "#89b4fa"
     unstagedChangesColor:
-      - '#f38ba8'
+      - "#f38ba8"
     defaultFgColor:
-      - '#cdd6f4'
+      - "#cdd6f4"
     searchingActiveBorderColor:
-      - '#f9e2af'
+      - "#f9e2af"
 
   authorColors:
-    '*': '#b4befe'
+    "*": "#b4befe"
+
 git:
   # Parse markdown style emoji (:sparkle: :books: ...)
   parseEmoji: true
 
 os:
   # Preset editor when editing file
-  editPreset: 'nvim'
+  editPreset: "nvim"
 
 # Keybindings
 keybinding:
@@ -48,12 +50,12 @@ keybinding:
     nextItem: <down>
     prevItem-alt: k
     nextItem-alt: j
-    prevPage: ','
+    prevPage: ","
     nextPage: .
     scrollLeft: H
     scrollRight: L
     gotoTop: <
-    gotoBottom: '>'
+    gotoBottom: ">"
     gotoTop-alt: <home>
     gotoBottom-alt: <end>
     toggleRangeSelect: v
@@ -66,17 +68,17 @@ keybinding:
     nextBlock-alt2: <tab>
     prevBlock-alt2: <backtab>
     jumpToBlock:
-      - '1'
-      - '2'
-      - '3'
-      - '4'
-      - '5'
-    focusMainView: '0'
-    nextMatch: 'n'
-    prevMatch: 'N'
+      - "1"
+      - "2"
+      - "3"
+      - "4"
+      - "5"
+    focusMainView: "0"
+    nextMatch: "n"
+    prevMatch: "N"
     startSearch: /
     optionMenu: <disabled>
-    optionMenu-alt1: '?'
+    optionMenu-alt1: "?"
     select: <space>
     goInto: <enter>
     confirm: <enter>
@@ -85,7 +87,7 @@ keybinding:
     confirmInEditor: <a-enter>
     confirmInEditor-alt: <c-s>
     remove: d
-    new: 'n'
+    new: "n"
     edit: e
     openFile: o
     scrollUpMain: <pgup>
@@ -94,7 +96,7 @@ keybinding:
     scrollDownMain-alt1: J
     scrollUpMain-alt2: <c-u>
     scrollDownMain-alt2: <c-d>
-    executeShellCommand: ':'
+    executeShellCommand: ":"
     createRebaseOptionsMenu: m
 
     # 'Files' appended for legacy reasons
@@ -105,10 +107,10 @@ keybinding:
     refresh: R
     createPatchOptionsMenu: <c-p>
     nextTab: <c-l>
-    prevTab: '['
+    prevTab: "["
     nextScreenMode: +
     prevScreenMode: _
-    cyclePagers: '|'
+    cyclePagers: "|"
     undo: z
     redo: Z
     filteringMenu: <c-s>
@@ -117,10 +119,10 @@ keybinding:
     copyToClipboard: <c-o>
     openRecentRepos: <c-r>
     submitEditorText: <enter>
-    extrasMenu: '@'
+    extrasMenu: "@"
     toggleWhitespaceInDiffView: <c-w>
-    increaseContextInDiffView: '}'
-    decreaseContextInDiffView: '{'
+    increaseContextInDiffView: "}"
+    decreaseContextInDiffView: "{"
     increaseRenameSimilarityThreshold: )
     decreaseRenameSimilarityThreshold: (
     openDiffTool: <c-t>
@@ -142,11 +144,11 @@ keybinding:
     toggleStagedAll: a
     viewResetOptions: D
     fetch: f
-    toggleTreeView: '`'
+    toggleTreeView: "`"
     openMergeOptions: M
     openStatusFilter: <c-b>
-    copyFileInfoToClipboard: 'y'
-    collapseAll: '-'
+    copyFileInfoToClipboard: "y"
+    collapseAll: "-"
     expandAll: =
   branches:
     createPullRequest: o
@@ -154,11 +156,11 @@ keybinding:
     copyPullRequestURL: <c-y>
     checkoutBranchByName: c
     forceCheckoutBranch: F
-    checkoutPreviousBranch: '-'
+    checkoutPreviousBranch: "-"
     rebaseBranch: r
     renameBranch: R
     mergeIntoCurrentBranch: M
-    moveCommitsToNewBranch: 'N'
+    moveCommitsToNewBranch: "N"
     viewGitFlowOptions: i
     fastForward: f
     createTag: T
@@ -189,12 +191,12 @@ keybinding:
     tagCommit: T
     checkoutCommit: <space>
     resetCherryPick: <c-R>
-    copyCommitAttributeToClipboard: 'y'
+    copyCommitAttributeToClipboard: "y"
     openLogMenu: à
     openInBrowser: o
     viewBisectOptions: b
     startInteractiveRebase: i
-    selectCommitsOfCurrentBranch: '*'
+    selectCommitsOfCurrentBranch: "*"
   amendAttribute:
     resetAuthor: a
     setAuthor: A
