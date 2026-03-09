@@ -1,19 +1,21 @@
-
-# -- Keybinds
+# ====================
+# KEYBINDS
+# ====================
 
 keybind = ctrl+shift+s=close_surface
 keybind = performable:ctrl+n=goto_split:next
 keybind = performable:ctrl+c=copy_to_clipboard
 
-# toggle quick terminal
-# keybind = global:cmd+backquote=toggle_quick_terminal
-
-# -- Themes
+# ====================
+# THEMES
+# ====================
 
 # Load theme from another config file
 config-file = ./theme
 
-# -- Window
+# ====================
+# WINDOW
+# ====================
 
 # window-width = 140
 # window-height = 40
@@ -29,7 +31,9 @@ window-padding-balance = true
 # Controls closing confirmation
 confirm-close-surface = false
 
-# -- Font configuration
+# ====================
+# FONT
+# ====================
 
 # font-family = JetBrainsMono Nerd Font
 font-family = Maple Mono NF CN
@@ -48,18 +52,24 @@ font-size = 12
 # Line height equivalent
 # adjust-cell-height = 1
 
-# -- Cursor
+# ====================
+# CURSOR
+# ====================
 
 # Change cursor style
 # cursor-style = block
-cursor-color = #cad3f5
+# cursor-color = #cad3f5
 
-# -- Shell
+# ====================
+# SHELL
+# ====================
 
 shell-integration = fish
 shell-integration-features = no-cursor 
 
-# -- Backgroud
+# ====================
+# BACKGROUND
+# ====================
 
 background-opacity = 0.80
 {{ if eq .chezmoi.os "darwin" }}
@@ -68,7 +78,10 @@ background-blur-radius = 50
 # background-blur-radius = 50
 {{ end }}
 
-# -- Shaders
+# ====================
+# SHADERS
+# ====================
+
 # custom-shader = shaders/cursor_smear_fade.glsl
 # custom-shader = shaders/cursor_smear.glsl
 # custom-shader = shaders/cursor_blaze_no_trail.glsl
@@ -84,7 +97,9 @@ custom-shader = shaders/cursor_warp.glsl
 # custom-shader = shaders/cursor_blaze_notrail_custom.glsl
 {{ end }}
 
-# -- Graphics
+# ====================
+# GRAPHICS
+# ====================
 
 # Enable Kitty graphics protocol
 image-storage-limit = 320000000
