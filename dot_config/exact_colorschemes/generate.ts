@@ -570,15 +570,37 @@ function generateFastfetchConfig(palette: Palette): string {
 `;
 }
 
+function getGhosttyTheme(name: string): string {
+	switch (name) {
+		case "catppuccin":
+			return "Catppuccin Mocha";
+		case "rose-pine":
+			return "Rose Pine";
+		case "tokyo-night":
+		case "anime":
+			return "TokyoNight Moon";
+		default:
+			return name;
+	}
+}
+
+function generateGhosttyConfig(name: string, palette: Palette): string {
+	return `theme = ${getGhosttyTheme(name)}
+cursor-color = ${palette.primary}
+`;
+}
+
 function main() {
 	const themesDir = import.meta.dir;
 	const fastfetchDir = `${themesDir}/fastfetch`;
+	const ghosttyDir = `${themesDir}/ghostty`;
 	const walkerDir = `${themesDir}/walker`;
 	const waybarDir = `${themesDir}/waybar`;
 	const hyprDir = `${themesDir}/hypr`;
 	const hyprpanelDir = `${themesDir}/hyprpanel`;
 	const makoDir = `${themesDir}/mako`;
 	mkdirSync(fastfetchDir, { recursive: true });
+	mkdirSync(ghosttyDir, { recursive: true });
 	mkdirSync(walkerDir, { recursive: true });
 	mkdirSync(waybarDir, { recursive: true });
 	mkdirSync(hyprDir, { recursive: true });
@@ -604,6 +626,10 @@ function main() {
 		const fastfetchConfig = generateFastfetchConfig(palette as Palette);
 		writeFileSync(`${fastfetchDir}/${name}.jsonc`, fastfetchConfig);
 		console.log(`Generated fastfetch/${name}.jsonc`);
+
+		const ghosttyConfig = generateGhosttyConfig(name, palette as Palette);
+		writeFileSync(`${ghosttyDir}/${name}`, ghosttyConfig);
+		console.log(`Generated ghostty/${name}`);
 
 		const walkerColorsCss = generateColorsCss(palette as Palette);
 		writeFileSync(`${walkerDir}/${name}.css`, walkerColorsCss);
