@@ -183,3 +183,11 @@ on-mode-changed = []
     if.app-id = 'app.zen-browser.zen'
     run = 'move-node-to-workspace 2' 
 
+[[on-window-detected]]
+    if.app-id = 'com.vivaldi.Vivaldi'
+    run = 'move-node-to-workspace 2' 
+
+[[on-window-detected]]
+    if.app-id = 'md.Obsidian'
+    run = 'move-node-to-workspace 3' 
+
