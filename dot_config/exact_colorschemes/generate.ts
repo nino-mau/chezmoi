@@ -586,7 +586,7 @@ function getGhosttyTheme(name: string): string {
 
 function generateGhosttyConfig(name: string, palette: Palette): string {
 	return `theme = ${getGhosttyTheme(name)}
-cursor-color = ${palette.primary}
+cursor-color = ${palette.fg}
 `;
 }
 
