@@ -57,19 +57,7 @@ sed -i "s/^palette = .*/palette = '$THEME'/" "$HOME/.config/starship.toml"
 # =======================
 
 # Update ghostty theme config
-GHOSTTY_THEME="$THEME"
-case "$THEME" in
-"catppuccin")
-  GHOSTTY_THEME="Catppuccin Mocha"
-  ;;
-"rose-pine")
-  GHOSTTY_THEME="Rose Pine"
-  ;;
-"tokyo-night")
-  GHOSTTY_THEME="TokyoNight Moon"
-  ;;
-esac
-sed -i "s/^theme = .*/theme = ${GHOSTTY_THEME}/" "$HOME/.config/ghostty/theme"
+ln -sf "$HOME/.config/colorschemes/ghostty/$THEME" "$HOME/.config/ghostty/theme"
 
 # Reload ghostty
 ~/.local/bin/reload_ghostty
