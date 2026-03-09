@@ -18,7 +18,7 @@ config-file = ./theme
 # window-width = 140
 # window-height = 40
 
-window-decoration = none
+# window-decoration = none
 
 macos-titlebar-style = hidden
 
@@ -77,7 +77,7 @@ background-blur-radius = 50
 # custom-shader = shaders/yourshader2.glsl
 
 {{ if eq .chezmoi.os "darwin" }}
-custom-shader = shaders/cursor_warp.glsl
+# custom-shader = shaders/cursor_warp.glsl
 {{ else }}
 custom-shader = shaders/cursor_warp.glsl
 # custom-shader = shaders/cursor_smear_custom.glsl
@@ -88,3 +88,4 @@ custom-shader = shaders/cursor_warp.glsl
 
 # Enable Kitty graphics protocol
 image-storage-limit = 320000000
+
