@@ -4,31 +4,31 @@ icon = "action"
 
 [[entries]]
 text = "1. Themes"
-# icon = "color-fill-symbolic"
 icon = "/home/nino/.local/share/icons/material/color_palette.svg"
 actions = { "toggle" = "walker --provider menus:themes" }
 
 [[entries]]
 text = "2. Color Picker"
-# icon = "color-picker-symbolic"
 icon = "/home/nino/.local/share/icons/material/color_picker.svg"
 actions = { "toggle" = "sh -c 'sleep 0.15 && hyprpicker'" }
 
 [[entries]]
-text = "3. Logout"
-# icon = "system-shutdown-symbolic"
+text = "3. Extract Text"
+icon = "/home/nino/.local/share/icons/material/text_select_start.svg"
+actions = { "toggle" = "/home/nino/.local/bin/extract_text.sh" }
+
+[[entries]]
+text = "4. Logout"
 icon = "/home/nino/.local/share/icons/material/logout.svg"
 actions = { "toggle" = "fish -c logout" }
 
 [[entries]]
-text = "4. Reboot"
-# icon = "system-reboot-symbolic"
+text = "5. Reboot"
 icon = "/home/nino/.local/share/icons/material/reboot.svg"
 actions = { "toggle" = "systemctl reboot" }
 
 [[entries]]
-text = "5. Shutdown"
-# icon = "system-shutdown-symbolic"
+text = "6. Shutdown"
 icon = "/home/nino/.local/share/icons/material/power.svg"
 actions = { "toggle" = "systemctl poweroff" }
 
