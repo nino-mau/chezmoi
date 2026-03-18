@@ -1,0 +1,17 @@
+{{- if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+set -euo pipefail
+{{- if .packages.linux.paru }}
+packages=(
+{{- range .packages.linux.paru }}
+  {{ . | quote }}
+{{- end }}
+)
+if command -v paru >/dev/null 2>&1; then
+  paru -S --needed --noconfirm "${packages[@]}"
+else
+  echo "paru is not installed" >&2
+  exit 1
+fi
+{{- end }}
+{{- end }}

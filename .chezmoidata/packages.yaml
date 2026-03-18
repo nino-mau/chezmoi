@@ -1,0 +1,8 @@
+packages:
+  darwin:
+    brews:
+    - 'git'
+  linux:
+    paru:
+    - 'yazi'
+    - 'git'
