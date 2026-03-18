@@ -1,0 +1,12 @@
+{
+  "$schema": "https://biomejs.dev/schemas/latest/schema.json",
+  "extends": ["./base.json"],
+  "linter": {
+    "domains": {
+      "vue": "all"
+    }
+  },
+  "html": {
+    "experimentalFullSupportEnabled": true
+  }
+}

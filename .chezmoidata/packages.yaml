@@ -6,3 +6,4 @@ packages:
     paru:
     - 'yazi'
     - 'git'
+    - 'bun'
