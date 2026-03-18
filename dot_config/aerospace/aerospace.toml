@@ -5,10 +5,11 @@
 # Fallback value (if you omit the key): config-version = 1
 config-version = 2
 
+
 # You can use it to add commands that run after AeroSpace startup.
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
 after-startup-command = [
-  'exec-and-forget borders active_color=0xff89B4FA inactive_color=0xff313244 width=5.0'
+  'exec-and-forget borders active_color=0xff89B4FA inactive_color=0xff313244 width=2.0 order=above'
 ]
 
 # Start AeroSpace at login
@@ -120,7 +121,7 @@ on-mode-changed = []
     cmd-down = 'focus-monitor --wrap-around down'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
-    cmd-slash = 'layout tiles horizontal vertical'
+    # cmd-slash = 'layout tiles horizontal vertical'
     cmd-comma = 'layout accordion horizontal vertical'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#focus
@@ -137,7 +138,6 @@ on-mode-changed = []
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#resize
     cmd-minus = 'resize smart -50'
-    cmd-equal = 'resize smart +50'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
     cmd-1 = 'workspace 1'
@@ -190,6 +190,9 @@ on-mode-changed = []
     run = 'move-node-to-workspace 2' 
 
 [[on-window-detected]]
-    if.app-id = 'md.Obsidian'
+    if.app-id = 'md.obsidian'
     run = 'move-node-to-workspace 3' 
+
+[exec.env-vars]
+  PATH = '/usr/local/bin/:${PATH}'
 

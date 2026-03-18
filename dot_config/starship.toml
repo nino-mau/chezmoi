@@ -1,11 +1,14 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Move the directory to the second line
-format = '[ ](bold primary)$all'
+format = '''
+[ ](bold primary)$directory$git_branch
+$character
+'''
 
 palette = 'catppuccin'
 
-scan_timeout = 1000
+scan_timeout = 30
 
 [character]
 success_symbol = "[❯](bold fg)"
