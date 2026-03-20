@@ -599,6 +599,7 @@ function main() {
 	const hyprDir = `${themesDir}/hypr`;
 	const hyprpanelDir = `${themesDir}/hyprpanel`;
 	const makoDir = `${themesDir}/mako`;
+	const gtkDir = `${themesDir}/gtk`;
 	mkdirSync(fastfetchDir, { recursive: true });
 	mkdirSync(ghosttyDir, { recursive: true });
 	mkdirSync(walkerDir, { recursive: true });
@@ -606,6 +607,7 @@ function main() {
 	mkdirSync(hyprDir, { recursive: true });
 	mkdirSync(hyprpanelDir, { recursive: true });
 	mkdirSync(makoDir, { recursive: true });
+	mkdirSync(gtkDir, { recursive: true });
 
 	for (const [name, palette] of Object.entries(themes)) {
 		const hyprConf = generateHyprConf(name, palette as Palette);
@@ -638,6 +640,10 @@ function main() {
 		const waybarColorsCss = generateColorsCss(palette as Palette);
 		writeFileSync(`${waybarDir}/${name}.css`, waybarColorsCss);
 		console.log(`Generated walker/${name}.css`);
+
+		const gtkCss = generateColorsCss(palette as Palette);
+		writeFileSync(`${gtkDir}/${name}.css`, gtkCss);
+		console.log(`Generated gtk/${name}.css`);
 	}
 
 	console.log("\nAll themes generated successfully!");
