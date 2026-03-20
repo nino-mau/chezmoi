@@ -6,9 +6,9 @@ format = '''
 [ ](bold primary)$directory$git_branch
 $character
 '''
-{{- else if eq .chezmoi.os "linux" }}
-format = '[ (bold primary)$all'
-{{ else }}
+{{ else if eq .chezmoi.os "linux" }}
+format = '[ ](bold primary)$all'
+{{ end }}
 
 palette = 'catppuccin'
 
