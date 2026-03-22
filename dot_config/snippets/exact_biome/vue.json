@@ -2,6 +2,33 @@
   "$schema": "https://biomejs.dev/schemas/latest/schema.json",
   "extends": ["./base.json"],
   "linter": {
+    "rules": {
+      "nursery": {
+        "noVueArrowFuncInWatch": "on",
+        "noVueOptionsApi": "on",
+        "noVueRefAsOperand": "on",
+        "noVueVIfWithVFor": "on",
+        "useVueConsistentDefinePropsDeclaration": "on",
+        "useVueConsistentVBindStyle": "on",
+        "useVueConsistentVOnStyle": "on",
+        "useVueDefineMacrosOrder": "on",
+        "useVueHyphenatedAttributes": "on",
+        "useVueMultiWordComponentNames": "on",
+        "useVueVForKey": "on",
+        "useVueValidTemplateRoot": "on",
+        "useVueValidVBind": "on",
+        "useVueValidVCloak": "on",
+        "useVueValidVElse": "on",
+        "useVueValidVElseIf": "on",
+        "useVueValidVHtml": "on",
+        "useVueValidVIf": "on",
+        "useVueValidVOn": "on",
+        "useVueValidVOnce": "on",
+        "useVueValidVPre": "on",
+        "useVueValidVText": "on",
+        "useVueVapor": "off"
+      }
+    },
     "domains": {
       "vue": "all"
     }

@@ -7,12 +7,13 @@ windows:
           - cd ./frontend && nvim .
 
   - window_name: frontend-cmd
+    layout: main-vertical
+    options:
+      main-pane-width: 67%
     panes:
       - shell_command:
           - cd frontend
       - shell_command:
-          - tmux resize-pane -t "$TMUX_PANE" -y 20
-          - sleep 2
           - while not docker compose ps --status running --services 2>/dev/null | grep -qx frontend; sleep 1; end; docker compose logs -f frontend
 
   - window_name: backend
@@ -21,12 +22,13 @@ windows:
           - cd ./backend && svenv && nvim .
 
   - window_name: backend-cmd
+    layout: main-vertical
+    options:
+      main-pane-width: 67%
     panes:
       - shell_command:
           - cd ./backend && svenv
       - shell_command:
-          - tmux resize-pane -t "$TMUX_PANE" -y 20
-          - sleep 2
           - while true; while not docker compose ps --status running --services 2>/dev/null | grep -qx backend; sleep 1; end; docker compose logs -f --tail=50 backend; sleep 1; end
 
   - window_name: cmd
