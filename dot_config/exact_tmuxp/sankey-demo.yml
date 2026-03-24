@@ -1,0 +1,22 @@
+session_name: sankey-demo
+start_directory: ~/Documents/dev/projects/sankey-demo
+windows:
+  - window_name: editor
+    panes:
+      - shell_command:
+          - nvim .
+
+  - window_name: cmd
+    panes:
+      - shell_command:
+          - bun i
+
+  - window_name: opencode
+    panes:
+      - shell_command:
+          - opencode
+
+  - window_name: dev-server
+    panes:
+      - shell_command:
+          - bun run dev
