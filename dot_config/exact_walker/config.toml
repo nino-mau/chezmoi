@@ -121,6 +121,10 @@ prefix = "à"
 provider = "windows"
 
 [[providers.prefixes]]
+prefix = "uni:"
+provider = "unicode"
+
+[[providers.prefixes]]
 prefix = "!"
 provider = "wallpaper"
 
