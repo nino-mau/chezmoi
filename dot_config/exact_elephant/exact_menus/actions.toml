@@ -3,32 +3,37 @@ name_pretty = "Actions"
 icon = "action"
 
 [[entries]]
-text = "1. Themes"
+text = "Themes"
 icon = "/home/nino/.local/share/icons/material/color_palette.svg"
 actions = { "toggle" = "walker --provider menus:themes" }
 
 [[entries]]
-text = "2. Color Picker"
+text = "Color Picker"
 icon = "/home/nino/.local/share/icons/material/color_picker.svg"
 actions = { "toggle" = "sh -c 'sleep 0.15 && hyprpicker'" }
 
 [[entries]]
-text = "3. Extract Text"
+text = "Extract Text"
 icon = "/home/nino/.local/share/icons/material/text_select_start.svg"
 actions = { "toggle" = "/home/nino/.local/bin/extract_text.sh" }
 
 [[entries]]
-text = "4. Logout"
+text = "Logout"
 icon = "/home/nino/.local/share/icons/material/logout.svg"
 actions = { "toggle" = "fish -c logout" }
 
 [[entries]]
-text = "5. Reboot"
+text = "Reboot"
 icon = "/home/nino/.local/share/icons/material/reboot.svg"
 actions = { "toggle" = "systemctl reboot" }
 
 [[entries]]
-text = "6. Shutdown"
+text = "Shutdown"
 icon = "/home/nino/.local/share/icons/material/power.svg"
 actions = { "toggle" = "systemctl poweroff" }
+
+[[entries]]
+text = "Screenshot"
+icon = "/home/nino/.local/share/icons/material/screenshot_zone.svg"
+actions = { "toggle" = "/home/nino/.local/bin/screenshot-selection.sh" }
 

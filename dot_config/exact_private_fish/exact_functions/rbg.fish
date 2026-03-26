@@ -1,4 +1,4 @@
-function bgd --description "Run a command in background and disown it"
+function rbg --description "Run a command in background and disown it"
     if test (count $argv) -eq 0
         echo "usage: bgd COMMAND [ARGS...]" >&2
         return 1

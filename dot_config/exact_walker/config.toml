@@ -59,15 +59,17 @@ runner = " "
 [providers.sets] # define your own defaults/empty sets of providers
 [providers.max_results_provider] # define max results per provider in here
 
-# Custom wallpaper menu 
 [[providers.prefixes]]
 prefix = "$"
 provider = "menus:wallpapers"
 
-# Custom translate menu 
 [[providers.prefixes]]
 prefix = "tr:"
 provider = "menus:translate"
+
+[[providers.prefixes]]
+prefix = "a:"
+provider = "menus:actions"
 
 # Custom nerdfonts menu 
 [[providers.prefixes]]
@@ -76,7 +78,7 @@ provider = "menus:nerd-icons"
 
 # Custom commit messages menu 
 [[providers.prefixes]]
-prefix = "cm:"
+prefix = "c:"
 provider = "menus:commit-message"
 
 # Custom iconify menu 
