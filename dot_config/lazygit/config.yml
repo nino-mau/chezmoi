@@ -37,6 +37,13 @@ os:
   # Preset editor when editing file
   editPreset: "nvim"
 
+customCommands:
+  - key: "C"
+    context: "files"
+    description: "Generate commit message with Opencode"
+    command: "opencode run --command cmsg"
+    output: terminal
+
 # Keybindings
 keybinding:
   universal:
