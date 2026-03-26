@@ -9,7 +9,7 @@ echo "$THEME" >"$HOME/.config/current_theme"
 notify-send "Changing theme to $THEME..." ""
 
 # Switch to main theme wallpaper
-swww img --transition-type grow --transition-fps 60 --transition-step 255 "$HOME/.local/share/wallpapers/$THEME/$THEME.png"
+awww img --transition-type grow --transition-fps 60 --transition-step 255 "$HOME/.local/share/wallpapers/$THEME/$THEME.png"
 
 # =======================
 # MAKO

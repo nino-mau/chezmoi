@@ -64,7 +64,7 @@ layout {
 }
 spawn-at-startup "mako"
 spawn-at-startup "waybar" "-c" "/home/nino/.config/waybar/config-niri.jsonc"
-spawn-at-startup "swww-daemon"
+spawn-at-startup "awww-daemon"
 spawn-at-startup "walker" "--gapplication-service"
 spawn-at-startup "elephant"
 spawn-at-startup "ghostty"
