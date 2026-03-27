@@ -1,0 +1,6 @@
+skills:
+  bunx-skills:
+    - 'https://github.com/nuxt/ui --skill nuxt-ui'
+    - 'https://github.com/shadcn/ui --skill shadcn'
+    - 'https://github.com/fastapi/fastapi --skill fastapi'
+
