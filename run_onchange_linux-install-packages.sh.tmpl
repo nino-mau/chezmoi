@@ -1,5 +1,6 @@
 {{- if eq .chezmoi.os "linux" -}}
 #!/bin/bash
+# Triggered when: {{ include ".chezmoidata/packages.yaml" | sha256sum }}
 set -euo pipefail
 {{- if .packages.linux.paru }}
 packages=(

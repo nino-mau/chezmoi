@@ -1,0 +1,18 @@
+#!/bin/bash
+# Triggered when: {{ include ".chezmoidata/skills.yaml" | sha256sum }}
+set -euo pipefail
+{{ if .skills.bunx }}
+packages=(
+{{- range .skills.bunx }}
+  {{ .repo | quote }}
+  "--skill"
+  {{ .skill | quote }}
+{{- end }}
+)
+if command -v bunx >/dev/null 2>&1; then
+  bunx skills add "${packages[@]}"
+else
+  echo "bunx is not installed" >&2
+  exit 1
+fi
+{{- end }}
