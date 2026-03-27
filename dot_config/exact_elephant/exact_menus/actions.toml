@@ -10,7 +10,7 @@ actions = { "toggle" = "walker --provider menus:themes" }
 [[entries]]
 text = "Color Picker"
 icon = "/home/nino/.local/share/icons/material/color_picker.svg"
-actions = { "toggle" = "sh -c 'sleep 0.15 && hyprpicker'" }
+actions = { "toggle" = "sh -c 'sleep 0.15 && hyprpicker | wl-copy'" }
 
 [[entries]]
 text = "Extract Text"
