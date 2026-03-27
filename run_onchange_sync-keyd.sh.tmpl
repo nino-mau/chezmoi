@@ -10,6 +10,8 @@ echo "Syncing keyd configuration to /etc/keyd..."
 
 sudo cp ~/.config/keyd/default.conf /etc/keyd/
 
+sudo keyd reload
+
 echo "Keyd configuration synced successfully"
 {{ else -}}
 {{ end -}}
