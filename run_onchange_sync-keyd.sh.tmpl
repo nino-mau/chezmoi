@@ -1,0 +1,17 @@
+{{ if ne .chezmoi.os "darwin" -}}
+#!/bin/bash
+# Sync keyd configs from ~/.config/keyd to /etc/keyd
+# Triggered when: {{ include "dot_config/keyd/default.conf" | sha256sum }}
+
+{{ if eq .chezmoi.hostname "nino-desktop-cachy" -}}
+set -e
+
+echo "Syncing keyd configuration to /etc/keyd..."
+
+sudo cp ~/.config/keyd/default.conf /etc/keyd/
+
+echo "Keyd configuration synced successfully"
+{{ else -}}
+{{ end -}}
+
+{{ end -}}
