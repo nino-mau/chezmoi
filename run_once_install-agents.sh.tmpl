@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
-{{ if .skills.bunx-skills }}
+{{ if .skills.bunx }}
 packages=(
-{{- range .skills.bunx-skills }}
+{{- range .skills.bunx }}
   {{ . | quote }}
 {{- end }}
 )
