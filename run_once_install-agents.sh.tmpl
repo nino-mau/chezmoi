@@ -1,0 +1,16 @@
+#!/bin/bash
+set -euo pipefail
+{{- if .skills.bunx-skills }}
+packages=(
+{{- range .skills.bunx-skills }}
+  {{ . | quote }}
+{{- end }}
+)
+if command -v paru >/dev/null 2>&1; then
+  bunx skills add "${packages[@]}"
+else
+  echo "bun is not installed" >&2
+  exit 1
+fi
+{{- end }}
+{{- end }}
