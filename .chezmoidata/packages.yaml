@@ -7,3 +7,5 @@ packages:
     - 'yazi'
     - 'git'
     - 'bun'
+    - 'eza'
+    - 'fish'
