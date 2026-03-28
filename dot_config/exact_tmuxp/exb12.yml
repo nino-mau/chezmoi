@@ -1,30 +1,30 @@
 session_name: exb12
-start_directory: $HOME/Documents/dev/exb12
+start_directory: $HOME/Code/exb12
 windows:
   - window_name: cmd
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/exb12/client/your-extensions/widgets
+          - cd $HOME/Code/exb12/client/your-extensions/widgets
 
   - window_name: cmd
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/exb12/client/your-extensions/widgets
+          - cd $HOME/Code/exb12/client/your-extensions/widgets
 
   - window_name: cmd
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/projects
+          - cd $HOME/Code/projects
 
   - window_name: client
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/exb12/client
+          - cd $HOME/Code/exb12/client
           - fnm use 16
           - npm start
 
   - window_name: server
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/exb12/server
+          - cd $HOME/Code/exb12/server
           - npm start

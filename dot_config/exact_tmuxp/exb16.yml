@@ -9,7 +9,7 @@ windows:
   - window_name: cmd
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/exb16/client/your-extensions/widgets
+          - cd $HOME/Code/exb16/client/your-extensions/widgets
 
   - window_name: cmd
     panes:

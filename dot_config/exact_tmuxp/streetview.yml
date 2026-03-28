@@ -1,36 +1,36 @@
 session_name: streetview
-start_directory: $HOME/Documents/dev/exb
+start_directory: $HOME/Code/exb
 windows:
   - window_name: editor
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/projects/streetview-exb-widget/
+          - cd $HOME/Code/projects/streetview-exb-widget/
           - nvim .
 
   - window_name: repo
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/projects/streetview-exb-widget/
+          - cd $HOME/Code/projects/streetview-exb-widget/
 
   - window_name: exb
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/exb/client/
+          - cd $HOME/Code/exb/client/
 
   - window_name: client
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/exb/client
+          - cd $HOME/Code/exb/client
           - pnpm start
 
   - window_name: server
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/exb/server
+          - cd $HOME/Code/exb/server
           - pnpm start
 
   - window_name: sync
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/projects/streetview-exb-widget/
-          - ./dev_livesync.sh street-view ~/Documents/dev/exb
+          - cd $HOME/Code/projects/streetview-exb-widget/
+          - ./dev_livesync.sh street-view ~/Code/exb

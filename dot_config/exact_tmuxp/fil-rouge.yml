@@ -1,5 +1,5 @@
 session_name: fil-rouge-2026
-start_directory: /home/nino/Documents/dev/projects/fil-rouge-2026/
+start_directory: $HOME/Code/projects/fil-rouge-2026/
 windows:
   - window_name: frontend
     panes:

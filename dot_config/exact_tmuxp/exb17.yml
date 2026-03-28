@@ -1,30 +1,30 @@
 session_name: exb17
-start_directory: $HOME/Documents/dev/exb17
+start_directory: $HOME/Code/exb17
 windows:
   - window_name: cmd
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/exb17/client/your-extensions/widgets
+          - cd $HOME/Code/exb17/client/your-extensions/widgets
 
   - window_name: cmd
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/exb17/client/your-extensions/widgets
+          - cd $HOME/Code/exb17/client/your-extensions/widgets
 
   - window_name: cmd
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/projects
+          - cd $HOME/Code/projects
 
   - window_name: client
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/exb17/client
+          - cd $HOME/Code/exb17/client
           - fnm use 22
           - pnpm start
 
   - window_name: server
     panes:
       - shell_command:
-          - cd $HOME/Documents/dev/exb17/server
+          - cd $HOME/Code/exb17/server
           - pnpm start

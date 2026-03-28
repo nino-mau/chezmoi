@@ -1,5 +1,5 @@
 session_name: stackboard
-start_directory: /home/nino/Documents/dev/projects/stackboard
+start_directory: $HOME/Code/projects/stackboard
 windows:
   - window_name: neovim
     panes:

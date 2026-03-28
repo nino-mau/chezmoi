@@ -1,5 +1,5 @@
 session_name: sankey-demo
-start_directory: ~/Documents/dev/projects/sankey-demo
+start_directory: $HOME/Code/projects/sankey-demo
 windows:
   - window_name: editor
     panes:

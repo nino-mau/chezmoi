@@ -70,6 +70,13 @@ ln -sf "$HOME/.config/colorschemes/ghostty/$THEME" "$HOME/.config/ghostty/theme"
 fish -c "fish_theme \"$HOME/.config/fish/themes/$THEME.fish\""
 
 # =======================
+# EZA
+# =======================
+
+# Update eza theme
+ln -sf "$HOME/.config/colorschemes/eza/$THEME.yml" "$HOME/.config/eza/theme.yml"
+
+# =======================
 # FASTFETCH
 # =======================
 
