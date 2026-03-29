@@ -8,7 +8,7 @@
         "noVueOptionsApi": "on",
         "noVueRefAsOperand": "on",
         "noVueVIfWithVFor": "on",
-        "useVueConsistentDefinePropsDeclaration": "on",
+        "useVueConsistentDefinePropsDeclaration": "off",
         "useVueConsistentVBindStyle": "on",
         "useVueConsistentVOnStyle": "on",
         "useVueDefineMacrosOrder": "on",

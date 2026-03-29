@@ -1,17 +1,17 @@
 {
   "position": "top",
-  "margin-top": 5,
+  "margin-top": 20,
   "modules-left": [
     "custom/launcher",
     "clock",
-    "custom/pacman",
     "hyprland/submap",
     "custom/media"
   ],
   "modules-center": [
-    "niri/workspaces"
+    "hyprland/workspaces"
   ],
   "modules-right": [
+    "custom/pacman",
     "pulseaudio",
     "network",
     "tray"
@@ -20,7 +20,7 @@
     "format": "{}",
     "tooltip": false
   },
-  "niri/workspaces": {
+  "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
       "1": "",
@@ -87,7 +87,7 @@
     "format": "󰅢  {}",
     "interval": "once",
     "exec": "checkupdates | wc -l",
-    "on-click": "kitty --hold yay -Syu",
+    "on-click": "ghostty --hold yay -Syu",
     "signal": 8,
     "tooltip-format": "{} updates available"
   },
@@ -117,7 +117,7 @@
   },
   "pulseaudio": {
     "format": "{icon}  {volume}%",
-    "format-bluetooth": "󰂱 {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
     "format-muted": "󰖁",
     "scroll-step": 1,
     "on-click": "pavucontrol",
@@ -155,12 +155,12 @@
     "tooltip-format": "Connected to {essid}"
   },
   "clock": {
-    "format": "󰥔  {:%I:%M %p}",
+    "format": "󰥔  {:%A, %d %b %H:%M}",
     "interval": 1,
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
       "format": {
-        "today": "<b>{}</b>"
+        "today": "<span color='#ff0000'><b>{}</b></span>"
       }
     },
     "actions": {
@@ -182,9 +182,6 @@
   "tray": {
     "icon-size": 21,
     "spacing": 10,
-    "icons": {
-      "blueman": "bluetooth",
-      "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
-    }
+    "icons": {}
   }
 }

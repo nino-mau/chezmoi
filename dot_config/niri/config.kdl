@@ -1,8 +1,8 @@
 input {
     keyboard {
         xkb {
-            layout "fr"
-            variant "mac"
+            layout "us"
+            variant "altgr-intl"
         }
         numlock
     }
