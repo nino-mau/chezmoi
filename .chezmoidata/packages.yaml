@@ -5,6 +5,7 @@ packages:
   linux:
     paru:
     - 'yazi'
+    - 'vicinae-bin'
     - 'git'
     - 'bun'
     - 'eza'
