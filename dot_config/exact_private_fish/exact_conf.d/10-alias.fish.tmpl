@@ -1,0 +1,117 @@
+# ====================
+# System
+# ====================
+
+{{ if eq .chezmoi.os "darwin" -}}
+alias i="brew install"
+{{ else -}}
+alias i="paru -S"
+{{ end -}}
+abbr -a rmr "rm -r"
+abbr -a rfc "source ~/.config/fish/config.fish"
+abbr -a mk "make"
+alias restart="exec $SHELL"
+
+# ====================
+# Misc
+# ====================
+
+# Show images in a grid in terminal
+abbr -a lsimg "timg --grid=3x2 --title *.{jpg,JPG,png,jpeg,webp}"
+
+# Generate random string
+alias rand="openssl rand -base64 32 | tr -d '/+='"
+
+# Render image using kitty graphic protocol
+alias icat="kitten icat"
+
+# ====================
+# Paru
+# ====================
+
+abbr -a pr paru
+abbr -a pl "paru -Qe" # List explicitly installed packages
+abbr -a ps "paru -Ss" # Search packages
+
+# ====================
+# Chezmoi
+# ====================
+
+abbr -a ch chezmoi
+
+# Chezmoi-managed config editing
+abbr -a che "chezmoi edit --apply"
+abbr -a cghost "chezmoi edit --apply ~/.config/ghostty/config"
+abbr -a ctmux "chezmoi edit --apply ~/.config/tmux/tmux.conf"
+abbr -a czellij "chezmoi edit --apply ~/.config/zellij/config.kdl"
+abbr -a chypr "chezmoi edit --apply ~/.config/hypr/hyprland.conf"
+
+# ====================
+# Opencode
+# ====================
+
+abbr -a occ "opencode --continue"
+abbr -a oc opencode
+
+
+# ====================
+# Eza (ls replacement)
+# ====================
+
+alias ls="eza --all --icons --sort=time --group-directories-first"
+abbr -a lsl "eza --all --long --icons --sort=time --group-directories-first --total-size"
+abbr -a tree "eza --all --tree --icons --sort=time --group-directories-first"
+
+# ====================
+# Docker
+# ====================
+
+abbr -a ld "lazydocker"
+abbr -a dcbd "docker compose up -d --build"
+abbr -a dcd "docker compose down"
+abbr -a dcr "docker compose restart"
+abbr -a dcdv "docker compose down -v"
+abbr -a dce "docker compose exec"
+abbr -a dcl "docker compose logs"
+abbr -a dcu "docker compose up -d"
+abbr -a dcps "docker compose ps"
+abbr -a dpsa "docker ps -a"
+
+# ====================
+# Editor
+# ====================
+
+abbr -a nv nvim
+alias mvim="NVIM_APPNAME=mvim nvim"
+alias nchad="NVIM_APPNAME=nvchad nvim"
+alias nvmin="NVIM_APPNAME=nv nvim"
+alias lvim="NVIM_APPNAME=lvim nvim"
+
+# ====================
+# Git
+# ====================
+
+abbr -a gcm "git commit -m"
+abbr -a gc "git clone"
+abbr -a gca 'git add * && git commit -m'
+abbr -a lg lazygit
+
+# ====================
+# Python
+# ====================
+
+abbr -a rvenv "source venv/bin/activate.fish"
+abbr -a dvenv deactivate
+
+# ====================
+# SSH
+# ====================
+
+alias sshpi="TERM=xterm-256color ssh nino@nino-pi"
+
+# ====================
+# Tmux
+# ====================
+
+abbr -a tks "tmux kill-session"
+abbr -a tml "tmuxp load"
