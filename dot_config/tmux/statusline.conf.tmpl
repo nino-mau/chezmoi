@@ -87,6 +87,7 @@ set -g window-status-format '\
 #{?#{==:#{pane_current_command},lazygit}, #{@git_icon} ,\
 #{?#{==:#{pane_current_command},btop},#{@btop_icon} ,\
 #{?#{==:#{pane_current_command},docker}, #{@docker_icon} ,\
+#{?#{==:#{pane_current_command},lazydocker}, #{@docker_icon} ,\
 #{?#{==:#{pane_current_command},docker-compose}, #{@docker_icon} ,\
 #{?#{==:#{pane_current_command},python}, #{@python_icon} ,\
 #{?#{==:#{pane_current_command},bash}, #{@bash_icon} ,\
@@ -98,7 +99,7 @@ set -g window-status-format '\
 #{?#{==:#{pane_current_command},fzf}, #{@fzf_icon} ,\
 #{?#{==:#{pane_current_command},lua}, #{@lua_icon} ,\
 #{?#{==:#{pane_current_command},opencode}, #{@opencode_icon} ,\
- #{@default_icon} }}}}}}}}}}}}}}}}}}}}'
+ #{@default_icon} }}}}}}}}}}}}}}}}}}}}}'
 set -g window-status-current-format '\
 #{?#{==:#{pane_current_command},zsh}, #{@term_icon} ,\
 #{?#{==:#{pane_current_command},fish}, #{@term_icon} ,\
@@ -109,6 +110,7 @@ set -g window-status-current-format '\
 #{?#{==:#{pane_current_command},lazygit}, #{@git_icon} ,\
 #{?#{==:#{pane_current_command},btop}, #{@btop_icon} ,\
 #{?#{==:#{pane_current_command},docker}, #{@docker_icon} ,\
+#{?#{==:#{pane_current_command},lazydocker}, #{@docker_icon} ,\
 #{?#{==:#{pane_current_command},docker_compose}, #{@docker_icon} ,\
 #{?#{==:#{pane_current_command},python}, #{@python_icon} ,\
 #{?#{==:#{pane_current_command},bash}, #{@bash_icon} ,\
@@ -120,7 +122,7 @@ set -g window-status-current-format '\
 #{?#{==:#{pane_current_command},fzf}, #{@fzf_icon} ,\
 #{?#{==:#{pane_current_command},lua}, #{@lua_icon} ,\
 #{?#{==:#{pane_current_command},opencode}, #{@opencode_icon} ,\
- #{@default_icon} }}}}}}}}}}}}}}}}}}}}'
+ #{@default_icon} }}}}}}}}}}}}}}}}}}}}}'
  
 # window style
 set -g window-status-style "bg=default,fg=#{@thm_surface_2}"

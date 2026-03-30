@@ -11,7 +11,10 @@
         "useVueConsistentDefinePropsDeclaration": "off",
         "useVueConsistentVBindStyle": "on",
         "useVueConsistentVOnStyle": "on",
-        "useVueDefineMacrosOrder": "on",
+        "useVueDefineMacrosOrder": {
+          "level": "on",
+          "fix": "safe"
+        },
         "useVueHyphenatedAttributes": "on",
         "useVueMultiWordComponentNames": "on",
         "useVueVForKey": "on",

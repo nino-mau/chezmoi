@@ -32,6 +32,20 @@
             }
          }
       },
+      "@nino-mau/theme-switcher": {
+         "entrypoints": {
+            "switch-theme": {
+               "alias": "st"
+            }
+         }
+      },
+      "@nino-mau/wallpaper-switcher": {
+         "entrypoints": {
+            "wallpapers": {
+               "alias": "sw"
+            }
+         }
+      },
       "@rithvikvibhu/store.vicinae.arch-packages": {
          "entrypoints": {
             "search-arch-packages": {
