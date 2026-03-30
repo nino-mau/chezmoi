@@ -1,0 +1,261 @@
+binds {
+    Super+X {
+        close-window
+    }
+
+    Super+O {
+        toggle-overview
+    }
+
+    Super+Q {
+        spawn "ghostty"
+    }
+
+    Super+0 {
+        spawn "nc" "-U" "/run/user/1000/walker/walker.sock"
+    }
+
+    Super+E {
+        spawn "vicinae" "vicinae://launch/core/search-emojis"
+    }
+
+    Super+B {
+        spawn "zen-browser"
+    }
+
+    Super+Space {
+        spawn "vicinae" "toggle"
+    }
+
+    Super+Equal {
+        spawn "vicinae" "vicinae://launch/clipboard/history"
+    }
+
+    Super+dead_grave {
+        spawn "walker" "--provider" "symbols"
+    }
+
+    Super+P {
+        spawn "walker" "--provider" "providerlist"
+    }
+
+    Super+A {
+        spawn "walker" "--provider" "menus:actions"
+    }
+
+    Super+dollar {
+        spawn "~/.local/bin/walker-theme-wallpapers"
+    }
+
+    Super+Shift+S {
+        spawn "~/.local/bin/screenshot-focused.sh"
+    }
+
+    Super+M {
+        spawn "hyprlock"
+    }
+
+    Super+V {
+        toggle-window-floating
+    }
+
+    Super+S {
+        toggle-column-tabbed-display
+    }
+
+    Super+F {
+        fullscreen-window
+    }
+
+    Super+H {
+        focus-column-left
+    }
+
+    Super+L {
+        focus-column-right
+    }
+
+    Super+K {
+        focus-window-up
+    }
+
+    Super+J {
+        focus-window-down
+    }
+
+    Super+Shift+H {
+        consume-or-expel-window-left
+    }
+
+    Super+Shift+L {
+        consume-or-expel-window-right
+    }
+
+    Super+Shift+K {
+        move-window-up
+    }
+
+    Super+Shift+J {
+        move-window-down
+    }
+
+    Super+Ctrl+H {
+        move-column-left
+    }
+
+    Super+Ctrl+L {
+        move-column-right
+    }
+
+    Super+Shift+Up {
+        set-column-width "+10%"
+    }
+
+    Super+Shift+Down {
+        set-column-width "-10%"
+    }
+
+    Super+Shift+F {
+        maximize-column
+    }
+
+    Super+Shift+P {
+        consume-window-into-column
+    }
+
+    Super+1 {
+        focus-workspace "1"
+    }
+
+    Super+2 {
+        focus-workspace "2"
+    }
+
+    Super+3 {
+        focus-workspace "3"
+    }
+
+    Super+4 {
+        focus-workspace "4"
+    }
+
+    Super+5 {
+        focus-workspace 5
+    }
+
+    Super+6 {
+        focus-workspace 6
+    }
+
+    Super+7 {
+        focus-workspace 7
+    }
+
+    Super+8 {
+        focus-workspace 8
+    }
+
+    Super+9 {
+        focus-workspace 9
+    }
+
+    Super+Shift+1 {
+        move-column-to-workspace "1"
+    }
+
+    Super+Shift+2 {
+        move-column-to-workspace "2"
+    }
+
+    Super+Shift+3 {
+        move-column-to-workspace "3"
+    }
+
+    Super+Shift+4 {
+        move-column-to-workspace "4"
+    }
+
+    Super+Shift+5 {
+        move-column-to-workspace 5
+    }
+
+    Super+Shift+6 {
+        move-column-to-workspace 6
+    }
+
+    Super+Shift+7 {
+        move-column-to-workspace 7
+    }
+
+    Super+Shift+8 {
+        move-column-to-workspace 8
+    }
+
+    Super+Shift+9 {
+        move-column-to-workspace 9
+    }
+
+    Super+WheelScrollDown cooldown-ms=150 {
+        focus-workspace-down
+    }
+
+    Super+WheelScrollUp cooldown-ms=150 {
+        focus-workspace-up
+    }
+
+    Super+Alt+L {
+        focus-workspace-down
+    }
+
+    Super+Alt+H {
+        focus-workspace-up
+    }
+
+    XF86AudioRaiseVolume allow-when-locked=true {
+        spawn-sh "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+    }
+
+    XF86AudioLowerVolume allow-when-locked=true {
+        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+    }
+
+    XF86AudioMute allow-when-locked=true {
+        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    }
+
+    XF86AudioMicMute allow-when-locked=true {
+        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+    }
+
+    XF86MonBrightnessUp allow-when-locked=true {
+        spawn-sh "brightnessctl -e4 -n2 set 5%+"
+    }
+
+    XF86MonBrightnessDown allow-when-locked=true {
+        spawn-sh "brightnessctl -e4 -n2 set 5%-"
+    }
+
+    XF86AudioNext allow-when-locked=true {
+        spawn-sh "playerctl next"
+    }
+
+    XF86AudioPause allow-when-locked=true {
+        spawn-sh "playerctl play-pause"
+    }
+
+    XF86AudioPlay allow-when-locked=true {
+        spawn-sh "playerctl play-pause"
+    }
+
+    XF86AudioPrev allow-when-locked=true {
+        spawn-sh "playerctl previous"
+    }
+
+    Mod5+L {
+        spawn-sh "wtype '|'"
+    }
+
+    Mod5+at {
+        spawn-sh "wtype '~'"
+    }
+}

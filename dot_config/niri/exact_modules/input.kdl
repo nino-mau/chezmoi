@@ -1,0 +1,20 @@
+input {
+    keyboard {
+        xkb {
+            layout "us"
+            variant "altgr-intl"
+        }
+
+        numlock
+    }
+
+    focus-follows-mouse
+
+    touchpad {
+        tap
+    }
+
+    mouse {
+        accel-speed 0.0
+    }
+}

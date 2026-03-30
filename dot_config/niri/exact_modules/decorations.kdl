@@ -1,0 +1,18 @@
+layout {
+    gaps 16
+
+    focus-ring {
+        off
+    }
+
+    border {
+        on
+        width 1
+    }
+
+    shadow {
+        on
+        softness 25
+        spread 5
+    }
+}

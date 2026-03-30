@@ -1,0 +1,35 @@
+output "DP-1" {
+    position x=0 y=0
+    focus-at-startup
+}
+
+output "DP-2" {
+    position x=2560 y=0
+}
+
+output "eDP-1" {
+    scale 1
+    position x=0 y=0
+}
+
+output "HDMI-A-2" {
+    scale 1
+    position x=0 y=1920
+    focus-at-startup
+}
+
+workspace "1" {
+    open-on-output "DP-1"
+}
+
+workspace "2" {
+    open-on-output "DP-1"
+}
+
+workspace "3" {
+    open-on-output "DP-2"
+}
+
+workspace "4" {
+    open-on-output "DP-1"
+}
