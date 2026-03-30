@@ -1,7 +1,7 @@
 # SYSC-Greet Hyprland config for greetd greeter session
 # Monitors auto-detected by Hyprland at runtime
 
-{{ if eq .chezmoi.hostname "nino-20n3s37900" }}
+{{ if eq .chezmoi.hostname "cachyos-x8664" }}
 monitor = eDP-1,disable
 {{ end }}
 
@@ -36,7 +36,8 @@ misc {
 
 # Input configuration
 input {
-    kb_layout = fr
+    kb_layout = us
+    kb_variant = altgr-intl
     repeat_delay = 400
     repeat_rate = 40
 
