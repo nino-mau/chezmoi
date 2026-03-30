@@ -449,7 +449,7 @@
   ],
   "theme.bar.buttons.modules.worldclock.enableBorder": false,
   "bar.clock.showIcon": true,
-  "bar.clock.format": "%A %d %b  %H:%M:%S",
+  "bar.clock.format": "%A %d %b  %H:%M",
   "bar.workspaces.show_icons": false,
   "bar.workspaces.showWsIcons": false,
   "bar.workspaces.showApplicationIcons": false,
