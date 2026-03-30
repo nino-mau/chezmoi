@@ -31,9 +31,9 @@ windows:
       - shell_command:
           - restart-on-exit -- fish -c 'while not docker compose ps --status running --services 2>/dev/null | grep -qx backend; sleep 1; end; docker compose logs -f --tail=50 backend'
 
-  - window_name: cmd
+  - window_name: lazydocker
     panes:
-      - docker compose down && docker compose up -d --build
+      - docker compose up -d --build && lazydocker
 
   - window_name: opencode
     panes:
