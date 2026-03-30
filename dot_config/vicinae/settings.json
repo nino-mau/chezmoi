@@ -9,60 +9,66 @@
 // Learn more about configuration at https://docs.vicinae.com/config
 
 {
-  "$schema": "https://vicinae.com/schemas/config.json",
-  "font": {
-    "normal": {
-      "family": "Maple Mono NF CN"
-    }
-  },
-  "theme": {
-    "dark": {
-      "name": "catppuccin-mocha",
-      "icon_theme": "Papirus-Dark"
-    }
-  },
-  "launcher_window": {
-    "opacity": 0.85
-  },
-  "providers": {
-    "@fbosch/store.vicinae.nerdfont-search": {
-      "entrypoints": {
-        "nerdfonts-search": {
-          "alias": "nf"
-        }
+   "$schema": "https://vicinae.com/schemas/config.json",
+   "font": {
+      "normal": {
+         "family": "Maple Mono NF CN"
       }
-    },
-    "power": {
-      "entrypoints": {
-        "lock": {
-          "preferences": {
-            "customProgram": "hyprlock"
-          }
-        },
-        "logout": {
-          "preferences": {
-            "confirm": false
-          }
-        },
-        "power-off": {
-          "preferences": {
-            "confirm": false
-          }
-        },
-        "reboot": {
-          "preferences": {
-            "confirm": false
-          }
-        }
+   },
+   "theme": {
+      "dark": {
+         "name": "catppuccin-mocha",
+         "icon_theme": "Papirus-Dark"
       }
-    },
-    "scripts": {
-      "entrypoints": {
-        "commit-message.sh": {
-          "alias": "cm"
-        }
+   },
+   "launcher_window": {
+      "opacity": 0.85
+   },
+   "providers": {
+      "@fbosch/store.vicinae.nerdfont-search": {
+         "entrypoints": {
+            "nerdfonts-search": {
+               "alias": "nf"
+            }
+         }
+      },
+      "@rithvikvibhu/store.vicinae.arch-packages": {
+         "entrypoints": {
+            "search-arch-packages": {
+               "alias": "pc"
+            }
+         }
+      },
+      "power": {
+         "entrypoints": {
+            "lock": {
+               "preferences": {
+                  "customProgram": "hyprlock"
+               }
+            },
+            "logout": {
+               "preferences": {
+                  "confirm": false
+               }
+            },
+            "power-off": {
+               "preferences": {
+                  "confirm": false
+               }
+            },
+            "reboot": {
+               "preferences": {
+                  "confirm": false
+               }
+            }
+         }
+      },
+      "scripts": {
+         "entrypoints": {
+            "commit-message.sh": {
+               "alias": "cm"
+            }
+         }
       }
-    }
-  }
+   }
 }
-
