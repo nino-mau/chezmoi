@@ -102,13 +102,17 @@
     "tooltip": true,
     "tooltip-format": "Open home folder"
   },
+  "clock": {
+    "format": "{:%b, %H:%M}",
+    "interval": 1,
+  },
   "battery": {
     "format": "{icon}",
-    "format-charging": " {capacity} %",
+    "format-charging": "{icon} {capacity} %",
     "format-icons": [
-      "",
-      "",
-      ""
+      "󰁼",
+      "󰁿",
+      "󰂂"
     ],
     "tooltip-format": "Battery is at {capacity}%"
   },

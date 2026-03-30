@@ -63,10 +63,9 @@ layout {
     }
 }
 spawn-at-startup "mako"
-spawn-at-startup "waybar" "-c" "/home/nino/.config/waybar/config-niri.jsonc"
+spawn-at-startup "waybar" "-c" "/home/nino/.config/waybar/config-bar.jsonc" "-s" "/home/nino/.config/waybar/style-bar.jsonc"
 spawn-at-startup "awww-daemon"
-spawn-at-startup "walker" "--gapplication-service"
-spawn-at-startup "elephant"
+spawn-at-startup "vicinae" "server"
 spawn-at-startup "ghostty"
 spawn-at-startup "ghostty" "-e" "opencode"
 spawn-at-startup "ghostty" "-e" "btop"
