@@ -1,5 +1,6 @@
 # Docker
 
+abbr -a ld "lazydocker"
 abbr -a dcbd "docker compose up -d --build"
 abbr -a dcd "docker compose down"
 abbr -a dcr "docker compose restart"
