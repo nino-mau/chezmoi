@@ -6,12 +6,13 @@ scrapJJKTranscript/
 
 .config/fish/fish_variables
 
-# Ignore matugen output files
+# Ignore theme related files
 .config/waybar/colors.css
 .config/hypr/colors.conf
 .config/gtk-4.0/gtk.css
 .config/gtk-3.0/gtk.css
 .config/walker/themes/colors.css
+.config/ghostty/theme
 .config/elephant/menus/.env
 
 {{- if eq .chezmoi.os "darwin" }}

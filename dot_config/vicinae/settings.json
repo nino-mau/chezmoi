@@ -22,13 +22,20 @@
       }
    },
    "launcher_window": {
-      "opacity": 0.85
+      "opacity": 0.9
    },
    "providers": {
       "@fbosch/store.vicinae.nerdfont-search": {
          "entrypoints": {
             "nerdfonts-search": {
                "alias": "nf"
+            }
+         }
+      },
+      "@nino-mau/iconify": {
+         "entrypoints": {
+            "search-icons": {
+               "alias": "ic"
             }
          }
       },
