@@ -3,6 +3,8 @@ gui:
   mouseEvents: true
   nerdFontsVersion: "3"
 
+  returnImmediately: true
+
   # Color theme
   theme:
     activeBorderColor:
