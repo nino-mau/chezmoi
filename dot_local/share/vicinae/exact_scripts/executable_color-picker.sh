@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # @vicinae.schemaVersion 1
-# @vicinae.title Color Picker
+# @vicinae.title Hypr Color Picker
 # @vicinae.mode silent
 # @vicinae.icon https://api.iconify.design/material-symbols/colorize-rounded.svg?color=%23ccd5f3
 printf 'Pick a color\n'
