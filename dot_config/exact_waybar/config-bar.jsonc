@@ -11,7 +11,7 @@
     "hyprland/workspaces"
   ],
   "modules-right": [
-    "custom/pacman",
+    "battery",
     "pulseaudio",
     "network",
     "tray"
@@ -25,12 +25,13 @@
     "format-icons": {
       "1": "",
       "2": "",
-      "3": "󰓓",
-      "4": "󰑊",
-      "5": "󰓇",
+      "3": "",
+      "4": "󰚩",
+      "5": "",
       "default": "",
       "urgent": ""
     },
+    "all-outputs": false,
     "persistent-workspaces": {
       "*": 5
     },
@@ -99,8 +100,8 @@
     "tooltip-format": "{} total files and folders in /"
   },
   "battery": {
-    "format": "{icon}   {capacity}%",
-    "format-charging": "󰂄  {capacity}%",
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
     "format-icons": [
       "󰁺",
       "󰁻",
@@ -116,7 +117,7 @@
     "tooltip-format": "Battery is at {capacity}%"
   },
   "pulseaudio": {
-    "format": "{icon}  {volume}%",
+    "format": "{icon} {volume}%",
     "format-bluetooth": "{icon} {volume}%",
     "format-muted": "󰖁",
     "scroll-step": 1,
@@ -141,7 +142,7 @@
   "network": {
     "interface": "wlan0",
     "format": "{ifname}",
-    "format-wifi": "{icon}  {essid}",
+    "format-wifi": "{icon} {essid}",
     "format-ethernet": "󰈀  {ipaddr}/{cidr}",
     "format-disconnected": "󰤭  Disconnected",
     "max-length": 50,
@@ -155,7 +156,7 @@
     "tooltip-format": "Connected to {essid}"
   },
   "clock": {
-    "format": "󰥔  {:%A, %d %b %H:%M}",
+    "format": "󰥔 {:%A, %d %b %H:%M}",
     "interval": 1,
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {

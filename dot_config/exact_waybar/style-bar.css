@@ -103,6 +103,7 @@ tooltip label {
   color: @aqua;
 }
 
-#custom-pacman {
+#custom-pacman,
+#battery {
   color: @yellow;
 }
