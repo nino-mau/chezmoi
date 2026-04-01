@@ -8,11 +8,13 @@ packages=(
   {{ . | quote }}
 {{- end }}
 )
-if command -v paru >/dev/null 2>&1; then
-  paru -S --needed --noconfirm "${packages[@]}"
-else
-  echo "paru is not installed" >&2
-  exit 1
+if ! command -v paru >/dev/null 2>&1; then
+  echo "warning: paru is not installed, skipping package installation" >&2
+  exit 0
+fi
+
+if ! paru -S --needed --noconfirm "${packages[@]}"; then
+  echo "warning: package installation failed, continuing chezmoi apply" >&2
 fi
 {{- end }}
 {{- end }}
