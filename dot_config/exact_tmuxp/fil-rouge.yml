@@ -41,10 +41,6 @@ windows:
 
   - window_name: lazydocker
     panes:
-      - docker compose up -d --build && lazydocker
-
-  - window_name: lazydocker
-    panes:
       - lazydocker
 
   - window_name: lazygit
