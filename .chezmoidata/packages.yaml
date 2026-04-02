@@ -6,6 +6,8 @@ packages:
     paru:
     - 'yazi'
     - 'vicinae-bin'
+    - 'swaync'
+    - 'swayosd'
     - 'git'
     - 'bun'
     - 'eza'

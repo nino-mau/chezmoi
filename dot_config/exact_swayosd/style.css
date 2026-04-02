@@ -1,0 +1,14 @@
+window#osd {
+  border-radius: 999px;
+  border: none;
+  background: alpha(@theme_bg_color, 0.78);
+}
+
+window#osd progressbar,
+window#osd segmentedprogress,
+window#osd trough,
+window#osd progress,
+window#osd segment,
+window#osd segment.active {
+  border-radius: 999px;
+}

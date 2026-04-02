@@ -27,3 +27,19 @@ gui:
       - "#cdd6f4"
     searchingActiveBorderColor:
       - "#f9e2af"
+
+customCommands:
+  containers:
+    - name: bash
+      attach: true
+      command: "docker exec -it {{ .Container.ID }} bash"
+      serviceNames: []
+    - name: reset-project
+      shell: true
+      command: "{{ .DockerCompose }} -p {{ .Container.ProjectName }} down -v && {{ .DockerCompose }} -p {{ .Container.ProjectName }} up -d --build"
+      serviceNames: []
+  services:
+    - name: reset-project
+      shell: true
+      command: "{{ .DockerCompose }} down -v && {{ .DockerCompose }} up -d --build"
+      serviceNames: []

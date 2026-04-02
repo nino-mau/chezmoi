@@ -3,7 +3,7 @@
   "margin-top": 20,
   "modules-left": [
     "custom/launcher",
-    "clock ",
+    "clock",
     "hyprland/submap",
     "custom/media"
   ],

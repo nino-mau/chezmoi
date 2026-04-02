@@ -6,32 +6,26 @@ windows:
       - shell_command:
           - cd ./frontend && nvim .
 
-  - window_name: frontend-cmd
-    layout: main-vertical
-    options:
-      main-pane-width: 67%
-    panes:
-      - shell_command:
-          - cd frontend
-      - shell_command:
-          - restart-on-exit -- fish -c 'while not docker compose ps --status running --services 2>/dev/null | grep -qx frontend; sleep 1; end; docker compose logs -f frontend'
-
   - window_name: backend
     panes:
       - shell_command:
           - cd ./backend && svenv && nvim .
 
-  - window_name: backend-cmd
-    layout: main-vertical
-    options:
-      main-pane-width: 67%
+  - window_name: cmd
+    layout: tiled
     panes:
       - shell_command:
+          - cd frontend
+          - clear
+      - shell_command:
+          - restart-on-exit -- fish -c 'while not docker compose ps --status running --services 2>/dev/null | grep -qx frontend; sleep 1; end; docker compose logs -f frontend'
+      - shell_command:
           - cd ./backend && svenv
+          - clear
       - shell_command:
           - restart-on-exit -- fish -c 'while not docker compose ps --status running --services 2>/dev/null | grep -qx backend; sleep 1; end; docker compose logs -f --tail=50 backend'
 
-  - window_name: cmd
+  - window_name: cmd-root
     panes:
       - docker compose up -d --build
 
