@@ -1,0 +1,184 @@
+@define-color bg0 #282c34;
+@define-color bg1 #21252b;
+@define-color bg2 #2c313a;
+@define-color bg3 #3e4451;
+@define-color bg4 #4b5263;
+
+@define-color red #e08c75;
+@define-color orange #d19a66;
+@define-color yellow #e5c07b;
+@define-color green #98c379;
+@define-color aqua #56b6c2;
+@define-color blue #61afef;
+@define-color darkblue #3a515d;
+@define-color everblue #7fbbb3;
+@define-color purple #c678dd;
+
+@define-color fg #abb2bf;
+
+@define-color grey0 #5c6370;
+@define-color grey1 #828887;
+@define-color grey2 #abb2bf;
+@define-color grey3 #2d353b;
+@define-color grey4 #475258;
+@define-color grey5 #3d484d;
+
+* {
+  border: none;
+  border-radius: 0px;
+
+  font-family: "Adwaita Sans", "JetBrainsMono Nerd Font Propo", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+tooltip {
+  background: @bg0;
+  border: 1px solid @bg3;
+  border-radius: 12px;
+}
+
+tooltip label {
+  color: @fg;
+  padding: 6px;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+}
+
+#workspaces {
+  background-color: @bg0;
+  padding: 5px 3px;
+  margin: 0 2px 0 2px;
+  border-radius: 18px;
+  border: 1px solid @bg1;
+  color: @fg;
+}
+
+#workspaces button {
+  padding: 0px 6px;
+  margin: 0px 3px;
+  border-radius: 50px;
+  color: @grey3;
+  background-color: @bg1;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.hover {
+  background-color: @purple;
+  color: @bg0;
+  border-radius: 16px;
+  min-width: 50px;
+  background-size: 400% 400%;
+}
+
+#workspaces button.persistent {
+  color: @everblue;
+}
+
+#workspaces button.empty {
+  color: @darkblue;
+}
+
+#workspaces button.active {
+  background-color: @everblue;
+  color: @bg0;
+  min-width: 50px;
+  transition: all 0.3s ease-in-out;
+  font-size: 13px;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+  color: @bg0;
+  border-radius: 16px;
+  min-width: 50px;
+  background-size: 400% 400%;
+  transition: all 0.3s ease-in-out;
+}
+
+#battery,
+#wireplumber,
+#network,
+#clock,
+#tray,
+#custom-keyboard,
+#custom-wall,
+#custom-menu,
+#custom-notification,
+#custom-powermenu {
+  background-color: @bg0;
+  padding: 0 15px 0 15px;
+  margin: 0 0 0 8px;
+  border-radius: 50px;
+  border: 1px solid @bg1;
+}
+
+#clock {
+  color: @blue;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+#tray {
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+#custom-notification {
+  color: @fg;
+  margin-left: 1px;
+  font-size: 16px;
+}
+
+#wireplumber {
+  color: @yellow;
+  margin-left: 2px;
+  font-size: 16px;
+}
+
+#network {
+  color: @purple;
+  margin-left: 2px;
+  margin-right: 2px;
+  font-size: 18px;
+}
+
+#battery {
+  color: @green;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+#custom-powermenu {
+  color: @red;
+  margin-right: 8px;
+  margin-left: 2px;
+  font-size: 16px;
+}
+
+#custom-menu {
+  color: @green;
+  padding: 0 8px 0 8px;
+  margin-right: 2px;
+}
+
+#custom-wall {
+  color: @orange;
+  margin-left: 1px;
+  margin-right: 1px;
+  font-size: 16px;
+}
+
+#custom-keyboard {
+  color: @aqua;
+  margin-left: 1px;
+  margin-right: 1px;
+  font-size: 16px;
+}

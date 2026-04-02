@@ -1,0 +1,152 @@
+{
+  "position": "top",
+  "margin-top": 4,
+  "margin-left": 4,
+  "margin-right": 4,
+  "modules-left": [
+    "custom/menu",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock",
+    "tray"
+  ],
+  "modules-right": [
+    "wireplumber",
+    "custom/wall",
+    "network",
+    "custom/keyboard",
+    "custom/notification",
+    "custom/powermenu"
+  ],
+  "clock": {
+    "format": "   {:%a %b %d %Y     %H:%M}",
+    "format-alt": "{:%A, %B %d, %Y (%R)}  ",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'>{}</span>",
+        "weeks": "<span color='#99ffdd'>W{}</span>",
+        "weekdays": "<span color='#ffcc66'>{}</span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "tz_up",
+      "on-scroll-down": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "urgent": "",
+      "active": "",
+      "default": ""
+    },
+    "persistent-workspaces": {
+      "*": 5 // 5 workspaces by default on every monitor
+    },
+    "sort-by-number": true
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10
+  },
+  "wireplumber": {
+    "format": "{volume}%  {icon}",
+    "format-muted": "",
+    "on-click": "helvum",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+  // for wifi and ethernet
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "󱚽",
+    "format-ethernet": "󰌗",
+    "format-disconnected": "󰈀",
+    "tooltip-format-wifi": "󱚽 {essid} ({signalStrength}%)\n󰩟 {ipaddr}/{cidr}",
+    "tooltip-format-ethernet": "󰈁 {ifname}\n󰩟 {ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "󰈀 Disconnected",
+    "max-length": 50,
+    "on-click": "nm-connection-editor",
+    "on-click-right": "kitty -e nmtui"
+  },
+  "battery": {
+    "bat": "BAT2",
+    "interval": 60,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "max-length": 25
+  },
+  "custom/notification": {
+    "tooltip": true,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+  "custom/powermenu": {
+    "format": "⏻",
+    "tooltip": "Power Menu",
+    "on-click": "~/.config/launcher-aditaya/files/powermenu/type-4/powermenu.sh"
+  },
+  "custom/keyboard": {
+    "exec": "hyprctl devices -j | jq -r '.keyboards[] | select(.main == true) | .active_keymap' | sed 's/English (US)/US/; s/Macedonian/MK/'",
+    "on-click": "hyprctl switchxkblayout \"$(hyprctl devices -j | jq -r '.keyboards[] | select(.main == true) | .name')\" next",
+    "format": " {}",
+    "interval": 1,
+    "tooltip": false
+  },
+  "custom/wall": {
+    "format": "",
+    "on-click": "~/.config/waybar/scripts/swww.sh",
+    "tooltip-format": "walpaper changer"
+  },
+  "custom/menu": {
+    "format": "  ",
+    "tooltip-format": "App-Launcher",
+    "on-click": "bash ~/.config/launcher-aditaya/files/launchers/type-4/launcher.sh"
+  },
+}

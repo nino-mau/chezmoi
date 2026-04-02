@@ -103,6 +103,10 @@ tooltip label {
   color: @aqua;
 }
 
+#custom-launcher {
+  padding-right: 18px;
+}
+
 #custom-pacman,
 #battery {
   color: @yellow;
