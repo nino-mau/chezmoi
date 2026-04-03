@@ -6,6 +6,7 @@ window-rule {
 
     background-effect {
         blur true
+        xray false
     }
 }
 
@@ -18,6 +19,22 @@ window-rule {
 window-rule {
     match is-active=false
     opacity 0.92
+}
+
+layer-rule {
+    match namespace="^swaync-control-center$"
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+layer-rule {
+    match namespace="^swaync-notification-window$"
+    background-effect {
+        blur true
+        xray false
+    }
 }
 
 window-rule {
