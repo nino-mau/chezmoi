@@ -1,0 +1,10 @@
+session_name: homelab
+windows:
+  - ssh:
+    shell_command_before:
+      - sshhome
+  - ssh:
+    shell_command_before:
+      - sshhome
+  - local:
+    root: ~
