@@ -60,6 +60,11 @@
             }
          }
       },
+      "@tonka3000/store.raycast.gitlab": {
+         "preferences": {
+            "instance": "https://gitlab.com"
+         }
+      },
       "power": {
          "entrypoints": {
             "lock": {

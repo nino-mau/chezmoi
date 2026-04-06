@@ -42,7 +42,7 @@ customCommands:
     context: "files"
     description: "Generate commit message with Opencode"
     command: "opencode run --command cmsg"
-    output: terminal
+    output: log
   - key: "U"
     context: "files"
     description: "Commit staged changes as update"
