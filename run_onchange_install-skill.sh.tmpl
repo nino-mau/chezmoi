@@ -11,6 +11,7 @@ packages=(
 )
 if command -v bunx >/dev/null 2>&1; then
   bunx skills add "${packages[@]}"
+  bunx skills update
 else
   echo "bunx is not installed" >&2
   exit 1

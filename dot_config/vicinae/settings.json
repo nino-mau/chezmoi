@@ -25,6 +25,21 @@
       "opacity": 0.9
    },
    "providers": {
+      "@dru89/store.raycast.obsidian-bookmarks": {
+         "preferences": {
+            "vaultPath": "/home/nino/.obsidian/Main",
+            "bookmarksPath": "3. Bookmarks",
+            "checkDuplicates": true,
+            "datePrefix": false,
+            "defaultFormAction": "openUrl",
+            "defaultItemAction": "openUrl",
+            "saveSubfolder": "3. Bookmarks",
+            "searchRecursively": true,
+            "useBrowserExtension": false,
+            "requiredTags": "bookmark",
+            "extraTags": "dev,smartorigin,ai,piracy,frontend,hyprland,dotfiles,repo,ressource,arch,open-source"
+         }
+      },
       "@fbosch/store.vicinae.nerdfont-search": {
          "entrypoints": {
             "nerdfonts-search": {
