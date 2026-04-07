@@ -6,3 +6,15 @@ skills:
       skill: shadcn
     - repo: https://github.com/fastapi/fastapi
       skill: fastapi
+    - repo: https://github.com/anthropics/skills
+      skill: frontend-design
+    - repo: https://github.com/better-auth/skills
+      skill: email-and-password-best-practices
+    - repo: https://github.com/better-auth/skills
+      skill: better-auth-best-practices
+    - repo: https://github.com/addyosmani/web-quality-skills
+      skill: accessibility
+    - repo: https://github.com/kepano/obsidian-skills
+      skill: obsidian-cli
+    - repo: https://github.com/kepano/obsidian-skills
+      skill: obsidian-markdown
