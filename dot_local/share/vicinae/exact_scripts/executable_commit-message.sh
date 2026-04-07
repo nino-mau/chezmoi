@@ -6,17 +6,17 @@
 # @vicinae.icon https://api.iconify.design/carbon/letter-cc.svg?color=%23ccd5f3
 selection="$(
   printf '%s\n' \
-    '✨ feat: ' \
-    '🐛 fix: ' \
-    '📚 docs: ' \
-    '🎨 style: ' \
-    '🛠️ refactor: ' \
-    '🚀 perf: ' \
-    '🚨 test: ' \
-    '📦 build: ' \
-    '⚙️ ci: ' \
-    '🔧 chore: ' \
-    '🗑 revert: ' \
+    '✨ feat' \
+    '🐛 fix' \
+    '📚 docs' \
+    '🎨 style' \
+    '🛠️ refactor' \
+    '🚀 perf' \
+    '🚨 test' \
+    '📦 build' \
+    '⚙️ ci' \
+    '🔧 chore' \
+    '🗑 revert' \
     '🎉 Initialization' |
     vicinae dmenu \
       --navigation-title "Commit Messages" \
