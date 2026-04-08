@@ -47,6 +47,11 @@
             }
          }
       },
+      "@keito4/store.raycast.skills": {
+         "preferences": {
+            "customNpxPath": "/usr/bin/bunx"
+         }
+      },
       "@nino-mau/iconify": {
          "entrypoints": {
             "search-icons": {
@@ -65,6 +70,13 @@
          "entrypoints": {
             "wallpapers": {
                "alias": "sw"
+            }
+         }
+      },
+      "@nino-mau/zen-bookmarks": {
+         "entrypoints": {
+            "search-bookmarks": {
+               "alias": "bk"
             }
          }
       },

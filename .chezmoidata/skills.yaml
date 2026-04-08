@@ -4,8 +4,9 @@ skills:
     - 'shadcn/ui@shadcn'
     - 'fastapi/fastapi@fastapi'
     - 'anthropics/skills@frontend-design'
-    - 'email-and-password-best-better-auth/skills@practices'
-    - 'better-auth-best-better-auth/skills@practices'
+    - 'better-auth/skills@email-and-password-best-practices'
+    - 'better-auth/skills@better-auth-best-practices'
     - 'addyosmani/web-quality-skills@accessibility'
-    - 'obsidian-kepano/obsidian-skills@cli'
-    - 'obsidian-kepano/obsidian-skills@markdown'
+    - 'kepano/obsidian-skills@obsidian-cli'
+    - 'kepano/obsidian-skills@obsidian-markdown'
+
