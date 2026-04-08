@@ -596,6 +596,7 @@ function main() {
 	const ghosttyDir = `${themesDir}/ghostty`;
 	const walkerDir = `${themesDir}/walker`;
 	const waybarDir = `${themesDir}/waybar`;
+	const swayncDir = `${themesDir}/swaync`;
 	const hyprDir = `${themesDir}/hypr`;
 	const hyprpanelDir = `${themesDir}/hyprpanel`;
 	const makoDir = `${themesDir}/mako`;
@@ -604,6 +605,7 @@ function main() {
 	mkdirSync(ghosttyDir, { recursive: true });
 	mkdirSync(walkerDir, { recursive: true });
 	mkdirSync(waybarDir, { recursive: true });
+	mkdirSync(swayncDir, { recursive: true });
 	mkdirSync(hyprDir, { recursive: true });
 	mkdirSync(hyprpanelDir, { recursive: true });
 	mkdirSync(makoDir, { recursive: true });
@@ -639,7 +641,11 @@ function main() {
 
 		const waybarColorsCss = generateColorsCss(palette as Palette);
 		writeFileSync(`${waybarDir}/${name}.css`, waybarColorsCss);
-		console.log(`Generated walker/${name}.css`);
+		console.log(`Generated waybar/${name}.css`);
+
+		const swayncColorsCss = generateColorsCss(palette as Palette);
+		writeFileSync(`${swayncDir}/${name}.css`, swayncColorsCss);
+		console.log(`Generated swaync/${name}.css`);
 
 		const gtkCss = generateColorsCss(palette as Palette);
 		writeFileSync(`${gtkDir}/${name}.css`, gtkCss);
