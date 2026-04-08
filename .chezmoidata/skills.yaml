@@ -3,7 +3,7 @@ skills:
     - 'nuxt/ui@nuxt-ui'
     - 'shadcn/ui@shadcn'
     - 'fastapi/fastapi@fastapi'
-    - 'frontend-anthropics/skills@design'
+    - 'anthropics/skills@frontend-design'
     - 'email-and-password-best-better-auth/skills@practices'
     - 'better-auth-best-better-auth/skills@practices'
     - 'addyosmani/web-quality-skills@accessibility'
