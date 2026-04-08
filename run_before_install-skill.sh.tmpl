@@ -8,8 +8,22 @@ packages=(
 {{- end }}
 )
 if command -v bunx >/dev/null 2>&1; then
-  bunx skills add "${packages[@]}"
-  bunx skills update
+  skills_dir={{ printf "%s/.agents/skills" .chezmoi.sourceDir | quote }}
+  did_install=false
+
+  for package in "${packages[@]}"; do
+    skill_name="${package##*@}"
+    if [[ -e "$skills_dir/$skill_name" ]]; then
+      continue
+    fi
+
+    bunx skills add "$package" -y
+    did_install=true
+  done
+
+  if [[ "$did_install" == true ]]; then
+    bunx skills update
+  fi
 else
   echo "bunx is not installed" >&2
   exit 1
