@@ -1,12 +1,10 @@
 #!/bin/bash
 # Triggered when: {{ include ".chezmoidata/skills.yaml" | sha256sum }}
 set -euo pipefail
-{{ if .skills.bunx }}
+{{- if .skills.bunx }}
 packages=(
 {{- range .skills.bunx }}
-  {{ .repo | quote }}
-  "--skill"
-  {{ .skill | quote }}
+  {{ . | quote }}
 {{- end }}
 )
 if command -v bunx >/dev/null 2>&1; then
