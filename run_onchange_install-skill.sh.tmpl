@@ -8,16 +8,17 @@ packages=(
 {{- end }}
 )
 if command -v bunx >/dev/null 2>&1; then
-  skills_dir={{ printf "%s/.agents/skills" .chezmoi.sourceDir | quote }}
+  installed_json="$(bunx skills list -g --json)"
   did_install=false
 
   for package in "${packages[@]}"; do
     skill_name="${package##*@}"
-    if [[ -e "$skills_dir/$skill_name" ]]; then
+    if grep -Fq "\"name\": \"$skill_name\"" <<<"$installed_json"; then
       continue
     fi
 
-    bunx skills add "$package" -y
+    bunx skills add "$package" -g -y
+    installed_json+=$'\n'"\"name\": \"$skill_name\""
     did_install=true
   done
 
