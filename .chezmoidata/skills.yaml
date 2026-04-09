@@ -9,4 +9,5 @@ skills:
     - 'addyosmani/web-quality-skills@accessibility'
     - 'kepano/obsidian-skills@obsidian-cli'
     - 'kepano/obsidian-skills@obsidian-markdown'
+    - 'vercel-labs/agent-skills@web-design-guidelines'
 

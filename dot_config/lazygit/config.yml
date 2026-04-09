@@ -41,7 +41,7 @@ customCommands:
   - key: "C"
     context: "files"
     description: "Generate commit message with Opencode"
-    command: "opencode run --command cmsg"
+    command: "pi --model openai-codex/gpt-5.4-mini:medium -p '/cmsg'"
     output: log
   - key: "U"
     context: "files"
