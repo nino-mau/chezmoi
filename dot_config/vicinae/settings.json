@@ -52,6 +52,13 @@
             "customNpxPath": "/usr/bin/bunx"
          }
       },
+      "@nino-mau/commit-message": {
+         "entrypoints": {
+            "commit-message": {
+               "alias": "cm"
+            }
+         }
+      },
       "@nino-mau/iconify": {
          "entrypoints": {
             "search-icons": {

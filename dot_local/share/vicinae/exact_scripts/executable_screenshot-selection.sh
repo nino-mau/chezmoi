@@ -7,7 +7,7 @@ printf 'Select an area\n'
 exec </dev/null >/dev/null 2>&1
 setsid -f bash -lc '
   sleep 0.2
-  dir="$HOME/Pictures/screenshot"
+  dir="$HOME/Pictures/Screenshots"
   timestamp="$(date +%Y-%m-%d_%H-%M-%S)"
   file="$dir/$timestamp.png"
   mkdir -p "$dir"

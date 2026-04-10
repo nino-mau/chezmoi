@@ -43,3 +43,7 @@ customCommands:
       shell: true
       command: "{{ .DockerCompose }} down -v && {{ .DockerCompose }} up -d --build"
       serviceNames: []
+    - name: up-build
+      shell: true
+      command: "{{ .DockerCompose }} down -v && {{ .DockerCompose }} up -d --build"
+      serviceNames: []
