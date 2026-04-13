@@ -30,7 +30,7 @@ default-root-container-layout = 'tiles'
 # Possible values: horizontal|vertical|auto
 # 'auto' means: wide monitor (anything wider than high) gets horizontal orientation,
 #               tall monitor (anything higher than wide) gets vertical orientation
-default-root-container-orientation = 'auto'
+default-root-container-orientation = 'horizontal'
 
 # Mouse follows focus when focused monitor changes
 # Drop it from your config, if you don't like this behavior
@@ -152,6 +152,8 @@ on-mode-changed = []
     cmd-shift-3 = 'move-node-to-workspace 3'
     cmd-shift-4 = 'move-node-to-workspace 4'
     cmd-shift-5 = 'move-node-to-workspace 5'
+
+    alt-slash = 'layout tiles horizontal vertical'
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
     alt-tab = 'workspace-back-and-forth'
