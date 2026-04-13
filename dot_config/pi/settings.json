@@ -1,0 +1,11 @@
+{
+  "lastChangelogVersion": "0.66.1",
+  "defaultProvider": "openai-codex",
+  "defaultModel": "gpt-5.4",
+  "packages": [
+    "git:github.com/otahontas/pi-coding-agent-catppuccin"
+  ],
+  "theme": "catppuccin-mocha",
+  "defaultThinkingLevel": "xhigh",
+  "hideThinkingBlock": false
+}
