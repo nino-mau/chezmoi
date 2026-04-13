@@ -1,0 +1,36 @@
+session_name: exb-sankey-demo
+start_directory: $HOME/Code/exb
+windows:
+  - window_name: editor
+    panes:
+      - shell_command:
+          - cd $HOME/Code/projects/exb-sankey-demo/
+          - nvim .
+
+  - window_name: repo
+    panes:
+      - shell_command:
+          - cd $HOME/Code/projects/exb-sankey-demo/
+
+  - window_name: exb
+    panes:
+      - shell_command:
+          - cd $HOME/Code/exb/client/
+
+  - window_name: client
+    panes:
+      - shell_command:
+          - cd $HOME/Code/exb/client
+          - pnpm start
+
+  - window_name: server
+    panes:
+      - shell_command:
+          - cd $HOME/Code/exb/server
+          - pnpm start
+
+  - window_name: sync
+    panes:
+      - shell_command:
+          - cd $HOME/Code/projects/exb-sankey-demo/
+          - ./dev_livesync.sh exb-sankey-demo ~/Code/exb
