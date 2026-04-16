@@ -2,7 +2,7 @@
 vec4 TRAIL_COLOR = iCurrentCursorColor; // can change to eg: vec4(0.2, 0.6, 1.0, 0.5);
 const float DURATION = 0.2; // in seconds
 const float TRAIL_LENGTH = 0.5;
-const float BLUR = 2.0; // blur size in pixels (for antialiasing)
+const float BLUR = 1.0; // blur size in pixels (for antialiasing)
 
 // --- CONSTANTS for easing functions ---
 const float PI = 3.14159265359;

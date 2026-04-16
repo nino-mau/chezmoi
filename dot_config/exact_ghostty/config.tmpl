@@ -5,6 +5,7 @@
 keybind = ctrl+f=start_search
 keybind = performable:ctrl+n=goto_split:next
 keybind = performable:ctrl+c=copy_to_clipboard
+keybind = ctrl+shift+e=text:\u{00E8}
 # keybind = alt+k=jump_to_prompt:-1
 # keybind = alt+j=jump_to_prompt:1
 
@@ -61,7 +62,7 @@ font-size = 12
 
 # Change cursor style
 # cursor-style = block
-# cursor-color = #cad3f5
+# cursor-color = #000000
 
 # ====================
 # SHELL
@@ -95,7 +96,7 @@ background-blur-radius = 50
 {{ if eq .chezmoi.os "darwin" }}
 # custom-shader = shaders/cursor_warp.glsl
 {{ else }}
-custom-shader = shaders/cursor_warp.glsl
+custom-shader = shaders/cursor_sweep.glsl
 # custom-shader = shaders/cursor_smear_custom.glsl
 # custom-shader = shaders/cursor_blaze_notrail_custom.glsl
 {{ end }}
