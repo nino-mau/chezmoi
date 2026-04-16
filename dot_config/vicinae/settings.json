@@ -99,6 +99,13 @@
             "instance": "https://gitlab.com"
          }
       },
+      "applications": {
+         "entrypoints": {
+            "yazi": {
+               "alias": "files"
+            }
+         }
+      },
       "files": {
          "entrypoints": {
             "search": {
