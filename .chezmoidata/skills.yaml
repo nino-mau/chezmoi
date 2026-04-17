@@ -10,4 +10,10 @@ skills:
     - 'kepano/obsidian-skills@obsidian-cli'
     - 'kepano/obsidian-skills@obsidian-markdown'
     - 'vercel-labs/agent-skills@web-design-guidelines'
+    - 'saschabrunnerch/arcgis-maps-sdk-js-ai-context@arcgis-core-maps'
+    - 'saschabrunnerch/arcgis-maps-sdk-js-ai-context@arcgis-geometry-operations'
+    - 'saschabrunnerch/arcgis-maps-sdk-js-ai-context@arcgis-popup-templates'
+    - 'saschabrunnerch/arcgis-maps-sdk-js-ai-context@arcgis-layers'
+    - 'saschabrunnerch/arcgis-maps-sdk-js-ai-context@arcgis-interaction'
+    - 'saschabrunnerch/arcgis-maps-sdk-js-ai-context@arcgis-cim-symbols'
 
