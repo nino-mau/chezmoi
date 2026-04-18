@@ -40,10 +40,10 @@ customCommands:
       serviceNames: []
   services:
     - name: reset-project
-      attach: true
+      shell: true
       command: "{{ .DockerCompose }} down -v && {{ .DockerCompose }} up -d --build"
       serviceNames: []
     - name: up-build
-      attach: true
+      shell: true
       command: "{{ .DockerCompose }} down -v && {{ .DockerCompose }} up -d --build"
       serviceNames: []

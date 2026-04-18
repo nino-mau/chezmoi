@@ -47,6 +47,16 @@
             }
          }
       },
+      "@joshuaiz/store.raycast.password-generator": {
+         "entrypoints": {
+            "generate-random-password": {
+               "preferences": {
+                  "rememberNumbersAndCharacters": true,
+                  "storePasswordLength": true
+               }
+            }
+         }
+      },
       "@keito4/store.raycast.skills": {
          "preferences": {
             "customNpxPath": "/usr/bin/bunx"

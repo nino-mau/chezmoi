@@ -22,6 +22,9 @@ abbr -a lsimg "timg --grid=3x2 --title *.{jpg,JPG,png,jpeg,webp}"
 # Generate random string
 alias rand="openssl rand -base64 32 | tr -d '/+='"
 
+# Generate random strong password 
+alias randpass="pwgen -s -y -c -n 15 1"
+
 # Render image using kitty graphic protocol
 alias icat="kitten icat"
 

@@ -3,6 +3,9 @@
 # opencode
 fish_add_path $HOME/.opencode/bin
 
+# uv
+fish_add_path "/home/nino/.local/share/../bin"
+
 # pnpm
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
 if not string match -q -- "*$PNPM_HOME*" "$PATH"
