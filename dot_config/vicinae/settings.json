@@ -24,6 +24,13 @@
    "launcher_window": {
       "opacity": 0.9
    },
+   "favorites": [
+      "@nino-mau/grammalecte-fr-corrector:correct-french-text",
+      "@nino-mau/theme-switcher:switch-theme",
+      "@nino-mau/wallpaper-switcher:wallpapers",
+      "@nino-mau/commit-message:commit-message",
+      "@nino-mau/zen-bookmarks:search-bookmarks"
+   ],
    "providers": {
       "@dru89/store.raycast.obsidian-bookmarks": {
          "preferences": {
@@ -66,6 +73,13 @@
          "entrypoints": {
             "commit-message": {
                "alias": "cm"
+            }
+         }
+      },
+      "@nino-mau/grammalecte-fr-corrector": {
+         "entrypoints": {
+            "correct-french-text": {
+               "alias": "sp"
             }
          }
       },
