@@ -1,0 +1,46 @@
+bootstrap_nodes = [
+    "router.utorrent.com:6881",
+    "router.bittorrent.com:6881",
+    "dht.transmissionbt.com:6881",
+    "dht.libtorrent.org:25401",
+    "router.cococorp.de:6881",
+]
+client_id = "-SS1000-9HWhCmPk1OB6"
+client_leeching_fallback_interval_secs = 60
+client_port = 45125
+connection_attempt_permits = 50
+default_download_folder = "/home/nino/Downloads"
+global_download_limit_bps = 0
+global_upload_limit_bps = 0
+lifetime_downloaded = 239009792
+lifetime_uploaded = 0
+max_concurrent_validations = 64
+max_connected_peers = 2000
+output_status_interval = 0
+peer_sort_column = "UL"
+peer_sort_direction = "Descending"
+peer_upload_in_flight_limit = 4
+private_client = false
+schema_version = 1
+torrent_sort_column = "Up"
+torrent_sort_direction = "Descending"
+tracker_fallback_interval_secs = 1800
+ui_theme = "catppuccin_mocha"
+upload_slots = 8
+
+[rss]
+enabled = true
+feeds = []
+filters = []
+max_preview_items = 500
+poll_interval_secs = 900
+
+[[torrents]]
+delete_files = false
+download_path = "/home/nino/Downloads"
+name = "test"
+torrent_control_state = "Running"
+torrent_or_magnet = "magnet:?xt=urn:btih:0123456789012345678901234567890123456789&dn=test"
+validation_status = false
+
+[torrents.file_priorities]
