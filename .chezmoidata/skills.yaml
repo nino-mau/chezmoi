@@ -16,4 +16,6 @@ skills:
     - 'saschabrunnerch/arcgis-maps-sdk-js-ai-context@arcgis-layers'
     - 'saschabrunnerch/arcgis-maps-sdk-js-ai-context@arcgis-interaction'
     - 'saschabrunnerch/arcgis-maps-sdk-js-ai-context@arcgis-cim-symbols'
+    - 'vince-winkintel/gitlab-cli-skills@gitlab-cli-skills'
+    - 'github/awesome-copilot@gh-cli'
 

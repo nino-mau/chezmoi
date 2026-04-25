@@ -26,13 +26,13 @@ windows:
     panes:
       - shell_command:
           - cd $HOME/Code/exb/client
-          - npm start
+          - pnpm start
 
   - window_name: server
     panes:
       - shell_command:
           - cd $HOME/Code/exb/server
-          - npm start
+          - pnpm start
 
   - window_name: sync
     panes:
