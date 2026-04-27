@@ -132,23 +132,23 @@ binds {
     }
 
     Super+1 {
-        focus-workspace "1"
+        focus-workspace "w1"
     }
 
     Super+2 {
-        focus-workspace "2"
+        focus-workspace "w2"
     }
 
     Super+3 {
-        focus-workspace "3"
+        focus-workspace "w3"
     }
 
     Super+4 {
-        focus-workspace "4"
+        focus-workspace "w4"
     }
 
     Super+5 {
-        focus-workspace 5
+        focus-workspace "w5"
     }
 
     Super+6 {
@@ -168,23 +168,23 @@ binds {
     }
 
     Super+Shift+1 {
-        move-column-to-workspace "1"
+        move-column-to-workspace "w1"
     }
 
     Super+Shift+2 {
-        move-column-to-workspace "2"
+        move-column-to-workspace "w2"
     }
 
     Super+Shift+3 {
-        move-column-to-workspace "3"
+        move-column-to-workspace "w3"
     }
 
     Super+Shift+4 {
-        move-column-to-workspace "4"
+        move-column-to-workspace "w4"
     }
 
     Super+Shift+5 {
-        move-column-to-workspace 5
+        move-column-to-workspace "w5"
     }
 
     Super+Shift+6 {

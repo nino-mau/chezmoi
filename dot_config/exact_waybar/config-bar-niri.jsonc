@@ -23,13 +23,12 @@
   "niri/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": ""
-    },
-    "all-outputs": false
+      "w1": "",
+      "w2": "",
+      "w3": "",
+      "w4": "",
+      "w5": ""
+    }
   },
   "custom/weather": {
     "exec": "${HOME}/.config/waybar/scripts/get-weather.sh Bangalore+India",
@@ -113,7 +112,7 @@
     "format-bluetooth": "{icon} {volume}%",
     "format-muted": "󰖁",
     "scroll-step": 1,
-    "on-click": "pavucontrol",
+    "on-click": "ghostty -e wiremix",
     "ignored-sinks": [
       "Easy Effects Sink"
     ],
