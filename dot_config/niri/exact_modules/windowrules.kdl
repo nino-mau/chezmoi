@@ -32,7 +32,7 @@ layer-rule {
 layer-rule {
     match namespace="^swaync-notification-window$"
     background-effect {
-        blur true
+        blur false
         xray false
     }
 }
