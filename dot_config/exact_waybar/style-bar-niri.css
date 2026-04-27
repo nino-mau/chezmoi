@@ -40,7 +40,7 @@ tooltip label {
 }
 
 #workspaces button {
-  padding: 0px 7px;
+  padding: 0px 4px;
   margin: 0px 4px;
   border-radius: 50px;
   color: transparent;
@@ -51,7 +51,7 @@ tooltip label {
 #workspaces button.active {
   background-color: @primary;
   color: @bg0;
-  min-width: 50px;
+  min-width: 55px;
   transition: all 0.3s ease-in-out;
   font-size: 13px;
 }

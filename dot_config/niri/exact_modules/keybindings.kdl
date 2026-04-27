@@ -31,6 +31,14 @@ binds {
         spawn "vicinae" "vicinae://launch/clipboard/history"
     }
 
+    Super+Slash {
+        spawn "vicinae" "vicinae://launch/@nino-mau/wallpaper-switcher/wallpapers"
+    }
+
+    Super+Apostrophe {
+        spawn "vicinae" "vicinae://launch/@nino-mau/commit-message/commit-message"
+    }
+
     Super+dead_grave {
         spawn "walker" "--provider" "symbols"
     }
@@ -63,7 +71,7 @@ binds {
         toggle-column-tabbed-display
     }
 
-    Super+F {
+    Super+Shift+F {
         fullscreen-window
     }
 
@@ -107,15 +115,15 @@ binds {
         move-column-right
     }
 
-    Super+Shift+Up {
+    Super+Shift+Right {
         set-column-width "+10%"
     }
 
-    Super+Shift+Down {
+    Super+Shift+Left {
         set-column-width "-10%"
     }
 
-    Super+Shift+F {
+    Super+F {
         maximize-column
     }
 
