@@ -18,6 +18,27 @@ output "HDMI-A-2" {
     focus-at-startup
 }
 
+{{ if eq .chezmoi.hostname "cachyos-x8664" }}
+workspace "1" {
+    open-on-output "DP-1"
+}
+
+workspace "2" {
+    open-on-output "DP-1"
+}
+
+workspace "3" {
+    open-on-output "DP-1"
+}
+
+workspace "4" {
+    open-on-output "DP-1"
+}
+
+workspace "5" {
+    open-on-output "DP-1"
+}
+{{ else }}
 workspace "1" {
     open-on-output "HDMI-A-2"
 }
@@ -33,3 +54,4 @@ workspace "3" {
 workspace "4" {
     open-on-output "HDMI-A-2"
 }
+{{ end }}
