@@ -118,7 +118,7 @@ keybinding:
     pullFiles: p
     refresh: R
     createPatchOptionsMenu: <c-p>
-    nextTab: <c-l>
+    nextTab: "]"
     prevTab: "["
     nextScreenMode: +
     prevScreenMode: _

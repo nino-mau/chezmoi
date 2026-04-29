@@ -152,7 +152,7 @@ binds {
     }
 
     Super+6 {
-        focus-workspace 6
+        focus-workspace "w6"
     }
 
     Super+7 {
@@ -188,7 +188,7 @@ binds {
     }
 
     Super+Shift+6 {
-        move-column-to-workspace 6
+        move-column-to-workspace "w6"
     }
 
     Super+Shift+7 {
