@@ -12,17 +12,17 @@ connection_attempt_permits = 50
 default_download_folder = "/home/nino/Downloads"
 global_download_limit_bps = 0
 global_upload_limit_bps = 0
-lifetime_downloaded = 239009792
+lifetime_downloaded = 3476127744
 lifetime_uploaded = 0
 max_concurrent_validations = 64
 max_connected_peers = 2000
 output_status_interval = 0
-peer_sort_column = "UL"
+peer_sort_column = "DL"
 peer_sort_direction = "Descending"
 peer_upload_in_flight_limit = 4
 private_client = false
 schema_version = 1
-torrent_sort_column = "Up"
+torrent_sort_column = "Down"
 torrent_sort_direction = "Descending"
 tracker_fallback_interval_secs = 1800
 ui_theme = "catppuccin_mocha"
@@ -36,11 +36,12 @@ max_preview_items = 500
 poll_interval_secs = 900
 
 [[torrents]]
+container_name = "Dandadan 2nd Season [7e40253c22be56be234c8ba47b3652aa04f69b66]"
 delete_files = false
 download_path = "/home/nino/Downloads"
-name = "test"
-torrent_control_state = "Running"
-torrent_or_magnet = "magnet:?xt=urn:btih:0123456789012345678901234567890123456789&dn=test"
+name = "Dandadan 2nd Season"
+torrent_control_state = "Paused"
+torrent_or_magnet = "magnet:?xt=urn:btih:7e40253c22be56be234c8ba47b3652aa04f69b66&dn=%5BDB%5D%20Dandadan%202nd%20Season%20%7C%20Dan%20Da%20Dan%20Season%202%20%5BDual%20Audio%2010bit%20BD1080p%5D%5BHEVC-x265%5D&tr=http%3A%2F%2Fnyaa.tracker.wf%3A7777%2Fannounce&tr=udp%3A%2F%2Fopen.stealth.si%3A80%2Fannounce&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337%2Fannounce&tr=udp%3A%2F%2Fexodus.desync.com%3A6969%2Fannounce&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451%2Fannounce"
 validation_status = false
 
 [torrents.file_priorities]
