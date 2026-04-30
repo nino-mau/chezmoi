@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Eddie CLI
+Icon=/usr/share/pixmaps/eddie-ui.png
+Exec=eddie-cli -connect=true
+Terminal=true
+Categories=System;Monitor;ConsoleOnly;
