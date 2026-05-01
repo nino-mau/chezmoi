@@ -1,91 +1,182 @@
 #!/usr/bin/env bash
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
-# weather info from wttr. https://github.com/chubin/wttr.in
-# Remember to add city
 
-city=Bengaluru
-cachedir=~/.cache/rbn
-cachefile=${0##*/}-$1
+location_input=${*:-Grenoble France}
+display_location=${location_input//+/ }
+query_location=${display_location// /+}
+normalized_location=$(printf '%s' "$display_location" | tr '[:upper:]' '[:lower:]' | tr ',' ' ' | tr -s '[:space:]' ' ')
 
-if [ ! -d $cachedir ]; then
-  mkdir -p $cachedir
+json_escape() {
+  local value=$1
+  value=${value//\\/\\\\}
+  value=${value//\"/\\\"}
+  value=${value//$'\n'/\\n}
+  value=${value//$'\r'/}
+  printf '%s' "$value"
+}
+
+emit_weather_json() {
+  printf '{"text":"%s","alt":"%s","tooltip":"%s"}\n' \
+    "$(json_escape "$1")" \
+    "$(json_escape "$2")" \
+    "$(json_escape "$3")"
+}
+
+icon_from_condition() {
+  case "$1" in
+  *thunder*)
+    printf ''
+    ;;
+  *sleet* | *freezing\ drizzle* | *freezing\ rain* | *ice\ pellets*)
+    printf ''
+    ;;
+  *blizzard* | *heavy\ snow* | *moderate\ snow*)
+    printf ''
+    ;;
+  *snow*)
+    printf ''
+    ;;
+  *torrential* | *heavy\ rain* | *moderate\ rain*)
+    printf ''
+    ;;
+  *rain* | *drizzle* | *shower*)
+    printf ''
+    ;;
+  *mist* | *fog* | *haze*)
+    printf ''
+    ;;
+  *overcast*)
+    printf ''
+    ;;
+  *partly\ cloudy*)
+    printf ''
+    ;;
+  *cloud*)
+    printf ''
+    ;;
+  *clear* | *sunny*)
+    printf ''
+    ;;
+  *)
+    printf ''
+    ;;
+  esac
+}
+
+emit_meteofrance_weather() {
+  local latitude=$1
+  local longitude=$2
+  local weather_json temperature apparent_temperature weather_code is_day wind_speed
+  local icon condition text_temperature detail_temperature detail_apparent detail_wind
+
+  command -v jq >/dev/null 2>&1 || return 1
+
+  weather_json=$(curl -fsS --retry 2 --retry-delay 1 --retry-all-errors --max-time 10 "https://api.open-meteo.com/v1/meteofrance?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,apparent_temperature,weather_code,is_day,wind_speed_10m&models=meteofrance_seamless" 2>/dev/null) || return 1
+
+  temperature=$(jq -er '.current.temperature_2m' <<<"$weather_json") || return 1
+  apparent_temperature=$(jq -er '.current.apparent_temperature' <<<"$weather_json") || return 1
+  weather_code=$(jq -er '.current.weather_code' <<<"$weather_json") || return 1
+  is_day=$(jq -er '.current.is_day' <<<"$weather_json") || return 1
+  wind_speed=$(jq -er '.current.wind_speed_10m' <<<"$weather_json") || return 1
+
+  case "$weather_code" in
+  0)
+    condition="Clear sky"
+    icon=""
+    ;;
+  1)
+    condition="Mainly clear"
+    icon=""
+    ;;
+  2)
+    condition="Partly cloudy"
+    icon=""
+    ;;
+  3)
+    condition="Overcast"
+    icon=""
+    ;;
+  45 | 48)
+    condition="Fog"
+    icon=""
+    ;;
+  51 | 53 | 55)
+    condition="Drizzle"
+    icon=""
+    ;;
+  56 | 57)
+    condition="Freezing drizzle"
+    icon=""
+    ;;
+  61 | 63 | 65)
+    condition="Rain"
+    icon=""
+    ;;
+  66 | 67)
+    condition="Freezing rain"
+    icon=""
+    ;;
+  71 | 73 | 75 | 77)
+    condition="Snow"
+    icon=""
+    ;;
+  80 | 81 | 82)
+    condition="Rain showers"
+    icon=""
+    ;;
+  85 | 86)
+    condition="Snow showers"
+    icon=""
+    ;;
+  95 | 96 | 99)
+    condition="Thunderstorm"
+    icon=""
+    ;;
+  *)
+    condition="Unknown"
+    icon=""
+    ;;
+  esac
+
+  if [[ "$is_day" -eq 0 && "$weather_code" -eq 0 ]]; then
+    icon=""
+  fi
+
+  text_temperature=$(LC_NUMERIC=C printf '%.0f°C' "$temperature")
+  detail_temperature=$(LC_NUMERIC=C printf '%.1f°C' "$temperature")
+  detail_apparent=$(LC_NUMERIC=C printf '%.1f°C' "$apparent_temperature")
+  detail_wind=$(LC_NUMERIC=C printf '%.1f km/h' "$wind_speed")
+
+  emit_weather_json \
+    "${icon} ${text_temperature}" \
+    "meteo-france-${weather_code}" \
+    "${display_location}: ${detail_temperature}, feels like ${detail_apparent}, wind ${detail_wind}, ${condition} (Meteo-France via Open-Meteo)"
+}
+
+if [[ "$normalized_location" == "grenoble" || "$normalized_location" == "grenoble france" ]]; then
+  if emit_meteofrance_weather 45.1885 5.7245; then
+    exit 0
+  fi
 fi
 
-if [ ! -f $cachedir/$cachefile ]; then
-  touch $cachedir/$cachefile
+if [[ "$normalized_location" == "meylan" || "$normalized_location" == "meylan france" ]]; then
+  if emit_meteofrance_weather 45.20978 5.77762; then
+    exit 0
+  fi
 fi
 
-# Save current IFS
-SAVEIFS=$IFS
-# Change IFS to new line.
-IFS=$'\n'
-
-cacheage=$(($(date +%s) - $(stat -c '%Y' "$cachedir/$cachefile")))
-if [ $cacheage -gt 1740 ] || [ ! -s $cachedir/$cachefile ]; then
-  data=($(curl -s https://en.wttr.in/"$city"$1\?0qnT 2>&1))
-  echo ${data[0]} | cut -f1 -d, >$cachedir/$cachefile
-  echo ${data[1]} | sed -E 's/^.{15}//' >>$cachedir/$cachefile
-  echo ${data[2]} | sed -E 's/^.{15}//' >>$cachedir/$cachefile
+if ! weather=$(curl -fsS --retry 2 --retry-delay 1 --retry-all-errors --max-time 10 "https://wttr.in/${query_location}?format=%C|%t" 2>/dev/null); then
+  printf '{"text":"%s","alt":"%s","tooltip":"%s"}\n' \
+    "$(json_escape ' N/A')" \
+    "$(json_escape 'unavailable')" \
+    "$(json_escape "${display_location}: unavailable")"
+  exit 0
 fi
 
-weather=($(cat $cachedir/$cachefile))
+condition=${weather%%|*}
+temperature=${weather#*|}
+temperature=${temperature//$'\r'/}
+temperature=${temperature#+}
+condition_key=$(printf '%s' "$condition" | tr '[:upper:]' '[:lower:]')
+icon=$(icon_from_condition "$condition_key")
 
-# Restore IFSClear
-IFS=$SAVEIFS
-
-#temperature=$(echo ${weather[2]} | sed -E 's/([[:digit:]])\.\./\1 to /g')
-temperature=$(curl -s "https://wttr.in/${city}?format=%t" | sed 's/+//')
-
-#echo ${weather[1]##*,}
-
-# https://www.nerdfonts.com/cheat-sheet
-case $(echo ${weather[1]##*,} | tr '[:upper:]' '[:lower:]') in
-"clear" | "sunny")
-  condition="" # nf-weather-day_sunny
-  ;;
-"partly cloudy")
-  condition="" # nf-weather-day_cloudy
-  ;;
-"cloudy")
-  condition="" # nf-weather-cloudy
-  ;;
-"overcast")
-  condition="" # nf-weather-cloud
-  ;;
-"haze")
-  condition="" # nf-weather-dust
-  ;;
-"fog" | "freezing fog")
-  condition="" # nf-weather-fog
-  ;;
-"patchy rain possible" | "patchy light drizzle" | "light drizzle" | "patchy light rain" | "light rain" | "light rain shower" | "mist" | "rain")
-  condition="" # nf-weather-showers
-  ;;
-"moderate rain at times" | "moderate rain" | "heavy rain at times" | "heavy rain" | "moderate or heavy rain shower" | "torrential rain shower" | "rain shower")
-  condition="" # nf-weather-rain
-  ;;
-"patchy snow possible" | "patchy sleet possible" | "patchy freezing drizzle possible" | "freezing drizzle" | "heavy freezing drizzle" | "light freezing rain" | "moderate or heavy freezing rain" | "light sleet" | "ice pellets" | "light sleet showers" | "moderate or heavy sleet showers")
-  condition="" # nf-weather-sleet
-  ;;
-"blowing snow" | "moderate or heavy sleet" | "patchy light snow" | "light snow" | "light snow showers")
-  condition="" # nf-weather-snow
-  ;;
-"blizzard" | "patchy moderate snow" | "moderate snow" | "patchy heavy snow" | "heavy snow" | "moderate or heavy snow with thunder" | "moderate or heavy snow showers")
-  condition="" # nf-weather-snow_wind
-  ;;
-"thundery outbreaks possible" | "patchy light rain with thunder" | "moderate or heavy rain with thunder" | "patchy light snow with thunder")
-  condition="" # nf-weather-storm_showers
-  ;;
-*)
-  condition="" # nf-fa-exclamation_triangle (fallback icon)
-  echo -e "{\"text\":\""$condition"\", \"alt\":\""${weather[0]}"\", \"tooltip\":\""${weather[0]}: $temperature ${weather[1]}"\"}"
-  ;;
-esac
-
-#echo $temp $condition
-
-echo -e "{\"text\":\""$condition $temperature"\", \"alt\":\""${weather[0]}"\", \"tooltip\":\""${weather[0]}: $temperature ${weather[1]}"\"}"
-
-cached_weather=" $temperature  \n$condition ${weather[1]}"
-
-echo -e $cached_weather >~/.cache/.weather_cache
+emit_weather_json "${icon} ${temperature}" "$condition_key" "${display_location}: ${temperature} ${condition}"

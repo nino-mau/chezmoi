@@ -3,18 +3,19 @@
   "margin-top": 20,
   "modules-left": [
     "custom/launcher",
-    "clock",
-    "hyprland/submap",
+    "custom/weather",
     "custom/media"
   ],
   "modules-center": [
+    "clock",
     "hyprland/workspaces"
   ],
   "modules-right": [
     "battery",
     "pulseaudio",
     "network",
-    "tray"
+    "tray",
+    "custom/notification"
   ],
   "hyprland/submap": {
     "format": "{}",
@@ -40,11 +41,10 @@
     "on-scroll-up": "hyprctl dispatch workspace e-1"
   },
   "custom/weather": {
-    "exec": "${HOME}/.config/waybar/scripts/get-weather.sh Bangalore+India",
+    "exec": "~/.config/waybar/scripts/get-weather.sh Grenoble+France 2>/dev/null",
     "return-type": "json",
-    "format": "{}",
-    "tooltip": true,
-    "interval": 3600
+    "interval": 1800,
+    "format": "{}"
   },
   "custom/notification": {
     "tooltip": true,
@@ -69,7 +69,7 @@
   },
   "custom/launcher": {
     "format": "",
-    "on-click": "swaync-client -t",
+    "on-click": "vicinae toggle",
     "tooltip-format": "Launch your favorite apps"
   },
   "custom/media": {
@@ -156,7 +156,7 @@
     "tooltip-format": "Connected to {essid}"
   },
   "clock": {
-    "format": "󰥔 {:%A, %d %b %H:%M}",
+    "format": "{:%d %b %H:%M}",
     "interval": 1,
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
