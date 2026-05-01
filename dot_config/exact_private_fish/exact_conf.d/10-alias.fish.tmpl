@@ -9,7 +9,6 @@ alias i="paru -S"
 {{ end -}}
 abbr -a rmr "rm -r"
 abbr -a rfc "source ~/.config/fish/config.fish"
-abbr -a mk "make"
 alias restart="exec $SHELL"
 
 # ====================
@@ -31,14 +30,13 @@ alias icat="kitten icat"
 # Open television text fuzzy search
 abbr -a lrg "tv text"
 
-# Open wiremix
-abbr -a mix "wiremix"
-
-# Open superseedr
-abbr -a torr "superseedr"
-
 # Start and connect to vpn with eddie-cli
 alias vpn="eddie-cli -connect=true"
+
+abbr -a mix "wiremix"
+abbr -a torr "superseedr"
+abbr -a mk "make"
+abbr -a js "just"
 
 # ====================
 # Paru
@@ -124,7 +122,7 @@ abbr -a dvenv deactivate
 # ====================
 
 alias sshpi="TERM=xterm-256color ssh nino@nino-pi"
-alias sshhome="TERM=xterm-256color ssh nino@home"
+alias sshhomelab="TERM=xterm-256color ssh nino@home"
 
 # ====================
 # Tmux

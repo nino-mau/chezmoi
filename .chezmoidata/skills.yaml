@@ -18,4 +18,4 @@ skills:
     - 'saschabrunnerch/arcgis-maps-sdk-js-ai-context@arcgis-cim-symbols'
     - 'vince-winkintel/gitlab-cli-skills@gitlab-cli-skills'
     - 'github/awesome-copilot@gh-cli'
-
+    - antfu/skills@pinia
