@@ -34,7 +34,7 @@ tooltip label {
 
 #workspaces {
   background: @bg0;
-  padding: 7px 4px;
+  padding: 7px 5px;
   border-radius: 100px;
   color: @fg;
 }
