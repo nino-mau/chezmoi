@@ -19,3 +19,4 @@ skills:
     - 'vince-winkintel/gitlab-cli-skills@gitlab-cli-skills'
     - 'github/awesome-copilot@gh-cli'
     - antfu/skills@pinia
+    - supabase/agent-skills@supabase-postgres-best-practices

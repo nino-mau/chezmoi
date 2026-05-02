@@ -51,8 +51,8 @@
     "tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
     "format": "{icon}",
     "format-icons": {
-      "notification": "",
-      "none": "",
+      "notification": "",
+      "none": "",
       "dnd-notification": "",
       "dnd-none": "",
       "inhibited-notification": "",
