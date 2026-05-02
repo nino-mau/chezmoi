@@ -34,50 +34,28 @@ tooltip label {
 
 #workspaces {
   background: @bg0;
-  padding: 8px 5px;
-  border-radius: 16px;
+  padding: 7px 4px;
+  border-radius: 100px;
   color: @fg;
 }
 
 #workspaces button {
-  padding: 0px 0px;
+  padding: 0px 7px;
   margin: 0px 4px;
-  border-radius: 50px;
+  border-radius: 100px;
   color: transparent;
   background: @bg2;
   transition: all 0.3s ease-in-out;
 }
 
+#workspaces button.focused,
 #workspaces button.active {
   background-color: @primary;
   color: @bg0;
-  min-width: 60px;
+  min-width: 50px;
   transition: all 0.3s ease-in-out;
   font-size: 13px;
 }
-
-#workspaces button#niri-workspace-5,
-#workspaces button#niri-workspace-5 label,
-#workspaces button#niri-workspace-6,
-#workspaces button#niri-workspace-6 label {
-  background: none;
-  border: none;
-  font-size: 0;
-  margin: 0;
-  min-height: 0;
-  min-width: 0;
-  padding: 0;
-  outline: none;
-}
-
-/* #workspaces button#niri-workspace-5 { */
-/*   background: None; */
-/*   border: None; */
-/*   font-size: 0; */
-/*   padding: 0; */
-/*   margin: 0; */
-/*   min-width: 0; */
-/* } */
 
 #workspaces button:hover {
   background-color: @lavender;
@@ -96,6 +74,20 @@ tooltip label {
   transition: all 0.3s ease-in-out;
 }
 
+#workspaces button#niri-workspace-5,
+#workspaces button#niri-workspace-5 label,
+#workspaces button#niri-workspace-6,
+#workspaces button#niri-workspace-6 label {
+  background: none;
+  border: none;
+  font-size: 0;
+  margin: 0;
+  min-height: 0;
+  min-width: 0;
+  outline: none;
+  padding: 0;
+}
+
 #battery,
 #pulseaudio,
 #backlight,
@@ -112,9 +104,9 @@ tooltip label {
 #tray,
 #custom-home-folder {
   background-color: @bg0;
-  padding: 0 14px 0 14px;
+  padding: 0 15px 0 15px;
   margin-left: 10px;
-  border-radius: 50px;
+  border-radius: 100px;
   color: @primary;
 }
 
@@ -122,12 +114,27 @@ tooltip label {
   color: @purple;
 }
 
+#clock {
+  margin-right: 10px;
+}
+
 #custom-media {
   color: @aqua;
 }
 
+#custom-weather {
+  color: @red;
+}
+
 #custom-launcher {
   color: @fg;
+  padding-left: 15px;
+  padding-right: 20px;
+}
+
+#custom-notification {
+  color: @fg;
+  padding-left: 15px;
   padding-right: 18px;
 }
 
