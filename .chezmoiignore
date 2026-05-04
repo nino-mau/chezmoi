@@ -3,6 +3,8 @@ scrapJJKTranscript/
 **/node_modules/**
 **/exact_node_modules/**
 .env
+.AppImage
+*.AppImage
 
 .config/fish/fish_variables
 
