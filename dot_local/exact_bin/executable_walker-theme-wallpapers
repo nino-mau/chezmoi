@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+pkill -x walker || true
+walker --gapplication-service >/dev/null 2>&1 &
+sleep 0.1
+walker --theme wallpaper --provider menus:theme-wallpapers

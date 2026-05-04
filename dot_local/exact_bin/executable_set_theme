@@ -1,0 +1,102 @@
+#!/bin/bash
+
+THEME="$1"
+
+# Store current theme in config
+echo "$THEME" >"$HOME/.config/current_theme"
+
+# Send notification to the user
+notify-send "Changing theme to $THEME..." ""
+
+# Switch to main theme wallpaper
+awww img --transition-type grow --transition-fps 60 --transition-step 255 "$HOME/.local/share/wallpapers/$THEME/$THEME.png"
+
+# =======================
+# MAKO
+# =======================
+
+ln -sf "$HOME/.config/colorschemes/mako/$THEME.conf" "$HOME/.config/mako/colors.conf"
+
+# Reload mako
+makoctl reload
+
+# =======================
+# HYPRLAND
+# =======================
+
+ln -sf "$HOME/.config/colorschemes/hypr/$THEME.conf" "$HOME/.config/hypr/colors.conf"
+
+# Reload hyprland
+hyprctl reload
+
+# =======================
+# HYPRPANEL
+# =======================
+
+ln -sf "$HOME/.config/colorschemes/hyprpanel/$THEME.json" "$HOME/.config/hyprpanel/theme.json"
+
+# Set theme using hyprpanel cli
+hyprpanel useTheme ~/.config/hyprpanel/theme.json
+
+# =======================
+# WAYBAR
+# =======================
+
+ln -sf "$HOME/.config/colorschemes/waybar/$THEME.css" "$HOME/.config/waybar/colors.css"
+
+pkill -9 waybar
+waybar -c ~/.config/waybar/config-bar-niri.jsonc -s ~/.config/waybar/style-bar-niri.css
+
+# =======================
+# SWAYNC
+# =======================
+
+ln -sf "$HOME/.config/colorschemes/swaync/$THEME.css" "$HOME/.config/swaync/colors.css"
+
+# Reload swaync css
+swaync-client -rs -sw >/dev/null 2>&1 || true
+
+# =======================
+# STARSHIP
+# =======================
+
+# Update palette in starship.toml
+sed -i "s/^palette = .*/palette = '$THEME'/" "$HOME/.config/starship.toml"
+
+# =======================
+# GHOSTTY
+# =======================
+
+# Update ghostty theme config
+ln -sf "$HOME/.config/colorschemes/ghostty/$THEME" "$HOME/.config/ghostty/theme"
+
+# Reload ghostty
+~/.local/bin/reload_ghostty
+
+# =======================
+# FISH
+# =======================
+
+# Update fish theme
+fish -c "fish_theme \"$HOME/.config/fish/themes/$THEME.fish\""
+
+# =======================
+# EZA
+# =======================
+
+# Update eza theme
+ln -sf "$HOME/.config/colorschemes/eza/$THEME.yml" "$HOME/.config/eza/theme.yml"
+
+# =======================
+# FASTFETCH
+# =======================
+
+# Update fastfetch config
+ln -sf "$HOME/.config/colorschemes/fastfetch/$THEME.jsonc" "$HOME/.config/fastfetch/config.jsonc"
+
+# =======================
+# WALKER
+# =======================
+
+# Update walker config
+ln -sf "$HOME/.config/colorschemes/walker/$THEME.css" "$HOME/.config/walker/themes/colors.css"

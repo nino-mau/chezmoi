@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+# Sync system configs from /etc to ~/.config for backup/dotfiles tracking
+# Source of truth: /etc folders
+# This script only copies, never modifies the real configs
+
+set -euo pipefail
+
+# Colors
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m' # No Color
+
+log_info()  { echo -e "${GREEN}[✓]${NC} $1"; }
+log_warn()  { echo -e "${YELLOW}[!]${NC} $1"; }
+log_error() { echo -e "${RED}[✗]${NC} $1"; }
+
+CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
+
+sync_earlyoom() {
+    local src="/etc/default/earlyoom"
+    local dest_dir="$CONFIG_DIR/earlyoom"
+    local dest="$dest_dir/earlyoom"
+
+    if [[ ! -f "$src" ]]; then
+        log_error "earlyoom config not found at $src"
+        return 1
+    fi
+
+    mkdir -p "$dest_dir"
+    
+    if [[ -f "$dest" ]] && diff -q "$src" "$dest" > /dev/null 2>&1; then
+        log_info "earlyoom: already in sync"
+    else
+        cp "$src" "$dest"
+        log_info "earlyoom: synced $src → $dest"
+    fi
+}
+
+sync_keyd() {
+    local src_dir="/etc/keyd"
+    local dest_dir="$CONFIG_DIR/keyd"
+
+    if [[ ! -d "$src_dir" ]]; then
+        log_error "keyd config dir not found at $src_dir"
+        return 1
+    fi
+
+    mkdir -p "$dest_dir"
+
+    local synced=0
+    for src_file in "$src_dir"/*.conf; do
+        [[ -f "$src_file" ]] || continue
+        
+        local filename
+        filename=$(basename "$src_file")
+        local dest_file="$dest_dir/$filename"
+
+        if [[ -f "$dest_file" ]] && diff -q "$src_file" "$dest_file" > /dev/null 2>&1; then
+            log_info "keyd/$filename: already in sync"
+        else
+            cp "$src_file" "$dest_file"
+            log_info "keyd/$filename: synced"
+            synced=$((synced + 1))
+        fi
+    done
+
+    if [[ $synced -eq 0 ]]; then
+        log_info "keyd: all files in sync"
+    fi
+}
+
+main() {
+    echo "Syncing system configs to $CONFIG_DIR..."
+    echo
+
+    sync_earlyoom
+    sync_keyd
+
+    echo
+    echo "Done."
+}
+
+main "$@"
