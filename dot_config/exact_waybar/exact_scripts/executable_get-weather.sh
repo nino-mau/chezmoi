@@ -24,34 +24,34 @@ emit_weather_json() {
 icon_from_condition() {
   case "$1" in
   *thunder*)
-    printf ''
+    printf ''
     ;;
   *sleet* | *freezing\ drizzle* | *freezing\ rain* | *ice\ pellets*)
-    printf ''
+    printf ''
     ;;
   *blizzard* | *heavy\ snow* | *moderate\ snow*)
-    printf ''
+    printf ''
     ;;
   *snow*)
-    printf ''
+    printf ''
     ;;
   *torrential* | *heavy\ rain* | *moderate\ rain*)
-    printf ''
+    printf ''
     ;;
   *rain* | *drizzle* | *shower*)
-    printf ''
+    printf ''
     ;;
   *mist* | *fog* | *haze*)
-    printf ''
+    printf ''
     ;;
   *overcast*)
-    printf ''
+    printf ''
     ;;
   *partly\ cloudy*)
-    printf ''
+    printf ''
     ;;
   *cloud*)
-    printf ''
+    printf ''
     ;;
   *clear* | *sunny*)
     printf ''
@@ -89,47 +89,47 @@ emit_meteofrance_weather() {
     ;;
   2)
     condition="Partly cloudy"
-    icon=""
+    icon=""
     ;;
   3)
     condition="Overcast"
-    icon=""
+    icon=""
     ;;
   45 | 48)
     condition="Fog"
-    icon=""
+    icon=""
     ;;
   51 | 53 | 55)
     condition="Drizzle"
-    icon=""
+    icon=""
     ;;
   56 | 57)
     condition="Freezing drizzle"
-    icon=""
+    icon=""
     ;;
   61 | 63 | 65)
     condition="Rain"
-    icon=""
+    icon=""
     ;;
   66 | 67)
     condition="Freezing rain"
-    icon=""
+    icon=""
     ;;
   71 | 73 | 75 | 77)
     condition="Snow"
-    icon=""
+    icon=""
     ;;
   80 | 81 | 82)
     condition="Rain showers"
-    icon=""
+    icon=""
     ;;
   85 | 86)
     condition="Snow showers"
-    icon=""
+    icon=""
     ;;
   95 | 96 | 99)
     condition="Thunderstorm"
-    icon=""
+    icon=""
     ;;
   *)
     condition="Unknown"
@@ -138,7 +138,7 @@ emit_meteofrance_weather() {
   esac
 
   if [[ "$is_day" -eq 0 && "$weather_code" -eq 0 ]]; then
-    icon=""
+    icon=""
   fi
 
   text_temperature=$(LC_NUMERIC=C printf '%.0f°C' "$temperature")
@@ -147,7 +147,7 @@ emit_meteofrance_weather() {
   detail_wind=$(LC_NUMERIC=C printf '%.1f km/h' "$wind_speed")
 
   emit_weather_json \
-    "${icon} ${text_temperature}" \
+    "${icon}  ${text_temperature}" \
     "meteo-france-${weather_code}" \
     "${display_location}: ${detail_temperature}, feels like ${detail_apparent}, wind ${detail_wind}, ${condition} (Meteo-France via Open-Meteo)"
 }
@@ -179,4 +179,4 @@ temperature=${temperature#+}
 condition_key=$(printf '%s' "$condition" | tr '[:upper:]' '[:lower:]')
 icon=$(icon_from_condition "$condition_key")
 
-emit_weather_json "${icon} ${temperature}" "$condition_key" "${display_location}: ${temperature} ${condition}"
+emit_weather_json "${icon}  ${temperature}" "$condition_key" "${display_location}: ${temperature} ${condition}"
