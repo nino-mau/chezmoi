@@ -1,8 +1,8 @@
 // -- CONFIGURATION ---
-vec4 TRAIL_COLOR = iCurrentCursorColor; // can change to eg: vec4(0.2, 0.6, 1.0, 0.5);
+// Trail color is inferred from cursor border pixels to avoid cursor-text bleed.
 const float DURATION = 0.2; // in seconds
 const float TRAIL_LENGTH = 0.5;
-const float BLUR = 1.0; // blur size in pixels (for antialiasing)
+const float BLUR = 2.0; // blur size in pixels (for antialiasing)
 
 // --- CONSTANTS for easing functions ---
 const float PI = 3.14159265359;
@@ -119,6 +119,44 @@ vec2 normalize(vec2 value, float isPosition) {
     return (value * 2.0 - (iResolution.xy * isPosition)) / iResolution.y;
 }
 
+vec2 denormalize(vec2 value, float isPosition) {
+    return (value * iResolution.y + (iResolution.xy * isPosition)) * 0.5;
+}
+
+vec4 sampleCursorFillColor(vec2 tl, vec2 tr, vec2 br, vec2 bl) {
+    vec2 size = vec2(abs(tr.x - tl.x), abs(tl.y - bl.y));
+    vec2 minInset = normalize(vec2(1.5, 1.5), 0.0);
+    vec2 inset = min(size * 0.25, max(minInset, size * 0.2));
+
+    vec2 stl = tl + vec2(inset.x, -inset.y);
+    vec2 str = tr + vec2(-inset.x, -inset.y);
+    vec2 sbr = br + vec2(-inset.x, inset.y);
+    vec2 sbl = bl + vec2(inset.x, inset.y);
+
+    vec4 c0 = texture(iChannel0, denormalize(stl, 1.0) / iResolution.xy);
+    vec4 c1 = texture(iChannel0, denormalize(str, 1.0) / iResolution.xy);
+    vec4 c2 = texture(iChannel0, denormalize(sbr, 1.0) / iResolution.xy);
+    vec4 c3 = texture(iChannel0, denormalize(sbl, 1.0) / iResolution.xy);
+
+    float d01 = dot(c0.rgb - c1.rgb, c0.rgb - c1.rgb);
+    float d02 = dot(c0.rgb - c2.rgb, c0.rgb - c2.rgb);
+    float d03 = dot(c0.rgb - c3.rgb, c0.rgb - c3.rgb);
+    float d12 = dot(c1.rgb - c2.rgb, c1.rgb - c2.rgb);
+    float d13 = dot(c1.rgb - c3.rgb, c1.rgb - c3.rgb);
+    float d23 = dot(c2.rgb - c3.rgb, c2.rgb - c3.rgb);
+
+    float bestDist = d01;
+    vec3 bestRgb = 0.5 * (c0.rgb + c1.rgb);
+
+    if (d02 < bestDist) { bestDist = d02; bestRgb = 0.5 * (c0.rgb + c2.rgb); }
+    if (d03 < bestDist) { bestDist = d03; bestRgb = 0.5 * (c0.rgb + c3.rgb); }
+    if (d12 < bestDist) { bestDist = d12; bestRgb = 0.5 * (c1.rgb + c2.rgb); }
+    if (d13 < bestDist) { bestDist = d13; bestRgb = 0.5 * (c1.rgb + c3.rgb); }
+    if (d23 < bestDist) { bestDist = d23; bestRgb = 0.5 * (c2.rgb + c3.rgb); }
+
+    return vec4(bestRgb, iCurrentCursorColor.a);
+}
+
 float antialising(float distance) {
 	return 1. - smoothstep(0., normalize(vec2(BLUR, BLUR), 0.).x, distance);
 }
@@ -147,6 +185,11 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord){
     
     vec4 currentCursor = vec4(normalize(iCurrentCursor.xy, 1.), normalize(iCurrentCursor.zw, 0.));
     vec4 previousCursor = vec4(normalize(iPreviousCursor.xy, 1.), normalize(iPreviousCursor.zw, 0.));
+
+    vec2 cc_tl = currentCursor.xy;
+    vec2 cc_tr = vec2(currentCursor.x + currentCursor.z, currentCursor.y);
+    vec2 cc_br = vec2(currentCursor.x + currentCursor.z, currentCursor.y - currentCursor.w);
+    vec2 cc_bl = vec2(currentCursor.x, currentCursor.y - currentCursor.w);
 
     vec2 centerCC = currentCursor.xy - (currentCursor.zw * offsetFactor);
     vec2 centerCP = previousCursor.xy - (previousCursor.zw * offsetFactor);
@@ -203,9 +246,9 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord){
         // -- Selecting and drawing the trail sdf --
         float sdfTrail = mix(sdfTrail_diag, sdfTrail_rect, isStraightMove);
 
-        vec4 trail = TRAIL_COLOR;
+        vec4 trail = sampleCursorFillColor(cc_tl, cc_tr, cc_br, cc_bl);
         float trailAlpha = antialising(sdfTrail);
-        newColor = mix(newColor, trail, trailAlpha);
+        newColor = mix(newColor, vec4(trail.rgb, newColor.a), trailAlpha);
 
         // Punch hole
         newColor = mix(newColor, fragColor, step(sdfCurrentCursor, 0.));

@@ -12,22 +12,20 @@ windows:
           - cd ./backend && svenv && nvim .
 
   - window_name: cmd
-    layout: tiled
+    layout: main-vertical
+    options:
+      main-pane-width: 50%
     panes:
       - shell_command:
-          - cd frontend
-          - clear
+          - docker compose up -d --build
       - shell_command:
-          - restart-on-exit -- fish -c 'while not docker compose ps --status running --services 2>/dev/null | grep -qx frontend; sleep 1; end; docker compose logs -f frontend'
+          - restart-on-exit -- fish -c 'while not docker compose ps --status
+            running --services 2>/dev/null | grep -qx frontend; sleep 1; end;
+            docker compose logs -f frontend'
       - shell_command:
-          - cd ./backend && svenv
-          - clear
-      - shell_command:
-          - restart-on-exit -- fish -c 'while not docker compose ps --status running --services 2>/dev/null | grep -qx backend; sleep 1; end; docker compose logs -f --tail=50 backend'
-
-  - window_name: cmd-root
-    panes:
-      - docker compose up -d --build
+          - restart-on-exit -- fish -c 'while not docker compose ps --status
+            running --services 2>/dev/null | grep -qx backend; sleep 1; end;
+            docker compose logs -f --tail=50 backend'
 
   - window_name: opencode
     panes:

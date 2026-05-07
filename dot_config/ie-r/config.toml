@@ -31,7 +31,7 @@ background = "#1F1D2E" # frosted glass tint behind the text box
 # It shows keybindings, current format, and capture backend info.
 # Glitch effects are purely cosmetic — a cyberpunk aesthetic touch.
 [hud]
-show = true
+show = false
 heavy_glitch_chance = 0   # full-line displacement glitch (0-100%)
 light_glitch_chance = 0   # subtle character jitter (0-100%)
 chromatic_chance = 0      # RGB channel split effect (0-100%)
@@ -100,15 +100,16 @@ cmyk = "{c}%, {m}%, {y}%, {k}%"
 size = 10                                  # max colors to remember
 reverse_order = true                       # newest first in tray menu
 colors = [
+    "#FBF0F5",
+    "#89B4FA",
+    "#6F3131",
+    "#2A1212",
     "#1E1E21",
     "#2B2B2E",
     "#F3F4F6",
     "#C0ACC4",
     "#333144",
     "#242638",
-    "#181825",
-    "#89B4FA",
-    "#323044",
 ]
 
 # Global system integration settings.

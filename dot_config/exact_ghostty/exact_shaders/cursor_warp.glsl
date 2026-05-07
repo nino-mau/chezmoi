@@ -1,5 +1,5 @@
 // --- CONFIGURATION ---
-vec4 TRAIL_COLOR = iCurrentCursorColor; // can change to eg: vec4(0.2, 0.6, 1.0, 0.5);
+// Trail color is inferred from cursor border pixels to avoid cursor-text bleed.
 const float DURATION = 0.2; // total animation time
 const float TRAIL_SIZE = 0.8; // 0.0 = all corners move together. 1.0 = max smear (leading corners jump instantly)
 const float THRESHOLD_MIN_DISTANCE = 1.5; // min distance to show trail (units of cursor height)
@@ -122,6 +122,44 @@ float getSdfConvexQuad(in vec2 p, in vec2 v1, in vec2 v2, in vec2 v3, in vec2 v4
 
 vec2 normalize(vec2 value, float isPosition) {
     return (value * 2.0 - (iResolution.xy * isPosition)) / iResolution.y;
+}
+
+vec2 denormalize(vec2 value, float isPosition) {
+    return (value * iResolution.y + (iResolution.xy * isPosition)) * 0.5;
+}
+
+vec4 sampleCursorFillColor(vec2 tl, vec2 tr, vec2 br, vec2 bl) {
+    vec2 size = vec2(abs(tr.x - tl.x), abs(tl.y - bl.y));
+    vec2 minInset = normalize(vec2(1.5, 1.5), 0.0);
+    vec2 inset = min(size * 0.25, max(minInset, size * 0.2));
+
+    vec2 stl = tl + vec2(inset.x, -inset.y);
+    vec2 str = tr + vec2(-inset.x, -inset.y);
+    vec2 sbr = br + vec2(-inset.x, inset.y);
+    vec2 sbl = bl + vec2(inset.x, inset.y);
+
+    vec4 c0 = texture(iChannel0, denormalize(stl, 1.0) / iResolution.xy);
+    vec4 c1 = texture(iChannel0, denormalize(str, 1.0) / iResolution.xy);
+    vec4 c2 = texture(iChannel0, denormalize(sbr, 1.0) / iResolution.xy);
+    vec4 c3 = texture(iChannel0, denormalize(sbl, 1.0) / iResolution.xy);
+
+    float d01 = dot(c0.rgb - c1.rgb, c0.rgb - c1.rgb);
+    float d02 = dot(c0.rgb - c2.rgb, c0.rgb - c2.rgb);
+    float d03 = dot(c0.rgb - c3.rgb, c0.rgb - c3.rgb);
+    float d12 = dot(c1.rgb - c2.rgb, c1.rgb - c2.rgb);
+    float d13 = dot(c1.rgb - c3.rgb, c1.rgb - c3.rgb);
+    float d23 = dot(c2.rgb - c3.rgb, c2.rgb - c3.rgb);
+
+    float bestDist = d01;
+    vec3 bestRgb = 0.5 * (c0.rgb + c1.rgb);
+
+    if (d02 < bestDist) { bestDist = d02; bestRgb = 0.5 * (c0.rgb + c2.rgb); }
+    if (d03 < bestDist) { bestDist = d03; bestRgb = 0.5 * (c0.rgb + c3.rgb); }
+    if (d12 < bestDist) { bestDist = d12; bestRgb = 0.5 * (c1.rgb + c2.rgb); }
+    if (d13 < bestDist) { bestDist = d13; bestRgb = 0.5 * (c1.rgb + c3.rgb); }
+    if (d23 < bestDist) { bestDist = d23; bestRgb = 0.5 * (c2.rgb + c3.rgb); }
+
+    return vec4(bestRgb, iCurrentCursorColor.a);
 }
 
 float antialising(float distance, float blurAmount) {
@@ -270,8 +308,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord){
         // tiny epsilon to avoid division by zero if moveVec is (0,0)
         float fadeProgress = clamp(dot(fragVec, moveVec) / (dot(moveVec, moveVec) + 1e-6), 0.0, 1.0);
 
-        vec4 trail = TRAIL_COLOR;
-        
         float effectiveBlur = BLUR;
         if (BLUR < 2.5) {
           // no antialising on horizontal/vertical movement, fixes 'pulse' like thing on end cursor
@@ -286,13 +322,13 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord){
             // float easedProgress = smoothstep(fadeStart, 1.0, fadeProgress);
             // easedProgress = pow(2.0, 10.0 * (fadeProgress - 1.0));
             float easedProgress = pow(fadeProgress, FADE_EXPONENT);
-            trail.a *= easedProgress;
+            shapeAlpha *= easedProgress;
         }
 
-        float finalAlpha = trail.a * shapeAlpha;
+        vec4 trail = sampleCursorFillColor(cc_tl, cc_tr, cc_br, cc_bl);
 
         // newColor.a to preserve the background alpha.
-        newColor = mix(newColor, vec4(trail.rgb, newColor.a), finalAlpha);
+        newColor = mix(newColor, vec4(trail.rgb, newColor.a), shapeAlpha);
 
         // punch hole on the trail, so current cursor is drawn on top
         newColor = mix(newColor, fragColor, step(sdfCurrentCursor, 0.));
