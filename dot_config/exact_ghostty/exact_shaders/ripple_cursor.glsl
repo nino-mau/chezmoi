@@ -3,7 +3,7 @@ const float DURATION = 0.15;               // How long the ripple animates (seco
 const float MAX_RADIUS = 0.05;             // Max radius in normalized coords (0.5 = 1/4 screen height)
 const float RING_THICKNESS = 0.02;             // Ring width in normalized coords
 const float CURSOR_WIDTH_CHANGE_THRESHOLD = 0.5; // Triggers ripple if cursor width changes by this fraction
-// Effect color is inferred from cursor border pixels to avoid cursor-text bleed.
+vec4 COLOR = vec4(0.35, 0.36, 0.44, 1.0); // change to iCurrentCursorColor for your cursor's color
 const float BLUR = 3.0;                    // Blur level in pixels
 const float ANIMATION_START_OFFSET = 0.0;        // Start the ripple slightly progressed (0.0 - 1.0)
 
@@ -68,44 +68,6 @@ vec2 normalize(vec2 value, float isPosition) {
     return (value * 2.0 - (iResolution.xy * isPosition)) / iResolution.y;
 }
 
-vec2 denormalize(vec2 value, float isPosition) {
-    return (value * iResolution.y + (iResolution.xy * isPosition)) * 0.5;
-}
-
-vec4 sampleCursorFillColor(vec2 tl, vec2 tr, vec2 br, vec2 bl) {
-    vec2 size = vec2(abs(tr.x - tl.x), abs(tl.y - bl.y));
-    vec2 minInset = normalize(vec2(1.5, 1.5), 0.0);
-    vec2 inset = min(size * 0.25, max(minInset, size * 0.2));
-
-    vec2 stl = tl + vec2(inset.x, -inset.y);
-    vec2 str = tr + vec2(-inset.x, -inset.y);
-    vec2 sbr = br + vec2(-inset.x, inset.y);
-    vec2 sbl = bl + vec2(inset.x, inset.y);
-
-    vec4 c0 = texture(iChannel0, denormalize(stl, 1.0) / iResolution.xy);
-    vec4 c1 = texture(iChannel0, denormalize(str, 1.0) / iResolution.xy);
-    vec4 c2 = texture(iChannel0, denormalize(sbr, 1.0) / iResolution.xy);
-    vec4 c3 = texture(iChannel0, denormalize(sbl, 1.0) / iResolution.xy);
-
-    float d01 = dot(c0.rgb - c1.rgb, c0.rgb - c1.rgb);
-    float d02 = dot(c0.rgb - c2.rgb, c0.rgb - c2.rgb);
-    float d03 = dot(c0.rgb - c3.rgb, c0.rgb - c3.rgb);
-    float d12 = dot(c1.rgb - c2.rgb, c1.rgb - c2.rgb);
-    float d13 = dot(c1.rgb - c3.rgb, c1.rgb - c3.rgb);
-    float d23 = dot(c2.rgb - c3.rgb, c2.rgb - c3.rgb);
-
-    float bestDist = d01;
-    vec3 bestRgb = 0.5 * (c0.rgb + c1.rgb);
-
-    if (d02 < bestDist) { bestDist = d02; bestRgb = 0.5 * (c0.rgb + c2.rgb); }
-    if (d03 < bestDist) { bestDist = d03; bestRgb = 0.5 * (c0.rgb + c3.rgb); }
-    if (d12 < bestDist) { bestDist = d12; bestRgb = 0.5 * (c1.rgb + c2.rgb); }
-    if (d13 < bestDist) { bestDist = d13; bestRgb = 0.5 * (c1.rgb + c3.rgb); }
-    if (d23 < bestDist) { bestDist = d23; bestRgb = 0.5 * (c2.rgb + c3.rgb); }
-
-    return vec4(bestRgb, iCurrentCursorColor.a);
-}
-
 void mainImage(out vec4 fragColor, in vec2 fragCoord){
     #if !defined(WEB)
     fragColor = texture(iChannel0, fragCoord.xy / iResolution.xy);
@@ -117,12 +79,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord){
 
     vec4 currentCursor = vec4(normalize(iCurrentCursor.xy, 1.), normalize(iCurrentCursor.zw, 0.));
     vec4 previousCursor = vec4(normalize(iPreviousCursor.xy, 1.), normalize(iPreviousCursor.zw, 0.));
-
-    vec2 cc_tl = currentCursor.xy;
-    vec2 cc_tr = vec2(currentCursor.x + currentCursor.z, currentCursor.y);
-    vec2 cc_br = vec2(currentCursor.x + currentCursor.z, currentCursor.y - currentCursor.w);
-    vec2 cc_bl = vec2(currentCursor.x, currentCursor.y - currentCursor.w);
-    vec4 effectColor = sampleCursorFillColor(cc_tl, cc_tr, cc_br, cc_bl);
 
     vec2 centerCC = currentCursor.xy - (currentCursor.zw * offsetFactor);
 
@@ -170,7 +126,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord){
         float ripple = (1.0 - smoothstep(-antiAliasSize, antiAliasSize, sdfRing)) * fade;
         
         // Apply ripple effect
-        fragColor = mix(fragColor, vec4(effectColor.rgb, fragColor.a), ripple * effectColor.a);
+        fragColor = mix(fragColor, COLOR, ripple * COLOR.a);
     }
     // else: do nothing, keep original fragColor
 }
