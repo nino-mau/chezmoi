@@ -100,8 +100,8 @@ cmyk = "{c}%, {m}%, {y}%, {k}%"
 size = 10                                  # max colors to remember
 reverse_order = true                       # newest first in tray menu
 colors = [
-    "#FBF0F5",
     "#89B4FA",
+    "#FBF0F5",
     "#6F3131",
     "#2A1212",
     "#1E1E21",
