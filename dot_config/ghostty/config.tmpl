@@ -1,0 +1,109 @@
+# ====================
+# KEYBINDS
+# ====================
+
+keybind = ctrl+f=start_search
+keybind = performable:ctrl+n=goto_split:next
+keybind = performable:ctrl+c=copy_to_clipboard
+keybind = ctrl+shift+e=text:\u{00E8}
+keybind = ctrl+shift+a=text:\u{00E0}
+# keybind = alt+k=jump_to_prompt:-1
+# keybind = alt+j=jump_to_prompt:1
+
+# ====================
+# THEMES
+# ====================
+
+# Load theme from another config file
+config-file = ./theme
+
+# ====================
+# WINDOW
+# ====================
+
+# window-width = 140
+# window-height = 40
+
+window-decoration = none
+macos-window-shadow = false
+
+macos-titlebar-style = hidden
+
+window-padding-x = 20
+window-padding-y = 20
+window-padding-balance = true
+
+# Controls closing confirmation
+confirm-close-surface = false
+
+# ====================
+# FONT
+# ====================
+
+# font-family = JetBrainsMono Nerd Font
+font-family = Maple Mono NF CN
+# font-family = SourceCodePro
+# font-family = GeistMonoNerdFont
+# font-family = IosevkaNerdFontPropo
+# font-family = FiraCode Nerd Font Mono
+# font-family = SpaceMono Nerd Font
+
+{{ if eq .chezmoi.os "darwin" }}
+font-size = 15
+{{ else }}
+font-size = 12
+{{ end }}
+
+# Line height equivalent
+# adjust-cell-height = 1
+
+# ====================
+# CURSOR
+# ====================
+
+# Change cursor style
+# cursor-style = block
+
+# ====================
+# SHELL
+# ====================
+
+shell-integration = fish
+shell-integration-features = no-cursor 
+
+# ====================
+# BACKGROUND
+# ====================
+
+background-opacity = 0.80
+{{ if eq .chezmoi.os "darwin" }}
+background-blur-radius = 50
+{{ else }}
+# background-blur-radius = 50
+{{ end }}
+
+# ====================
+# SHADERS
+# ====================
+
+# custom-shader = shaders/cursor_smear_fade.glsl
+# custom-shader = shaders/cursor_smear.glsl
+# custom-shader = shaders/cursor_blaze_no_trail.glsl
+# custom-shader = shaders/cursor_blaze.glsl
+# custom-shader = shaders/cursor_sweep.glsl
+# custom-shader = shaders/yourshader2.glsl
+
+{{ if eq .chezmoi.os "darwin" }}
+# custom-shader = shaders/cursor_warp.glsl
+{{ else }}
+custom-shader = shaders/cursor_warp.glsl
+# custom-shader = shaders/cursor_smear_custom.glsl
+# custom-shader = shaders/cursor_blaze_notrail_custom.glsl
+{{ end }}
+
+# ====================
+# GRAPHICS
+# ====================
+
+# Enable Kitty graphics protocol
+image-storage-limit = 320000000
