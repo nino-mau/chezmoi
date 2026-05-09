@@ -114,7 +114,7 @@
       "@rithvikvibhu/store.vicinae.arch-packages": {
          "entrypoints": {
             "search-arch-packages": {
-               "alias": "pc"
+               "alias": "ps"
             }
          }
       },
