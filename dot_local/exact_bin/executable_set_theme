@@ -24,7 +24,7 @@ makoctl reload
 # HYPRLAND
 # =======================
 
-ln -sf "$HOME/.config/colorschemes/hypr/$THEME.conf" "$HOME/.config/hypr/colors.conf"
+ln -sf "$HOME/.config/colorschemes/hypr/$THEME.lua" "$HOME/.config/hypr/colors.lua"
 
 # Reload hyprland
 hyprctl reload

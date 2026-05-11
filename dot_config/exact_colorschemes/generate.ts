@@ -29,31 +29,56 @@ const stripHash = (hex: string) => hex.replace("#", "");
 
 function generateHyprConf(name: string, palette: Palette): string {
 	const p = palette;
-	return `$bg0 = rgb(${stripHash(p.bg0)})
-$bg1 = rgb(${stripHash(p.bg1)})
-$bg2 = rgb(${stripHash(p.bg2)})
-$bg3 = rgb(${stripHash(p.bg3)})
-$bg4 = rgb(${stripHash(p.bg4)})
+	return `
+local bg0 = "${p.bg0}"
+local bg1 = "${p.bg1}"
+local bg2 = "${p.bg2}"
+local bg3 = "${p.bg3}"
+local bg4 = "${p.bg4}"
 
-$fg = rgb(${stripHash(p.fg)})
-$fg2 = rgb(${stripHash(p.fg2)})
+local fg = "${p.fg}"
+local fg2 = "${p.fg2}"
 
-$red = rgb(${stripHash(p.red)})
-$orange = rgb(${stripHash(p.orange)})
-$yellow = rgb(${stripHash(p.yellow)})
-$green = rgb(${stripHash(p.green)})
-$aqua = rgb(${stripHash(p.aqua)})
-$blue = rgb(${stripHash(p.blue)})
-$purple = rgb(${stripHash(p.purple)})
-$pink = rgb(${stripHash(p.pink)})
-$lavender = rgb(${stripHash(p.lavender)})
+local red = "${p.red}"
+local orange = "${p.orange}"
+local yellow = "${p.yellow}"
+local green = "${p.green}"
+local aqua = "${p.aqua}"
+local blue = "${p.blue}"
+local purple = "${p.purple}"
+local pink = "${p.pink}"
+local lavender = "${p.lavender}"
 
-$grey0 = rgb(${stripHash(p.grey0)})
-$grey1 = rgb(${stripHash(p.grey1)})
-$grey2 = rgb(${stripHash(p.grey2)})
+local grey0 = "${p.grey0}"
+local grey1 = "${p.grey1}"
+local grey2 = "${p.grey2}"
 
-$primary = rgb(${stripHash(p.primary)})
-$border = rgb(${stripHash(p.border)})
+local primary = "${p.primary}"
+local border = "${p.border}"
+
+return {
+	bg0 = bg0,
+	bg1 = bg1,
+	bg2 = bg2,
+	bg3 = bg3,
+	bg4 = bg4,
+	fg = fg,
+	fg2 = fg2,
+	red = red,
+	orange = orange,
+	yellow = yellow,
+	green = green,
+	aqua = aqua,
+	blue = blue,
+	purple = purple,
+	pink = pink,
+	lavender = lavender,
+	grey0 = grey0,
+	grey1 = grey1,
+	grey2 = grey2,
+	primary = primary,
+	border = border,
+}
 `;
 }
 
@@ -613,8 +638,8 @@ function main() {
 
 	for (const [name, palette] of Object.entries(themes)) {
 		const hyprConf = generateHyprConf(name, palette as Palette);
-		writeFileSync(`${hyprDir}/${name}.conf`, hyprConf);
-		console.log(`Generated hypr/${name}.conf`);
+		writeFileSync(`${hyprDir}/${name}.lua`, hyprConf);
+		console.log(`Generated hypr/${name}.lua`);
 
 		const hyprpanelTheme = generateHyprpanelTheme(palette as Palette);
 		writeFileSync(
