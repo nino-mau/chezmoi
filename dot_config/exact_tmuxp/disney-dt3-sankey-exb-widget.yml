@@ -1,0 +1,36 @@
+session_name: disney-dt3-sankey-exb-widget
+start_directory: $HOME/Code/projects/disney-dt3-sankey-exb-widget/
+windows:
+  - window_name: editor
+    panes:
+      - shell_command:
+          - nvim .
+
+  - window_name: cmd
+    layout: main-vertical
+    options:
+      main-pane-width: '50%'
+    panes:
+      - clear
+      - clear
+
+  - window_name: exb-client
+    panes:
+      - cd $HOME/Code/exb/client/
+
+  - window_name: ai
+    panes:
+      - pi
+
+  - window_name: processes
+    layout: main-horizontal
+    panes:
+      - shell_command:
+          - cd $HOME/Code/exb/client
+          - npm start
+      - shell_command:
+          - cd $HOME/Code/exb/server
+          - npm start
+      - shell_command:
+          - cd $HOME/Code/projects/disney-dt3-sankey-exb-widget/
+          - ./tools/devLivesync.sh disney-dt3-sankey-exb-widget ~/Code/exb
