@@ -40,6 +40,7 @@ scrapJJKTranscript/
 .config/swayosd
 .config/swaync
 .config/niri
+.config/ie-r
 {{- end }}
 
 {{ if eq .chezmoi.os "linux" }}
