@@ -20,7 +20,7 @@ windows:
 
   - window_name: ai
     panes:
-      - pi
+      - opencode --continue --port 4899
 
   - window_name: processes
     layout: main-horizontal
