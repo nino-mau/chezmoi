@@ -1,33 +1,62 @@
 function clipimg -d 'Save current clipboard image'
-    set -l types (wl-paste --list-types)
+    set -l os (uname -s)
     set -l mime
     set -l src
     set -l src_kind clipboard
     set -l has_uri_list 0
+    set -l clipboard_uti
 
-    for type in $types
-        set -l base (string lower -- (string replace -r ';.*$' '' -- $type))
-        if test "$base" = text/uri-list
-            set has_uri_list 1
+    if test "$os" = Darwin
+        set -l utis (osascript -l JavaScript -e \
+            'ObjC.import("AppKit"); $.NSPasteboard.generalPasteboard.types.js.join("\n")' 2>/dev/null)
+        for uti in $utis
+            if test -n "$clipboard_uti"
+                break
+            end
+            switch $uti
+                case public.png
+                    set mime image/png; set clipboard_uti $uti
+                case public.jpeg
+                    set mime image/jpeg; set clipboard_uti $uti
+                case public.gif com.compuserve.gif
+                    set mime image/gif; set clipboard_uti $uti
+                case org.webmproject.webp public.webp
+                    set mime image/webp; set clipboard_uti $uti
+                case public.tiff
+                    set mime image/tiff; set clipboard_uti $uti
+                case public.heic
+                    set mime image/heic; set clipboard_uti $uti
+                case public.avif
+                    set mime image/avif; set clipboard_uti $uti
+            end
         end
+    else
+        set -l types (wl-paste --list-types)
 
-        if contains -- $base image/svg+xml image/svg
-            set mime $base
-            break
-        end
-    end
-
-    if test -z "$mime"
         for type in $types
             set -l base (string lower -- (string replace -r ';.*$' '' -- $type))
-            if string match -qr '^image/' -- $base
+            if test "$base" = text/uri-list
+                set has_uri_list 1
+            end
+
+            if contains -- $base image/svg+xml image/svg
                 set mime $base
                 break
             end
         end
+
+        if test -z "$mime"
+            for type in $types
+                set -l base (string lower -- (string replace -r ';.*$' '' -- $type))
+                if string match -qr '^image/' -- $base
+                    set mime $base
+                    break
+                end
+            end
+        end
     end
 
-    if test -z "$mime"; and test $has_uri_list -eq 1
+    if test "$os" != Darwin; and test -z "$mime"; and test $has_uri_list -eq 1
         for line in (wl-paste --no-newline --type text/uri-list)
             set line (string trim -- $line)
             if test -n "$line"; and not string match -qr '^#' -- $line
@@ -115,7 +144,19 @@ function clipimg -d 'Save current clipboard image'
 
     switch $src_kind
         case clipboard
-            wl-paste --type $mime > "$dst"
+            if test "$os" = Darwin
+                set -l tmp (mktemp /tmp/clipimg_XXXXXX.js)
+                printf 'ObjC.import("AppKit");\nObjC.import("Foundation");\nconst data = $.NSPasteboard.generalPasteboard.dataForType("%s");\ndata.writeToFileAtomically("%s", true);\n' \
+                    "$clipboard_uti" (pwd)/$name.$ext > $tmp
+                osascript -l JavaScript $tmp
+                set -l jxa_status $status
+                rm -f $tmp
+                test $jxa_status -eq 0; or begin
+                    echo "Failed to write clipboard image" >&2; return 1
+                end
+            else
+                wl-paste --type $mime > "$dst"
+            end
         case file
             cp -- "$src" "$dst"
         case url
