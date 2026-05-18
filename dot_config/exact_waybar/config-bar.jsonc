@@ -4,7 +4,8 @@
   "modules-left": [
     "custom/launcher",
     "custom/weather",
-    "custom/media"
+    "custom/media",
+    "mpris"
   ],
   "modules-center": [
     "clock",
@@ -72,17 +73,17 @@
     "on-click": "vicinae toggle",
     "tooltip-format": "Launch your favorite apps"
   },
-  "custom/media": {
-    "format": "{}",
-    "escape": true,
-    "return-type": "json",
-    "max-length": 40,
-    "on-click": "playerctl play-pause",
-    "on-click-right": "playerctl stop",
-    "smooth-scrolling-threshold": 1, // This value was tested using a trackpad, it should be lowered if using a mouse.
-    "on-scroll-up": "playerctl next",
-    "on-scroll-down": "playerctl previous",
-    "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null" // Script in resources/custom_modules folder
+  "mpris": {
+    "format": "{status_icon} {artist} — {title}",
+    "tooltip-format": "{artist} — {title} {length}",
+    "format-status": "{icon}",
+    "status-icons": {
+      "playing": "",
+      "stopped": "",
+      "paused": ""
+    },
+    "title-len": 25,
+    "artist-len": 25
   },
   "custom/pacman": {
     "format": "󰅢  {}",

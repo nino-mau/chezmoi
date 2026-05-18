@@ -80,7 +80,7 @@ tooltip label {
 #network,
 #clock,
 #custom-weather,
-#custom-media,
+#mpris,
 #window,
 #custom-launcher,
 #custom-notification,
@@ -104,7 +104,7 @@ tooltip label {
   margin-right: 10px;
 }
 
-#custom-media {
+#mpris {
   color: @aqua;
 }
 

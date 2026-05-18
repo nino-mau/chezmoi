@@ -29,7 +29,7 @@ windows:
 
   - window_name: opencode
     panes:
-      - opencode --continue
+      - opencode --continue --port 4980
 
   - window_name: lazydocker
     panes:
