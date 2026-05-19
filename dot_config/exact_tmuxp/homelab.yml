@@ -2,9 +2,9 @@ session_name: homelab
 windows:
   - ssh:
     shell_command_before:
-      - sshhome
+      - sshhomelab
   - ssh:
     shell_command_before:
-      - sshhome
+      - sshhomelab
   - local:
     root: ~
