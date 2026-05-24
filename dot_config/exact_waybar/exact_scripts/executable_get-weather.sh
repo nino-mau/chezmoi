@@ -147,7 +147,7 @@ emit_meteofrance_weather() {
   detail_wind=$(LC_NUMERIC=C printf '%.1f km/h' "$wind_speed")
 
   emit_weather_json \
-    "${icon}  ${text_temperature}" \
+    "${icon} ${text_temperature}" \
     "meteo-france-${weather_code}" \
     "${display_location}: ${detail_temperature}, feels like ${detail_apparent}, wind ${detail_wind}, ${condition} (Meteo-France via Open-Meteo)"
 }

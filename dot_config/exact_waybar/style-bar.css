@@ -80,7 +80,6 @@ tooltip label {
 #network,
 #clock,
 #custom-weather,
-#mpris,
 #window,
 #custom-launcher,
 #custom-notification,
@@ -104,9 +103,6 @@ tooltip label {
   margin-right: 10px;
 }
 
-#mpris {
-  color: @aqua;
-}
 
 #custom-weather {
   color: @red;
@@ -128,5 +124,57 @@ tooltip label {
 
 #custom-pacman,
 #battery {
+  color: @yellow;
+}
+
+#media {
+  background-color: @bg0;
+  padding: 0 10px;
+  margin-left: 10px;
+  border-radius: 100px;
+}
+
+#cava,
+#mpris {
+  background: transparent;
+  padding: 0 6px;
+  margin: 0;
+  border-radius: 0;
+}
+
+#mpris {
+  color: @aqua;
+}
+
+#cava {
+  color: @aqua;
+  min-width: 112px;
+}
+
+#stats {
+  background-color: @bg0;
+  padding: 0 10px;
+  margin-left: 10px;
+  border-radius: 100px;
+}
+
+#cpu,
+#memory,
+#custom-gpu {
+  background: transparent;
+  padding: 0 6px;
+  margin: 0;
+  border-radius: 0;
+}
+
+#cpu {
+  color: @yellow;
+}
+
+#memory {
+  color: @yellow;
+}
+
+#custom-gpu {
   color: @yellow;
 }

@@ -22,7 +22,7 @@
       }
    },
    "launcher_window": {
-      "opacity": 0.9
+      "opacity": 0.85
    },
    "favorites": [
       "@nino-mau/grammalecte-fr-corrector:correct-french-text",
