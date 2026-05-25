@@ -1,0 +1,20 @@
+system-infos:
+  darwin:
+    os: 'macos'
+    package-manager: 'brew'
+    desktop-environment: 'aerospace'
+    app-launcher: 'raycast'
+    shell: 'fish'
+    terminal: 'ghostty'
+    editor: 'neovim'
+    browser: 'zen-browser'
+    dotfiles-manager: 'chezmoi'
+  linux:
+    os: 'cachyos'
+    package-manager: 'paru'
+    desktop-environment: 'hyprland'
+    shell: 'fish'
+    terminal: 'ghostty'
+    editor: 'neovim'
+    browser: 'zen-browser'
+    dotfiles-manager: 'chezmoi'

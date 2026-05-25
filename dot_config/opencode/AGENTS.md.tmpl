@@ -1,49 +1,34 @@
-## System Context
+## System Informations
 
-{{ if eq .chezmoi.os "darwin" }}
-- OS: MacOS
-- Desktop Environment: Aerospace
-- Package Manager: brew
-{{ else }}
-- OS: Archlinux
-- Desktop Environment: Hyprland/Wayland
-- Package Manager: paru
-{{ end }}
-- Shell: fish
-- Terminal Emulator: ghostty
-- Editor: neovim (~/.config/nvim)
-- Browser: zen-browser
-- Dot Files: ~/.config
+{{- $sys := index . "system-infos" .chezmoi.os -}}
 
-to get more detailed system informations run:
+- OS: {{ index $sys "os" }}
+- Desktop Environment: {{ index $sys "desktop-environment" }}
+- Package Manager: {{ index $sys "package-manager" }}
+- App launcher: {{ index $sys "app-launcher" }}
+- Shell: {{ index $sys "shell" }}
+- Terminal: {{ index $sys "terminal" }}
+- Editor: {{ index $sys "editor" }}
+- Browser: {{ index $sys "browser" }}
+- Dotfiles manager: {{ index $sys "dotfiles-manager" }}
 
-```bash
-fastfetch
-```
+Other:
 
-My tools/software:
-
-- Coding Agent Interface: OpencodeCLI <https://opencode.ai/docs/>
-- Note Taking: Obsidian (at ~/.obsidian/Main)
-- Terminal Multiplexer: Tmux
-- Git Interface: Lazygit
-- Dotfile Versionning/Management: chezmoi
-- Application Launcher: walker <https://github.com/abenz1267/walker> with elephant data provider <https://github.com/abenz1267/elephant>
+- opencode and pi-coding-agents as my coding agents
+- Obsidian for note (at ~/.obsidian/Main)
+- Tmux for terminal multiplexing
 
 ## Guidelines
 
-### Behaviour
+### General
 
-- Always load skills relevant to the request
 - Be challenging, not agreeable, when I say something I want your opinion not your validation
 - Focus on teaching and be pedagogic
+- Safety first
 - Try to stick to existing coding pattern in the project you're working on
 - Avoid unecessary flavour text, go to the point
-- If possible websearch/webfetch for a documentation
 
 ### Coding
-
-#### General
 
 - Keep the code simple and understandable
 
@@ -63,12 +48,12 @@ My tools/software:
 - Avoid using emoji when writing, only had them if it's really pertinent
 - Avoid giving commercial feel to READMEs and other user facing docs, keep it to the point and technical
 
-## Other Ressources
+## Ressources
 
 ### Useful Paths
 
-- Contains my custom scripts ~/.local/bin
-- Contains my wallpapers ~/.local/share/wallappers
-- Contains my colorschemes configuration ~/.config/colorschemes/
-- Contains my custom launcher menu ~/.config/elephant/menus
-- Contains my dev projects ~/.config/elephant/menus
+- contains repos I use as reference when coding `~/Code/reference`
+- contains my coding projects: `~/Code/projects/`
+- contains my maintained repos: `~/Code/repos/personal/`
+- contains my custom scripts: `~/.local/bin`
+
