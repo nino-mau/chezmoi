@@ -1,0 +1,24 @@
+session_name: quickshell-bar
+start_directory: $HOME/.config/quickshell/bar
+windows:
+  - window_name: editor
+    panes:
+      - shell_command:
+          - nvim .
+
+  - window_name: cmd
+    layout: main-vertical
+    options:
+      main-pane-width: "50%"
+    panes:
+      - clear
+      - clear
+
+  - window_name: opencode
+    panes:
+      - opencode --continue --port 4583
+
+  - window_name: process
+    panes:
+      - shell_command:
+          - qs -c bar
