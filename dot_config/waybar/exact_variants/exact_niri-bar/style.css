@@ -1,0 +1,195 @@
+@import "../../colors.css";
+
+* {
+  border: none;
+  border-radius: 0px;
+  font-family: "Maple Mono NF CN", "Symbols Nerd Font", monospace;
+  font-size: 16px;
+  min-height: 0;
+  font-weight: 600;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+.modules-right {
+  margin-right: 20px;
+}
+
+.modules-left {
+  margin-left: 10px;
+}
+
+tooltip {
+  background: @bg0;
+  border: 1px solid @primary;
+  border-radius: 12px;
+}
+
+tooltip label {
+  color: @fg;
+  padding: 6px;
+}
+
+#workspaces {
+  background: @bg0;
+  padding: 7px 4px;
+  border-radius: 100px;
+  color: @fg;
+}
+
+#workspaces button {
+  padding: 0px 7px;
+  margin: 0px 4px;
+  border-radius: 100px;
+  color: transparent;
+  background: @bg2;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+  background-color: @primary;
+  color: @bg0;
+  min-width: 50px;
+  transition: all 0.3s ease-in-out;
+  font-size: 13px;
+}
+
+#workspaces button:hover {
+  background-color: @lavender;
+  color: @bg0;
+  border-radius: 16px;
+  min-width: 50px;
+  background-size: 400% 400%;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+  color: @bg0;
+  border-radius: 16px;
+  min-width: 50px;
+  background-size: 400% 400%;
+  transition: all 0.3s ease-in-out;
+}
+
+#workspaces button#niri-workspace-5,
+#workspaces button#niri-workspace-5 label,
+#workspaces button#niri-workspace-6,
+#workspaces button#niri-workspace-6 label {
+  background: none;
+  border: none;
+  font-size: 0;
+  margin: 0;
+  min-height: 0;
+  min-width: 0;
+  outline: none;
+  padding: 0;
+}
+
+#battery,
+#pulseaudio,
+#backlight,
+#custom-pacman,
+#network,
+#clock,
+#custom-weather,
+#window,
+#custom-launcher,
+#custom-notification,
+#submap,
+#power-profiles-daemon,
+#tray,
+#custom-home-folder {
+  background-color: @bg0;
+  padding: 0 15px 0 15px;
+  margin-left: 10px;
+  border-radius: 100px;
+  color: @primary;
+}
+
+#network {
+  color: @purple;
+}
+
+#clock {
+  margin-right: 10px;
+}
+
+#custom-weather {
+  color: @red;
+}
+
+#custom-launcher {
+  color: @fg;
+  padding-left: 15px;
+  padding-right: 20px;
+}
+
+#custom-notification {
+  color: @fg;
+  padding-left: 15px;
+  padding-right: 18px;
+}
+
+#custom-pacman,
+#battery {
+  color: @yellow;
+}
+
+#media {
+  background-color: @bg0;
+  padding: 0 10px;
+  margin-left: 10px;
+  border-radius: 100px;
+}
+
+#cava,
+#mpris {
+  background: transparent;
+  padding: 0 6px;
+  margin: 0;
+  border-radius: 0;
+}
+
+#mpris {
+  color: @aqua;
+}
+
+#cava {
+  color: @aqua;
+  min-width: 112px;
+}
+
+#stats {
+  background-color: @bg0;
+  padding: 0 10px;
+  margin-left: 10px;
+  border-radius: 100px;
+}
+
+#cpu,
+#memory,
+#temperature {
+  background: transparent;
+  padding: 0 6px;
+  margin: 0;
+  border-radius: 0;
+}
+
+#cpu {
+  color: @yellow;
+}
+
+#memory {
+  color: @yellow;
+}
+
+#temperature {
+  color: @yellow;
+}
+
+#temperature.critical {
+  color: @red;
+}

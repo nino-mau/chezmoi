@@ -1,0 +1,236 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Magniquick/waybar-config-schema/main/schema.json",
+  "position": "top",
+  "margin-top": 20,
+  "modules-left": [
+    "custom/launcher",
+    "custom/weather",
+    "group/media"
+  ],
+  "modules-center": [
+    "clock",
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "group/stats",
+    "battery",
+    "pulseaudio",
+    "network",
+    "tray"
+  ],
+  "hyprland/submap": {
+    "format": "{}",
+    "tooltip": false
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "default": "",
+      "urgent": ""
+    },
+    "all-outputs": false,
+    "persistent-workspaces": {
+      "*": 5
+    },
+    "on-click": "activate",
+    "on-scroll-down": "hyprctl dispatch workspace e+1",
+    "on-scroll-up": "hyprctl dispatch workspace e-1"
+  },
+  "custom/weather": {
+    "exec": "~/.config/waybar/scripts/get-weather.sh Grenoble+France 2>/dev/null",
+    "return-type": "json",
+    "interval": 1800,
+    "format": "{}"
+  },
+  "custom/notification": {
+    "tooltip": true,
+    "tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "",
+      "none": "",
+      "dnd-notification": "",
+      "dnd-none": "",
+      "inhibited-notification": "",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "sleep 0.1 && swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+  "custom/launcher": {
+    "format": "",
+    "on-click": "vicinae toggle",
+    "tooltip-format": "Launch your favorite apps"
+  },
+  "group/media": {
+    "orientation": "horizontal",
+    "modules": [
+      "cava",
+      "mpris"
+    ]
+  },
+  "mpris": {
+    "format": "<small>{artist} — {title}</small>",
+    "tooltip-format": "{artist} — {title} {length}",
+    "format-status": "{icon}",
+    "status-icons": {
+      "playing": "",
+      "stopped": "",
+      "paused": ""
+    },
+    "title-len": 25,
+    "artist-len": 25
+  },
+  "cava": {
+    "cava_config": "$XDG_CONFIG_HOME/cava/waybar_raw.conf",
+    "input_delay": 2,
+    "framerate": 30,
+    "on-click": "playerctl play-pause",
+    "format-icons": [
+      "▁",
+      "▂",
+      "▃",
+      "▄",
+      "▅",
+      "▆",
+      "▇",
+      "█"
+    ],
+    "actions": {
+      "on-click-right": "mode"
+    }
+  },
+  "group/stats": {
+    "orientation": "horizontal",
+    "modules": [
+      "cpu",
+      "memory",
+      "temperature"
+    ]
+  },
+  "cpu": {
+    "interval": 2,
+    "format": "<small> {usage}%</small>",
+    "tooltip": true
+  },
+  "memory": {
+    "interval": 5,
+    "format": "<small> {percentage}%</small>",
+    "tooltip": true
+  },
+  "custom/gpu": {
+    "exec-if": "sh -c 'for p in /sys/class/drm/card*/device/gpu_busy_percent; do [ -r \"$p\" ] && exit 0; done; exit 1'",
+    "exec": "sh -c 'for p in /sys/class/drm/card*/device/gpu_busy_percent; do [ -r \"$p\" ] && { printf \"%s%%\" \"$(cat \"$p\")\"; exit; }; done'",
+    "interval": 2,
+    "format": "<small>󰢮 {}</small>",
+    "tooltip-format": "GPU load: {}"
+  },
+  "temperature": {
+    "interval": 5,
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 85,
+    "format": "<small> {temperatureC}</small>",
+    "format-critical": "<small>{temperatureC}°</small>",
+    "tooltip": true
+  },
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-icons": [
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ],
+    "tooltip-format": "Battery is at {capacity}%"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-muted": "",
+    "scroll-step": 1,
+    "on-click": "ghostty -e wiremix",
+    "ignored-sinks": [
+      "Easy Effects Sink"
+    ],
+    "format-icons": {
+      "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+      "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "phone-muted": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "tooltip-format": "Volume: {volume}%"
+  },
+  "network": {
+    "interface": "wlan0",
+    "format": "{ifname}",
+    "format-wifi": "{icon} {essid}",
+    "format-ethernet": "󰈀  {ipaddr}/{cidr}",
+    "format-disconnected": "󰤭  Disconnected",
+    "max-length": 50,
+    "format-icons": [
+      "󰤯",
+      "󰤟",
+      "󰤢",
+      "󰤥",
+      "󰤨"
+    ],
+    "tooltip-format": "Connected to {essid}"
+  },
+  "clock": {
+    "format": "{:%d %b %H:%M}",
+    "interval": 1,
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "format": {
+        "today": "<span color='#ff0000'><b>{}</b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "shift_up",
+      "on-click": "shift_down"
+    }
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power mode: {profile}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "󰠠",
+      "balanced": "󰚀",
+      "power-saver": "󰌪"
+    }
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10,
+    "icons": {}
+  }
+}
