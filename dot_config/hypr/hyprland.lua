@@ -1,0 +1,13 @@
+-- Source the rest of the files required from here
+require("modules.monitors")
+require("modules.autostart")
+require("modules.programs")
+require("modules.env")
+require("modules.decorations")
+require("modules.layout")
+require("modules.misc")
+require("modules.input")
+require("modules.keybindings")
+require("modules.windowrules")
+require("modules.animations")
+require("modules.plugin")
