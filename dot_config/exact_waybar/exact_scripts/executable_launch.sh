@@ -1,12 +1,20 @@
 #!/usr/bin/env bash
 
-# Available themes: alchemy, subtle, ultra_minimal, velvetline
+VARIANT="${1:-}"
 
-waybar_config_dir="/home/$USER/.config/waybar"
+case "$VARIANT" in
+  bar|niri-bar|pill)
+    CONFIG_DIR="$HOME/.config/waybar/variants/$VARIANT"
+    ;;
+  *)
+    printf '%s\n' "Variant doesn't exist, use: bar, niri-bar, pill" >&2
+    exit 1
+    ;;
+esac
 
-killall -9 waybar
-killall -9 swaync
+pkill -x waybar 2>/dev/null || true
+while pgrep -x waybar >/dev/null; do
+  sleep 0.1
+done
 
-swaync &
-
-waybar &
+exec waybar -c "$CONFIG_DIR/config.jsonc" -s "$CONFIG_DIR/style.css"
