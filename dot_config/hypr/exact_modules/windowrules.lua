@@ -19,6 +19,7 @@ local blurred_namespaces = {
 	"swaync",
 	"swaync-control-center",
 	"swaync-notification-window",
+	"^quickshell-bar-.*$",
 }
 
 -- Send browser to workspace 2
