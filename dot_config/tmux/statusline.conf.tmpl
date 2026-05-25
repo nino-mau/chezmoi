@@ -26,16 +26,6 @@ set -ga status-left "#[bg=default,fg=#{@thm_yellow}]#{?window_zoomed_flag,  z
 set -g status-right-length 100
 set -g status-right ""
 
-{{ if ne .chezmoi.os "darwin" }}
-set -ga status-right "#[bg=default,fg=#{@thm_red}] 󰹑 #($HOME/.local/bin/gpu_name.sh)"
-set -ga status-right "#[bg=default,fg=#{@thm_overlay_0}, none] │"
-set -ga status-right "#[bg=default,fg=#{@thm_teal}] 󰓅 #($HOME/.local/bin/mem_percent.py)%"
-set -ga status-right "#[bg=default,fg=#{@thm_overlay_0}, none] │"
-set -ga status-right "#[bg=default,fg=#{@thm_yellow}] 󰍛 #($HOME/.local/bin/cpu_percent.py)%"
-set -ga status-right "#[bg=default,fg=#{@thm_overlay_0}, none] │"
-set -ga status-right "#[bg=default,fg=#{@thm_blue}]  #($HOME/.local/bin/cpu_temp.py)°C"
-{{ end }}
-
 # bootstrap tpm
 if "test ! -d ~/.tmux/plugins/tpm" \
    "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
