@@ -1,9 +1,14 @@
 function restart-waybar --description "Restart waybar"
-    pkill -9 waybar
+    set -l scripts_dir ~/.config/waybar/scripts
 
-    if pgrep -x Hyprland >/dev/null
-      rbg waybar -c ~/.config/waybar/config-bar.jsonc -s ~/.config/waybar/style-bar.css
+    if pgrep -x waybar >/dev/null
+        rbg $scripts_dir/restart.sh
+    else if pgrep -x Hyprland >/dev/null
+        rbg $scripts_dir/launch.sh bar
     else if pgrep -x niri >/dev/null
-      rbg waybar -c ~/.config/waybar/config-bar-niri.jsonc -s ~/.config/waybar/style-bar-niri.css
+        rbg $scripts_dir/launch.sh niri-bar
+    else
+        printf '%s\n' 'waybar is not running and no supported compositor is active' >&2
+        return 1
     end
 end
