@@ -13,6 +13,7 @@ system-infos:
     os: 'cachyos'
     package-manager: 'paru'
     desktop-environment: 'hyprland'
+    app-launcher: 'vicinae'
     shell: 'fish'
     terminal: 'ghostty'
     editor: 'neovim'
