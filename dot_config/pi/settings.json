@@ -1,6 +1,6 @@
 {
-  "lastChangelogVersion": "0.70.6",
-  "defaultProvider": "openai-codex",
+  "lastChangelogVersion": "0.75.5",
+  "defaultProvider": "github-copilot",
   "defaultModel": "gpt-5.4",
   "packages": [
     "git:github.com/otahontas/pi-coding-agent-catppuccin"
