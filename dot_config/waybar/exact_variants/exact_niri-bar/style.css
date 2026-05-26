@@ -42,6 +42,7 @@ tooltip label {
 #workspaces button {
   padding: 0px 7px;
   margin: 0px 4px;
+  min-width: 20px;
   border-radius: 100px;
   color: transparent;
   background: @bg2;
@@ -179,15 +180,15 @@ tooltip label {
 }
 
 #cpu {
-  color: @yellow;
+  color: @aqua;
 }
 
 #memory {
-  color: @yellow;
+  color: @aqua;
 }
 
 #temperature {
-  color: @yellow;
+  color: @aqua;
 }
 
 #temperature.critical {
