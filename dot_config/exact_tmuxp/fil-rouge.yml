@@ -14,7 +14,7 @@ windows:
   - window_name: cmd
     layout: main-vertical
     options:
-      main-pane-width: 50%
+      main-pane-width: 65%
     panes:
       - shell_command:
           - docker compose up -d --build

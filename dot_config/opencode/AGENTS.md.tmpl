@@ -1,6 +1,6 @@
 ## System Informations
 
-{{- $sys := index . "system-infos" .chezmoi.os -}}
+{{- $sys := index . "system-infos" .chezmoi.os }}
 
 - OS: {{ index $sys "os" }}
 - Desktop Environment: {{ index $sys "desktop-environment" }}
@@ -36,6 +36,7 @@ Other:
 
 - Always prefer Typescript unless explicitly stated otherwise
 - Avoid using the "any" type
+- Prefer `type` over `interface` unless you have a valid reason
 - Prefer bun over node/npm/pnpm
 - Switch node version using fnm
 

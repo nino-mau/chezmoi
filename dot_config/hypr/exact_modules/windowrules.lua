@@ -30,6 +30,14 @@ hl.window_rule({
 	},
 })
 
+-- Send t3code to workspace 4
+hl.window_rule({
+	workspace = "4",
+	match = {
+		class = "t3code",
+	},
+})
+
 -- Send Steam/lutris games to special workspace "game"
 for _, class in ipairs(game_workspace_classes) do
 	hl.window_rule({
@@ -159,12 +167,3 @@ for _, namespace in ipairs(blurred_namespaces) do
 		},
 	})
 end
-
--- Add blur to walker launcher
--- hl.layer_rule({
--- 	blur = true,
--- 	ignore_alpha = 0.5,
--- 	match = {
--- 		namespace = "walker",
--- 	},
--- })

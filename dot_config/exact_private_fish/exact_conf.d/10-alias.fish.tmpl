@@ -22,8 +22,9 @@ alias restart="exec $SHELL"
 # Misc
 # ====================
 
-# Show images in a grid in terminal
+# Show images/svg in a grid in terminal
 abbr -a lsimg "timg --grid=3x2 --title *.{jpg,JPG,png,jpeg,webp}"
+abbr -a lssvg "timg --grid=3x2 --title *.{svg,SVG}"
 
 # Generate random string
 alias rand="openssl rand -base64 32 | tr -d '/+='"

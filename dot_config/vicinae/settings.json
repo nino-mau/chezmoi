@@ -25,13 +25,19 @@
       "opacity": 0.85
    },
    "favorites": [
-      "@nino-mau/grammalecte-fr-corrector:correct-french-text",
-      "@nino-mau/theme-switcher:switch-theme",
-      "@nino-mau/wallpaper-switcher:wallpapers",
       "@nino-mau/commit-message:commit-message",
-      "@nino-mau/zen-bookmarks:search-bookmarks"
+      "@nino-mau/theme-switcher:switch-theme",
+      "@nino-mau/grammalecte-fr-corrector:correct-french-text",
+      "@nino-mau/wallpaper-switcher:wallpapers",
+      "@nino-mau/zen-bookmarks:search-bookmarks",
+      "applications:t3code"
    ],
    "providers": {
+      "@c4n4m1/store.vicinae.zoxide-recent-directories": {
+         "preferences": {
+            "application": "nvim"
+         }
+      },
       "@dru89/store.raycast.obsidian-bookmarks": {
          "preferences": {
             "vaultPath": "/home/nino/.obsidian/Main",
@@ -116,6 +122,21 @@
             "search-arch-packages": {
                "alias": "ps"
             }
+         }
+      },
+      "@thuggyduck/store.raycast.agent-usage": {
+         "preferences": {
+            "ampDisplayMode": "amount",
+            "showAmp": false,
+            "showAntigravity": false,
+            "showClaude": false,
+            "showCodex": true,
+            "showCopilot": true,
+            "showDroid": false,
+            "showGemini": false,
+            "showKimi": false,
+            "showSynthetic": false,
+            "showZai": false
          }
       },
       "@tonka3000/store.raycast.gitlab": {
