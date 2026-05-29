@@ -22,6 +22,29 @@ local blurred_namespaces = {
 	"^quickshell-bar-.*$",
 }
 
+local bitwarden_popup_tag = "bitwarden-popup"
+
+local function has_tag(window, needle)
+	for _, tag in ipairs(window.tags) do
+		if tag == needle then
+			return true
+		end
+	end
+
+	return false
+end
+
+local function float_bitwarden_popup(window)
+	if has_tag(window, bitwarden_popup_tag) then
+		return
+	end
+
+	hl.dispatch(hl.dsp.window.float({ action = "set", window = window }))
+	hl.dispatch(hl.dsp.window.resize({ window = window, x = 420, y = 640 }))
+	hl.dispatch(hl.dsp.window.center({ window = window }))
+	hl.dispatch(hl.dsp.window.tag({ tag = "+" .. bitwarden_popup_tag, window = window }))
+end
+
 -- Send browser to workspace 2
 hl.window_rule({
 	workspace = "2",
@@ -29,6 +52,29 @@ hl.window_rule({
 		class = "zen",
 	},
 })
+
+-- Keep the Bitwarden extension popup compact instead of tiling it like a browser window
+hl.window_rule({
+	match = {
+		initial_title = "^_crx_nngceckbapebfimnlniiiahkandclblb$",
+	},
+	float = true,
+	size = "420 640",
+	center = true,
+	tag = "+" .. bitwarden_popup_tag,
+})
+
+hl.on("window.title", function(window)
+	if window.class ~= "zen" then
+		return
+	end
+
+	if not window.title:find("Bitwarden Password Manager", 1, true) then
+		return
+	end
+
+	float_bitwarden_popup(window)
+end)
 
 -- Send t3code to workspace 4
 hl.window_rule({
