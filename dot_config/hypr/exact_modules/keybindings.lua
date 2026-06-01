@@ -3,34 +3,48 @@
 
 local programs = require("modules.programs")
 
+local function bind(keys, action, description, opts)
+	local merged = {}
+
+	if opts then
+		for key, value in pairs(opts) do
+			merged[key] = value
+		end
+	end
+
+	merged.description = description
+
+	hl.bind(keys, action, merged)
+end
+
 -- ===============
 -- Actions
 -- ===============
 
-hl.bind("SUPER + X", hl.dsp.window.close())
+bind("SUPER + X", hl.dsp.window.close(), "Close the active window")
 
 -- Launch apps
-hl.bind("SUPER + Q", hl.dsp.exec_cmd(programs.terminal))
-hl.bind("SUPER + B", hl.dsp.exec_cmd(programs.browser))
+bind("SUPER + Q", hl.dsp.exec_cmd(programs.terminal), "Open terminal")
+bind("SUPER + B", hl.dsp.exec_cmd(programs.browser), "Open browser")
 
 -- Vicinae menu bindings
-hl.bind("SUPER + 0", hl.dsp.exec_cmd(programs.menu))
-hl.bind("SUPER + equal", hl.dsp.exec_cmd(programs.clipboard_menu))
-hl.bind("SUPER + apostrophe", hl.dsp.exec_cmd(programs.commit_menu))
-hl.bind("SUPER + E", hl.dsp.exec_cmd(programs.emoji_menu))
-hl.bind("SUPER + slash", hl.dsp.exec_cmd(programs.wallpapers_menu))
+bind("SUPER + 0", hl.dsp.exec_cmd(programs.menu), "Open launcher menu")
+bind("SUPER + equal", hl.dsp.exec_cmd(programs.clipboard_menu), "Open clipboard history")
+bind("SUPER + apostrophe", hl.dsp.exec_cmd(programs.commit_menu), "Open commit message menu")
+bind("SUPER + E", hl.dsp.exec_cmd(programs.emoji_menu), "Open emoji menu")
+bind("SUPER + slash", hl.dsp.exec_cmd(programs.wallpapers_menu), "Open wallpapers menu")
 
 -- Vicinae bindings
-hl.bind("SUPER + space", hl.dsp.exec_cmd(programs.vicinae))
+bind("SUPER + space", hl.dsp.exec_cmd(programs.vicinae), "Toggle Vicinae")
 
 -- Take screenshot
-hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("~/.local/bin/screenshot-focused.sh"))
+bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("~/.local/bin/screenshot-focused.sh"), "Take focused window screenshot")
 
 -- Lockscreen binding
-hl.bind("SUPER + M", hl.dsp.exec_cmd(programs.lockscreen))
+bind("SUPER + M", hl.dsp.exec_cmd(programs.lockscreen), "Lock screen")
 
 -- Toggle ie-r color picker
-hl.bind("SUPER + SHIFT + P", hl.dsp.exec_cmd("pkill -SIGUSR1 ie-r"))
+bind("SUPER + SHIFT + P", hl.dsp.exec_cmd("pkill -SIGUSR1 ie-r"), "Toggle color picker")
 
 -- Toggle ie-r color history
 -- hl.bind("ALT + SHIFT + H", hl.dsp.exec_cmd("pkill -SIGUSR2 ie-r"))
@@ -39,26 +53,26 @@ hl.bind("SUPER + SHIFT + P", hl.dsp.exec_cmd("pkill -SIGUSR1 ie-r"))
 -- Windows
 -- ===============
 
-hl.bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }))
-hl.bind("SUPER + P", hl.dsp.window.pseudo()) -- dwindle
+bind("SUPER + V", hl.dsp.window.float({ action = "toggle" }), "Toggle floating for active window")
+bind("SUPER + P", hl.dsp.window.pseudo(), "Toggle pseudotile for active window") -- dwindle
 -- hl.bind("SUPER + colon", hl.dsp.layout("togglesplit")) -- dwindle
 -- hl.bind("SUPER + ugrave", hl.dsp.layout("togglesplit 1")) -- dwindle
 
 -- Move focus with SUPER + arrow keys
 -- hl.bind("SUPER + h", hl.dsp.focus({ direction = "left" }))
 -- hl.bind("SUPER + l", hl.dsp.focus({ direction = "right" }))
-hl.bind("SUPER + k", hl.dsp.focus({ direction = "up" }))
-hl.bind("SUPER + j", hl.dsp.focus({ direction = "down" }))
+bind("SUPER + k", hl.dsp.focus({ direction = "up" }), "Focus window above")
+bind("SUPER + j", hl.dsp.focus({ direction = "down" }), "Focus window below")
 
 -- Move/resize windows with SUPER + LMB/RMB and dragging
-hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), { mouse = true })
-hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
+bind("SUPER + mouse:272", hl.dsp.window.drag(), "Drag active window", { mouse = true })
+bind("SUPER + mouse:273", hl.dsp.window.resize(), "Resize active window", { mouse = true })
 
 -- Expand a window
-hl.bind("SUPER + f", hl.dsp.window.fullscreen({ mode = "maximized" }))
+bind("SUPER + f", hl.dsp.window.fullscreen({ mode = "maximized" }), "Maximize active window")
 
 -- Make a window full screen
-hl.bind("SUPER + SHIFT + f", hl.dsp.window.fullscreen())
+bind("SUPER + SHIFT + f", hl.dsp.window.fullscreen(), "Toggle fullscreen for active window")
 
 -- ===============
 -- Workspaces
@@ -66,55 +80,56 @@ hl.bind("SUPER + SHIFT + f", hl.dsp.window.fullscreen())
 
 -- Switch workspaces with SUPER + [0-9]
 for i = 1, 9 do
-	hl.bind("SUPER + " .. i, hl.dsp.focus({ workspace = i }))
+	bind("SUPER + " .. i, hl.dsp.focus({ workspace = i }), "Switch to workspace " .. i)
 end
 
 -- Move active window to a workspace with SUPER + SHIFT + [0-9]
 for i = 1, 9 do
-	hl.bind("SUPER + SHIFT + " .. i, hl.dsp.window.move({ workspace = i }))
+	bind("SUPER + SHIFT + " .. i, hl.dsp.window.move({ workspace = i }), "Move active window to workspace " .. i)
 end
 
 -- Special Workspaces
-hl.bind("SUPER + G", hl.dsp.workspace.toggle_special("game"))
-hl.bind("SUPER + d", hl.dsp.workspace.toggle_special("note"))
-hl.bind("SUPER + S", hl.dsp.workspace.toggle_special("term"))
-hl.bind("SUPER + grave", hl.dsp.workspace.toggle_special("btop"))
-hl.bind("SUPER + O", hl.dsp.workspace.toggle_special("discord"))
+bind("SUPER + G", hl.dsp.workspace.toggle_special("game"), "Toggle game special workspace")
+bind("SUPER + SHIFT + G", hl.dsp.window.move({ workspace = "special:game" }), "Toggle game special workspace")
+bind("SUPER + d", hl.dsp.workspace.toggle_special("note"), "Toggle notes special workspace")
+bind("SUPER + S", hl.dsp.workspace.toggle_special("term"), "Toggle terminal special workspace")
+bind("SUPER + grave", hl.dsp.workspace.toggle_special("btop"), "Toggle btop special workspace")
+bind("SUPER + O", hl.dsp.workspace.toggle_special("discord"), "Toggle Discord special workspace")
 
 -- Scroll through existing workspaces with SUPER + ALT + H/L
-hl.bind("SUPER + ALT + L", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind("SUPER + ALT + H", hl.dsp.focus({ workspace = "e-1" }))
+bind("SUPER + ALT + L", hl.dsp.focus({ workspace = "e+1" }), "Focus next workspace")
+bind("SUPER + ALT + H", hl.dsp.focus({ workspace = "e-1" }), "Focus previous workspace")
 
 -- ===============
 -- Scrolling
 -- ===============
 
 -- Move view by column
-hl.bind("SUPER + l", hl.dsp.layout("focus right"))
-hl.bind("SUPER + h", hl.dsp.layout("focus left"))
+bind("SUPER + l", hl.dsp.layout("focus right"), "Focus column to the right")
+bind("SUPER + h", hl.dsp.layout("focus left"), "Focus column to the left")
 
-hl.bind("SUPER + mouse_down", hl.dsp.layout("move +col"))
-hl.bind("SUPER + mouse_up", hl.dsp.layout("move -col"))
+bind("SUPER + mouse_down", hl.dsp.layout("move +col"), "Focus next column")
+bind("SUPER + mouse_up", hl.dsp.layout("move -col"), "Focus previous column")
 
 -- Move window between column/directions
-hl.bind("SUPER + SHIFT + l", hl.dsp.window.move({ direction = "right" }))
-hl.bind("SUPER + SHIFT + h", hl.dsp.window.move({ direction = "left" }))
-hl.bind("SUPER + SHIFT + k", hl.dsp.window.move({ direction = "up" }))
-hl.bind("SUPER + SHIFT + j", hl.dsp.window.move({ direction = "down" }))
+bind("SUPER + SHIFT + l", hl.dsp.window.move({ direction = "right" }), "Move active window right")
+bind("SUPER + SHIFT + h", hl.dsp.window.move({ direction = "left" }), "Move active window left")
+bind("SUPER + SHIFT + k", hl.dsp.window.move({ direction = "up" }), "Move active window up")
+bind("SUPER + SHIFT + j", hl.dsp.window.move({ direction = "down" }), "Move active window down")
 
 -- Swap columns
-hl.bind("SUPER + CTRL + l", hl.dsp.layout("swapcol r"))
-hl.bind("SUPER + CTRL + h", hl.dsp.layout("swapcol l"))
+bind("SUPER + CTRL + l", hl.dsp.layout("swapcol r"), "Swap with column to the right")
+bind("SUPER + CTRL + h", hl.dsp.layout("swapcol l"), "Swap with column to the left")
 
 -- Move window between column/directions
-hl.bind("SUPER + SHIFT + right", hl.dsp.layout("colresize +0.1"))
-hl.bind("SUPER + SHIFT + left", hl.dsp.layout("colresize -0.1"))
+bind("SUPER + SHIFT + right", hl.dsp.layout("colresize +0.1"), "Increase column width")
+bind("SUPER + SHIFT + left", hl.dsp.layout("colresize -0.1"), "Decrease column width")
 
 -- Toggle center vs fit
-hl.bind("SUPER + CTRL + y", hl.dsp.layout("fit tobeg"))
+bind("SUPER + CTRL + y", hl.dsp.layout("fit tobeg"), "Fit column from the beginning")
 
 -- Put window in its own column
-hl.bind("SUPER + SHIFT + p", hl.dsp.layout("promote"))
+bind("SUPER + SHIFT + p", hl.dsp.layout("promote"), "Promote window into its own column")
 
 -- ===============
 -- Misc
@@ -128,34 +143,43 @@ hl.bind("SUPER + SHIFT + p", hl.dsp.layout("promote"))
 -- hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
 -- hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
 
-hl.bind(
+bind(
 	"XF86AudioRaiseVolume",
 	hl.dsp.exec_cmd("swayosd-client --output-volume raise"),
+	"Raise output volume",
 	{ locked = true, repeating = true }
 )
-hl.bind(
+bind(
 	"XF86AudioLowerVolume",
 	hl.dsp.exec_cmd("swayosd-client --output-volume lower"),
+	"Lower output volume",
 	{ locked = true, repeating = true }
 )
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("swayosd-client --output-volume mute-toggle"), { locked = true })
+bind(
+	"XF86AudioMute",
+	hl.dsp.exec_cmd("swayosd-client --output-volume mute-toggle"),
+	"Toggle output mute",
+	{ locked = true }
+)
 
-hl.bind(
+bind(
 	"XF86MonBrightnessUp",
 	hl.dsp.exec_cmd("swayosd-client --brightness raise"),
+	"Raise brightness",
 	{ locked = true, repeating = true }
 )
-hl.bind(
+bind(
 	"XF86MonBrightnessDown",
 	hl.dsp.exec_cmd("swayosd-client --brightness lower"),
+	"Lower brightness",
 	{ locked = true, repeating = true }
 )
 
 -- Requires playerctl
-hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
-hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), "Play next track", { locked = true })
+bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), "Toggle playback", { locked = true })
+bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), "Toggle playback", { locked = true })
+bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), "Play previous track", { locked = true })
 
 -- Rebind pipe character to rightalt + l
 -- hl.bind("Mod5 + L", hl.dsp.exec_cmd("wtype '|'"))

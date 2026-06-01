@@ -11,6 +11,6 @@ function ask -d 'Ask something to ai through pi coding agent'
         return 1
     end
 
-    # pi --model openai-codex/gpt-5.4-mini:$thinking -p (string join ' ' -- $argv)
-    pi --model github-copilot/gpt-5.4-mini:$thinking -p (string join ' ' -- $argv)
+    pi --model openai-codex/gpt-5.4-mini:$thinking -p (string join ' ' -- $argv)
+    # pi --model github-copilot/gpt-5.4-mini:$thinking -p (string join ' ' -- $argv)
 end
