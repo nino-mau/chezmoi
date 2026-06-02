@@ -1,6 +1,14 @@
-function hl -d 'Browse fish functions with fzf'
+function hl -d 'Browse user-defined fish functions with fzf'
+    set -l function_dir (realpath ~/.config/fish/functions)
+
     for fn in (functions | sort)
         set -l meta (functions --details --verbose $fn)
+        set -l path (realpath $meta[1] 2>/dev/null)
+
+        if not string match -q "$function_dir/*" $path
+            continue
+        end
+
         set -l desc $meta[5]
 
         if test "$desc" = n/a

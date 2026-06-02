@@ -6,6 +6,7 @@
  * - OSC 777: Ghostty, iTerm2, WezTerm, rxvt-unicode
  * - OSC 99: Kitty
  * - Windows toast: Windows Terminal (WSL)
+ * - tmux passthrough when running inside tmux
  */
 
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
@@ -23,14 +24,25 @@ function windowsToastScript(title: string, body: string): string {
 	].join("; ");
 }
 
+function writeTerminalSequence(sequence: string): void {
+	if (process.env.TMUX) {
+		// tmux only forwards arbitrary terminal escape sequences through a DCS passthrough.
+		// Escape characters inside the payload must be doubled for tmux to pass them through.
+		process.stdout.write(`\x1bPtmux;${sequence.replaceAll("\x1b", "\x1b\x1b")}\x1b\\`);
+		return;
+	}
+
+	process.stdout.write(sequence);
+}
+
 function notifyOSC777(title: string, body: string): void {
-	process.stdout.write(`\x1b]777;notify;${title};${body}\x07`);
+	writeTerminalSequence(`\x1b]777;notify;${title};${body}\x07`);
 }
 
 function notifyOSC99(title: string, body: string): void {
 	// Kitty OSC 99: i=notification id, d=0 means not done yet, p=body for second part
-	process.stdout.write(`\x1b]99;i=1:d=0;${title}\x1b\\`);
-	process.stdout.write(`\x1b]99;i=1:p=body;${body}\x1b\\`);
+	writeTerminalSequence(`\x1b]99;i=1:d=0;${title}\x1b\\`);
+	writeTerminalSequence(`\x1b]99;i=1:p=body;${body}\x1b\\`);
 }
 
 function notifyWindows(title: string, body: string): void {
@@ -49,7 +61,9 @@ function notify(title: string, body: string): void {
 }
 
 export default function (pi: ExtensionAPI) {
-	pi.on("agent_end", async () => {
+	pi.on("agent_end", async (_event, ctx) => {
+		if (!ctx.hasUI) return;
+
 		notify("Pi", "Ready for input");
 	});
 }

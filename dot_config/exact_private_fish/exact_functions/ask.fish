@@ -1,5 +1,5 @@
 function ask -d 'Ask something to ai through pi coding agent'
-    set -l thinking minimal
+    set -l thinking off
 
     if set -q argv[1]; and test "$argv[1]" = -l
         set thinking high
