@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=T3 Code
+Comment=T3 Code desktop build
+Exec=env -u ELECTRON_RUN_AS_NODE CLAUDE_CONFIG_DIR=/home/nino/.config/claude t3code %U
+Terminal=false
+Type=Application
+Icon=t3code
+StartupWMClass=t3code
+Categories=Development;
