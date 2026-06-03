@@ -1,0 +1,2 @@
+export XCURSOR_SIZE=24
+export CLAUDE_CONFIG_DIR=/home/nino/.config/claude
