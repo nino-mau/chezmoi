@@ -16,7 +16,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("~/.config/waybar/scripts/launch.sh bar")
 
 	-- Launch swaync
-	hl.exec_cmd("swaync")
+	-- hl.exec_cmd("swaync")
 
 	-- Launch swayosd
 	hl.exec_cmd("swayosd-server -s ~/.config/swayosd/style.css")
