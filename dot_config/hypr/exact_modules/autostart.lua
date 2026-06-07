@@ -13,7 +13,10 @@ hl.on("hyprland.start", function()
 	-- hl.exec_cmd('/usr/lib/ibus/ibus-ui-gtk3 --enable-wayland-im --exec-daemon --daemon-args "--xim --panel disable"')
 
 	-- Launch waybar
-	hl.exec_cmd("~/.config/waybar/scripts/launch.sh bar")
+	-- hl.exec_cmd("~/.config/waybar/scripts/launch.sh bar")
+
+	-- Launch quickshell bar
+	hl.exec_cmd("qs -c bar")
 
 	-- Launch swaync
 	-- hl.exec_cmd("swaync")
