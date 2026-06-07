@@ -41,6 +41,8 @@ hl.config({
 			contrast = 0.8,
 			vibrancy = 0.2,
 			ignore_opacity = true,
+			popups = true,
+			popups_ignorealpha = 0.5,
 		},
 	},
 })

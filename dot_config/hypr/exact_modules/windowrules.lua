@@ -20,6 +20,8 @@ local blurred_namespaces = {
 	"swaync-control-center",
 	"swaync-notification-window",
 	"^quickshell-bar-.*$",
+	"^quickshell-notifications-.*$",
+	"^noctalia-.*$",
 }
 
 local bitwarden_popup_tag = "bitwarden-popup"
@@ -211,5 +213,6 @@ for _, namespace in ipairs(blurred_namespaces) do
 		match = {
 			namespace = namespace,
 		},
+		blur_popups = true,
 	})
 end
