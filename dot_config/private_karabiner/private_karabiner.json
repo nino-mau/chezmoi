@@ -4,9 +4,18 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "CTRL A",
+                        "description": "Cmd-A to Ctrl-A",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.github\\.wez\\.wezterm$",
+                                            "com.mitchellh.ghostty"
+                                        ],
+                                        "type": "frontmost_application_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "a",
                                     "modifiers": {
@@ -51,7 +60,7 @@
                         ]
                     },
                     {
-                        "description": "CTRL V",
+                        "description": "Cmd-V to Ctrl-V",
                         "manipulators": [
                             {
                                 "from": {
@@ -72,7 +81,7 @@
                         ]
                     },
                     {
-                        "description": "CTRL C",
+                        "description": "Cmd-C to Ctrl-C",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -140,14 +149,6 @@
                         "vendor_id": 6645
                     },
                     "treat_as_built_in_keyboard": true
-                },
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 632,
-                        "vendor_id": 1452
-                    },
-                    "ignore": true
                 },
                 {
                     "identifiers": {
