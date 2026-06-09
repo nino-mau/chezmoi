@@ -7,6 +7,7 @@ keybind = performable:ctrl+n=goto_split:next
 keybind = performable:ctrl+c=copy_to_clipboard
 keybind = ctrl+shift+e=text:\u{00E8}
 keybind = ctrl+shift+a=text:\u{00E0}
+macos-option-as-alt = true
 
 # ====================
 # THEMES
@@ -24,7 +25,6 @@ config-file = ./theme
 
 window-decoration = none
 macos-window-shadow = false
-
 macos-titlebar-style = hidden
 
 window-padding-x = 20
@@ -33,6 +33,13 @@ window-padding-balance = true
 
 # Controls closing confirmation
 confirm-close-surface = false
+
+background-opacity = 0.8
+{{ if eq .chezmoi.os "darwin" }}
+background-blur-radius = 50
+{{ else }}
+# background-blur-radius = 50
+{{ end }}
 
 # ====================
 # NOTIFICATION
@@ -78,17 +85,6 @@ font-size = 12
 
 shell-integration = fish
 shell-integration-features = no-cursor 
-
-# ====================
-# BACKGROUND
-# ====================
-
-background-opacity = 0.80
-{{ if eq .chezmoi.os "darwin" }}
-background-blur-radius = 50
-{{ else }}
-# background-blur-radius = 50
-{{ end }}
 
 # ====================
 # SHADERS
