@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(npm run *)",
+      "Bash(bun run *)",
+      "Bash(ls*)",
+      "Read(~/Code/**)",
+      "Edit(~/Code/projects/**)",
+      "Read(~/Code/projects/**)"
+    ],
+    "deny": [
+      "Read(*.env)",
+      "Bash(curl:*)"
+    ],
+    "ask": [
+      "Bash(gh pr create:*)",
+      "Bash(git commit:*)",
+      "Bash(rm *)"
+    ],
+    "defaultMode": "default"
+  },
+  "model": "claude-fable-5[1m]",
+  "theme": "dark-ansi",
+  "editorMode": "vim"
+}
