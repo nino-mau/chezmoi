@@ -2,6 +2,7 @@
 
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx EZA_CONFIG_DIR "$HOME/.config/eza"
+set -gx CLAUDE_CONFIG_DIR "$HOME/.config/claude"
 set -gx EXB_PATH "$HOME/Code/exb"
 set -gx PI_CODING_AGENT_DIR "$HOME/.config/pi"
 set -gx PI_CODING_AGENT_DIR "$HOME/.config/pi"
