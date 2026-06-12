@@ -5,20 +5,14 @@
       "Bash(git add:*)",
       "Bash(npm run *)",
       "Bash(bun run *)",
+      "Bash(git ls *)",
       "Bash(ls*)",
       "Read(~/Code/**)",
       "Edit(~/Code/projects/**)",
       "Read(~/Code/projects/**)"
     ],
-    "deny": [
-      "Read(*.env)",
-      "Bash(curl:*)"
-    ],
-    "ask": [
-      "Bash(gh pr create:*)",
-      "Bash(git commit:*)",
-      "Bash(rm *)"
-    ],
+    "deny": ["Read(*.env)", "Bash(curl:*)", "Bash(rm *)"],
+    "ask": ["Bash(gh pr create:*)", "Bash(git commit:*)"],
     "defaultMode": "default"
   },
   "model": "claude-fable-5[1m]",
