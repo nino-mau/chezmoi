@@ -17,6 +17,19 @@ local function bind(keys, action, description, opts)
 	hl.bind(keys, action, merged)
 end
 
+local function focus_horizontal(direction)
+	return function()
+		local workspace = hl.get_active_workspace()
+
+		if workspace and workspace.tiled_layout == "scrolling" then
+			hl.dispatch(hl.dsp.layout("focus " .. direction))
+			return
+		end
+
+		hl.dispatch(hl.dsp.focus({ direction = direction }))
+	end
+end
+
 -- ===============
 -- Actions
 -- ===============
@@ -58,9 +71,9 @@ bind("SUPER + P", hl.dsp.window.pseudo(), "Toggle pseudotile for active window")
 -- hl.bind("SUPER + colon", hl.dsp.layout("togglesplit")) -- dwindle
 -- hl.bind("SUPER + ugrave", hl.dsp.layout("togglesplit 1")) -- dwindle
 
--- Move focus with SUPER + arrow keys
--- hl.bind("SUPER + h", hl.dsp.focus({ direction = "left" }))
--- hl.bind("SUPER + l", hl.dsp.focus({ direction = "right" }))
+-- Move focus with SUPER + hjkl
+bind("SUPER + l", focus_horizontal("right"), "Focus right")
+bind("SUPER + h", focus_horizontal("left"), "Focus left")
 bind("SUPER + k", hl.dsp.focus({ direction = "up" }), "Focus window above")
 bind("SUPER + j", hl.dsp.focus({ direction = "down" }), "Focus window below")
 
@@ -105,9 +118,6 @@ bind("SUPER + ALT + H", hl.dsp.focus({ workspace = "e-1" }), "Focus previous wor
 -- ===============
 
 -- Move view by column
-bind("SUPER + l", hl.dsp.layout("focus right"), "Focus column to the right")
-bind("SUPER + h", hl.dsp.layout("focus left"), "Focus column to the left")
-
 bind("SUPER + mouse_down", hl.dsp.layout("move +col"), "Focus next column")
 bind("SUPER + mouse_up", hl.dsp.layout("move -col"), "Focus previous column")
 
