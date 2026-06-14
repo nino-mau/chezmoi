@@ -89,7 +89,7 @@
             }
          }
       },
-      "@nino-mau/iconify": {
+      "@nino-mau/store.vicinae.iconify": {
          "entrypoints": {
             "search-icons": {
                "alias": "ic"
@@ -129,7 +129,7 @@
             "ampDisplayMode": "amount",
             "showAmp": false,
             "showAntigravity": false,
-            "showClaude": false,
+            "showClaude": true,
             "showCodex": true,
             "showCopilot": true,
             "showDroid": false,
