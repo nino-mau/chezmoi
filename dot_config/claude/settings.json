@@ -11,11 +11,18 @@
       "Edit(~/Code/projects/**)",
       "Read(~/Code/projects/**)"
     ],
-    "deny": ["Read(*.env)", "Bash(curl:*)", "Bash(rm *)"],
-    "ask": ["Bash(gh pr create:*)", "Bash(git commit:*)"],
+    "deny": [
+      "Read(*.env)",
+      "Bash(curl:*)",
+      "Bash(rm *)"
+    ],
+    "ask": [
+      "Bash(gh pr create:*)",
+      "Bash(git commit:*)"
+    ],
     "defaultMode": "default"
   },
-  "model": "claude-fable-5[1m]",
+  "model": "opus",
   "theme": "dark-ansi",
   "editorMode": "vim"
 }
