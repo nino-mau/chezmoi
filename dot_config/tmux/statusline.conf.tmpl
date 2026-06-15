@@ -47,23 +47,23 @@ setw -g pane-border-lines single
 
 # window content (icon)
 
-set -g @term_icon ""
-set -g @paru_icon "󱑢"
-set -g @nvim_icon ""
+set -g @term_icon ""
+set -g @paru_icon ""
+set -g @nvim_icon ""
 set -g @git_icon ""
 set -g @btop_icon "󰄦"
 set -g @python_icon ""
-set -g @bash_icon ""
-set -g @ssh_icon ""
-set -g @node_icon ""
+set -g @bash_icon ""
+set -g @ssh_icon ""
+set -g @node_icon ""
 set -g @bun_icon ""
 set -g @cargo_icon ""
 set -g @lua_icon ""
 set -g @fzf_icon "󱩾"
-set -g @opencode_icon "󱜙"
+set -g @agent_icon "󱜙"
 set -g @rustc_icon ""
 set -g @docker_icon "󰡨"
-set -g @default_icon ""
+set -g @default_icon ""
 
 set -g automatic-rename off
 set -g allow-rename off
@@ -88,9 +88,11 @@ set -g window-status-format '\
 #{?#{==:#{pane_current_command},rustc}, #{@rustc_icon} ,\
 #{?#{==:#{pane_current_command},fzf}, #{@fzf_icon} ,\
 #{?#{==:#{pane_current_command},lua}, #{@lua_icon} ,\
-#{?#{==:#{pane_current_command},opencode.exe}, #{@opencode_icon} ,\
-#{?#{==:#{pane_current_command},pi}, #{@opencode_icon} ,\
- #{@default_icon} }}}}}}}}}}}}}}}}}}}}}}'
+#{?#{==:#{pane_current_command},opencode.exe}, #{@agent_icon} ,\
+#{?#{==:#{pane_current_command},opencode}, #{@agent_icon} ,\
+#{?#{==:#{pane_current_command},pi}, #{@agent_icon} ,\
+#{?#{==:#{pane_current_command},claude}, #{@agent_icon} ,\
+ #{@default_icon} }}}}}}}}}}}}}}}}}}}}}}}}'
 set -g window-status-current-format '\
 #{?#{==:#{pane_current_command},zsh}, #{@term_icon} ,\
 #{?#{==:#{pane_current_command},fish}, #{@term_icon} ,\
@@ -112,9 +114,11 @@ set -g window-status-current-format '\
 #{?#{==:#{pane_current_command},rustc}, #{@rustc_icon} ,\
 #{?#{==:#{pane_current_command},fzf}, #{@fzf_icon} ,\
 #{?#{==:#{pane_current_command},lua}, #{@lua_icon} ,\
-#{?#{==:#{pane_current_command},opencode.exe}, #{@opencode_icon} ,\
-#{?#{==:#{pane_current_command},pi}, #{@opencode_icon} ,\
- #{@default_icon} }}}}}}}}}}}}}}}}}}}}}}'
+#{?#{==:#{pane_current_command},opencode.exe}, #{@agent_icon} ,\
+#{?#{==:#{pane_current_command},opencode}, #{@agent_icon} ,\
+#{?#{==:#{pane_current_command},pi}, #{@agent_icon} ,\
+#{?#{==:#{pane_current_command},claude}, #{@agent_icon} ,\
+ #{@default_icon} }}}}}}}}}}}}}}}}}}}}}}}}'
  
 # window style
 set -g window-status-style "bg=default,fg=#{@thm_surface_2}"
