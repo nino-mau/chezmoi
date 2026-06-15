@@ -2,12 +2,13 @@
   "lastChangelogVersion": "0.79.1",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.5",
-  "packages": [
-    "npm:pi-nvim",
-    "npm:@juicesharp/rpiv-ask-user-question",
-    "npm:@juicesharp/rpiv-btw"
-  ],
+  "packages": ["npm:pi-nvim", "npm:@juicesharp/rpiv-ask-user-question", "npm:@juicesharp/rpiv-btw"],
   "theme": "catppuccin-mocha",
+  "retry": {
+    "enabled": true,
+    "maxRetries": 3
+  },
   "defaultThinkingLevel": "xhigh",
   "hideThinkingBlock": false
 }
+
