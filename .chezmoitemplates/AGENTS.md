@@ -40,14 +40,13 @@ Other:
 - Prefer bun over node/npm/pnpm
 - Switch node version using fnm
 
-#### Python
-
-- Prefer uv over pip
-
 ### Writing
 
 - Avoid using emoji when writing, only had them if it's really pertinent
+- Try to write in the most natural/humane way
 - Avoid giving commercial feel to READMEs and other user facing docs, keep it to the point and technical
+- When writing documentation be the most minimal possible with flavour text, be straight to the point and don't focus on well structured phrases/ponctuations
+- No m-dash
 
 ## Ressources
 
