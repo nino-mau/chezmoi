@@ -11,8 +11,10 @@
 {
    "$schema": "https://vicinae.com/schemas/config.json",
    "font": {
+      "rendering": "native",
       "normal": {
-         "family": "Maple Mono NF CN"
+         "family": "Maple Mono NF CN",
+         "size": 10.5
       }
    },
    "theme": {
@@ -22,7 +24,13 @@
       }
    },
    "launcher_window": {
-      "opacity": 0.85
+      "opacity": 0.85,
+      "client_side_decorations": {
+         "rounding": 15
+      },
+      "layer_shell": {
+         "enabled": true
+      }
    },
    "favorites": [
       "@nino-mau/commit-message:commit-message",
