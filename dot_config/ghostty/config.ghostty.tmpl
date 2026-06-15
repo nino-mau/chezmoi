@@ -91,8 +91,7 @@ shell-integration-features = no-cursor
 # ====================
 
 # Fix for shaders to correctly compute the cursor color
-# alpha-blending = linear-corrected
-# window-colorspace = srgb
+alpha-blending = linear-corrected
 
 {{ if eq .chezmoi.os "darwin" }}
 # custom-shader = shaders/cursor_sweep.glsl
