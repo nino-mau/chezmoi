@@ -14,11 +14,16 @@ windows:
       - clear
       - clear
 
-  - window_name: opencode
+  - window_name: pi
     panes:
-      - opencode --continue --port 4583
+      - pi --continue
+
+  - window_name: claude
+    panes:
+      - claude --continue
 
   - window_name: process
     panes:
       - shell_command:
+          - pkill -x qs
           - qs -c bar
