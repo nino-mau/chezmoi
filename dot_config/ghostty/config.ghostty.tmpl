@@ -94,7 +94,7 @@ shell-integration-features = no-cursor
 alpha-blending = linear-corrected
 
 {{ if eq .chezmoi.os "darwin" }}
-# custom-shader = shaders/cursor_sweep.glsl
+custom-shader = shaders/cursor_sweep.glsl
 {{ else }}
 custom-shader = shaders/cursor_sweep.glsl
 # custom-shader = shaders/cursor_smear_custom.glsl
