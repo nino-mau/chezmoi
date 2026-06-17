@@ -49,6 +49,7 @@ setw -g pane-border-lines single
 
 set -g @term_icon ""
 set -g @paru_icon ""
+set -g @brew_icon ""
 set -g @nvim_icon ""
 set -g @git_icon ""
 set -g @btop_icon "󰄦"
@@ -64,6 +65,7 @@ set -g @agent_icon "󱜙"
 set -g @rustc_icon ""
 set -g @docker_icon "󰡨"
 set -g @default_icon ""
+set -g @ruby_icon ""
 
 set -g automatic-rename off
 set -g allow-rename off
@@ -73,12 +75,14 @@ set -g window-status-format '\
 #{?#{==:#{pane_current_command},paru}, #{@paru_icon} ,\
 #{?#{==:#{pane_current_command},pacman}, #{@paru_icon} ,\
 #{?#{==:#{pane_current_command},nvim}, #{@nvim_icon} ,\
+#{?#{==:#{pane_current_command},chezmoi}, #{@nvim_icon} ,\
 #{?#{==:#{pane_current_command},git}, #{@git_icon} ,\
 #{?#{==:#{pane_current_command},lazygit}, #{@git_icon} ,\
 #{?#{==:#{pane_current_command},btop},#{@btop_icon} ,\
 #{?#{==:#{pane_current_command},docker}, #{@docker_icon} ,\
 #{?#{==:#{pane_current_command},lazydocker}, #{@docker_icon} ,\
 #{?#{==:#{pane_current_command},docker-compose}, #{@docker_icon} ,\
+#{?#{==:#{pane_current_command},ruby}, #{@ruby_icon} ,\
 #{?#{==:#{pane_current_command},python}, #{@python_icon} ,\
 #{?#{==:#{pane_current_command},bash}, #{@bash_icon} ,\
 #{?#{==:#{pane_current_command},ssh}, #{@ssh_icon} ,\
@@ -92,19 +96,22 @@ set -g window-status-format '\
 #{?#{==:#{pane_current_command},opencode}, #{@agent_icon} ,\
 #{?#{==:#{pane_current_command},pi}, #{@agent_icon} ,\
 #{?#{==:#{pane_current_command},claude}, #{@agent_icon} ,\
- #{@default_icon} }}}}}}}}}}}}}}}}}}}}}}}}'
+#{?#{==:#{pane_current_command},brew}, #{@brew_icon} ,\
+ #{@default_icon} }}}}}}}}}}}}}}}}}}}}}}}}}}}'
 set -g window-status-current-format '\
 #{?#{==:#{pane_current_command},zsh}, #{@term_icon} ,\
 #{?#{==:#{pane_current_command},fish}, #{@term_icon} ,\
 #{?#{==:#{pane_current_command},paru}, #{@paru_icon} ,\
 #{?#{==:#{pane_current_command},pacman}, #{@paru_icon} ,\
 #{?#{==:#{pane_current_command},nvim}, #{@nvim_icon} ,\
+#{?#{==:#{pane_current_command},chezmoi}, #{@nvim_icon} ,\
 #{?#{==:#{pane_current_command},git}, #{@git_icon} ,\
 #{?#{==:#{pane_current_command},lazygit}, #{@git_icon} ,\
 #{?#{==:#{pane_current_command},btop}, #{@btop_icon} ,\
 #{?#{==:#{pane_current_command},docker}, #{@docker_icon} ,\
 #{?#{==:#{pane_current_command},lazydocker}, #{@docker_icon} ,\
 #{?#{==:#{pane_current_command},docker_compose}, #{@docker_icon} ,\
+#{?#{==:#{pane_current_command},ruby}, #{@ruby_icon} ,\
 #{?#{==:#{pane_current_command},python}, #{@python_icon} ,\
 #{?#{==:#{pane_current_command},bash}, #{@bash_icon} ,\
 #{?#{==:#{pane_current_command},ssh}, #{@ssh_icon} ,\
@@ -118,7 +125,8 @@ set -g window-status-current-format '\
 #{?#{==:#{pane_current_command},opencode}, #{@agent_icon} ,\
 #{?#{==:#{pane_current_command},pi}, #{@agent_icon} ,\
 #{?#{==:#{pane_current_command},claude}, #{@agent_icon} ,\
- #{@default_icon} }}}}}}}}}}}}}}}}}}}}}}}}'
+#{?#{==:#{pane_current_command},brew}, #{@brew_icon} ,\
+ #{@default_icon} }}}}}}}}}}}}}}}}}}}}}}}}}}}'
  
 # window style
 set -g window-status-style "bg=default,fg=#{@thm_surface_2}"
