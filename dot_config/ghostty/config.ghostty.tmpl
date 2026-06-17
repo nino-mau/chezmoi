@@ -3,6 +3,8 @@
 # ====================
 
 keybind = ctrl+f=start_search
+keybind = super+ctrl+-=decrease_font_size:0.5
+keybind = super+ctrl++=increase_font_size:1
 keybind = performable:ctrl+n=goto_split:next
 keybind = performable:ctrl+c=copy_to_clipboard
 keybind = ctrl+shift+e=text:\u{00E8}
@@ -45,7 +47,7 @@ background-blur-radius = 50
 # NOTIFICATION
 # ====================
 
-notify-on-command-finish = unfocused
+notify-on-command-finish = always
 notify-on-command-finish-action = no-bell,notify
 notify-on-command-finish-after = 30s
 
@@ -54,7 +56,9 @@ notify-on-command-finish-after = 30s
 # ====================
 
 # font-family = JetBrainsMono Nerd Font
-font-family = Maple Mono NF CN
+# font-family = JetBrains Maple Mono Nerd Font
+font-family = Maple Mono NF
+# font-family = Smiley Sans
 # font-family = SourceCodePro
 # font-family = GeistMonoNerdFont
 # font-family = IosevkaNerdFontPropo
@@ -63,6 +67,7 @@ font-family = Maple Mono NF CN
 
 {{ if eq .chezmoi.os "darwin" }}
 font-size = 15
+# adjust-cell-height = 10%
 {{ else }}
 font-size = 12
 {{ end }}
