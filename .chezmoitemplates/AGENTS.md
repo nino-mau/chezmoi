@@ -31,6 +31,7 @@ Other:
 ### Coding
 
 - Keep the code simple and understandable
+- by default avoid descriptions commits
 
 #### Typescript/Javascript
 
