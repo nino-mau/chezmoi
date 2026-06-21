@@ -22,6 +22,7 @@ local blurred_namespaces = {
 	"^quickshell-bar-.*$",
 	"^quickshell-notifications-.*$",
 	"^noctalia-.*$",
+	"^sshell:.*",
 }
 
 local bitwarden_popup_tag = "bitwarden-popup"
@@ -46,6 +47,14 @@ local function float_bitwarden_popup(window)
 	hl.dispatch(hl.dsp.window.center({ window = window }))
 	hl.dispatch(hl.dsp.window.tag({ tag = "+" .. bitwarden_popup_tag, window = window }))
 end
+
+-- Let Hyprland keybinds work while the Windows VM is focused
+hl.window_rule({
+	no_shortcuts_inhibit = true,
+	match = {
+		class = "qemu",
+	},
+})
 
 -- Send browser to workspace 2
 hl.window_rule({
