@@ -53,8 +53,7 @@ bind("SUPER + space", hl.dsp.exec_cmd(programs.vicinae), "Toggle Vicinae")
 -- Take screenshot
 bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("~/.local/bin/screenshot-focused.sh"), "Take focused window screenshot")
 
--- Lockscreen binding
-bind("SUPER + M", hl.dsp.exec_cmd(programs.lockscreen), "Lock screen")
+bind("SUPER + M", hl.dsp.exec_cmd(programs.session_menu), "Open session menu")
 
 -- Toggle ie-r color picker
 bind("SUPER + SHIFT + P", hl.dsp.exec_cmd("pkill -SIGUSR1 ie-r"), "Toggle color picker")
@@ -146,41 +145,36 @@ bind("SUPER + SHIFT + p", hl.dsp.layout("promote"), "Promote window into its own
 -- ===============
 
 -- Laptop multimedia keys for volume and LCD brightness
--- hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
--- hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { locked = true, repeating = true })
--- hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true, repeating = true })
--- hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true, repeating = true })
--- hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
--- hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
-
+-- Quickshell's OSD listens to PipeWire changes, so volume keys only need to
+-- update the default sink directly.
 bind(
 	"XF86AudioRaiseVolume",
-	hl.dsp.exec_cmd("swayosd-client --output-volume raise"),
+	hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"),
 	"Raise output volume",
 	{ locked = true, repeating = true }
 )
 bind(
 	"XF86AudioLowerVolume",
-	hl.dsp.exec_cmd("swayosd-client --output-volume lower"),
+	hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),
 	"Lower output volume",
 	{ locked = true, repeating = true }
 )
 bind(
 	"XF86AudioMute",
-	hl.dsp.exec_cmd("swayosd-client --output-volume mute-toggle"),
+	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
 	"Toggle output mute",
 	{ locked = true }
 )
 
 bind(
 	"XF86MonBrightnessUp",
-	hl.dsp.exec_cmd("swayosd-client --brightness raise"),
+	hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"),
 	"Raise brightness",
 	{ locked = true, repeating = true }
 )
 bind(
 	"XF86MonBrightnessDown",
-	hl.dsp.exec_cmd("swayosd-client --brightness lower"),
+	hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"),
 	"Lower brightness",
 	{ locked = true, repeating = true }
 )

@@ -22,13 +22,13 @@ hl.on("hyprland.start", function()
 	-- hl.exec_cmd("swaync")
 
 	-- Launch swayosd
-	hl.exec_cmd("swayosd-server -s ~/.config/swayosd/style.css")
+	-- hl.exec_cmd("swayosd-server -s ~/.config/swayosd/style.css")
 
 	-- Launch awww daemon
 	hl.exec_cmd("awww-daemon")
 
 	-- Set clipboard manager
-	hl.exec_cmd("wl-paste --type text --watch cliphist store")
+	-- hl.exec_cmd("wl-paste --type text --watch cliphist store")
 
 	-- Launch ie-r color picker daemon
 	hl.exec_cmd("ie-r")

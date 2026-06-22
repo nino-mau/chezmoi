@@ -3,7 +3,8 @@ return {
 	browser = "zen-browser",
 	fileManager = "yazi",
 	hypremoji = "hypremoji",
-	lockscreen = "hyprlock",
+	lockscreen = "qs -c bar ipc call lock lock",
+	session_menu = "qs -c bar ipc call session toggle",
 
 	-- Vicinae menus
 	vicinae = "vicinae toggle",

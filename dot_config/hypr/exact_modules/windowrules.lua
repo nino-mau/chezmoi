@@ -22,6 +22,7 @@ local blurred_namespaces = {
 	"^quickshell-bar-.*$",
 	"^quickshell-notifications-.*$",
 	"^quickshell-osd-.*$",
+	"^quickshell-session-.*$",
 	"^noctalia-.*$",
 	"^sshell:.*",
 }
