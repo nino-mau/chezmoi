@@ -4,8 +4,12 @@
 
 {{ if eq .chezmoi.os "darwin" -}}
 alias i="brew install"
+alias r="brew remove"
+alias upgrade="brew upgrade"
 {{ else -}}
 alias i="paru -S"
+alias r="paru -R"
+alias upgrade="paru -Syu"
 {{ end -}}
 
 abbr -a rmr "rm -r"
