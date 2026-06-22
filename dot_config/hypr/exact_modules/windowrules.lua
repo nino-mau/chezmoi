@@ -21,6 +21,7 @@ local blurred_namespaces = {
 	"swaync-notification-window",
 	"^quickshell-bar-.*$",
 	"^quickshell-notifications-.*$",
+	"^quickshell-osd-.*$",
 	"^noctalia-.*$",
 	"^sshell:.*",
 }
