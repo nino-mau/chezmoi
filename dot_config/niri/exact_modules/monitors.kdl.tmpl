@@ -19,43 +19,43 @@ output "HDMI-A-2" {
 }
 
 {{ if eq .chezmoi.hostname "nino-desktop-cachy" }}
-workspace "w1" {
+workspace "1" {
     open-on-output "DP-1"
 }
 
-workspace "w2" {
+workspace "2" {
     open-on-output "DP-1"
 }
 
-workspace "w3" {
+workspace "3" {
     open-on-output "DP-2"
 }
 
-workspace "w4" {
+workspace "4" {
     open-on-output "DP-1"
 }
 
-workspace "w5" {
+workspace "5" {
     open-on-output "DP-1"
 }
 {{ else }}
-workspace "w1" {
+workspace "1" {
     open-on-output "HDMI-A-2"
 }
 
-workspace "w2" {
+workspace "2" {
     open-on-output "HDMI-A-2"
 }
 
-workspace "w3" {
+workspace "3" {
     open-on-output "HDMI-A-2"
 }
 
-workspace "w4" {
+workspace "4" {
     open-on-output "HDMI-A-2"
 }
 
-workspace "w5" {
+workspace "5" {
     open-on-output "HDMI-A-2"
 }
 {{ end }}
