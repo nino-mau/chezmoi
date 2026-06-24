@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+
+set -u
+
+# Prefer an external monitor for the greeter without disabling eDP.
+# Static "monitor = eDP-1,disable" breaks undocked boots.
+# If no external output is active, this exits and Hyprland uses the laptop panel.
+
+read_monitors() {
+    hyprctl monitors 2>/dev/null
+}
+
+wait_for_monitors() {
+    local output
+
+    for _ in {1..20}; do
+        output="$(read_monitors || true)"
+        if grep -q '^Monitor ' <<<"$output"; then
+            printf '%s\n' "$output"
+            return 0
+        fi
+
+        sleep 0.1
+    done
+
+    return 1
+}
+
+select_external_monitor() {
+    awk '
+        /^Monitor / {
+            name = $2
+            sub(/:$/, "", name)
+            current = name
+            next
+        }
+
+        /^[[:space:]]*[0-9]+x[0-9]+@/ {
+            if (current !~ /^eDP-/) {
+                split($1, mode, "@")
+                split(mode[1], size, "x")
+                area = (size[1] + 0) * (size[2] + 0)
+
+                if (area > best_area) {
+                    best_area = area
+                    best = current
+                }
+            }
+        }
+
+        END {
+            if (best != "") {
+                print best
+            }
+        }
+    '
+}
+
+main() {
+    local monitors preferred_monitor
+
+    monitors="$(wait_for_monitors)" || exit 0
+    preferred_monitor="$(select_external_monitor <<<"$monitors")"
+
+    if [[ -z "$preferred_monitor" ]]; then
+        exit 0
+    fi
+
+    hyprctl dispatch focusmonitor "$preferred_monitor" >/dev/null 2>&1 || true
+}
+
+main "$@"

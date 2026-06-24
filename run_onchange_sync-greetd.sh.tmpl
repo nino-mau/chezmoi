@@ -1,7 +1,7 @@
 {{ if ne .chezmoi.os "darwin" -}}
 #!/bin/bash
 # Sync greetd configs from ~/.config/greetd to /etc/greetd
-# Triggered when: {{ include "dot_config/exact_greetd/config.toml" | sha256sum }} {{ include "dot_config/exact_greetd/hyprland-greeter-config.conf.tmpl" | sha256sum }}
+# Triggered when: {{ include "dot_config/exact_greetd/config.toml" | sha256sum }} {{ include "dot_config/exact_greetd/hyprland-greeter-config.conf.tmpl" | sha256sum }} {{ include "dot_config/exact_greetd/executable_select-greeter-monitor" | sha256sum }}
 
 set -e
 
@@ -11,6 +11,7 @@ echo "Syncing greetd configuration to /etc/greetd..."
 sudo cp ~/.config/greetd/config.toml /etc/greetd/
 sudo cp ~/.config/greetd/hyprland-greeter-config.conf /etc/greetd/
 sudo cp ~/.config/greetd/kitty.conf /etc/greetd/
+sudo install -m 755 ~/.config/greetd/select-greeter-monitor /etc/greetd/select-greeter-monitor
 
 echo "Greetd configuration synced successfully"
 {{ end -}}

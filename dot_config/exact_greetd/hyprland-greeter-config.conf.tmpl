@@ -1,9 +1,8 @@
 # SYSC-Greet Hyprland config for greetd greeter session
 # Monitors auto-detected by Hyprland at runtime
-
-{{ if eq .chezmoi.hostname "cachyos-x8664" }}
-monitor = eDP-1,disable
-{{ end }}
+# Keep every connected monitor enabled. The greeter startup script focuses the
+# preferred external display when one exists, leaving eDP as fallback.
+monitor = ,preferred,auto,1
 
 # No animations for faster greeter startup
 animations {
@@ -59,4 +58,4 @@ layerrule = match:namespace wallpaper, blur on
 
 # Startup applications
 exec-once = gslapper -f -I /tmp/sysc-greet-wallpaper.sock '*' /usr/share/sysc-greet/wallpapers/sysc-greet-default.png
-exec-once = XDG_CACHE_HOME=/tmp/greeter-cache HOME=/var/lib/greeter kitty --start-as=fullscreen --config=/etc/greetd/kitty.conf /usr/local/bin/sysc-greet && hyprctl dispatch exit
+exec-once = /etc/greetd/select-greeter-monitor; XDG_CACHE_HOME=/tmp/greeter-cache HOME=/var/lib/greeter kitty --start-as=fullscreen --config=/etc/greetd/kitty.conf /usr/local/bin/sysc-greet && hyprctl dispatch exit
