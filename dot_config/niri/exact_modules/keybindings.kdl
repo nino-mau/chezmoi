@@ -60,7 +60,7 @@ binds {
     }
 
     Super+M {
-        spawn "hyprlock"
+        spawn "qs" "-c" "bar" "ipc" "call" "session" "toggle"
     }
 
     Super+V {
@@ -220,15 +220,15 @@ binds {
     }
 
     XF86AudioRaiseVolume allow-when-locked=true {
-        spawn-sh "swayosd-client --output-volume raise"
+        spawn-sh "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
     }
 
     XF86AudioLowerVolume allow-when-locked=true {
-        spawn-sh "swayosd-client --output-volume lower"
+        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
     }
 
     XF86AudioMute allow-when-locked=true {
-        spawn-sh "swayosd-client --output-volume mute-toggle"
+        spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     }
 
     XF86AudioMicMute allow-when-locked=true {
