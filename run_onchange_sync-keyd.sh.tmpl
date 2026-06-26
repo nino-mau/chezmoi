@@ -1,13 +1,16 @@
 {{ if ne .chezmoi.os "darwin" -}}
 #!/bin/bash
 # Sync keyd configs from ~/.config/keyd to /etc/keyd
-# Triggered when: {{ include "dot_config/keyd/default.conf" | sha256sum }}
+# Triggered when:
+# {{ include "dot_config/keyd/default.conf" | sha256sum }}
+# {{ include "dot_config/keyd/laptop.conf.tmpl" | sha256sum }}
 
 set -e
 
 echo "Syncing keyd configuration to /etc/keyd..."
 
 sudo cp ~/.config/keyd/default.conf /etc/keyd/
+sudo cp ~/.config/keyd/laptop.conf /etc/keyd/
 
 sudo keyd reload
 
