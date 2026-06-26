@@ -41,6 +41,13 @@
       "applications:t3code"
    ],
    "providers": {
+      "@Gelei/store.vicinae.bluetooth": {
+         "entrypoints": {
+            "devices": {
+               "alias": "bl"
+            }
+         }
+      },
       "@c4n4m1/store.vicinae.zoxide-recent-directories": {
          "preferences": {
             "application": "nvim"
