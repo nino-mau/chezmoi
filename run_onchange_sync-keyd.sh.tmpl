@@ -10,7 +10,9 @@ set -e
 echo "Syncing keyd configuration to /etc/keyd..."
 
 sudo cp ~/.config/keyd/default.conf /etc/keyd/
+{{ if eq .chezmoi.hostname "cachyos-x8664" -}}
 sudo cp ~/.config/keyd/laptop.conf /etc/keyd/
+{{ end -}}
 
 sudo keyd reload
 
