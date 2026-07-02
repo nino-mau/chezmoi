@@ -13,7 +13,14 @@ if ! command -v paru >/dev/null 2>&1; then
   exit 0
 fi
 
-if ! paru -S --needed --noconfirm "${packages[@]}"; then
+missing=()
+mapfile -t missing < <(pacman -T "${packages[@]}")
+
+if ((${#missing[@]} == 0)); then
+  exit 0
+fi
+
+if ! paru -S --needed --noconfirm "${missing[@]}"; then
   echo "warning: package installation failed, continuing chezmoi apply" >&2
 fi
 {{- end }}
