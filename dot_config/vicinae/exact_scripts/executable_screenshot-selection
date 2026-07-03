@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
 # @vicinae.schemaVersion 1
+# @vicinae.exec ["/bin/bash"]
 # @vicinae.title Screenshot
 # @vicinae.mode silent
 # @vicinae.icon https://api.iconify.design/material-symbols/screenshot-region-rounded.svg?color=%23ccd5f3

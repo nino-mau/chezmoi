@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
 # @vicinae.schemaVersion 1
+# @vicinae.exec ["/bin/bash"]
 # @vicinae.title Upgrade
 # @vicinae.mode silent
 # @vicinae.icon https://api.iconify.design/material-symbols/upgrade.svg?color=%23ccd5f3
