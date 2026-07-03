@@ -27,6 +27,7 @@ Other:
 - Safety first
 - Try to stick to existing coding pattern in the project you're working on
 - Avoid unecessary flavour text, go to the point
+- Do not make edit without being asked
 
 ### Coding
 
