@@ -21,6 +21,9 @@ if test -d "$FNM_PATH"
     set PATH "$FNM_PATH" $PATH
 end
 
+# programs installed with bun 
+fish_add_path "/Users/nino/.bun/bin"
+
 {{ if eq .chezmoi.os "darwin" }}
 # bun
 set -gx BUN_INSTALL "$HOME/.bun"
