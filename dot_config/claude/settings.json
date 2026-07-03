@@ -22,7 +22,7 @@
     ],
     "defaultMode": "default"
   },
-  "model": "opus",
+  "model": "claude-fable-5[1m]",
   "theme": "dark-ansi",
   "editorMode": "vim"
 }
