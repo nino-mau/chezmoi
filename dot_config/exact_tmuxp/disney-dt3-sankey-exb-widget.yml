@@ -4,12 +4,12 @@ windows:
   - window_name: editor
     panes:
       - shell_command:
-          - nvim .
+          - nvim
 
   - window_name: cmd
     layout: main-vertical
     options:
-      main-pane-width: '50%'
+      main-pane-width: "50%"
     panes:
       - clear
       - clear

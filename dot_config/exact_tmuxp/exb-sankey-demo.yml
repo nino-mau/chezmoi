@@ -5,7 +5,7 @@ windows:
     panes:
       - shell_command:
           - cd $HOME/Code/projects/exb-sankey-demo/
-          - nvim .
+          - nvim
 
   - window_name: repo
     panes:
