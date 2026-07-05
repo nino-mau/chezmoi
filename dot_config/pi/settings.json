@@ -12,6 +12,6 @@
     "enabled": true,
     "maxRetries": 3
   },
-  "defaultThinkingLevel": "xhigh",
+  "defaultThinkingLevel": "high",
   "hideThinkingBlock": false
 }
