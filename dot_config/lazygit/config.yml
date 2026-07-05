@@ -41,9 +41,7 @@ customCommands:
   - key: "C"
     context: "files"
     description: "Generate commit message with Opencode"
-    command: "pi --model openai-codex/gpt-5.4-mini:minimal -p '/cmsg'"
-    # Fallback when openAI subscription is rate limited :
-    # command: "pi --model github-copilot/gpt-5.4-mini:minimal -p '/cmsg'"
+    command: "pi --model openai-codex/gpt-5.5:minimal -p '/cmsg'"
     output: log
 
   - key: "U"
