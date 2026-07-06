@@ -1,11 +1,11 @@
 ---
 name: arcgis-experience-builder
-description: Use this when working with on custom arcgis experience builder widgets
+description: Use this when working on custom arcgis experience builder widgets
 ---
 
 ## Best Practices
 
-- You can find the exb client code at ~/Code/exb/client
+- You can find the exb client code at ~/Code/exb/client or ~/Code/exb<version>/client
 - Read the doc: https://developers.arcgis.com/experience-builder/guide/getting-started-widget/
 - For widget example, see widgets in the official arcgis-experience-builder-sdk-resources repo, find it either there ~/tmp/arcgis-experience-builder-sdk-resources/widgets or directly on github https://github.com/Esri/arcgis-experience-builder-sdk-resources
 
