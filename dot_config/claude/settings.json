@@ -24,5 +24,6 @@
   },
   "model": "claude-fable-5[1m]",
   "theme": "dark-ansi",
-  "editorMode": "vim"
+  "editorMode": "vim",
+  "effortLevel": "high"
 }
