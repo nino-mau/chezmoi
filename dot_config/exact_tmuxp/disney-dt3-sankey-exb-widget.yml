@@ -16,7 +16,7 @@ windows:
 
   - window_name: exb-client
     panes:
-      - cd $HOME/Code/exb/client/
+      - cd $HOME/Code/exb14/client/
 
   - window_name: ai
     panes:
@@ -26,11 +26,11 @@ windows:
     layout: main-horizontal
     panes:
       - shell_command:
-          - cd $HOME/Code/exb/client
+          - cd $HOME/Code/exb14/client
           - npm start
       - shell_command:
-          - cd $HOME/Code/exb/server
+          - cd $HOME/Code/exb14/server
           - npm start
       - shell_command:
           - cd $HOME/Code/projects/disney-dt3-sankey-exb-widget/
-          - ./tools/devLivesync.sh
+          - ./tools/devLivesync.sh $HOME/Code/exb14
