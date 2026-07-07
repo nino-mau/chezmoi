@@ -26,6 +26,7 @@ Other:
 - Safety first
 - Try to stick to existing coding pattern in the project you're working on
 - Do not make edit without being asked
+- When the user ask for a big task and you think there are too little details, do not hesitate to ask questions
 
 ### Conversational Style
 
