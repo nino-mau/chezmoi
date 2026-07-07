@@ -2,7 +2,6 @@ gui:
   # Show nerd icons (notably for files in staged list)
   mouseEvents: true
   nerdFontsVersion: "3"
-
   # Color theme
   theme:
     activeBorderColor:
@@ -25,31 +24,25 @@ gui:
       - "#cdd6f4"
     searchingActiveBorderColor:
       - "#f9e2af"
-
   authorColors:
     "*": "#b4befe"
-
 git:
   # Parse markdown style emoji (:sparkle: :books: ...)
   parseEmoji: true
-
 os:
   # Preset editor when editing file
   editPreset: "nvim"
-
 customCommands:
   - key: "C"
     context: "files"
     description: "Generate commit message with Opencode"
     command: "pi --model openai-codex/gpt-5.5:minimal -p '/cmsg'"
     output: log
-
   - key: "U"
     context: "files"
     description: "Commit staged changes as update"
     command: 'git commit -m "update"'
     output: log
-
 # Keybindings
 keybinding:
   universal:
@@ -110,10 +103,8 @@ keybinding:
     scrollDownMain-alt2: <c-d>
     executeShellCommand: ":"
     createRebaseOptionsMenu: m
-
     # 'Files' appended for legacy reasons
     pushFiles: P
-
     # 'Files' appended for legacy reasons
     pullFiles: p
     refresh: R
@@ -138,6 +129,7 @@ keybinding:
     increaseRenameSimilarityThreshold: )
     decreaseRenameSimilarityThreshold: (
     openDiffTool: <c-t>
+    newWorktree: w
   status:
     checkForUpdate: u
     recentRepos: <enter>
@@ -181,8 +173,6 @@ keybinding:
     fetchRemote: f
     addForkRemote: F
     sortOrder: s
-  worktrees:
-    viewWorktreeOptions: w
   commits:
     squashDown: s
     renameCommit: r
