@@ -1,0 +1,134 @@
+{
+  "version": 3,
+  "skills": {
+    "shadcn": {
+      "source": "shadcn/ui",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/shadcn/ui.git",
+      "skillPath": "skills/shadcn/SKILL.md",
+      "skillFolderHash": "962eb7ef77f17e0bce530153d4fec2136c5fa061",
+      "installedAt": "2026-07-06T17:41:09.914Z",
+      "updatedAt": "2026-07-06T17:41:09.914Z"
+    },
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "eb6a23305aea6e340d14b9de3766e721f9f4861b",
+      "installedAt": "2026-07-06T17:41:16.127Z",
+      "updatedAt": "2026-07-06T17:41:16.127Z"
+    },
+    "caveman-commit": {
+      "source": "juliusbrussee/caveman",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/juliusbrussee/caveman.git",
+      "skillPath": "skills/caveman-commit/SKILL.md",
+      "skillFolderHash": "6ba13fa3503e9607eed8f94828b524510d83b7ef",
+      "installedAt": "2026-07-06T17:41:53.627Z",
+      "updatedAt": "2026-07-06T17:41:53.627Z"
+    },
+    "arcgis-layers": {
+      "source": "saschabrunnerch/arcgis-maps-sdk-js-ai-context",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/saschabrunnerch/arcgis-maps-sdk-js-ai-context.git",
+      "skillPath": "skills/arcgis-layers/SKILL.md",
+      "skillFolderHash": "446fda08582b8d8759b00ee68a16d13ea552b163",
+      "installedAt": "2026-07-08T12:30:03.158Z",
+      "updatedAt": "2026-07-08T12:30:03.158Z"
+    },
+    "arcgis-cim-symbols": {
+      "source": "saschabrunnerch/arcgis-maps-sdk-js-ai-context",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/saschabrunnerch/arcgis-maps-sdk-js-ai-context.git",
+      "skillPath": "skills/arcgis-cim-symbols/SKILL.md",
+      "skillFolderHash": "036910ffbfe6b483b648a5710b6126d22c998c23",
+      "installedAt": "2026-07-08T12:31:54.876Z",
+      "updatedAt": "2026-07-08T12:31:54.876Z"
+    },
+    "arcgis-popup-templates": {
+      "source": "saschabrunnerch/arcgis-maps-sdk-js-ai-context",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/saschabrunnerch/arcgis-maps-sdk-js-ai-context.git",
+      "skillPath": "skills/arcgis-popup-templates/SKILL.md",
+      "skillFolderHash": "a4f1fbb9a1bba03ee98bca0ca11f859506b191a6",
+      "installedAt": "2026-07-08T12:32:48.476Z",
+      "updatedAt": "2026-07-08T12:32:48.476Z"
+    },
+    "arcgis-geometry-operations": {
+      "source": "saschabrunnerch/arcgis-maps-sdk-js-ai-context",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/saschabrunnerch/arcgis-maps-sdk-js-ai-context.git",
+      "skillPath": "skills/arcgis-geometry-operations/SKILL.md",
+      "skillFolderHash": "b53ebcf43f3d23abccc5538b8dce167c7e4ff862",
+      "installedAt": "2026-07-08T12:34:34.832Z",
+      "updatedAt": "2026-07-08T12:35:36.728Z"
+    },
+    "arcgis-interaction": {
+      "source": "saschabrunnerch/arcgis-maps-sdk-js-ai-context",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/saschabrunnerch/arcgis-maps-sdk-js-ai-context.git",
+      "skillPath": "skills/arcgis-interaction/SKILL.md",
+      "skillFolderHash": "555b0ce7baa592cf2e0df85db4419cfa76f4f557",
+      "installedAt": "2026-07-08T12:36:06.802Z",
+      "updatedAt": "2026-07-08T12:36:38.973Z"
+    },
+    "arcgis-coordinates-projection": {
+      "source": "saschabrunnerch/arcgis-maps-sdk-js-ai-context",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/saschabrunnerch/arcgis-maps-sdk-js-ai-context.git",
+      "skillPath": "skills/arcgis-coordinates-projection/SKILL.md",
+      "skillFolderHash": "10acb80bc63ddf3b928ebb9cde575c4b41b4e441",
+      "installedAt": "2026-07-08T12:37:31.462Z",
+      "updatedAt": "2026-07-08T12:37:31.462Z"
+    },
+    "arcgis-core-maps": {
+      "source": "saschabrunnerch/arcgis-maps-sdk-js-ai-context",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/saschabrunnerch/arcgis-maps-sdk-js-ai-context.git",
+      "skillPath": "skills/arcgis-core-maps/SKILL.md",
+      "skillFolderHash": "c117c8d46bbba43755dd644a484f78ef83abc5c0",
+      "installedAt": "2026-07-08T12:38:38.954Z",
+      "updatedAt": "2026-07-08T12:38:38.954Z"
+    },
+    "arcgis-feature-effects": {
+      "source": "saschabrunnerch/arcgis-maps-sdk-js-ai-context",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/saschabrunnerch/arcgis-maps-sdk-js-ai-context.git",
+      "skillPath": "skills/arcgis-feature-effects/SKILL.md",
+      "skillFolderHash": "14b977171c50927af95d12a55d72ffa138f8b26f",
+      "installedAt": "2026-07-08T12:40:09.697Z",
+      "updatedAt": "2026-07-08T12:40:09.697Z"
+    },
+    "arcgis-performance": {
+      "source": "saschabrunnerch/arcgis-maps-sdk-js-ai-context",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/saschabrunnerch/arcgis-maps-sdk-js-ai-context.git",
+      "skillPath": "skills/arcgis-performance/SKILL.md",
+      "skillFolderHash": "19c1758527ee85c54a162ee8b47bbdd2243d4247",
+      "installedAt": "2026-07-08T12:40:49.038Z",
+      "updatedAt": "2026-07-08T12:40:49.038Z"
+    },
+    "arcgis-rest-services": {
+      "source": "saschabrunnerch/arcgis-maps-sdk-js-ai-context",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/saschabrunnerch/arcgis-maps-sdk-js-ai-context.git",
+      "skillPath": "skills/arcgis-rest-services/SKILL.md",
+      "skillFolderHash": "7fc8d71076043b4b6822bf7ab4f9298ec8acfc9f",
+      "installedAt": "2026-07-08T12:41:42.871Z",
+      "updatedAt": "2026-07-08T12:41:42.871Z"
+    },
+    "vercel-react-best-practices": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/react-best-practices/SKILL.md",
+      "skillFolderHash": "343db72180d05814949fef7d46be96b5c6ee86b3",
+      "installedAt": "2026-07-08T12:44:27.107Z",
+      "updatedAt": "2026-07-08T12:44:27.107Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  }
+}
