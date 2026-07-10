@@ -9,210 +9,214 @@
 // Learn more about configuration at https://docs.vicinae.com/config
 
 {
-  "$schema": "https://vicinae.com/schemas/config.json",
-  "font": {
-    "rendering": "native",
-    "normal": {
-      "family": "Maple Mono NF CN",
-      "size": 10.5
-    }
-  },
-  "theme": {
-    "dark": {
-      "name": "catppuccin-mocha",
-      "icon_theme": "Papirus-Dark"
-    }
-  },
-  "launcher_window": {
-    "opacity": 0.85,
-    "client_side_decorations": {
-      "rounding": 15
-    },
-    "layer_shell": {
-      "enabled": true
-    }
-  },
-  "favorites": [
-    "@nino-mau/commit-message:commit-message",
-    "@nino-mau/theme-switcher:switch-theme",
-    "@nino-mau/grammalecte-fr-corrector:correct-french-text",
-    "@nino-mau/wallpaper-switcher:wallpapers",
-    "@nino-mau/zen-bookmarks:search-bookmarks",
-    "applications:t3code"
-  ],
-  "providers": {
-    "@Gelei/store.vicinae.bluetooth": {
-      "entrypoints": {
-        "devices": {
-          "alias": "bl"
-        }
+   "$schema": "https://vicinae.com/schemas/config.json",
+   "font": {
+      "rendering": "native",
+      "normal": {
+         "family": "Maple Mono NF CN",
+         "size": 10.5
       }
-    },
-    "@c4n4m1/store.vicinae.zoxide-recent-directories": {
-      "preferences": {
-        "application": "nvim"
+   },
+   "theme": {
+      "dark": {
+         "name": "catppuccin-mocha",
+         "icon_theme": "Papirus-Dark"
       }
-    },
-    "@dru89/store.raycast.obsidian-bookmarks": {
-      "preferences": {
-        "vaultPath": "/home/nino/.obsidian/Main",
-        "bookmarksPath": "3. Bookmarks",
-        "checkDuplicates": true,
-        "datePrefix": false,
-        "defaultFormAction": "openUrl",
-        "defaultItemAction": "openUrl",
-        "saveSubfolder": "3. Bookmarks",
-        "searchRecursively": true,
-        "useBrowserExtension": false,
-        "requiredTags": "bookmark",
-        "extraTags": "dev,smartorigin,ai,piracy,frontend,hyprland,dotfiles,repo,ressource,arch,open-source"
-      }
-    },
-    "@fbosch/store.vicinae.nerdfont-search": {
-      "entrypoints": {
-        "nerdfonts-search": {
-          "alias": "nf"
-        }
-      }
-    },
-    "@joshuaiz/store.raycast.password-generator": {
-      "entrypoints": {
-        "generate-random-password": {
-          "preferences": {
-            "rememberNumbersAndCharacters": true,
-            "storePasswordLength": true
-          }
-        }
-      }
-    },
-    "@keito4/store.raycast.skills": {
-      "preferences": {
-        "customNpxPath": "/usr/bin/bunx"
-      }
-    },
-    "@nino-mau/commit-message": {
-      "entrypoints": {
-        "commit-message": {
-          "alias": "cm"
-        }
-      }
-    },
-    "@nino-mau/grammalecte-fr-corrector": {
-      "entrypoints": {
-        "correct-french-text": {
-          "alias": "sp"
-        }
-      }
-    },
-    "@nino-mau/store.vicinae.iconify": {
-      "entrypoints": {
-        "search-icons": {
-          "alias": "ic"
-        }
-      }
-    },
-    "@nino-mau/theme-switcher": {
-      "entrypoints": {
-        "switch-theme": {
-          "alias": "st"
-        }
-      }
-    },
-    "@nino-mau/wallpaper-switcher": {
-      "entrypoints": {
-        "wallpapers": {
-          "alias": "sw"
-        }
-      }
-    },
-    "@nino-mau/zen-bookmarks": {
-      "entrypoints": {
-        "search-bookmarks": {
-          "alias": "bk"
-        }
-      }
-    },
-    "@rithvikvibhu/store.vicinae.arch-packages": {
-      "entrypoints": {
-        "search-arch-packages": {
-          "alias": "ps"
-        }
-      }
-    },
-    "@thuggyduck/store.raycast.agent-usage": {
-      "preferences": {
-        "ampDisplayMode": "amount",
-        "showAmp": false,
-        "showAntigravity": false,
-        "showClaude": true,
-        "showCodex": true,
-        "showCopilot": true,
-        "showDroid": false,
-        "showGemini": false,
-        "showKimi": false,
-        "showSynthetic": false,
-        "showZai": false
-      }
-    },
-    "@tonka3000/store.raycast.gitlab": {
-      "preferences": {
-        "instance": "https://gitlab.com"
-      }
-    },
-    "applications": {
-      "entrypoints": {
-        "eddie-cli": {
-          "alias": "vpn"
-        },
-        "wiremix": {
-          "alias": "mix"
-        },
-        "yazi": {
-          "alias": "files"
-        }
-      }
-    },
-    "clipboard": {
-      "preferences": {
-        "monitoring": true
-      }
-    },
-    "files": {
-      "entrypoints": {
-        "search": {
-          "alias": "fd"
-        }
-      }
-    },
-    "power": {
-      "entrypoints": {
-        "lock": {
-          "preferences": {
-            "customProgram": "hyprlock"
-          }
-        },
-        "logout": {
-          "preferences": {
-            "confirm": false
-          }
-        },
-        "power-off": {
-          "preferences": {
-            "confirm": false
-          }
-        },
-        "reboot": {
-          "preferences": {
-            "confirm": false
-          }
-        }
-      }
-    },
-    "scripts": {
-      "preferences": {
-        "customDirs": ["/home/nino/.config/vicinae/scripts"]
+   },
+   "launcher_window": {
+      "opacity": 0.85,
+      "client_side_decorations": {
+         "rounding": 15
       },
-      "entrypoints": {}
-    }
-  }
+      "layer_shell": {
+         "enabled": true
+      }
+   },
+   "favorites": [
+      "@nino-mau/commit-message:commit-message",
+      "@nino-mau/theme-switcher:switch-theme",
+      "@nino-mau/grammalecte-fr-corrector:correct-french-text",
+      "@nino-mau/wallpaper-switcher:wallpapers",
+      "@nino-mau/zen-bookmarks:search-bookmarks",
+      "applications:t3code"
+   ],
+   "providers": {
+      "@Gelei/store.vicinae.bluetooth": {
+         "entrypoints": {
+            "devices": {
+               "alias": "bl"
+            }
+         }
+      },
+      "@c4n4m1/store.vicinae.zoxide-recent-directories": {
+         "preferences": {
+            "application": "nvim"
+         }
+      },
+      "@dru89/store.raycast.obsidian-bookmarks": {
+         "preferences": {
+            "vaultPath": "/home/nino/.obsidian/Main",
+            "bookmarksPath": "3. Bookmarks",
+            "checkDuplicates": true,
+            "datePrefix": false,
+            "defaultFormAction": "openUrl",
+            "defaultItemAction": "openUrl",
+            "saveSubfolder": "3. Bookmarks",
+            "searchRecursively": true,
+            "useBrowserExtension": false,
+            "requiredTags": "bookmark",
+            "extraTags": "dev,smartorigin,ai,piracy,frontend,hyprland,dotfiles,repo,ressource,arch,open-source"
+         }
+      },
+      "@fbosch/store.vicinae.nerdfont-search": {
+         "entrypoints": {
+            "nerdfonts-search": {
+               "alias": "nf"
+            }
+         }
+      },
+      "@joshuaiz/store.raycast.password-generator": {
+         "entrypoints": {
+            "generate-random-password": {
+               "preferences": {
+                  "rememberNumbersAndCharacters": true,
+                  "storePasswordLength": true
+               }
+            }
+         }
+      },
+      "@keito4/store.raycast.skills": {
+         "preferences": {
+            "customNpxPath": "/usr/bin/bunx"
+         }
+      },
+      "@nino-mau/commit-message": {
+         "entrypoints": {
+            "commit-message": {
+               "alias": "cm"
+            }
+         }
+      },
+      "@nino-mau/grammalecte-fr-corrector": {
+         "entrypoints": {
+            "correct-french-text": {
+               "alias": "sp"
+            }
+         }
+      },
+      "@nino-mau/store.vicinae.iconify": {
+         "entrypoints": {
+            "search-icons": {
+               "alias": "ic"
+            }
+         }
+      },
+      "@nino-mau/theme-switcher": {
+         "entrypoints": {
+            "switch-theme": {
+               "alias": "st"
+            }
+         }
+      },
+      "@nino-mau/wallpaper-switcher": {
+         "entrypoints": {
+            "wallpapers": {
+               "alias": "sw"
+            }
+         }
+      },
+      "@nino-mau/zen-bookmarks": {
+         "entrypoints": {
+            "search-bookmarks": {
+               "alias": "bk"
+            }
+         }
+      },
+      "@rithvikvibhu/store.vicinae.arch-packages": {
+         "entrypoints": {
+            "search-arch-packages": {
+               "alias": "ps"
+            }
+         }
+      },
+      "@thuggyduck/store.raycast.agent-usage": {
+         "preferences": {
+            "ampDisplayMode": "amount",
+            "showAmp": false,
+            "showAntigravity": false,
+            "showClaude": true,
+            "showCodex": true,
+            "showCopilot": false,
+            "showCursor": false,
+            "showDroid": false,
+            "showGemini": false,
+            "showKimi": false,
+            "showMinimax": false,
+            "showOpencodeGo": false,
+            "showSynthetic": false,
+            "showZai": false
+         }
+      },
+      "@tonka3000/store.raycast.gitlab": {
+         "preferences": {
+            "instance": "https://gitlab.com"
+         }
+      },
+      "applications": {
+         "entrypoints": {
+            "eddie-cli": {
+               "alias": "vpn"
+            },
+            "wiremix": {
+               "alias": "mix"
+            },
+            "yazi": {
+               "alias": "files"
+            }
+         }
+      },
+      "clipboard": {
+         "preferences": {
+            "monitoring": true
+         }
+      },
+      "files": {
+         "entrypoints": {
+            "search": {
+               "alias": "fd"
+            }
+         }
+      },
+      "power": {
+         "entrypoints": {
+            "lock": {
+               "preferences": {
+                  "customProgram": "hyprlock"
+               }
+            },
+            "logout": {
+               "preferences": {
+                  "confirm": false
+               }
+            },
+            "power-off": {
+               "preferences": {
+                  "confirm": false
+               }
+            },
+            "reboot": {
+               "preferences": {
+                  "confirm": false
+               }
+            }
+         }
+      },
+      "scripts": {
+         "preferences": {
+            "customDirs": [
+               "/home/nino/.config/vicinae/scripts"
+            ]
+         }
+      }
+   }
 }
