@@ -1,6 +1,8 @@
 -- Monitors configurations
 -- See https://wiki.hypr.land/Configuring/Monitors/
 
+-- Configure laptop monitors
+
 hl.monitor({
 	output = "HDMI-A-2",
 	mode = "1920x1080@60",
@@ -15,7 +17,7 @@ hl.monitor({
 	scale = "1",
 })
 
--- Assign workspaces to monitors
+-- Assign workspaces to main monitors
 hl.workspace_rule({ workspace = "1", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "2", monitor = "DP-1" })
 hl.workspace_rule({ workspace = "3", monitor = "DP-2" })

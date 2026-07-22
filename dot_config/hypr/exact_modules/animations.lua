@@ -52,11 +52,11 @@ local function spring_animations()
 	hl.curve("menu_accel", { type = "bezier", points = { { 0.38, 0.04 }, { 1, 0.07 } } })
 
 	-- Spring Curves
-	hl.curve("spring_menu", { type = "spring", mass = 1, stiffness = 80, dampening = 14 })
-	hl.curve("spring_window", { type = "spring", mass = 1, stiffness = 30, dampening = 8 })
-	hl.curve("spring_open", { type = "spring", mass = 1, stiffness = 30, dampening = 8 })
-	hl.curve("spring_workspace", { type = "spring", mass = 1.2, stiffness = 30, dampening = 10 })
-	hl.curve("spring_special", { type = "spring", mass = 1, stiffness = 30, dampening = 8 })
+	hl.curve("spring_menu", { type = "spring", mass = 1, stiffness = 240, dampening = 14 })
+	hl.curve("spring_window", { type = "spring", mass = 1, stiffness = 90, dampening = 8 })
+	hl.curve("spring_open", { type = "spring", mass = 1, stiffness = 90, dampening = 8 })
+	hl.curve("spring_workspace", { type = "spring", mass = 1.2, stiffness = 90, dampening = 10 })
+	hl.curve("spring_special", { type = "spring", mass = 1, stiffness = 90, dampening = 8 })
 
 	-- Window animations
 	hl.animation({ leaf = "windows", enabled = true, speed = 1, spring = "spring_window" })
@@ -96,11 +96,11 @@ local function gnomed_animations()
 	hl.curve("overshot", { type = "bezier", points = { { 0.13, 0.99 }, { 0.29, 1.05 } } })
 
 	-- Spring Curves
-	hl.curve("spring_menu", { type = "spring", mass = 1, stiffness = 80, dampening = 14 })
-	hl.curve("spring_window", { type = "spring", mass = 1, stiffness = 30, dampening = 8 })
-	hl.curve("spring_open", { type = "spring", mass = 1, stiffness = 30, dampening = 8 })
-	hl.curve("spring_workspace", { type = "spring", mass = 1.2, stiffness = 30, dampening = 10 })
-	hl.curve("spring_special", { type = "spring", mass = 1, stiffness = 30, dampening = 8 })
+	hl.curve("spring_menu", { type = "spring", mass = 1, stiffness = 240, dampening = 14 })
+	hl.curve("spring_window", { type = "spring", mass = 1, stiffness = 90, dampening = 8 })
+	hl.curve("spring_open", { type = "spring", mass = 1, stiffness = 90, dampening = 8 })
+	hl.curve("spring_workspace", { type = "spring", mass = 1.2, stiffness = 360, dampening = 32 })
+	hl.curve("spring_special", { type = "spring", mass = 1, stiffness = 360, dampening = 28 })
 
 	-- Windows
 	hl.animation({ leaf = "windows", enabled = true, speed = 5, bezier = "overshot", style = "gnomed" })
@@ -108,17 +108,23 @@ local function gnomed_animations()
 	hl.animation({ leaf = "windowsMove", enabled = true, speed = 5, bezier = "overshot", style = "slide" })
 
 	-- Layers
-	hl.animation({ leaf = "layers", enabled = true, speed = 5, bezier = "ease", style = "gnomed" })
+	hl.animation({ leaf = "layers", enabled = true, speed = 2, spring = "spring_special", style = "slide" })
 
 	-- Fade and border
 	hl.animation({ leaf = "fade", enabled = true, speed = 3, bezier = "ease" })
 	hl.animation({ leaf = "border", enabled = true, speed = 2, bezier = "ease" })
 
 	-- Workspaces
-	-- hl.animation({ leaf = "workspaces", enabled = true, speed = 5, bezier = "overshot", style = "slidefade 25%" })
+	-- hl.animation({ leaf = "workspaces", enabled = true, speed = 6, bezier = "overshot", style = "slidefade 25%" })
 
 	-- Workspace animations
-	hl.animation({ leaf = "workspaces", enabled = true, speed = 1, spring = "spring_workspace", style = "slidefade" })
+	hl.animation({
+		leaf = "workspaces",
+		enabled = true,
+		speed = 1,
+		spring = "spring_workspace",
+		style = "slidefade 25%",
+	})
 	hl.animation({
 		leaf = "specialWorkspace",
 		enabled = true,

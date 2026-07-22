@@ -135,7 +135,7 @@ bind("SUPER + SHIFT + right", hl.dsp.layout("colresize +0.1"), "Increase column 
 bind("SUPER + SHIFT + left", hl.dsp.layout("colresize -0.1"), "Decrease column width")
 
 -- Toggle center vs fit
-bind("SUPER + CTRL + y", hl.dsp.layout("fit tobeg"), "Fit column from the beginning")
+bind("SUPER + SHIFT + E", hl.dsp.layout("fit expand"), "Expand current window to remaining free space on monitor")
 
 -- Put window in its own column
 bind("SUPER + SHIFT + p", hl.dsp.layout("promote"), "Promote window into its own column")
