@@ -126,6 +126,15 @@
       "skillFolderHash": "343db72180d05814949fef7d46be96b5c6ee86b3",
       "installedAt": "2026-07-08T12:44:27.107Z",
       "updatedAt": "2026-07-08T12:44:27.107Z"
+    },
+    "fastapi": {
+      "source": "fastapi/fastapi",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/fastapi/fastapi.git",
+      "skillPath": "fastapi/.agents/skills/fastapi/SKILL.md",
+      "skillFolderHash": "a3a558959c169f0766fba515c08bcee1870024ed",
+      "installedAt": "2026-07-09T14:40:58.268Z",
+      "updatedAt": "2026-07-09T14:40:58.268Z"
     }
   },
   "dismissed": {
