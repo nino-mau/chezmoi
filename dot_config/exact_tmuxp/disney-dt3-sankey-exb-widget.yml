@@ -22,6 +22,10 @@ windows:
     panes:
       - pi --continue
 
+  - window_name: claude
+    panes:
+      - claude --continue
+
   - window_name: processes
     layout: main-horizontal
     panes:
