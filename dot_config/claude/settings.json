@@ -22,8 +22,8 @@
     ],
     "defaultMode": "default"
   },
-  "model": "claude-fable-5[1m]",
+  "model": "opus",
+  "effortLevel": "high",
   "theme": "dark-ansi",
-  "editorMode": "vim",
-  "effortLevel": "high"
+  "editorMode": "vim"
 }
