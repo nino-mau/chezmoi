@@ -7,8 +7,7 @@ function clipimg -d 'Save current clipboard image'
     set -l clipboard_uti
 
     if test "$os" = Darwin
-        set -l utis (osascript -l JavaScript -e \
-            'ObjC.import("AppKit"); $.NSPasteboard.generalPasteboard.types.js.join("\n")' 2>/dev/null)
+        set -l utis (osascript -l JavaScript -e 'ObjC.import("AppKit"); const types = $.NSPasteboard.generalPasteboard.types; const names = []; for (let i = 0; i < types.count; i++) names.push(ObjC.unwrap(types.objectAtIndex(i))); names.join("\n");' 2>/dev/null)
         for uti in $utis
             if test -n "$clipboard_uti"
                 break
