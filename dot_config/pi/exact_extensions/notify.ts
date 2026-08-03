@@ -60,10 +60,24 @@ function notify(title: string, body: string): void {
 	}
 }
 
-export default function (pi: ExtensionAPI) {
-	pi.on("agent_end", async (_event, ctx) => {
-		if (!ctx.hasUI) return;
+function notifyAndBell(body: string): void {
+	notify("Pi", body);
 
-		notify("Pi", "Ready for input");
+	if (process.env.TMUX) {
+		process.stdout.write("\x07");
+	}
+}
+
+export default function (pi: ExtensionAPI) {
+	pi.on("tool_execution_start", async (event, ctx) => {
+		if (!ctx.hasUI || event.toolName !== "ask_user_question") return;
+
+		notifyAndBell("Question requires input");
+	});
+
+	pi.on("agent_settled", async (_event, ctx) => {
+		if (!ctx.hasUI || !ctx.isIdle()) return;
+
+		notifyAndBell("Ready for input");
 	});
 }
