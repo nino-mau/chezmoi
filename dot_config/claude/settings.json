@@ -11,19 +11,45 @@
       "Edit(~/Code/projects/**)",
       "Read(~/Code/projects/**)"
     ],
-    "deny": [
-      "Read(*.env)",
-      "Bash(curl:*)",
-      "Bash(rm *)"
-    ],
-    "ask": [
-      "Bash(gh pr create:*)",
-      "Bash(git commit:*)"
-    ],
+    "deny": ["Read(*.env)", "Bash(curl:*)", "Bash(rm *)"],
+    "ask": ["Bash(gh pr create:*)", "Bash(git commit:*)"],
     "defaultMode": "default"
   },
   "model": "opus",
   "effortLevel": "high",
   "theme": "dark-ansi",
-  "editorMode": "vim"
+  "editorMode": "vim",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "notify-send --app-name='Claude Code' 'Claude Code' 'Ready for input' >/dev/null 2>&1; pane_tty=$(tmux display-message -p -t \"$TMUX_PANE\" '#{pane_tty}' 2>/dev/null); [ -n \"$pane_tty\" ] && printf '\\a' > \"$pane_tty\"; true"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "AskUserQuestion",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "notify-send --app-name='Claude Code' 'Claude Code' 'Question requires input' >/dev/null 2>&1; pane_tty=$(tmux display-message -p -t \"$TMUX_PANE\" '#{pane_tty}' 2>/dev/null); [ -n \"$pane_tty\" ] && printf '\\a' > \"$pane_tty\"; true"
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "notify-send --app-name='Claude Code' 'Claude Code' 'Permission required' >/dev/null 2>&1; pane_tty=$(tmux display-message -p -t \"$TMUX_PANE\" '#{pane_tty}' 2>/dev/null); [ -n \"$pane_tty\" ] && printf '\\a' > \"$pane_tty\"; true"
+          }
+        ]
+      }
+    ]
+  }
 }
