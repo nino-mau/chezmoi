@@ -123,7 +123,7 @@ local function gnomed_animations()
 		enabled = true,
 		speed = 1,
 		spring = "spring_workspace",
-		style = "slidefade 25%",
+		style = "slide",
 	})
 	hl.animation({
 		leaf = "specialWorkspace",
