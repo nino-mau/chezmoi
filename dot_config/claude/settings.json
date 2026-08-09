@@ -13,7 +13,7 @@
     ],
     "deny": ["Read(*.env)", "Bash(curl:*)", "Bash(rm *)"],
     "ask": ["Bash(gh pr create:*)", "Bash(git commit:*)"],
-    "defaultMode": "default"
+    "defaultMode": "auto"
   },
   "model": "opus",
   "effortLevel": "high",
