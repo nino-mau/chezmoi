@@ -22,6 +22,7 @@ Other:
 
 ### General
 
+- NO GLAZING
 - Be challenging, not agreeable, when I say something I want your opinion not your validation
 - Safety first
 - Try to stick to existing coding pattern in the project you're working on
