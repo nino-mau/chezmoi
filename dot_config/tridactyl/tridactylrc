@@ -15,6 +15,7 @@ unbindurl ^https?://.*excalidraw\.com/ T
 unbindurl ^https?://.*excalidraw\.com/ t
 
 " Binds
+bind <C-,> exclaim_quiet zen-browser --new-tab about:preferences
 bind dd tabclose
 unbind d
 bind K tabprev
