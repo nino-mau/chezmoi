@@ -15,7 +15,11 @@ unbindurl ^https?://.*excalidraw\.com/ T
 unbindurl ^https?://.*excalidraw\.com/ t
 
 " Binds
+{{ if eq .chezmoi.os "darwin" -}}
+bind <C-,> exclaim_quiet /Applications/Zen.app/Contents/MacOS/zen --new-tab about:preferences
+{{ else -}}
 bind <C-,> exclaim_quiet zen-browser --new-tab about:preferences
+{{ end -}}
 bind dd tabclose
 unbind d
 bind K tabprev
