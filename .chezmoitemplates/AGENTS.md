@@ -11,6 +11,7 @@
 - Editor: {{ index $sys "editor" }}
 - Browser: {{ index $sys "browser" }}
 - Dotfiles manager: {{ index $sys "dotfiles-manager" }}
+- Keyboard re-mapper: {{ index $sys "keyboard-mapper" }}
 
 Other:
 

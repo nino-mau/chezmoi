@@ -9,6 +9,7 @@ system-infos:
     editor: 'neovim'
     browser: 'zen-browser'
     dotfiles-manager: 'chezmoi'
+    keyboard-mapper: 'karabiner-element'
   linux:
     os: 'cachyos'
     package-manager: 'paru'
@@ -19,3 +20,4 @@ system-infos:
     editor: 'neovim'
     browser: 'zen-browser'
     dotfiles-manager: 'chezmoi'
+    keyboard-mapper: 'keyd'
