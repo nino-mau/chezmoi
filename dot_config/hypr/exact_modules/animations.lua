@@ -94,18 +94,23 @@ local function gnomed_animations()
 	-- Bezier curves
 	hl.curve("ease", { type = "bezier", points = { { 0.25, 0.1 }, { 0.25, 1.0 } } })
 	hl.curve("overshot", { type = "bezier", points = { { 0.13, 0.99 }, { 0.29, 1.05 } } })
+	hl.curve("smoothOut", { type = "bezier", points = { { 0.36, 0 }, { 0.66, -0.56 } } })
+	hl.curve("smoothIn", { type = "bezier", points = { { 0.25, 1 }, { 0.5, 1 } } })
+	hl.curve("softSnap", { type = "bezier", points = { { 0.4, 0 }, { 0.2, 1 } } })
+	hl.curve("fluent", { type = "bezier", points = { { 0.0, 0.0 }, { 0.2, 1.0 } } })
 
 	-- Spring Curves
 	hl.curve("spring_menu", { type = "spring", mass = 1, stiffness = 240, dampening = 14 })
 	hl.curve("spring_window", { type = "spring", mass = 1, stiffness = 90, dampening = 8 })
-	hl.curve("spring_open", { type = "spring", mass = 1, stiffness = 90, dampening = 8 })
+	hl.curve("spring_open", { type = "spring", mass = 1.2, stiffness = 90, dampening = 8 })
 	hl.curve("spring_workspace", { type = "spring", mass = 1.2, stiffness = 360, dampening = 32 })
 	hl.curve("spring_special", { type = "spring", mass = 1, stiffness = 360, dampening = 28 })
 
 	-- Windows
 	hl.animation({ leaf = "windows", enabled = true, speed = 5, bezier = "overshot", style = "gnomed" })
 	hl.animation({ leaf = "windowsOut", enabled = true, speed = 5, bezier = "ease", style = "slide bottom" })
-	hl.animation({ leaf = "windowsMove", enabled = true, speed = 5, bezier = "overshot", style = "slide" })
+	-- hl.animation({ leaf = "windowsMove", enabled = true, speed = 4, bezier = "ease" })
+	hl.animation({ leaf = "windowsMove", enabled = true, speed = 4, bezier = "softSnap" })
 
 	-- Layers
 	hl.animation({ leaf = "layers", enabled = true, speed = 2, spring = "spring_special", style = "slide" })
@@ -135,3 +140,4 @@ local function gnomed_animations()
 end
 
 gnomed_animations()
+-- test()
