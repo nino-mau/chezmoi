@@ -1,0 +1,246 @@
+[bar.default]
+background_opacity = 0.54999998770654202
+center = ["workspaces", "clock"]
+concave_edge_corners = true
+end = [
+  "tray",
+  "widget",
+  "network",
+  "bluetooth",
+  "volume",
+  "brightness",
+  "battery",
+  "notifications",
+]
+font_family = "Maple Mono NF"
+margin_edge = 16
+margin_ends = 16
+start = ["control-center", "weather", "group:g1", "cat"]
+widget_spacing = 10
+
+[[bar.default.capsule_group]]
+accordion = false
+accordion_direction = "end"
+enabled = true
+fill = "surface_variant"
+foreground = "primary"
+id = "g1"
+members = ["audio_visualizer", "media"]
+opacity = 1.0
+padding = 6.0
+widget_spacing = 6
+
+[desktop_widgets]
+enabled = false
+
+[location]
+auto_locate = true
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = ["lockscreen-login-box@DP-2", "lockscreen-login-box@DP-1"]
+
+[lockscreen_widgets.grid]
+cell_size = 16
+major_interval = 4
+visible = true
+
+[lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+box_height = 196.0
+box_width = 810.0
+cx = 1280.0
+cy = 1258.0
+output = "DP-1"
+rotation = 0.0
+type = "login_box"
+
+[lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+background_color = "surface_variant"
+background_opacity = 0.88
+background_radius = 12.0
+center_password_text = false
+input_opacity = 1.0
+input_radius = 6.0
+layout = "regular"
+show_caps_lock = true
+show_keyboard_layout = true
+show_login_button = true
+show_media = true
+show_session_buttons = true
+show_unlock_hint = true
+show_weather = true
+
+[lockscreen_widgets.widget."lockscreen-login-box@DP-2"]
+box_height = 196.0
+box_width = 810.0
+cx = 1280.0
+cy = 1258.0
+output = "DP-2"
+rotation = 0.0
+type = "login_box"
+
+[lockscreen_widgets.widget."lockscreen-login-box@DP-2".settings]
+background_color = "surface_variant"
+background_opacity = 0.88
+background_radius = 12.0
+center_password_text = false
+input_opacity = 1.0
+input_radius = 6.0
+layout = "regular"
+show_caps_lock = true
+show_keyboard_layout = true
+show_login_button = true
+show_media = true
+show_session_buttons = true
+show_unlock_hint = true
+show_weather = true
+
+[notification]
+background_opacity = 0.50999998860061169
+border = false
+
+[osd]
+background_opacity = 0.50999998860061169
+border = false
+
+[osd.kinds]
+media = false
+
+[plugin_settings."yuuto/arch-updater"]
+aur_helper = "paru"
+check_arch_news = false
+flatpak_enabled = false
+notify_on_updates = false
+
+[plugins]
+enabled = ["noctalia/bongocat", "yuuto/arch-updater"]
+
+[shell]
+clipboard_enabled = false
+font_family = "Maple Mono NF"
+lang = "en"
+telemetry_enabled = true
+
+[shell.panel]
+borders = false
+session_placement = "floating"
+session_position = "center"
+transparency_mode = "soft"
+
+[shell.screenshot]
+directory = "/home/nino/Pictures/Screenshots"
+
+[shell.session]
+grid_columns = 5
+show_shortcuts = false
+
+[[shell.session.actions]]
+action = "lock"
+countdown_seconds = 0.0
+enabled = true
+shortcut = "1"
+variant = "default"
+
+[[shell.session.actions]]
+action = "logout"
+countdown_seconds = 0.0
+enabled = true
+shortcut = "2"
+variant = "default"
+
+[[shell.session.actions]]
+action = "reboot"
+countdown_seconds = 0.0
+enabled = true
+shortcut = "4"
+variant = "default"
+
+[[shell.session.actions]]
+action = "shutdown"
+countdown_seconds = 0.0
+enabled = true
+shortcut = "5"
+variant = "destructive"
+
+[theme]
+builtin = "Catppuccin"
+community_palette = "Atuel"
+custom_palette = "catppuccin_mocha"
+source = "custom"
+
+[theme.templates]
+builtin_ids = ["gtk3", "gtk4", "qt"]
+
+[config.custom_colors]
+teal = "#94e2d5"
+
+[wallpaper]
+directory = "/home/nino/.local/share/wallpapers/catppuccin"
+
+[wallpaper.default]
+path = "/home/nino/.local/share/wallpapers/catppuccin/clouds-darker.png"
+
+[wallpaper.last]
+path = "/home/nino/.local/share/wallpapers/catppuccin/clouds-darker.png"
+
+[wallpaper.monitors.DP-1]
+path = "/home/nino/.local/share/wallpapers/catppuccin/clouds-darker.png"
+
+[wallpaper.monitors.DP-2]
+path = "/home/nino/.local/share/wallpapers/catppuccin/clouds-darker.png"
+
+[[wallpaper.favorite]]
+builtin_palette = "Noctalia"
+palette_source = "builtin"
+path = "/home/nino/.local/share/wallpapers/catppuccin/clouds-darker.png"
+theme_mode = "dark"
+
+[widget.audio_visualizer]
+mirrored = false
+width = 35
+
+[widget.cat]
+input_devices = ["/dev/input/event26"]
+type = "noctalia/bongocat:cat"
+
+[widget.clock]
+format = "{:%a %d %b %H:%M}"
+timezone = "Europe/Paris"
+vertical_format = "{:%a %H:%M}"
+
+[widget.control-center]
+capsule_fill = "on_primary"
+capsule_padding = 9
+color = "primary"
+custom_image = "/home/nino/.local/share/icons/custom/cachy-os-multicolored.svg"
+glyph = ""
+scale = 1.1500000000000001
+
+[widget.media]
+artist_first = true
+hide_album_art = true
+hide_when_no_media = true
+title_scroll = "on_hover"
+
+[widget.tray]
+hidden = ["nm-applet", "blueman", "org.kde.StatusNotifierItem-1-1"]
+match_adjacent_spacing = true
+
+[widget.volume]
+show_label = false
+
+[widget.weather]
+show_condition = false
+
+[widget.widget]
+glyph = "cloud-download"
+type = "yuuto/arch-updater:widget"
+
+[widget.workspaces]
+empty_color = "outline"
+hide_when_empty = false
+occupied_color = "outline"
+show_all_outputs = true
+show_labels = false
+urgent_color = "outline"
