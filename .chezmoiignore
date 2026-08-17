@@ -29,6 +29,7 @@ scrapJJKTranscript/
 .config/greetd
 .config/earlyoom
 .config/waybar
+.config/noctalia
 .config/walker
 .config/walker
 .config/vesktop
@@ -36,7 +37,6 @@ scrapJJKTranscript/
 .config/hyprpanel
 .config/hypremoji
 .config/nwg-look
-.config/vicinae
 .config/swayosd
 .config/swaync
 .config/niri
