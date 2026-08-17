@@ -1,7 +1,7 @@
 -- Source the rest of the files required from here
 require("modules.monitors")
 require("modules.autostart")
-require("modules.programs")
+require("modules.commands")
 require("modules.env")
 require("modules.decorations")
 require("modules.layout")

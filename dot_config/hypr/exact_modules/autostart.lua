@@ -1,6 +1,6 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
 
-local programs = require("modules.programs")
+local programs = require("modules.commands")
 
 hl.on("hyprland.start", function()
 	-- Launch notification daemon

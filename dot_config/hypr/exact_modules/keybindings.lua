@@ -1,7 +1,7 @@
 -- Keybindings
 -- See https://wiki.hypr.land/Configuring/Basics/Binds/
 
-local programs = require("modules.programs")
+local programs = require("modules.commands")
 
 local function bind(keys, action, description, opts)
 	local merged = {}
