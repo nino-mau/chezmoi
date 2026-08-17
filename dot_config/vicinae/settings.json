@@ -10,6 +10,10 @@
 
 {
    "$schema": "https://vicinae.com/schemas/config.json",
+   "wrap_navigation": true,
+   "global_shortcuts": {
+      "toggle": ""
+   },
    "font": {
       "rendering": "native",
       "normal": {
@@ -27,6 +31,9 @@
       "opacity": 0.75,
       "client_side_decorations": {
          "rounding": 15
+      },
+      "compact_mode": {
+         "enabled": false
       },
       "layer_shell": {
          "enabled": true
@@ -72,6 +79,13 @@
          "entrypoints": {
             "nerdfonts-search": {
                "alias": "nf"
+            }
+         }
+      },
+      "@gebeto/store.raycast.translate": {
+         "entrypoints": {
+            "translate": {
+               "alias": "tr"
             }
          }
       },
@@ -180,6 +194,13 @@
             "monitoring": true
          }
       },
+      "core": {
+         "entrypoints": {
+            "search-builtin-icons": {
+               "enabled": true
+            }
+         }
+      },
       "files": {
          "entrypoints": {
             "search": {
@@ -191,7 +212,8 @@
          "entrypoints": {
             "lock": {
                "preferences": {
-                  "customProgram": "hyprlock"
+                  "customProgram": "noctalia msg session lock",
+                  "confirm": false
                }
             },
             "logout": {
@@ -200,6 +222,7 @@
                }
             },
             "power-off": {
+               "alias": "off",
                "preferences": {
                   "confirm": false
                }
@@ -216,6 +239,16 @@
             "customDirs": [
                "/home/nino/.config/vicinae/scripts"
             ]
+         }
+      },
+      "system": {
+         "entrypoints": {
+            "run": {
+               "alias": "cmd",
+               "preferences": {
+                  "default-action": "run-in-terminal-hold"
+               }
+            }
          }
       }
    }
