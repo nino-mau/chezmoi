@@ -16,7 +16,10 @@ hl.on("hyprland.start", function()
 	-- hl.exec_cmd("~/.config/waybar/scripts/launch.sh bar")
 
 	-- Launch quickshell bar
-	hl.exec_cmd("qs -c bar")
+	-- hl.exec_cmd("qs -c bar")
+
+	-- Launch noctalia shell
+	hl.exec_cmd("noctalia")
 
 	-- Launch swaync
 	-- hl.exec_cmd("swaync")
