@@ -33,6 +33,9 @@ abbr -a lssvg "timg --grid=3x2 --title *.{svg,SVG}"
 # Generate random string
 alias rand="openssl rand -base64 32 | tr -d '/+='"
 
+# Display codex/claude usage using codexbar-cli
+abbr -a usage "codexbar cards --provider both --source oauth --brief"
+
 # Generate random strong password 
 alias randpass="pwgen -s -y -c -n 15 1"
 
@@ -66,7 +69,8 @@ abbr -a ps "paru -Ss" # Search packages
 abbr -a ch chezmoi
 
 # Chezmoi-managed config editing
-abbr -a ce "chezmoi edit --apply"
+abbr -a che "chezmoi edit --apply"
+abbr -a clg "lazygit -p ~/.local/share/chezmoi/"
 abbr -a cghost "chezmoi edit --apply ~/.config/ghostty/config.ghostty"
 abbr -a calias "chezmoi edit --apply ~/.config/fish/conf.d/10-alias.fish"
 abbr -a ctmux "chezmoi edit --apply ~/.config/tmux/tmux.conf"
