@@ -28,7 +28,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "notify-send --app-name='Claude Code' 'Claude Code' 'Ready for input' >/dev/null 2>&1; pane_tty=$(tmux display-message -p -t \"$TMUX_PANE\" '#{pane_tty}' 2>/dev/null); [ -n \"$pane_tty\" ] && printf '\\033Ptmux;\\033\\033]9;Claude Code: Ready for input\\007\\033\\\\\\a' > \"$pane_tty\"; true"
+            "command": "$HOME/.config/claude/hooks/notify 'Ready for input'"
           }
         ]
       }
@@ -39,7 +39,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "notify-send --app-name='Claude Code' 'Claude Code' 'Question requires input' >/dev/null 2>&1; pane_tty=$(tmux display-message -p -t \"$TMUX_PANE\" '#{pane_tty}' 2>/dev/null); [ -n \"$pane_tty\" ] && printf '\\033Ptmux;\\033\\033]9;Claude Code: Question requires input\\007\\033\\\\\\a' > \"$pane_tty\"; true"
+            "command": "$HOME/.config/claude/hooks/notify 'Question requires input'"
           }
         ]
       }
@@ -49,7 +49,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "notify-send --app-name='Claude Code' 'Claude Code' 'Permission required' >/dev/null 2>&1; pane_tty=$(tmux display-message -p -t \"$TMUX_PANE\" '#{pane_tty}' 2>/dev/null); [ -n \"$pane_tty\" ] && printf '\\033Ptmux;\\033\\033]9;Claude Code: Permission required\\007\\033\\\\\\a' > \"$pane_tty\"; true"
+            "command": "$HOME/.config/claude/hooks/notify 'Permission required'"
           }
         ]
       }
