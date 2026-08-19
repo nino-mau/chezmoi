@@ -57,5 +57,6 @@
   },
   "effortLevel": "high",
   "theme": "dark-ansi",
-  "editorMode": "vim"
+  "editorMode": "vim",
+  "model": "opus"
 }
