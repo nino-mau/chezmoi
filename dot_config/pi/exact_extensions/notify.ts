@@ -1,83 +1,29 @@
-/**
- * Pi Notify Extension
- *
- * Sends a native terminal notification when Pi agent is done and waiting for input.
- * Supports multiple terminal protocols:
- * - OSC 777: Ghostty, iTerm2, WezTerm, rxvt-unicode
- * - OSC 99: Kitty
- * - Windows toast: Windows Terminal (WSL)
- * - tmux passthrough when running inside tmux
- */
-
+import { spawn } from "node:child_process";
 import type { ExtensionAPI } from "@earendil-works/pi-coding-agent";
 
-function windowsToastScript(title: string, body: string): string {
-	const type = "Windows.UI.Notifications";
-	const mgr = `[${type}.ToastNotificationManager, ${type}, ContentType = WindowsRuntime]`;
-	const template = `[${type}.ToastTemplateType]::ToastText01`;
-	const toast = `[${type}.ToastNotification]::new($xml)`;
-	return [
-		`${mgr} > $null`,
-		`$xml = [${type}.ToastNotificationManager]::GetTemplateContent(${template})`,
-		`$xml.GetElementsByTagName('text')[0].AppendChild($xml.CreateTextNode('${body}')) > $null`,
-		`[${type}.ToastNotificationManager]::CreateToastNotifier('${title}').Show(${toast})`,
-	].join("; ");
-}
+function notify(body: string): void {
+	const child = spawn(
+		"fish",
+		["-c", 'notify "$argv[1]" "$argv[2]"', "Pi", body],
+		{
+			stdio: ["ignore", "inherit", "ignore"],
+		},
+	);
 
-function writeTerminalSequence(sequence: string): void {
-	if (process.env.TMUX) {
-		// tmux only forwards arbitrary terminal escape sequences through a DCS passthrough.
-		// Escape characters inside the payload must be doubled for tmux to pass them through.
-		process.stdout.write(`\x1bPtmux;${sequence.replaceAll("\x1b", "\x1b\x1b")}\x1b\\`);
-		return;
-	}
-
-	process.stdout.write(sequence);
-}
-
-function notifyOSC777(title: string, body: string): void {
-	writeTerminalSequence(`\x1b]777;notify;${title};${body}\x07`);
-}
-
-function notifyOSC99(title: string, body: string): void {
-	// Kitty OSC 99: i=notification id, d=0 means not done yet, p=body for second part
-	writeTerminalSequence(`\x1b]99;i=1:d=0;${title}\x1b\\`);
-	writeTerminalSequence(`\x1b]99;i=1:p=body;${body}\x1b\\`);
-}
-
-function notifyWindows(title: string, body: string): void {
-	const { execFile } = require("child_process");
-	execFile("powershell.exe", ["-NoProfile", "-Command", windowsToastScript(title, body)]);
-}
-
-function notify(title: string, body: string): void {
-	if (process.env.WT_SESSION) {
-		notifyWindows(title, body);
-	} else if (process.env.KITTY_WINDOW_ID) {
-		notifyOSC99(title, body);
-	} else {
-		notifyOSC777(title, body);
-	}
-}
-
-function notifyAndBell(body: string): void {
-	notify("Pi", body);
-
-	if (process.env.TMUX) {
-		process.stdout.write("\x07");
-	}
+	// Avoid an unhandled error if Fish cannot be started.
+	child.on("error", () => {});
 }
 
 export default function (pi: ExtensionAPI) {
-	pi.on("tool_execution_start", async (event, ctx) => {
-		if (!ctx.hasUI || event.toolName !== "ask_user_question") return;
+	pi.on("tool_execution_start", (event, ctx) => {
+		if (ctx.mode !== "tui" || event.toolName !== "ask_user_question") return;
 
-		notifyAndBell("Question requires input");
+		notify("Question requires input");
 	});
 
-	pi.on("agent_settled", async (_event, ctx) => {
-		if (!ctx.hasUI || !ctx.isIdle()) return;
+	pi.on("agent_settled", (_event, ctx) => {
+		if (ctx.mode !== "tui" || !ctx.isIdle()) return;
 
-		notifyAndBell("Ready for input");
+		notify("Ready for input");
 	});
 }
