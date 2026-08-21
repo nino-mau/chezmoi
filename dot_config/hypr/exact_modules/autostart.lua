@@ -1,6 +1,6 @@
 -- See https://wiki.hypr.land/Configuring/Basics/Autostart/
 
-local programs = require("modules.commands")
+local commands = require("modules.commands")
 
 hl.on("hyprland.start", function()
 	-- Launch notification daemon
@@ -39,9 +39,12 @@ hl.on("hyprland.start", function()
 	-- Launch grammalecte server for vicinae spell checking local extension
 	hl.exec_cmd("grammalecte-server")
 
-	hl.exec_cmd(programs.terminal)
-	hl.exec_cmd(programs.browser, { workspace = "2" })
+	hl.exec_cmd(commands.terminal)
+	hl.exec_cmd(commands.browser, { workspace = "2" })
 
 	-- Launch btop in special btop workspace
-	hl.exec_cmd(programs.terminal .. ' -e "btop"', { workspace = "special:btop silent" })
+	hl.exec_cmd(commands.terminal .. ' -e "btop"', { workspace = "special:btop silent" })
+
+	-- Launch pi in special agent workspace
+	hl.exec_cmd(commands.terminal .. " -e " .. commands.agent, { workspace = "special:agent silent" })
 end)

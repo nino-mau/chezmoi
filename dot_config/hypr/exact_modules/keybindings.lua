@@ -102,7 +102,9 @@ end
 
 -- Special Workspaces
 bind("SUPER + G", hl.dsp.workspace.toggle_special("game"), "Toggle game special workspace")
-bind("SUPER + SHIFT + G", hl.dsp.window.move({ workspace = "special:game" }), "Toggle game special workspace")
+bind("SUPER + SHIFT + G", hl.dsp.window.move({ workspace = "special:game" }), "Send to game special workspace")
+bind("SUPER + A", hl.dsp.workspace.toggle_special("agent"), "Toggle agent special workspace")
+bind("SUPER + SHIFT + A", hl.dsp.window.move({ workspace = "special:agent" }), "Send to game agent special workspace")
 bind("SUPER + d", hl.dsp.workspace.toggle_special("note"), "Toggle notes special workspace")
 bind("SUPER + S", hl.dsp.workspace.toggle_special("term"), "Toggle terminal special workspace")
 bind("SUPER + grave", hl.dsp.workspace.toggle_special("btop"), "Toggle btop special workspace")
