@@ -1,0 +1,9 @@
+[theme.templates]
+enable_builtin_templates = true
+enable_community_templates = true
+builtin_ids = ["gtk3", "gtk4", "qt", "starship"]
+community_ids = ["bat"]
+
+[theme.templates.user.eza]
+input_path = "$XDG_CONFIG_HOME/noctalia/templates/eza/eza.yml"
+output_path = "$XDG_CONFIG_HOME/eza/theme.yml"
