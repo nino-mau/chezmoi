@@ -2,7 +2,11 @@
   "lastChangelogVersion": "0.84.2",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.6-sol",
-  "packages": ["npm:pi-nvim", "npm:@juicesharp/rpiv-ask-user-question", "npm:@juicesharp/rpiv-btw"],
+  "packages": [
+    "npm:pi-nvim",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:@juicesharp/rpiv-btw"
+  ],
   "theme": "catppuccin-mocha",
   "retry": {
     "enabled": true,
