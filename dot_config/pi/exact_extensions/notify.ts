@@ -19,11 +19,19 @@ export default function (pi: ExtensionAPI) {
 		if (ctx.mode !== "tui" || event.toolName !== "ask_user_question") return;
 
 		notify("Question requires input");
+
+		if (process.env.TMUX) {
+			process.stdout.write("\x07");
+		}
 	});
 
 	pi.on("agent_settled", (_event, ctx) => {
 		if (ctx.mode !== "tui" || !ctx.isIdle()) return;
 
 		notify("Ready for input");
+
+		if (process.env.TMUX) {
+			process.stdout.write("\x07");
+		}
 	});
 }
