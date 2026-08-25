@@ -40,14 +40,14 @@ auto_locate = true
 
 [lockscreen]
 blur_intensity = 0.0
-monitors = ["DP-1"]
+monitors = ["DP-3"]
 
 [lockscreen_widgets]
 enabled = true
 schema_version = 2
 widget_order = [
+  "lockscreen-login-box@DP-3",
   "lockscreen-login-box@DP-2",
-  "lockscreen-login-box@DP-1",
   "lockscreen-widget-0000000000000001",
   "lockscreen-widget-0000000000000002",
   "lockscreen-widget-0000000000000004",
@@ -68,15 +68,6 @@ widget_order = [
 cell_size = 8
 major_interval = 4
 visible = true
-
-[lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
-box_height = 70.0
-box_width = 416.0
-cx = 1280.0
-cy = 1251.0
-output = "DP-1"
-rotation = 0.0
-type = "login_box"
 
 [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
 background_color = "surface_variant"
@@ -100,6 +91,8 @@ box_width = 384.0
 cx = 1280.0
 cy = 1248.0
 output = "DP-2"
+placement_height = 0.0
+placement_width = 0.0
 rotation = 0.0
 type = "login_box"
 
@@ -119,12 +112,41 @@ show_session_buttons = true
 show_unlock_hint = false
 show_weather = false
 
+[lockscreen_widgets.widget."lockscreen-login-box@DP-3"]
+box_height = 70.0
+box_width = 416.0
+cx = 1280.0
+cy = 1251.0
+output = "DP-3"
+placement_height = 1440.0
+placement_width = 2560.0
+rotation = 0.0
+type = "login_box"
+
+[lockscreen_widgets.widget."lockscreen-login-box@DP-3".settings]
+background_color = "surface_variant"
+background_opacity = 0.0
+background_radius = 12.0
+center_password_text = true
+input_opacity = 0.80000000000000004
+input_radius = 6.0
+layout = "compact"
+show_caps_lock = false
+show_keyboard_layout = false
+show_login_button = false
+show_media = true
+show_session_buttons = true
+show_unlock_hint = false
+show_weather = true
+
 [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
 box_height = 144.0
 box_width = 512.0
 cx = 1280.0
 cy = 600.0
 output = "DP-2"
+placement_height = 0.0
+placement_width = 0.0
 rotation = 0.0
 type = "clock"
 
@@ -145,6 +167,8 @@ box_width = 336.0
 cx = 1280.0
 cy = 720.0
 output = "DP-2"
+placement_height = 0.0
+placement_width = 0.0
 rotation = 0.0
 type = "clock"
 
@@ -161,6 +185,8 @@ box_width = 176.0
 cx = 1176.0
 cy = 1152.0
 output = "DP-2"
+placement_height = 0.0
+placement_width = 0.0
 rotation = 0.0
 type = "weather"
 
@@ -182,6 +208,8 @@ box_width = 176.0
 cx = 1384.0
 cy = 1152.0
 output = "DP-2"
+placement_height = 0.0
+placement_width = 0.0
 rotation = 0.0
 type = "sysmon"
 
@@ -211,7 +239,9 @@ box_height = 144.0
 box_width = 504.0
 cx = 1284.0
 cy = 592.0
-output = "DP-1"
+output = "DP-3"
+placement_height = 1440.0
+placement_width = 2560.0
 rotation = 0.0
 type = "clock"
 
@@ -231,7 +261,9 @@ box_height = 56.0
 box_width = 264.0
 cx = 1280.0
 cy = 720.0
-output = "DP-1"
+output = "DP-3"
+placement_height = 1440.0
+placement_width = 2560.0
 rotation = 0.0
 type = "clock"
 
@@ -247,7 +279,9 @@ box_height = 240.0
 box_width = 240.0
 cx = 1288.0
 cy = 888.0
-output = "DP-1"
+output = "DP-3"
+placement_height = 1440.0
+placement_width = 2560.0
 rotation = 0.0
 type = "fancy_audio_visualizer"
 
@@ -274,7 +308,9 @@ box_height = 120.0
 box_width = 176.0
 cx = 1176.0
 cy = 1148.0
-output = "DP-1"
+output = "DP-3"
+placement_height = 1440.0
+placement_width = 2560.0
 rotation = 0.0
 type = "weather"
 
@@ -295,7 +331,9 @@ box_height = 120.0
 box_width = 176.0
 cx = 1384.0
 cy = 1148.0
-output = "DP-1"
+output = "DP-3"
+placement_height = 1440.0
+placement_width = 2560.0
 rotation = 0.0
 type = "sysmon"
 
@@ -325,7 +363,9 @@ box_height = 64.0
 box_width = 64.0
 cx = 1232.0
 cy = 1328.0
-output = "DP-1"
+output = "DP-3"
+placement_height = 1440.0
+placement_width = 2560.0
 rotation = 0.0
 type = "button"
 
@@ -340,7 +380,9 @@ box_height = 64.0
 box_width = 64.0
 cx = 1328.0
 cy = 1328.0
-output = "DP-1"
+output = "DP-3"
+placement_height = 1440.0
+placement_width = 2560.0
 rotation = 0.0
 type = "button"
 
@@ -356,7 +398,9 @@ box_height = 64.0
 box_width = 64.0
 cx = 1232.0
 cy = 1328.0
-output = "DP-1"
+output = "DP-3"
+placement_height = 1440.0
+placement_width = 2560.0
 rotation = 0.0
 type = "label"
 
@@ -368,7 +412,9 @@ box_height = 64.0
 box_width = 64.0
 cx = 1328.0
 cy = 1328.0
-output = "DP-1"
+output = "DP-3"
+placement_height = 1440.0
+placement_width = 2560.0
 rotation = 0.0
 type = "label"
 
@@ -381,6 +427,8 @@ box_width = 0.0
 cx = 1280.0
 cy = 816.0
 output = "DP-2"
+placement_height = 0.0
+placement_width = 0.0
 rotation = 0.0
 type = "audio_visualizer"
 
@@ -468,19 +516,20 @@ community_palette = "Atuel"
 custom_palette = "catppuccin_mocha"
 source = "custom"
 
+[theme.templates]
+builtin_ids = ["gtk3", "gtk4", "qt", "starship"]
+community_ids = ["bat"]
+enable_builtin_templates = true
+enable_community_templates = true
+
+[theme.templates.user.eza]
+input_path = "$XDG_CONFIG_HOME/noctalia/templates/eza/eza.yml"
+output_path = "$XDG_CONFIG_HOME/eza/theme.yml"
+
 [wallpaper]
 directory = "/home/nino/.local/share/wallpapers/catppuccin"
 
 [wallpaper.default]
-path = "/home/nino/.local/share/wallpapers/catppuccin/clouds-darker.png"
-
-[wallpaper.last]
-path = "/home/nino/.local/share/wallpapers/catppuccin/clouds-darker.png"
-
-[wallpaper.monitors.DP-1]
-path = "/home/nino/.local/share/wallpapers/catppuccin/clouds-darker.png"
-
-[wallpaper.monitors.DP-2]
 path = "/home/nino/.local/share/wallpapers/catppuccin/clouds-darker.png"
 
 [[wallpaper.favorite]]
