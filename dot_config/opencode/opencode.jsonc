@@ -1,8 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": [
-    "/Users/nino/.config/opencode/plugins/notify.ts"
-  ],
   "provider": {},
   "model": "openai/gpt-5.6-luna",
   "default_agent": "plan",
