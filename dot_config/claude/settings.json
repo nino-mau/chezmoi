@@ -11,15 +11,8 @@
       "Edit(~/Code/projects/**)",
       "Read(~/Code/projects/**)"
     ],
-    "deny": [
-      "Read(*.env)",
-      "Bash(curl:*)",
-      "Bash(rm *)"
-    ],
-    "ask": [
-      "Bash(gh pr create:*)",
-      "Bash(git commit:*)"
-    ],
+    "deny": ["Read(*.env)", "Bash(curl:*)", "Bash(rm *)"],
+    "ask": ["Bash(gh pr create:*)", "Bash(git commit:*)"],
     "defaultMode": "auto"
   },
   "hooks": {
@@ -28,7 +21,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HOME/.config/claude/hooks/notify 'Ready for input'"
+            "command": "fish -c 'notify \"Claude Code\" \"Ready for input\"'"
           }
         ]
       }
@@ -39,7 +32,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HOME/.config/claude/hooks/notify 'Question requires input'"
+            "command": "fish -c 'notify \"Claude Code\" \"Question requires input\"'"
           }
         ]
       }
@@ -49,7 +42,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "$HOME/.config/claude/hooks/notify 'Permission required'"
+            "command": "fish -c 'notify \"Claude Code\" \"Permission required\"'"
           }
         ]
       }
