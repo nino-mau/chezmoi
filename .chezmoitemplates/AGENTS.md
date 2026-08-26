@@ -50,6 +50,7 @@ Other:
 - Prefer `type` over `interface` unless you have a valid reason
 - Prefer bun over node/npm/pnpm
 - Switch node version using fnm
+- When using `/** */` comments do them on three line not just one
 
 ### Writing
 
