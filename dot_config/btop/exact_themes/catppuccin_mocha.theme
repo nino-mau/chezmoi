@@ -29,9 +29,9 @@ theme[meter_bg]="#45475a"
 theme[proc_misc]="#f5e0dc"
 
 # CPU, Memory, Network, Proc box outline colors
-theme[cpu_box]="#cba6f7" #Mauve
-theme[mem_box]="#a6e3a1" #Green
-theme[net_box]="#eba0ac" #Maroon
+theme[cpu_box]="#89b4fa" #Mauve
+theme[mem_box]="#89b4fa" #Green
+theme[net_box]="#89b4fa" #Maroon
 theme[proc_box]="#89b4fa" #Blue
 
 # Box divider line and small boxes line color
