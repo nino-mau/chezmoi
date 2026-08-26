@@ -10,12 +10,8 @@ function notify --description "Send a desktop notification"
             if test "$platform" = Linux; and command -q notify-send
                 command notify-send --app-name="$title" "$title" "$body"
                 return
-            else if test "$platform" = Darwin; and command -q osascript
-                printf '%s\n' \
-                    'on run argv' \
-                    'display notification (item 2 of argv) with title (item 1 of argv)' \
-                    'end run' |
-                    command osascript - "$title" "$body"
+            else if test "$platform" = Darwin; and command -q terminal-notifier
+                command terminal-notifier -title "$title" -message "$body"
                 return
             end
         end
@@ -33,12 +29,8 @@ function notify --description "Send a desktop notification"
         printf '\ePtmux;\e\e]777;notify;%s;%s\a\e\\' "$title" "$body"
     else if test "$platform" = Linux; and command -q notify-send
         command notify-send --app-name="$title" "$title" "$body"
-    else if test "$platform" = Darwin; and command -q osascript
-        printf '%s\n' \
-            'on run argv' \
-            'display notification (item 2 of argv) with title (item 1 of argv)' \
-            'end run' |
-            command osascript - "$title" "$body"
+    else if test "$platform" = Darwin; and command -q terminal-notifier
+        command terminal-notifier -title "$title" -message "$body"
     else
         printf '\e]777;notify;%s;%s\a' "$title" "$body"
     end
