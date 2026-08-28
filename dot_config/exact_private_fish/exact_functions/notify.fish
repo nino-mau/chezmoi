@@ -4,16 +4,16 @@ function notify --description "Send a desktop notification"
 
     set -l platform (uname)
 
+    if test "$platform" = Darwin
+        command terminal-notifier -title "$title" -message "$body"
+        return
+    end
+
     if set -q TMUX
         set -l attached_clients (tmux display-message -p '#{session_attached}' 2>/dev/null)
-        if test "$attached_clients" = 0
-            if test "$platform" = Linux; and command -q notify-send
-                command notify-send --app-name="$title" "$title" "$body"
-                return
-            else if test "$platform" = Darwin; and command -q terminal-notifier
-                command terminal-notifier -title "$title" -message "$body"
-                return
-            end
+        if test "$attached_clients" = 0; and test "$platform" = Linux; and command -q notify-send
+            command notify-send --app-name="$title" "$title" "$body"
+            return
         end
     end
 
@@ -29,8 +29,6 @@ function notify --description "Send a desktop notification"
         printf '\ePtmux;\e\e]777;notify;%s;%s\a\e\\' "$title" "$body"
     else if test "$platform" = Linux; and command -q notify-send
         command notify-send --app-name="$title" "$title" "$body"
-    else if test "$platform" = Darwin; and command -q terminal-notifier
-        command terminal-notifier -title "$title" -message "$body"
     else
         printf '\e]777;notify;%s;%s\a' "$title" "$body"
     end
