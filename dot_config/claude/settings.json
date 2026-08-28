@@ -21,7 +21,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "fish -c 'notify \"Claude Code\" \"Ready for input\"'"
+            "command": "fish -c 'notify \"Claude Code\" \"Ready for input\"'; if [ -n \"${TMUX_PANE:-}\" ]; then pane_tty=$(tmux display-message -p -t \"$TMUX_PANE\" '#{pane_tty}' 2>/dev/null); [ -n \"$pane_tty\" ] && printf '\\a' >\"$pane_tty\"; fi"
           }
         ]
       }
@@ -32,7 +32,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "fish -c 'notify \"Claude Code\" \"Question requires input\"'"
+            "command": "fish -c 'notify \"Claude Code\" \"Question requires input\"'; if [ -n \"${TMUX_PANE:-}\" ]; then pane_tty=$(tmux display-message -p -t \"$TMUX_PANE\" '#{pane_tty}' 2>/dev/null); [ -n \"$pane_tty\" ] && printf '\\a' >\"$pane_tty\"; fi"
           }
         ]
       }
@@ -42,7 +42,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "fish -c 'notify \"Claude Code\" \"Permission required\"'"
+            "command": "fish -c 'notify \"Claude Code\" \"Permission required\"'; if [ -n \"${TMUX_PANE:-}\" ]; then pane_tty=$(tmux display-message -p -t \"$TMUX_PANE\" '#{pane_tty}' 2>/dev/null); [ -n \"$pane_tty\" ] && printf '\\a' >\"$pane_tty\"; fi"
           }
         ]
       }
