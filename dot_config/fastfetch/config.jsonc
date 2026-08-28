@@ -3,78 +3,99 @@
   "logo": {
     "source": "~/.local/share/ascii/cat",
     "padding": {
-      "top": 4,
-      "right": 6,
-      "left": 3
+      "top": 2
     },
     "color": {
-      "1": "#89b4fa",
-      "2": "#89b4fa"
+      "1": "blue"
     }
   },
   "display": {
-    "separator": " ",
+    "separator": "  ",
+    "disableLinewrap": true,
+    "brightColor": true,
+    "key": {
+      "type": "both-2"
+    },
     "color": {
-      "title": "#b4befe",
-      "keys": "#89b4fa",
-      "output": "#cdd6f4"
+      "separator": "black",
+      "title": "red",
+      "keys": "blue",
+      "output": "default"
     },
     "percent": {
       "color": {
-        "green": "#cba6f7",
-        "yellow": "#85b1fa",
-        "red": "#f38ba8"
+        "green": "magenta",
+        "yellow": "blue",
+        "red": "red"
       }
     }
   },
   "modules": [
-    "break",
     {
       "type": "title",
-      "keyWidth": 10
+      "color": {
+        "at": "default",
+        "host": "blue",
+        "user": "italic_default"
+      }
     },
     "break",
     {
       "type": "os",
-      "key": " "
+      "format": "{pretty-name}",
+      "key": "OS           ",
+      "keyColor": "italic_blue"
     },
     {
       "type": "kernel",
-      "key": " "
-    },
-    {
-      "type": "shell",
-      "key": " "
-    },
-    {
-      "type": "terminal",
-      "key": " "
+      "key": "Kernel       ",
+      "keyColor": "italic_default"
     },
     {
       "type": "wm",
-      "key": " "
+      "key": "WM           ",
+      "format": "{pretty-name} {version}",
+      "keyColor": "italic_red",
+      "outputColor": "underline_"
     },
     {
-      "type": "disk",
-      "key": "󰆼 "
+      "type": "shell",
+      "format": "{pretty-name}",
+      "key": "Shell        ",
+      "keyColor": "italic_magenta"
+    },
+    {
+      "type": "uptime",
+      "key": "Uptime       ",
+      "keyColor": "italic_yellow",
+      "condition": {
+        "system": "macOS"
+      }
     },
     {
       "type": "gpu",
-      "key": "󰢮 "
+      "key": "GPU          ",
+      "keyColor": "italic_yellow",
+      "condition": {
+        "system": "Linux"
+      }
     },
     {
-      "type": "cpu",
-      "key": "󰘚 "
+      "type": "memory",
+      "key": "Memory       ",
+      "keyColor": "italic_cyan",
+      "format": "{used} / {total}"
     },
     {
-      "type": "media",
-      "key": "󰝚 "
+      "type": "disk",
+      "key": "Storage (/)  ",
+      "keyColor": "italic_blue",
+      "format": "{size-used} / {size-total}"
     },
     "break",
     {
       "type": "colors",
       "symbol": "circle"
-    },
-    "break"
+    }
   ]
 }
