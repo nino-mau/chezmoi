@@ -17,7 +17,11 @@ macos-option-as-alt = false
 # ====================
 
 # Load theme
+{{ if eq .chezmoi.os "darwin" -}}
+theme = Catppuccin Mocha
+{{ else -}}
 theme = noctalia
+{{ end -}}
 cursor-color = #89b4fa
 
 # ====================
