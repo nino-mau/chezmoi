@@ -1,0 +1,39 @@
+# name: 'Catppuccin Ghostty'
+# Uses the active terminal ANSI palette.
+
+fish_color_quote magenta
+fish_color_command blue
+fish_color_redirection blue --bold
+fish_color_end blue
+fish_color_error red
+fish_color_param normal
+fish_color_comment brblack
+fish_color_selection normal --bold --background=brblack
+fish_color_search_match normal --background=brblack
+fish_color_history_current --bold
+fish_color_operator blue
+fish_color_escape magenta
+fish_color_cwd magenta
+fish_color_cwd_root red
+fish_color_option
+fish_color_valid_path --underline=single
+fish_color_autosuggestion brblack
+fish_color_user green
+fish_color_host normal
+fish_color_host_remote yellow
+fish_color_status red
+fish_color_cancel red --reverse
+
+fish_pager_color_background
+fish_pager_color_prefix normal --bold --underline=single
+fish_pager_color_progress brwhite --background=cyan
+fish_pager_color_completion normal
+fish_pager_color_description yellow --italics
+fish_pager_color_selected_background --reverse
+fish_pager_color_selected_prefix
+fish_pager_color_selected_completion
+fish_pager_color_selected_description
+fish_pager_color_secondary_completion
+fish_pager_color_secondary_description
+fish_pager_color_secondary_background
+fish_pager_color_secondary_prefix
