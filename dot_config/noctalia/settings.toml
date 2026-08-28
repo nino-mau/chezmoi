@@ -516,16 +516,6 @@ community_palette = "Atuel"
 custom_palette = "catppuccin_mocha"
 source = "custom"
 
-[theme.templates]
-builtin_ids = ["gtk3", "gtk4", "qt", "starship"]
-community_ids = ["bat"]
-enable_builtin_templates = true
-enable_community_templates = true
-
-[theme.templates.user.eza]
-input_path = "$XDG_CONFIG_HOME/noctalia/templates/eza/eza.yml"
-output_path = "$XDG_CONFIG_HOME/eza/theme.yml"
-
 [wallpaper]
 directory = "/home/nino/.local/share/wallpapers/catppuccin"
 
