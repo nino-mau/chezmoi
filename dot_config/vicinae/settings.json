@@ -104,6 +104,13 @@
             "customNpxPath": "/usr/bin/bunx"
          }
       },
+      "@knoopx/store.vicinae.github": {
+         "preferences": {
+            "defaultIssueFilter": "my",
+            "defaultRepositoryFilter": "my",
+            "numberOfResults": "50"
+         }
+      },
       "@nino-mau/commit-message": {
          "entrypoints": {
             "commit-message": {
