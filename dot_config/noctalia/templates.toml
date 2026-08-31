@@ -2,7 +2,7 @@
 enable_builtin_templates = true
 enable_community_templates = true
 builtin_ids = ["gtk3", "gtk4", "ghostty", "qt", "starship"]
-community_ids = ["zen-browser", "papirus-icons", "bat"]
+community_ids = ["bat"]
 
 [theme.templates.user.eza]
 input_path = "$XDG_CONFIG_HOME/noctalia/templates/eza/eza.yml"
