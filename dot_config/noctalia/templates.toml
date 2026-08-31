@@ -21,3 +21,12 @@ post_hook = "bash '{{ config_dir }}/templates/zen-browser/apply.sh'"
 input_path = "templates/zen-browser/zen-userContent.css"
 output_path = "$XDG_CACHE_HOME/noctalia/zen-browser/zen-userContent.css"
 post_hook = "bash '{{ config_dir }}/templates/zen-browser/apply.sh'"
+
+[theme.templates.user.yazi]
+input_path = "templates/yazi/yazi.toml"
+output_path = "$XDG_CONFIG_HOME/yazi/flavors/noctalia.yazi/flavor.toml"
+post_hook = "bash '{{ config_dir }}/templates/yazi/apply.sh'"
+
+[theme.templates.user.yazi-syntax]
+input_path = "templates/yazi/yazi.tmTheme"
+output_path = "$XDG_CONFIG_HOME/yazi/flavors/noctalia.yazi/tmtheme.xml"
