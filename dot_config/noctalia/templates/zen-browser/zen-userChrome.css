@@ -6,6 +6,8 @@
 @media (prefers-color-scheme: dark) {
   * {
     --base: {{colors.background.dark.hex}};
+    --base-0: {{colors.background.dark.rgba | set_alpha 0}};
+    --base-transparent: {{colors.background.dark.rgba | set_alpha 0.8}};
     --surface: {{colors.surface_container.dark.hex}};
     --overlay: {{colors.surface_container.dark.hex}};
     --hl_low: {{colors.surface_container_high.dark.hex}};
@@ -57,11 +59,11 @@
   --zen-selected-bg: var(--hover) !important;
 
   /* Browser surfaces */
-  --toolbar-bgcolor: var(--base) !important;
-  --zen-themed-toolbar-bg: var(--base) !important;
+  --toolbar-bgcolor: var(--base-0) !important;
+  --zen-themed-toolbar-bg: var(--base-0) !important;
   --zen-themed-toolbar-bg-transparent: transparent !important;
-  --zen-main-browser-background: var(--base) !important;
-  --toolbox-bgcolor-inactive: var(--base) !important;
+  --zen-main-browser-background: var(--base-0) !important;
+  --toolbox-bgcolor-inactive: var(--base-0) !important;
   --zen-urlbar-background: var(--surface) !important;
   --zen-colors-input-bg: var(--surface) !important;
 
@@ -97,13 +99,13 @@
   --sidebar-background-color: var(--surface) !important;
   --sidebar-border-color: var(--outline) !important;
   --lwt-sidebar-text-color: var(--text) !important;
-  --lwt-sidebar-background-color: var(--base) !important;
+  --lwt-sidebar-background-color: var(--base-0) !important;
 }
 
 /* Zen keeps the old value while cross-fading browser background changes. */
 #zen-browser-background {
-  --zen-main-browser-background: var(--base) !important;
-  --zen-main-browser-background-old: var(--base) !important;
+  --zen-main-browser-background: var(--base-transparent) !important;
+  --zen-main-browser-background-old: var(--base-0) !important;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -137,12 +139,12 @@ textarea {
 #zen-appcontent-navbar-container,
 #TabsToolbar,
 hbox#titlebar {
-  background-color: var(--base) !important;
+  background-color: var(--base-0) !important;
 }
 
 /* Keep the sidebar splitter opaque instead of inheriting Zen's translucency. */
 #zen-sidebar-splitter {
-  background-color: var(--base) !important;
+  background-color: var(--base-0) !important;
   opacity: 1 !important;
 }
 
@@ -336,7 +338,7 @@ toolbar .toolbarbutton-1 {
 }
 
 #urlbar-results {
-  background-color: var(--base) !important;
+  background-color: var(--base-0) !important;
   color: var(--text) !important;
 }
 
@@ -466,7 +468,7 @@ panel[type="autocomplete-richlistbox"],
 /* -------------------------------------------------------------------------- */
 
 #zenEditBookmarkPanelFaviconContainer {
-  background: var(--base) !important;
+  background: var(--base-0) !important;
 }
 
 .zenEditBMPanel_fieldContainer > label {
@@ -474,7 +476,7 @@ panel[type="autocomplete-richlistbox"],
 }
 
 #editBMPanel_folderTree {
-  background-color: var(--base) !important;
+  background-color: var(--base-0) !important;
   background-image: none !important;
   color: var(--text) !important;
   border-radius: 8px !important;
@@ -551,7 +553,7 @@ panel[type="autocomplete-richlistbox"],
 /* -------------------------------------------------------------------------- */
 
 dialog {
-  background: var(--base) !important;
+  background: var(--base-0) !important;
   color: var(--text) !important;
 }
 
@@ -704,7 +706,7 @@ toolbarbutton.zen-glance-sidebar-split.toolbarbutton-1:hover {
 @-moz-document url("chrome://browser/content/aboutDialog.xhtml") {
   #aboutDialogContainer,
   #clientBox {
-    background-color: var(--base) !important;
+    background-color: var(--base-0) !important;
   }
 
   #bottomBox {
