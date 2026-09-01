@@ -34,3 +34,7 @@ output_path = "$XDG_CONFIG_HOME/yazi/flavors/noctalia.yazi/tmtheme.xml"
 [theme.templates.user.lazygit]
 input_path = "templates/lazygit/lazygit.yml"
 output_path = "$XDG_CONFIG_HOME/lazygit/theme.yml"
+
+[theme.templates.user.fzf]
+input_path = "templates/fzf/fzfrc"
+output_path = "$XDG_CONFIG_HOME/fzf/fzfrc"
