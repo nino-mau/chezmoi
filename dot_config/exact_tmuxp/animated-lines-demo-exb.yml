@@ -1,5 +1,5 @@
 session_name: animated-lines-demo-exb
-start_directory: $HOME/Code/projects/animated-lines-demo-exb-widget/
+start_directory: $HOME/Code/projects/animated-lines-demo-exb/
 windows:
   - window_name: editor
     panes:
@@ -36,4 +36,4 @@ windows:
           - cd $HOME/Code/exb14/server
           - npm start
       - shell_command:
-          - ./tools/devLivesync.sh $HOME/Code/exb14
+          - ./scripts/devLivesync.sh $HOME/Code/exb14
