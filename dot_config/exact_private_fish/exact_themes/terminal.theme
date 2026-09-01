@@ -1,4 +1,4 @@
-# name: 'Catppuccin Ghostty'
+# name: 'Terminal'
 # Uses the active terminal ANSI palette.
 
 fish_color_quote magenta
