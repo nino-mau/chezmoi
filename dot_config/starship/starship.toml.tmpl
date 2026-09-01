@@ -1,14 +1,14 @@
-# ~/.config/starship.toml
-
 "$schema" = 'https://starship.rs/config-schema.json'
-palette = "noctalia"
+
 {{- if eq .chezmoi.os "darwin" }}
+palette = "catppuccin"
 # Move the directory to the second line
 format = '''
 [ ](bold blue)$directory$git_branch
 $character
 '''
 {{ else if eq .chezmoi.os "linux" }}
+palette = "noctalia"
 format = '[ ](bold blue)$all'
 {{ end }}
 
@@ -242,6 +242,38 @@ symbol = " "
 
 [zig]
 symbol = " "
+
+[palettes.catppuccin]
+blue      = "#89b4fa"
+red       = "#f38ba8"
+green     = "#a6e3a1"
+yellow    = "#f9e2af"
+cyan      = "#94e2d5"
+magenta   = "#f5c2e7"
+white     = "#bac2de"
+black     = "#45475a"
+rosewater = "#f9e2af"
+flamingo  = "#f38ba8"
+pink      = "#f5c2e7"
+mauve     = "#f5c2e7"
+maroon    = "#f38ba8"
+peach     = "#f9e2af"
+teal      = "#94e2d5"
+sky       = "#94e2d5"
+sapphire  = "#89b4fa"
+lavender  = "#f5c2e7"
+text      = "#cdd6f4"
+subtext1  = "#bac2de"
+subtext0  = "#585b70"
+overlay2  = "#585b70"
+overlay1  = "#585b70"
+overlay0  = "#45475a"
+surface2  = "#45475a"
+surface1  = "#45475a"
+surface0  = "#1e1e2e"
+base      = "#1e1e2e"
+mantle    = "#1e1e2e"
+crust     = "#1e1e2e"
 
 # >>> NOCTALIA STARSHIP PALETTE >>>
 # Noctalia Starship Palette
