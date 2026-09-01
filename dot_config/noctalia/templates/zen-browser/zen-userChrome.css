@@ -9,6 +9,7 @@
     --base-0: {{colors.background.dark.rgba | set_alpha 0}};
     --base-transparent: {{colors.background.dark.rgba | set_alpha 0.8}};
     --surface: {{colors.surface_container.dark.hex}};
+    --surface_low: {{colors.surface_container_low.dark.hex}};
     --overlay: {{colors.surface_container.dark.hex}};
     --hl_low: {{colors.surface_container_high.dark.hex}};
     --hl_med: {{colors.surface_container_highest.dark.hex}};
@@ -29,6 +30,7 @@
   * {
     --base: {{colors.background.light.hex}};
     --surface: {{colors.surface_container_low.light.hex}};
+    --surface_low: {{colors.surface_container_low.light.hex}};
     --overlay: {{colors.surface_container.light.hex}};
     --hl_low: {{colors.surface_container_high.light.hex}};
     --hl_med: {{colors.surface_container_highest.light.hex}};
@@ -74,6 +76,10 @@
   --toolbarbutton-background-color-hover: var(--hover) !important;
   --toolbarbutton-background-color-active: var(--hover) !important;
   --button-background-color-menu-hover: var(--hover) !important;
+  --toolbar-background-color: var(--base) !important;
+  --toolbar-text-color: var(--text) !important;
+  --input-text-background-color: var(--surface) !important;
+  --zen-input-border-color: var(--outline) !important;
 
   /* Text and icons */
   --input-text-color: var(--text) !important;
@@ -397,6 +403,16 @@ menu:where([_moz-menuactive="true"]:not([disabled="true"]))
 menuitem:where([_moz-menuactive="true"]:not([disabled="true"]))
   :is(.menu-text, .menu-iconic-text, .menu-icon, .menu-accel) {
   color: var(--base) !important;
+}
+
+/* Findbar styling */
+
+.findbar-textbox {
+  background-color: var(--surface_low) !important;
+  color: var(--text) !important;
+}
+.browserContainer > findbar {
+  background-color: var(--surface) !important;
 }
 
 /* -------------------------------------------------------------------------- */
