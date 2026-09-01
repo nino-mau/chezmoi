@@ -3,6 +3,7 @@
 set -x EDITOR nvim
 set -x MANPAGER "nvim +Man!"
 set -gx EXB_PATH "$HOME/Code/exb"
+set -gx LG_CONFIG_FILE "$HOME/.config/lazygit/config.yml,$HOME/.config/lazygit/theme.yml"
 {{ if eq .chezmoi.os "darwin" -}}
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx EZA_CONFIG_DIR "$HOME/.config/eza"
