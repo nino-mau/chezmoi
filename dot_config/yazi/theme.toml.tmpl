@@ -8,6 +8,12 @@
 
 # vim:fileencoding=utf-8:foldmethod=marker
 
+{{ if eq .chezmoi.os "darwin" -}}
+[flavor]
+dark = "catppuccin-mocha"
+light = "catppuccin-mocha"
+{{ else -}}
 [flavor]
 dark = "noctalia"
 light = "noctalia"
+{{ end -}}
