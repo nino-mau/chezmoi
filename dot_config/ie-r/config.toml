@@ -100,6 +100,7 @@ cmyk = "{c}%, {m}%, {y}%, {k}%"
 size = 10                                  # max colors to remember
 reverse_order = true                       # newest first in tray menu
 colors = [
+    "#A6E3A1",
     "#9BD297",
     "#F38BA8",
     "#CDD6F4",
@@ -109,7 +110,6 @@ colors = [
     "#7AA2F7",
     "#1E1F2F",
     "#A6ADC8",
-    "#B6BDDA",
 ]
 
 # Global system integration settings.
