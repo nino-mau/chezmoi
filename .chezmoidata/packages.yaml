@@ -1,16 +1,34 @@
 packages:
   darwin:
-    brews:
-    - 'git'
+    tar:
+    - aerospace
+    - codexbar
+    - vivify
+    dmg:
+    - zen-twilight
+    - karabiner-elements
+    - ghostty
+    - raycast
+    - port
+    - helium
+    - obsidian
+    - kitty
+    pkg:
+      - microsoft-teams
+      - tailscale
+    port:
+    - git
+    - sketchybar
+    - neovim
   linux:
     paru:
-    - 'yazi'
-    - 'vicinae-bin'
-    - 'swaync'
-    - 'swayosd'
-    - 'git'
-    - 'bun'
-    - 'eza'
-    - 'fish'
-    - 'pi-coding-agent'
-    - 'pwgen'
+    - yazi
+    - vicinae-bin
+    - swaync
+    - swayosd
+    - git
+    - bun
+    - eza
+    - fish
+    - pi-coding-agent
+    - pwgen
