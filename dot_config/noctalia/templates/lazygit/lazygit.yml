@@ -1,0 +1,30 @@
+# yaml-language-server: $schema=https://json.schemastore.org/lazygit.json
+gui:
+  # Color theme
+  theme:
+    activeBorderColor:
+      - "{{ colors.primary.dark.hex }}"
+      - bold
+    inactiveBorderColor:
+      - "{{ colors.on_surface_variant.dark.hex }}"
+    optionsTextColor:
+      - "{{ colors.primary.dark.hex }}"
+    selectedLineBgColor:
+      - "{{ colors.surface_container_lowest.dark.hex }}"
+    cherryPickedCommitBgColor:
+      - "{{ colors.terminal_normal_black.dark.hex }}"
+    cherryPickedCommitFgColor:
+      - "{{ colors.primary.dark.hex }}"
+    unstagedChangesColor:
+      - "{{ colors.error.dark.hex }}"
+    defaultFgColor:
+      - "{{ colors.on_surface.dark.hex }}"
+    searchingActiveBorderColor:
+      - "{{ colors.terminal_normal_yellow.dark.hex }}"
+    markedBaseCommitFgColor:
+      - "{{ colors.error.dark.hex }}"
+      - bold
+    inactiveViewSelectedLineBgColor:
+      - "{{ colors.surface_container_lowest.dark.hex }}"
+  authorColors:
+    "*": "{{ colors.secondary.dark.hex }}"
