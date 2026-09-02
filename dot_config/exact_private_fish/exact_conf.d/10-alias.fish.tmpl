@@ -2,16 +2,6 @@
 # System
 # ====================
 
-{{ if eq .chezmoi.os "darwin" -}}
-alias i="brew install"
-alias r="brew remove"
-alias upgrade="brew upgrade"
-{{ else -}}
-alias i="paru -S"
-alias r="paru -R"
-alias upgrade="paru -Syu"
-{{ end -}}
-
 abbr -a rmr "rm -r"
 abbr -a rfc "source ~/.config/fish/config.fish"
 abbr -a cx "chmod +x"
@@ -21,6 +11,25 @@ abbr -a sru "systemctl restart --user"
 abbr -a ssu "systemctl restart --user"
 
 alias restart="exec $SHELL"
+
+# ====================
+# Package manager
+# ====================
+
+{{ if eq .chezmoi.os "darwin" -}}
+alias i="sudo port install"
+alias r="sudo port uninstall"
+alias upgrade="sudo port upgrade"
+abbr -a ps "port search" # Search packages
+abbr -a pl "port installed requested" # List explicitly installed packages
+{{ else -}}
+alias i="paru -S"
+alias r="paru -R"
+alias upgrade="paru -Syu"
+abbr -a pr paru
+abbr -a pl "paru -Qe" # List explicitly installed packages
+abbr -a ps "paru -Ss" # Search packages
+{{ end -}}
 
 # ====================
 # Misc
@@ -52,15 +61,6 @@ abbr -a mix "wiremix"
 abbr -a torr "superseedr"
 abbr -a mk "make"
 abbr -a js "just"
-
-
-# ====================
-# Paru
-# ====================
-
-abbr -a pr paru
-abbr -a pl "paru -Qe" # List explicitly installed packages
-abbr -a ps "paru -Ss" # Search packages
 
 # ====================
 # Chezmoi
