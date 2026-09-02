@@ -1,9 +1,10 @@
 packages:
   darwin:
-    tar:
+    manual:
     - aerospace
     - codexbar
     - vivify
+    - borders
     dmg:
     - zen-twilight
     - karabiner-elements
