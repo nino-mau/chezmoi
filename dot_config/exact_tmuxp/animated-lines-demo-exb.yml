@@ -36,4 +36,4 @@ windows:
           - cd $HOME/Code/exb14/server
           - npm start
       - shell_command:
-          - ./scripts/devLivesync.sh $HOME/Code/exb14
+          - just dev-livesync
