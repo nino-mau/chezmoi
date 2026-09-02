@@ -10,13 +10,14 @@ set -g @catppuccin_flavour 'mocha'
 # Configure Online
 set -g @online_icon "ok"
 set -g @offline_icon "nok"
+set -g @pane_process "#($HOME/.config/tmux/scripts/find-pane-process.sh '#{pane_tty}')"
 
 # status left look and feel
 set -g status-left-length 100
 set -g status-left ""
 set -ga status-left "#{?client_prefix,#{#[bg=#{@thm_red},fg=#{@thm_bg},bold]  #S },#{#[bg=default,fg=#{@thm_mauve}]  #S }}"
 set -ga status-left "#[bg=default,fg=#{@thm_overlay_0},none]│"
-set -ga status-left "#[bg=default,fg=#{@thm_maroon}]  #{pane_current_command} "
+set -ga status-left "#[bg=default,fg=#{@thm_maroon}]  #{E:@pane_process} "
 set -ga status-left "#[bg=default,fg=#{@thm_overlay_0},none]│"
 set -ga status-left "#[bg=default,fg=#{@thm_blue}]  #{=/-32/...:#{s|$USER|~|:#{b:pane_current_path}}} "
 set -ga status-left "#[bg=default,fg=#{@thm_overlay_0},none]#{?window_zoomed_flag,│,}"
@@ -71,62 +72,62 @@ set -g @ruby_icon ""
 set -g automatic-rename off
 set -g allow-rename off
 set -g window-status-format '\
-#{?#{==:#{pane_current_command},zsh}, #{@term_icon} ,\
-#{?#{==:#{pane_current_command},fish}, #{@term_icon} ,\
-#{?#{==:#{pane_current_command},paru}, #{@paru_icon} ,\
-#{?#{==:#{pane_current_command},pacman}, #{@paru_icon} ,\
-#{?#{==:#{pane_current_command},nvim}, #{@nvim_icon} ,\
-#{?#{==:#{pane_current_command},chezmoi}, #{@nvim_icon} ,\
-#{?#{==:#{pane_current_command},git}, #{@git_icon} ,\
-#{?#{==:#{pane_current_command},lazygit}, #{@git_icon} ,\
-#{?#{==:#{pane_current_command},btop},#{@btop_icon} ,\
-#{?#{==:#{pane_current_command},docker}, #{@docker_icon} ,\
-#{?#{==:#{pane_current_command},lazydocker}, #{@docker_icon} ,\
-#{?#{==:#{pane_current_command},docker-compose}, #{@docker_icon} ,\
-#{?#{==:#{pane_current_command},ruby}, #{@ruby_icon} ,\
-#{?#{==:#{pane_current_command},python}, #{@python_icon} ,\
-#{?#{==:#{pane_current_command},bash}, #{@bash_icon} ,\
-#{?#{==:#{pane_current_command},ssh}, #{@ssh_icon} ,\
-#{?#{==:#{pane_current_command},node}, #{@node_icon} ,\
-#{?#{==:#{pane_current_command},bun}, #{@bun_icon} ,\
-#{?#{==:#{pane_current_command},cargo}, #{@cargo} ,\
-#{?#{==:#{pane_current_command},rustc}, #{@rustc_icon} ,\
-#{?#{==:#{pane_current_command},fzf}, #{@fzf_icon} ,\
-#{?#{==:#{pane_current_command},lua}, #{@lua_icon} ,\
-#{?#{==:#{pane_current_command},opencode.exe}, #{@agent_icon} ,\
-#{?#{==:#{pane_current_command},opencode}, #{@agent_icon} ,\
-#{?#{==:#{pane_current_command},pi}, #{@agent_icon} ,\
-#{?#{==:#{pane_current_command},claude}, #{@agent_icon} ,\
-#{?#{==:#{pane_current_command},brew}, #{@brew_icon} ,\
+#{?#{==:#{E:@pane_process},zsh}, #{@term_icon} ,\
+#{?#{==:#{E:@pane_process},fish}, #{@term_icon} ,\
+#{?#{==:#{E:@pane_process},paru}, #{@paru_icon} ,\
+#{?#{==:#{E:@pane_process},pacman}, #{@paru_icon} ,\
+#{?#{==:#{E:@pane_process},nvim}, #{@nvim_icon} ,\
+#{?#{==:#{E:@pane_process},chezmoi}, #{@nvim_icon} ,\
+#{?#{==:#{E:@pane_process},git}, #{@git_icon} ,\
+#{?#{==:#{E:@pane_process},lazygit}, #{@git_icon} ,\
+#{?#{==:#{E:@pane_process},btop},#{@btop_icon} ,\
+#{?#{==:#{E:@pane_process},docker}, #{@docker_icon} ,\
+#{?#{==:#{E:@pane_process},lazydocker}, #{@docker_icon} ,\
+#{?#{==:#{E:@pane_process},docker-compose}, #{@docker_icon} ,\
+#{?#{==:#{E:@pane_process},ruby}, #{@ruby_icon} ,\
+#{?#{==:#{E:@pane_process},python}, #{@python_icon} ,\
+#{?#{==:#{E:@pane_process},bash}, #{@bash_icon} ,\
+#{?#{==:#{E:@pane_process},ssh}, #{@ssh_icon} ,\
+#{?#{==:#{E:@pane_process},node}, #{@node_icon} ,\
+#{?#{==:#{E:@pane_process},bun}, #{@bun_icon} ,\
+#{?#{==:#{E:@pane_process},cargo}, #{@cargo_icon} ,\
+#{?#{==:#{E:@pane_process},rustc}, #{@rustc_icon} ,\
+#{?#{==:#{E:@pane_process},fzf}, #{@fzf_icon} ,\
+#{?#{==:#{E:@pane_process},lua}, #{@lua_icon} ,\
+#{?#{==:#{E:@pane_process},opencode.exe}, #{@agent_icon} ,\
+#{?#{==:#{E:@pane_process},opencode}, #{@agent_icon} ,\
+#{?#{==:#{E:@pane_process},pi}, #{@agent_icon} ,\
+#{?#{==:#{E:@pane_process},claude}, #{@agent_icon} ,\
+#{?#{==:#{E:@pane_process},brew}, #{@brew_icon} ,\
  #{@default_icon} }}}}}}}}}}}}}}}}}}}}}}}}}}}'
 set -g window-status-current-format '\
-#{?#{==:#{pane_current_command},zsh}, #{@term_icon} ,\
-#{?#{==:#{pane_current_command},fish}, #{@term_icon} ,\
-#{?#{==:#{pane_current_command},paru}, #{@paru_icon} ,\
-#{?#{==:#{pane_current_command},pacman}, #{@paru_icon} ,\
-#{?#{==:#{pane_current_command},nvim}, #{@nvim_icon} ,\
-#{?#{==:#{pane_current_command},chezmoi}, #{@nvim_icon} ,\
-#{?#{==:#{pane_current_command},git}, #{@git_icon} ,\
-#{?#{==:#{pane_current_command},lazygit}, #{@git_icon} ,\
-#{?#{==:#{pane_current_command},btop}, #{@btop_icon} ,\
-#{?#{==:#{pane_current_command},docker}, #{@docker_icon} ,\
-#{?#{==:#{pane_current_command},lazydocker}, #{@docker_icon} ,\
-#{?#{==:#{pane_current_command},docker_compose}, #{@docker_icon} ,\
-#{?#{==:#{pane_current_command},ruby}, #{@ruby_icon} ,\
-#{?#{==:#{pane_current_command},python}, #{@python_icon} ,\
-#{?#{==:#{pane_current_command},bash}, #{@bash_icon} ,\
-#{?#{==:#{pane_current_command},ssh}, #{@ssh_icon} ,\
-#{?#{==:#{pane_current_command},node}, #{@node_icon} ,\
-#{?#{==:#{pane_current_command},bun}, #{@bun_icon} ,\
-#{?#{==:#{pane_current_command},cargo}, #{@cargo_icon} ,\
-#{?#{==:#{pane_current_command},rustc}, #{@rustc_icon} ,\
-#{?#{==:#{pane_current_command},fzf}, #{@fzf_icon} ,\
-#{?#{==:#{pane_current_command},lua}, #{@lua_icon} ,\
-#{?#{==:#{pane_current_command},opencode.exe}, #{@agent_icon} ,\
-#{?#{==:#{pane_current_command},opencode}, #{@agent_icon} ,\
-#{?#{==:#{pane_current_command},pi}, #{@agent_icon} ,\
-#{?#{==:#{pane_current_command},claude}, #{@agent_icon} ,\
-#{?#{==:#{pane_current_command},brew}, #{@brew_icon} ,\
+#{?#{==:#{E:@pane_process},zsh}, #{@term_icon} ,\
+#{?#{==:#{E:@pane_process},fish}, #{@term_icon} ,\
+#{?#{==:#{E:@pane_process},paru}, #{@paru_icon} ,\
+#{?#{==:#{E:@pane_process},pacman}, #{@paru_icon} ,\
+#{?#{==:#{E:@pane_process},nvim}, #{@nvim_icon} ,\
+#{?#{==:#{E:@pane_process},chezmoi}, #{@nvim_icon} ,\
+#{?#{==:#{E:@pane_process},git}, #{@git_icon} ,\
+#{?#{==:#{E:@pane_process},lazygit}, #{@git_icon} ,\
+#{?#{==:#{E:@pane_process},btop}, #{@btop_icon} ,\
+#{?#{==:#{E:@pane_process},docker}, #{@docker_icon} ,\
+#{?#{==:#{E:@pane_process},lazydocker}, #{@docker_icon} ,\
+#{?#{==:#{E:@pane_process},docker-compose}, #{@docker_icon} ,\
+#{?#{==:#{E:@pane_process},ruby}, #{@ruby_icon} ,\
+#{?#{==:#{E:@pane_process},python}, #{@python_icon} ,\
+#{?#{==:#{E:@pane_process},bash}, #{@bash_icon} ,\
+#{?#{==:#{E:@pane_process},ssh}, #{@ssh_icon} ,\
+#{?#{==:#{E:@pane_process},node}, #{@node_icon} ,\
+#{?#{==:#{E:@pane_process},bun}, #{@bun_icon} ,\
+#{?#{==:#{E:@pane_process},cargo}, #{@cargo_icon} ,\
+#{?#{==:#{E:@pane_process},rustc}, #{@rustc_icon} ,\
+#{?#{==:#{E:@pane_process},fzf}, #{@fzf_icon} ,\
+#{?#{==:#{E:@pane_process},lua}, #{@lua_icon} ,\
+#{?#{==:#{E:@pane_process},opencode.exe}, #{@agent_icon} ,\
+#{?#{==:#{E:@pane_process},opencode}, #{@agent_icon} ,\
+#{?#{==:#{E:@pane_process},pi}, #{@agent_icon} ,\
+#{?#{==:#{E:@pane_process},claude}, #{@agent_icon} ,\
+#{?#{==:#{E:@pane_process},brew}, #{@brew_icon} ,\
  #{@default_icon} }}}}}}}}}}}}}}}}}}}}}}}}}}}'
  
 # window style
