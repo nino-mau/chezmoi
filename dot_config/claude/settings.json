@@ -11,10 +11,18 @@
       "Edit(~/Code/projects/**)",
       "Read(~/Code/projects/**)"
     ],
-    "deny": ["Read(*.env)", "Bash(curl:*)", "Bash(rm *)"],
-    "ask": ["Bash(gh pr create:*)", "Bash(git commit:*)"],
+    "deny": [
+      "Read(*.env)",
+      "Bash(curl:*)",
+      "Bash(rm *)"
+    ],
+    "ask": [
+      "Bash(gh pr create:*)",
+      "Bash(git commit:*)"
+    ],
     "defaultMode": "auto"
   },
+  "model": "opus",
   "hooks": {
     "Stop": [
       {
@@ -49,7 +57,7 @@
     ]
   },
   "effortLevel": "high",
+  "tui": "fullscreen",
   "theme": "dark-ansi",
-  "editorMode": "vim",
-  "model": "opus"
+  "editorMode": "vim"
 }
