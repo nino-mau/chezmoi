@@ -10,7 +10,7 @@ gui:
     optionsTextColor:
       - "{{ colors.primary.dark.hex }}"
     selectedLineBgColor:
-      - "{{ colors.surface_container_lowest.dark.hex }}"
+      - "{{ colors.surface_container.dark.hex }}"
     cherryPickedCommitBgColor:
       - "{{ colors.terminal_normal_black.dark.hex }}"
     cherryPickedCommitFgColor:
@@ -25,6 +25,6 @@ gui:
       - "{{ colors.error.dark.hex }}"
       - bold
     inactiveViewSelectedLineBgColor:
-      - "{{ colors.surface_container_lowest.dark.hex }}"
+      - "{{ colors.surface_container_high.dark.hex }}"
   authorColors:
     "*": "{{ colors.secondary.dark.hex }}"
