@@ -1,5 +1,7 @@
 ## System Informations
 
+Information about the system you're running on:
+
 {{- $sys := index . "system-infos" .chezmoi.os }}
 
 - OS: {{ index $sys "os" }}
@@ -10,12 +12,12 @@
 - Terminal: {{ index $sys "terminal" }}
 - Editor: {{ index $sys "editor" }}
 - Browser: {{ index $sys "browser" }}
-- Dotfiles manager: {{ index $sys "dotfiles-manager" }}
+- dotfiles manager: {{ index $sys "dotfiles-manager" }}
 - Keyboard re-mapper: {{ index $sys "keyboard-mapper" }}
 
 Other:
 
-- opencode and pi-coding-agents as my coding agents
+- Opencode and pi-coding-agents as my coding agents
 - Obsidian for note (at ~/.obsidian/Main)
 - Tmux for terminal multiplexing
 
@@ -24,43 +26,24 @@ Other:
 ### General
 
 - NO GLAZING
-- Be challenging, not agreeable, when I say something I want your opinion not your validation
-- Safety first
-- Try to stick to existing coding pattern in the project you're working on
-- Do not make edit without being asked
-- When the user ask for a big task and you think there are too little details, do not hesitate to ask questions
-
-### Conversational Style
-
+- KEEP IT SIMPLE
+- Be challenging, not agreeable, when the user say something the user wants your opinion not your validation
+- When the user asks a question (or anything that sounds like a question), answer it first before making edits or running implementation commands.
 - Keep answers short and concise
 - No fluff or cheerful filler text (e.g., "Thanks @user" not "Thanks so much @user!")
-- Technical prose only, be direct
-- When the user asks a question, answer it first before making edits or running implementation commands.
-- When responding to user feedback or an analysis, explicitly say whether you agree or disagree before saying what you changed.
 
 ### Coding
 
-- Keep the code simple and understandable
-- by default avoid descriptions commits
-
-#### Typescript/Javascript
-
-- Always prefer Typescript unless explicitly stated otherwise
-- Avoid using the "any" type
-- Prefer `type` over `interface` unless you have a valid reason
-- Prefer bun over node/npm/pnpm
-- Switch node version using fnm
-- When using `/** */` comments do them on three line not just one
+- KEEP IT SIMPLE
+- Try to stick to existing coding pattern in the project you're working on
 
 ### Writing
 
-- Avoid using emoji when writing, only had them if it's really pertinent
-- Try to write in the most natural/humane way
-- Avoid giving commercial feel to READMEs and other user facing docs, keep it to the point and technical
-- When writing documentation be the most minimal possible with flavour text, be straight to the point and don't focus on well structured phrases/ponctuations
+- Avoid using emoji
+- Write in a natural/humane way
 - No m-dash
 
-## Ressources
+## Resources
 
 ### Useful Paths
 
