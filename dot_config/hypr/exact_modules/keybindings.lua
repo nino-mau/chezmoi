@@ -70,7 +70,6 @@ bind("SUPER + P", hl.dsp.window.pseudo(), "Toggle pseudotile for active window")
 -- hl.bind("SUPER + colon", hl.dsp.layout("togglesplit")) -- dwindle
 -- hl.bind("SUPER + ugrave", hl.dsp.layout("togglesplit 1")) -- dwindle
 
--- Move focus with SUPER + hjkl
 bind("SUPER + l", focus_horizontal("right"), "Focus right")
 bind("SUPER + h", focus_horizontal("left"), "Focus left")
 bind("SUPER + k", hl.dsp.focus({ direction = "up" }), "Focus window above")
@@ -80,11 +79,13 @@ bind("SUPER + j", hl.dsp.focus({ direction = "down" }), "Focus window below")
 bind("SUPER + mouse:272", hl.dsp.window.drag(), "Drag active window", { mouse = true })
 bind("SUPER + mouse:273", hl.dsp.window.resize(), "Resize active window", { mouse = true })
 
--- Expand a window
 bind("SUPER + f", hl.dsp.window.fullscreen({ mode = "maximized" }), "Maximize active window")
 
--- Make a window full screen
 bind("SUPER + SHIFT + f", hl.dsp.window.fullscreen(), "Toggle fullscreen for active window")
+
+bind("SUPER + ALT + f", hl.dsp.focus({ urgent_or_last = true }), "Focus urgent or last window")
+
+bind("SUPER + ALT + b", hl.dsp.focus({ window = "tag:browser\\*" }), "Focus browser")
 
 -- ===============
 -- Workspaces
@@ -111,8 +112,8 @@ bind("SUPER + grave", hl.dsp.workspace.toggle_special("btop"), "Toggle btop spec
 bind("SUPER + O", hl.dsp.workspace.toggle_special("discord"), "Toggle Discord special workspace")
 
 -- Scroll through existing workspaces with SUPER + ALT + H/L
-bind("SUPER + ALT + L", hl.dsp.focus({ workspace = "e+1" }), "Focus next workspace")
-bind("SUPER + ALT + H", hl.dsp.focus({ workspace = "e-1" }), "Focus previous workspace")
+-- bind("SUPER + ALT + L", hl.dsp.focus({ workspace = "e+1" }), "Focus next workspace")
+-- bind("SUPER + ALT + H", hl.dsp.focus({ workspace = "e-1" }), "Focus previous workspace")
 
 -- ===============
 -- Scrolling
