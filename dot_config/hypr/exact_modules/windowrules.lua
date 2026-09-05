@@ -56,12 +56,29 @@ hl.window_rule({
 	},
 })
 
--- Send zen-browser to workspace 2
+hl.window_rule({
+	workspace = "2",
+	match = {
+		class = "zen-twilight",
+	},
+	tag = "browser",
+})
+
+-- Send browsers to workspace 2 and tag them
+hl.window_rule({
+	workspace = "2",
+	match = {
+		class = "zen-twilight",
+	},
+	tag = "browser",
+})
+
 hl.window_rule({
 	workspace = "2",
 	match = {
 		class = "zen",
 	},
+	tag = "browser",
 })
 
 -- Send WXT development firefox browser to workspace 3 (second monitor)
