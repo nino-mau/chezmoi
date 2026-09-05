@@ -64,7 +64,7 @@ Other:
 
 ### Useful Paths
 
-- contains repos I use as reference when coding `~/Code/reference`
+- contains repos I use as reference when coding `~/Code/references`
 - contains my coding projects: `~/Code/projects/`
 - contains my maintained repos: `~/Code/repos/personal/`
 - contains my custom scripts: `~/.local/bin`
