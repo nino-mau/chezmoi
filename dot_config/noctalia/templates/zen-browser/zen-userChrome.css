@@ -68,6 +68,7 @@
   --toolbox-bgcolor-inactive: var(--base-0) !important;
   --zen-urlbar-background: var(--surface) !important;
   --zen-colors-input-bg: var(--surface) !important;
+  --zen-dialog-background: var(--base) !important;
 
   /* Interactive surfaces */
   --zen-toolbar-element-bg: var(--surface) !important;
@@ -76,6 +77,7 @@
   --toolbarbutton-background-color-hover: var(--hover) !important;
   --toolbarbutton-background-color-active: var(--hover) !important;
   --button-background-color-menu-hover: var(--hover) !important;
+  --button-background-color-primary: var(--primary) !important;
   --toolbar-background-color: var(--base) !important;
   --toolbar-text-color: var(--text) !important;
   --input-text-background-color: var(--surface) !important;
@@ -121,6 +123,8 @@
 input,
 textarea {
   color: var(--input-text-color) !important;
+  background-color: var(--surface);
+  border-color: var(--outline);
 }
 
 *|input[type="checkbox"],
@@ -573,6 +577,32 @@ dialog {
   color: var(--text) !important;
 }
 
+.dialogBox {
+  outline-color: var(--outline) !important;
+}
+
+.dialog-button-box {
+  button {
+  --button-background-color-primary: var(--primary) !important;
+  --button-background-color-primary-hover: var(--secondary) !important;
+  --button-background-color-hover: var(--hover) !important;
+  }
+}
+
+.dialog-button-box > button:is([dlgtype="cancel"]) {
+  appearance: none !important;
+  background: var(--overlay) !important;
+  color: var(--text) !important;
+}
+
+.dialog-button-box > button:is([dlgtype="cancel"]):hover {
+  background: var(--hl_low) !important;
+}
+
+.dialog-button-box > button:is([dlgtype="cancel"]):active {
+  background: var(--hl_med) !important;
+}
+
 dialog button,
 panel button,
 window[role="dialog"] button,
@@ -619,6 +649,15 @@ window[windowtype="alert:alert"] button[default="true"]:hover {
 
 .text-link:hover {
   color: color-mix(in srgb, var(--secondary) 70%, transparent) !important;
+}
+
+/* Style specific to bookmark dialog */
+
+#editBookmarkPanelContent {
+  input {
+    background-color: var(--surface) !important;
+    border-color: var(--outline) !important;
+  }
 }
 
 /* -------------------------------------------------------------------------- */

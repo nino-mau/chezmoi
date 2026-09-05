@@ -103,10 +103,10 @@ title_error = { fg = "{{ colors.terminal_normal_red.dark.hex }}" }
 
 [filetype]
 rules = [
-  { url = "**/Code/", fg = "{{ colors.secondary.dark.hex }}" },
-  { url = "**/Downloads/", fg = "{{ colors.secondary.dark.hex }}" },
-  { url = "**/Documents/", fg = "{{ colors.secondary.dark.hex }}" },
-  { url = "**/Library/", fg = "{{ colors.secondary.dark.hex }}" },
+  { url = "**/Code/", fg = "{{ colors.tertiary.dark.hex }}", bold = true },
+  { url = "**/Downloads/", fg = "{{ colors.tertiary.dark.hex }}", bold = true },
+  { url = "**/Documents/", fg = "{{ colors.tertiary.dark.hex }}", bold = true },
+  { url = "**/Library/", fg = "{{ colors.tertiary.dark.hex }}", bold = true },
 
   # Media
   { mime = "**/image/*", fg = "{{ colors.terminal_normal_yellow.dark.hex }}" },
@@ -146,10 +146,10 @@ dirs = [
   { name = ".github", text = "", fg = "{{ colors.terminal_normal_yellow.dark.hex }}" },
   { name = ".npm", text = "", fg = "{{ colors.terminal_normal_yellow.dark.hex }}" },
   { name = "Desktop", text = "", fg = "{{ colors.primary.dark.hex }}" },
-  { name = "Code", text = "󰅴", fg = "{{ colors.secondary.dark.hex }}" },
-  { name = "Documents", text = "", fg = "{{ colors.secondary.dark.hex }}" },
-  { name = "Downloads", text = "", fg = "{{ colors.secondary.dark.hex }}" },
-  { name = "Library", text = "", fg = "{{ colors.secondary.dark.hex }}" },
+  { name = "Code", text = "󰅴", fg = "{{ colors.tertiary.dark.hex }}" },
+  { name = "Documents", text = "", fg = "{{ colors.tertiary.dark.hex }}" },
+  { name = "Downloads", text = "", fg = "{{ colors.tertiary.dark.hex }}" },
+  { name = "Library", text = "", fg = "{{ colors.tertiary.dark.hex }}" },
   { name = "Movies", text = "", fg = "{{ colors.primary.dark.hex }}" },
   { name = "Music", text = "", fg = "{{ colors.primary.dark.hex }}" },
   { name = "Pictures", text = "", fg = "{{ colors.primary.dark.hex }}" },
