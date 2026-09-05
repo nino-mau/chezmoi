@@ -4,6 +4,10 @@ enable_community_templates = true
 builtin_ids = ["gtk3", "gtk4", "ghostty", "qt", "starship"]
 community_ids = ["bat"]
 
+[theme.templates.user.hypr]
+input_path = "templates/hypr/theme.lua"
+output_path = "$XDG_CONFIG_HOME/hypr/theme.lua"
+
 [theme.templates.user.eza]
 input_path = "$XDG_CONFIG_HOME/noctalia/templates/eza/eza.yml"
 output_path = "$XDG_CONFIG_HOME/eza/theme.yml"

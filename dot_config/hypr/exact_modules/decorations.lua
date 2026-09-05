@@ -1,6 +1,6 @@
 -- Config that impact general appearance
 -- See https://wiki.hypr.land/Configuring/Variables/#decoration
-local colors = require("colors")
+local theme = require("theme")
 
 hl.config({
 	general = {
@@ -8,8 +8,8 @@ hl.config({
 		gaps_out = 16,
 		border_size = 1,
 		col = {
-			active_border = colors.primary,
-			inactive_border = colors.border,
+			active_border = theme.primary,
+			inactive_border = theme.border,
 		},
 		-- Set to true enable resizing windows by clicking and dragging on borders and gaps
 		resize_on_border = false,
