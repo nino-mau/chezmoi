@@ -9,6 +9,7 @@
     --base-0: rgba(30, 30, 46, 0);
     --base-transparent: rgba(30, 30, 46, 0.8);
     --surface: #313244;
+    --surface_low: #272839;
     --overlay: #313244;
     --hl_low: #3a3b50;
     --hl_med: #42435c;
@@ -29,6 +30,7 @@
   * {
     --base: #eff1f5;
     --surface: #dde0e7;
+    --surface_low: #dde0e7;
     --overlay: #ccd0da;
     --hl_low: #c0c5d1;
     --hl_med: #b4bac9;
@@ -66,6 +68,7 @@
   --toolbox-bgcolor-inactive: var(--base-0) !important;
   --zen-urlbar-background: var(--surface) !important;
   --zen-colors-input-bg: var(--surface) !important;
+  --zen-dialog-background: var(--base) !important;
 
   /* Interactive surfaces */
   --zen-toolbar-element-bg: var(--surface) !important;
@@ -74,6 +77,11 @@
   --toolbarbutton-background-color-hover: var(--hover) !important;
   --toolbarbutton-background-color-active: var(--hover) !important;
   --button-background-color-menu-hover: var(--hover) !important;
+  --button-background-color-primary: var(--primary) !important;
+  --toolbar-background-color: var(--base) !important;
+  --toolbar-text-color: var(--text) !important;
+  --input-text-background-color: var(--surface) !important;
+  --zen-input-border-color: var(--outline) !important;
 
   /* Text and icons */
   --input-text-color: var(--text) !important;
@@ -115,6 +123,8 @@
 input,
 textarea {
   color: var(--input-text-color) !important;
+  background-color: var(--surface);
+  border-color: var(--outline);
 }
 
 *|input[type="checkbox"],
@@ -399,6 +409,16 @@ menuitem:where([_moz-menuactive="true"]:not([disabled="true"]))
   color: var(--base) !important;
 }
 
+/* Findbar styling */
+
+.findbar-textbox {
+  background-color: var(--surface_low) !important;
+  color: var(--text) !important;
+}
+.browserContainer > findbar {
+  background-color: var(--surface) !important;
+}
+
 /* -------------------------------------------------------------------------- */
 /* Autocomplete panel                                                         */
 /* -------------------------------------------------------------------------- */
@@ -557,6 +577,32 @@ dialog {
   color: var(--text) !important;
 }
 
+.dialogBox {
+  outline-color: var(--outline) !important;
+}
+
+.dialog-button-box {
+  button {
+  --button-background-color-primary: var(--primary) !important;
+  --button-background-color-primary-hover: var(--secondary) !important;
+  --button-background-color-hover: var(--hover) !important;
+  }
+}
+
+.dialog-button-box > button:is([dlgtype="cancel"]) {
+  appearance: none !important;
+  background: var(--overlay) !important;
+  color: var(--text) !important;
+}
+
+.dialog-button-box > button:is([dlgtype="cancel"]):hover {
+  background: var(--hl_low) !important;
+}
+
+.dialog-button-box > button:is([dlgtype="cancel"]):active {
+  background: var(--hl_med) !important;
+}
+
 dialog button,
 panel button,
 window[role="dialog"] button,
@@ -603,6 +649,15 @@ window[windowtype="alert:alert"] button[default="true"]:hover {
 
 .text-link:hover {
   color: color-mix(in srgb, var(--secondary) 70%, transparent) !important;
+}
+
+/* Style specific to bookmark dialog */
+
+#editBookmarkPanelContent {
+  input {
+    background-color: var(--surface) !important;
+    border-color: var(--outline) !important;
+  }
 }
 
 /* -------------------------------------------------------------------------- */
