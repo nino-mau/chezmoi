@@ -70,7 +70,7 @@ hl.window_rule({
 	match = {
 		class = "zen-twilight",
 	},
-	tag = "browser",
+	tag = "+browser",
 })
 
 hl.window_rule({
@@ -78,7 +78,7 @@ hl.window_rule({
 	match = {
 		class = "zen",
 	},
-	tag = "browser",
+	tag = "+browser",
 })
 
 -- Send WXT development firefox browser to workspace 3 (second monitor)
