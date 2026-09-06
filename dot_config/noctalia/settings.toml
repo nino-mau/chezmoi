@@ -511,7 +511,7 @@ shortcut = "5"
 variant = "destructive"
 
 [theme]
-builtin = "Tokyo-Night"
+builtin = "Nord"
 community_palette = "Atuel"
 custom_palette = "catppuccin_mocha"
 source = "custom"
