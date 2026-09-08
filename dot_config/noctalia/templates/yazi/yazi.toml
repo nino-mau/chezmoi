@@ -104,8 +104,11 @@ title_error = { fg = "{{ colors.terminal_normal_red.dark.hex }}" }
 [filetype]
 rules = [
   { url = "**/Code/", fg = "{{ colors.tertiary.dark.hex }}", bold = true },
+  { url = "**/.config/", fg = "{{ colors.tertiary.dark.hex }}", bold = true },
   { url = "**/Downloads/", fg = "{{ colors.tertiary.dark.hex }}", bold = true },
   { url = "**/Documents/", fg = "{{ colors.tertiary.dark.hex }}", bold = true },
+  { url = "**/Pictures/", fg = "{{ colors.tertiary.dark.hex }}", bold = true },
+  { url = "**/Videos/", fg = "{{ colors.tertiary.dark.hex }}", bold = true },
   { url = "**/Library/", fg = "{{ colors.tertiary.dark.hex }}", bold = true },
 
   # Media
@@ -150,11 +153,11 @@ dirs = [
   { name = "Documents", text = "", fg = "{{ colors.tertiary.dark.hex }}" },
   { name = "Downloads", text = "", fg = "{{ colors.tertiary.dark.hex }}" },
   { name = "Library", text = "", fg = "{{ colors.tertiary.dark.hex }}" },
+  { name = "Pictures", text = "", fg = "{{ colors.tertiary.dark.hex }}" },
+  { name = "Videos", text = "", fg = "{{ colors.tertiary.dark.hex }}" },
   { name = "Movies", text = "", fg = "{{ colors.primary.dark.hex }}" },
   { name = "Music", text = "", fg = "{{ colors.primary.dark.hex }}" },
-  { name = "Pictures", text = "", fg = "{{ colors.primary.dark.hex }}" },
   { name = "Public", text = "", fg = "{{ colors.primary.dark.hex }}" },
-  { name = "Videos", text = "", fg = "{{ colors.primary.dark.hex }}" },
 ]
 conds = [
   # Special files
