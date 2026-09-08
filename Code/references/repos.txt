@@ -1,0 +1,23 @@
+# Relative path	Git origin
+fastapi/full-stack-fastapi-template	https://github.com/fastapi/full-stack-fastapi-template
+neovim/LazyVim	https://github.com/LazyVim/LazyVim
+neovim/NvChad	https://github.com/NvChad/NvChad.git
+neovim/nvchad-ui	https://github.com/NvChad/ui.git
+nuxt/kanri	https://github.com/kanriapp/kanri
+nuxt/nuxt-dashboard-template	https://github.com/nuxt-ui-templates/dashboard
+nuxt/nuxt-ui	https://github.com/nuxt/ui
+nuxt/real-world-nuxt	https://github.com/steveclarke/real-world-nuxt.git
+other/vicinae-extensions	https://github.com/vicinaehq/extensions.git
+other/vicinae	https://github.com/vicinaehq/vicinae
+python/taiga-back	https://github.com/taigaio/taiga-back
+quickshell/Apertura	https://github.com/natepayn3/Apertura.git
+quickshell/caelestia-dots	https://github.com/caelestia-dots/shell
+quickshell/noctalia	https://github.com/noctalia-dev/noctalia.git
+quickshell/quickshell-examples	https://git.outfoxxed.me/quickshell/quickshell-examples
+vicinae	https://github.com/vicinaehq/vicinae.git
+web-apps/dub	https://github.com/dubinc/dub.git
+web-apps/erpnext	https://github.com/frappe/erpnext.git
+web-apps/litlyx	https://github.com/Litlyx/litlyx
+web-apps/midday	https://github.com/midday-ai/midday.git
+web-apps/plane	https://github.com/makeplane/plane.git
+zen-browser/desktop	https://github.com/zen-browser/desktop.git
