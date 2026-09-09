@@ -75,13 +75,6 @@
             "extraTags": "dev,smartorigin,ai,piracy,frontend,hyprland,dotfiles,repo,ressource,arch,open-source"
          }
       },
-      "@fbosch/store.vicinae.nerdfont-search": {
-         "entrypoints": {
-            "nerdfonts-search": {
-               "alias": "nf"
-            }
-         }
-      },
       "@gebeto/store.raycast.translate": {
          "entrypoints": {
             "translate": {
@@ -111,13 +104,6 @@
             "numberOfResults": "50"
          }
       },
-      "@nino-mau/commit-message": {
-         "entrypoints": {
-            "commit-message": {
-               "alias": "cm"
-            }
-         }
-      },
       "@nino-mau/grammalecte-fr-corrector": {
          "entrypoints": {
             "correct-french-text": {
@@ -129,27 +115,6 @@
          "entrypoints": {
             "search-icons": {
                "alias": "ic"
-            }
-         }
-      },
-      "@nino-mau/theme-switcher": {
-         "entrypoints": {
-            "switch-theme": {
-               "alias": "st"
-            }
-         }
-      },
-      "@nino-mau/wallpaper-switcher": {
-         "entrypoints": {
-            "wallpapers": {
-               "alias": "sw"
-            }
-         }
-      },
-      "@nino-mau/zen-bookmarks": {
-         "entrypoints": {
-            "search-bookmarks": {
-               "alias": "bk"
             }
          }
       },
