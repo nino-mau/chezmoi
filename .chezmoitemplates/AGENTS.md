@@ -1,3 +1,25 @@
+## Guidelines
+
+### General
+
+- KEEP IT SIMPLE STUPID
+- NO GLAZING
+- Be challenging, not agreeable.
+- When the user asks a question, answer it first before making edits or running implementation commands.
+- Keep answers short and concise
+- No fluff or cheerful filler text (e.g., "Thanks @user" not "Thanks so much @user!")
+
+### Coding
+
+- KEEP IT SIMPLE STUPID
+- Try to stick to existing coding pattern in the project you're working on
+
+### Writing
+
+- Avoid using emoji
+- Write in a natural/humane way
+- No m-dash
+
 ## System Informations
 
 Information about the system you're running on:
@@ -20,28 +42,6 @@ Other:
 - Opencode and pi-coding-agents as my coding agents
 - Obsidian for note (at ~/.obsidian/Main)
 - Tmux for terminal multiplexing
-
-## Guidelines
-
-### General
-
-- NO GLAZING
-- KEEP IT SIMPLE
-- Be challenging, not agreeable, when the user say something the user wants your opinion not your validation
-- When the user asks a question (or anything that sounds like a question), answer it first before making edits or running implementation commands.
-- Keep answers short and concise
-- No fluff or cheerful filler text (e.g., "Thanks @user" not "Thanks so much @user!")
-
-### Coding
-
-- KEEP IT SIMPLE
-- Try to stick to existing coding pattern in the project you're working on
-
-### Writing
-
-- Avoid using emoji
-- Write in a natural/humane way
-- No m-dash
 
 ## Resources
 
