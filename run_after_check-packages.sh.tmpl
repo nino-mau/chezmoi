@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+set -uo pipefail
+
+{{ if ne .chezmoi.os "linux" -}}
+exit 0
+{{ else -}}
+PACKAGES_COMMAND="$HOME/.local/bin/packages"
+
+warn() {
+    printf 'packages: %s\n' "$1" >&2
+}
+
+if [[ ! -x "$PACKAGES_COMMAND" ]]; then
+    warn "cannot check installed packages: $PACKAGES_COMMAND is unavailable"
+    exit 0
+fi
+
+if ! command -v pacman >/dev/null 2>&1; then
+    warn "cannot check installed packages: pacman is unavailable"
+    exit 0
+fi
+
+configured=()
+missing=()
+
+while IFS= read -r package; do
+    configured+=("$package")
+done < <("$PACKAGES_COMMAND" list all)
+
+while IFS= read -r package; do
+    [[ -n "$package" ]] && missing+=("$package")
+done < <(pacman -T "${configured[@]}" 2>/dev/null || true)
+
+if [[ ${#missing[@]} -eq 0 ]]; then
+    exit 0
+fi
+
+warn "${#missing[@]} configured package(s) are missing:"
+printf '  %s\n' "${missing[@]}" >&2
+printf 'Run: packages all\n' >&2
+
+exit 0
+{{ end -}}
