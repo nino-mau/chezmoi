@@ -12,10 +12,6 @@ builtin_ids = [
 ]
 community_ids = ["bat"]
 
-[theme.templates.user.hypr]
-input_path = "templates/hypr/theme.lua"
-output_path = "$XDG_CONFIG_HOME/hypr/theme.lua"
-
 [theme.templates.user.eza]
 input_path = "$XDG_CONFIG_HOME/noctalia/templates/eza/eza.yml"
 output_path = "$XDG_CONFIG_HOME/eza/theme.yml"
@@ -24,15 +20,21 @@ output_path = "$XDG_CONFIG_HOME/eza/theme.yml"
 input_path = "$XDG_CONFIG_HOME/noctalia/templates/eza/eza.yml"
 output_path = "$XDG_CONFIG_HOME/eza/theme.yml"
 
-[theme.templates.user.zen_browser_chrome]
-input_path = "templates/zen-browser/zen-userChrome.css"
-output_path = "$XDG_CACHE_HOME/noctalia/zen-browser/zen-userChrome.css"
-post_hook = "bash '{{ config_dir }}/templates/zen-browser/apply.sh'"
+[theme.templates.user.fzf]
+input_path = "templates/fzf/fzfrc"
+output_path = "$XDG_CONFIG_HOME/fzf/fzfrc"
 
-[theme.templates.user.zen_browser_content]
-input_path = "templates/zen-browser/zen-userContent.css"
-output_path = "$XDG_CACHE_HOME/noctalia/zen-browser/zen-userContent.css"
-post_hook = "bash '{{ config_dir }}/templates/zen-browser/apply.sh'"
+[theme.templates.user.hypr]
+input_path = "templates/hypr/theme.lua"
+output_path = "$XDG_CONFIG_HOME/hypr/theme.lua"
+
+[theme.templates.user.lazygit]
+input_path = "templates/lazygit/lazygit.yml"
+output_path = "$XDG_CONFIG_HOME/lazygit/theme.yml"
+
+[theme.templates.user.sysc-greet]
+input_path = "templates/sysc-greet/noctalia.toml"
+output_path = "$XDG_CONFIG_HOME/sysc-greet/themes/noctalia.toml"
 
 [theme.templates.user.yazi]
 input_path = "templates/yazi/yazi.toml"
@@ -43,14 +45,12 @@ post_hook = "bash '{{ config_dir }}/templates/yazi/apply.sh'"
 input_path = "templates/yazi/yazi.tmTheme"
 output_path = "$XDG_CONFIG_HOME/yazi/flavors/noctalia.yazi/tmtheme.xml"
 
-[theme.templates.user.lazygit]
-input_path = "templates/lazygit/lazygit.yml"
-output_path = "$XDG_CONFIG_HOME/lazygit/theme.yml"
+[theme.templates.user.zen_browser_chrome]
+input_path = "templates/zen-browser/zen-userChrome.css"
+output_path = "$XDG_CACHE_HOME/noctalia/zen-browser/zen-userChrome.css"
+post_hook = "bash '{{ config_dir }}/templates/zen-browser/apply.sh'"
 
-[theme.templates.user.fzf]
-input_path = "templates/fzf/fzfrc"
-output_path = "$XDG_CONFIG_HOME/fzf/fzfrc"
-
-[theme.templates.user.sysc-greet]
-input_path = "templates/sysc-greet/noctalia.toml"
-output_path = "$XDG_CONFIG_HOME/sysc-greet/themes/noctalia.toml"
+[theme.templates.user.zen_browser_content]
+input_path = "templates/zen-browser/zen-userContent.css"
+output_path = "$XDG_CACHE_HOME/noctalia/zen-browser/zen-userContent.css"
+post_hook = "bash '{{ config_dir }}/templates/zen-browser/apply.sh'"
