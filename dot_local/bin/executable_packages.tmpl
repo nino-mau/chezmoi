@@ -1,0 +1,140 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+PACKAGES=()
+CATEGORIES=(
+{{ if eq .chezmoi.os "linux" }}{{ range $category, $_ := .packages.linux.paru }}    "{{ $category }}"
+{{ end }}{{ else if eq .chezmoi.os "darwin" }}{{ range $category, $_ := .packages.darwin }}    "{{ $category }}"
+{{ end }}{{ end }})
+
+usage() {
+    cat <<EOF
+Usage: $(basename "$0") CATEGORY
+       $(basename "$0") all
+       $(basename "$0") list [CATEGORY|all]
+
+Install a package category or every configured package.
+
+Categories:
+$(printf '  %s\n' "${CATEGORIES[@]}")
+EOF
+}
+
+fail() {
+    printf 'packages: %s\n' "$1" >&2
+    exit 1
+}
+
+add_package() {
+    local candidate="$1"
+    local package
+
+    for package in "${PACKAGES[@]}"; do
+        [[ "$package" == "$candidate" ]] && return
+    done
+
+    PACKAGES+=("$candidate")
+}
+
+add_packages() {
+    local package
+
+    for package in "$@"; do
+        add_package "$package"
+    done
+}
+
+add_category() {
+    case "$1" in
+{{ if eq .chezmoi.os "linux" }}{{ range $category, $items := .packages.linux.paru }}        "{{ $category }}")
+            add_packages{{ range $items }} "{{ . }}"{{ end }}
+            ;;
+{{ end }}{{ else if eq .chezmoi.os "darwin" }}{{ range $category, $items := .packages.darwin }}        "{{ $category }}")
+            add_packages{{ range $items }} "{{ . }}"{{ end }}
+            ;;
+{{ end }}{{ end }}        *)
+            return 1
+            ;;
+    esac
+}
+
+select_packages() {
+    local selection="$1"
+    local category
+
+    if [[ "$selection" == "all" ]]; then
+        for category in "${CATEGORIES[@]}"; do
+            add_category "$category"
+        done
+    elif ! add_category "$selection"; then
+        fail "unknown category: $selection"
+    fi
+}
+
+list_categories() {
+    printf '%s\n' "${CATEGORIES[@]}"
+}
+
+list_packages() {
+    local selection="$1"
+
+    select_packages "$selection"
+    printf '%s\n' "${PACKAGES[@]}"
+}
+
+install_packages() {
+    local selection="$1"
+
+{{ if eq .chezmoi.os "linux" }}    select_packages "$selection"
+
+    if ! command -v paru >/dev/null 2>&1; then
+        command -v pacman >/dev/null 2>&1 || fail "paru and pacman are not installed"
+        printf 'Installing paru...\n'
+        sudo pacman -S --needed paru
+    fi
+
+    printf 'Installing %d packages from %s...\n' "${#PACKAGES[@]}" "$selection"
+    paru -S --needed -- "${PACKAGES[@]}"
+{{ else if eq .chezmoi.os "darwin" }}    if [[ "$selection" == "all" ]]; then
+        fail "all is unavailable on macOS: manual, dmg, and pkg entries have no installer metadata"
+    fi
+
+    select_packages "$selection"
+
+    if [[ "$selection" != "port" ]]; then
+        printf 'Packages in %s:\n' "$selection" >&2
+        printf '  %s\n' "${PACKAGES[@]}" >&2
+        fail "$selection packages require manual installation"
+    fi
+
+    command -v port >/dev/null 2>&1 || fail "MacPorts is not installed"
+    printf 'Installing %d packages from %s...\n' "${#PACKAGES[@]}" "$selection"
+    sudo port install "${PACKAGES[@]}"
+{{ else }}    fail "unsupported operating system"
+{{ end }}}
+
+main() {
+    [[ $# -gt 0 ]] || { usage; exit 1; }
+
+    case "$1" in
+        -h|--help|help)
+            [[ $# -eq 1 ]] || fail "help takes no arguments"
+            usage
+            ;;
+        list)
+            [[ $# -le 2 ]] || fail "list accepts at most one category"
+            if [[ $# -eq 1 ]]; then
+                list_categories
+            else
+                list_packages "$2"
+            fi
+            ;;
+        *)
+            [[ $# -eq 1 ]] || fail "install one category at a time, or use all"
+            install_packages "$1"
+            ;;
+    esac
+}
+
+main "$@"
