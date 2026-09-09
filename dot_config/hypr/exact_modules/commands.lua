@@ -1,6 +1,6 @@
 return {
 	terminal = "ghostty",
-	browser = "zen-browser",
+	browser = "zen-twilight",
 	fileManager = "yazi",
 	hypremoji = "hypremoji",
 	agent = "pi",
