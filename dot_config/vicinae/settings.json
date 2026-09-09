@@ -40,6 +40,7 @@
       }
    },
    "favorites": [
+      "scripts:screenshot-selection",
       "@nino-mau/commit-message:commit-message",
       "@nino-mau/theme-switcher:switch-theme",
       "@nino-mau/grammalecte-fr-corrector:correct-french-text",

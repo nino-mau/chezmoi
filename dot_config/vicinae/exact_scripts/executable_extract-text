@@ -2,7 +2,7 @@
 # @vicinae.exec ["/bin/bash"]
 # @vicinae.title Extract Text (OCR)
 # @vicinae.mode silent
-# @vicinae.icon https://api.iconify.design/material-symbols/document-scanner-rounded.svg?color=%23ccd5f3
+# @vicinae.icon /home/nino/.config/vicinae/icons/extract-text.png
 printf 'Select an area to extract text\n'
 exec </dev/null >/dev/null 2>&1
 setsid -f bash -lc '
