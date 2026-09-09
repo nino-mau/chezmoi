@@ -15,21 +15,91 @@ packages:
     - obsidian
     - kitty
     pkg:
-      - microsoft-teams
-      - tailscale
+    - microsoft-teams
+    - tailscale
     port:
     - git
     - sketchybar
     - neovim
   linux:
     paru:
-    - yazi
-    - vicinae-bin
-    - swaync
-    - swayosd
-    - git
-    - bun
-    - eza
-    - fish
-    - pi-coding-agent
-    - pwgen
+      essentials:
+      - git
+      - noctalia
+      - fish
+      - bun
+      - fnm-bin
+      - keyd
+      - earlyoom
+      - tailscale
+      - greetd
+      - unzip
+      - hyprpolkitagent
+      - neovim-nightly-bin
+      - vim
+      - chezmoi
+      - tree-sitter-cli
+      - python
+      - wl-clipboard
+      - fd
+      - ripgrep
+      - jq
+      - rsync
+      terminal-essentials:
+      - eza
+      - zoxide
+      - fzf
+      - fastfetch
+      - tmux
+      - bat
+      - starship
+      - tmuxp
+      nerd-fonts:
+      - ttf-googlesanscode-nerd
+      - ttf-recursive-nerd
+      - ttf-jetbrains-mono
+      - ttf-opensans
+      - ttf-firacode-nerd
+      - maplemono-nf-unhinted
+      tui:
+      - lazygit
+      - lazydocker
+      - btop
+      - yazi
+      - pi-coding-agent
+      - opencode
+      - claude-code
+      - openai-codex
+      - gdu
+      - sysz
+      utils:
+      - timg
+      - ie-r
+      - inotify-tools
+      - wev
+      - wtype
+      - tesseract
+      - codexbar-cli
+      - vivify
+      dev:
+      - just
+      - mise
+      - docker
+      - docker-compose
+      - docker-buildx
+      gui:
+      - mpv
+      - vicinae-bin
+      - vesktop-bin
+      - qbittorrent
+      - ghostty
+      - eddie-ui
+      - loupe
+      - nautilus
+      games:
+      - steam
+      - wine
+      - protonup-qt-bin
+      - lutris
+      other:
+      - eddie-cli
