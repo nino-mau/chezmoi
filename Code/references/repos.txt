@@ -21,3 +21,5 @@ web-apps/litlyx	https://github.com/Litlyx/litlyx
 web-apps/midday	https://github.com/midday-ai/midday.git
 web-apps/plane	https://github.com/makeplane/plane.git
 zen-browser/desktop	https://github.com/zen-browser/desktop.git
+noctalia/source	https://github.com/noctalia-dev/noctalia.git
+noctalia/community-templates	https://github.com/noctalia-dev/community-templates.git
