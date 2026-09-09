@@ -1,7 +1,12 @@
 {{ if ne .chezmoi.os "darwin" -}}
 #!/bin/bash
 # Sync sysc-greet configs from ~/.config/sysc-greet to /usr/share/sysc-greet
-# Triggered when: {{ include "dot_config/exact_sysc-greet/exact_ascii_configs/hyprland.conf" | sha256sum }}
+# Triggered when:
+# {{ include "dot_config/exact_sysc-greet/exact_ascii_configs/hyprland.conf" | sha256sum }}
+# {{ include "dot_config/exact_sysc-greet/themes/noctalia.toml" | sha256sum }}
+# {{ range glob "dot_config/exact_sysc-greet/exact_wallpapers/*" }}
+# {{ . }} {{ include . | sha256sum }}
+# {{ end }}
 
 set -e
 
@@ -12,6 +17,12 @@ sudo cp -r ~/.config/sysc-greet/ascii_configs/* /usr/share/sysc-greet/ascii_conf
 
 # Copy fonts
 sudo cp -r ~/.config/sysc-greet/fonts/* /usr/share/sysc-greet/fonts/
+
+# Copy custom theme
+sudo cp ~/.config/sysc-greet/themes/noctalia.toml /usr/share/sysc-greet/themes/noctalia.toml
+
+# Copy themed wallpapers
+sudo cp -r ~/.config/sysc-greet/wallpapers/* /usr/share/sysc-greet/wallpapers/
 
 echo "Sysc-greet configuration synced successfully"
 {{ end -}}
