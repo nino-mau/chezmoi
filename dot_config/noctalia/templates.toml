@@ -1,7 +1,15 @@
 [theme.templates]
 enable_builtin_templates = true
 enable_community_templates = true
-builtin_ids = ["gtk3", "gtk4", "ghostty", "kcolorscheme", "qt", "starship"]
+builtin_ids = [
+  "gtk3",
+  "gtk4",
+  "ghostty",
+  "kcolorscheme",
+  "qt",
+  "starship",
+  "kitty",
+]
 community_ids = ["bat"]
 
 [theme.templates.user.hypr]
