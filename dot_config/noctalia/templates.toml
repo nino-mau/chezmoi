@@ -42,3 +42,7 @@ output_path = "$XDG_CONFIG_HOME/lazygit/theme.yml"
 [theme.templates.user.fzf]
 input_path = "templates/fzf/fzfrc"
 output_path = "$XDG_CONFIG_HOME/fzf/fzfrc"
+
+[theme.templates.user.sysc-greet]
+input_path = "templates/sysc-greet/noctalia.toml"
+output_path = "$XDG_CONFIG_HOME/sysc-greet/themes/noctalia.toml"
