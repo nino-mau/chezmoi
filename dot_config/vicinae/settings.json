@@ -40,13 +40,13 @@
       }
    },
    "favorites": [
+      "scripts:extract-text",
       "scripts:screenshot-selection",
       "@nino-mau/commit-message:commit-message",
       "@nino-mau/theme-switcher:switch-theme",
       "@nino-mau/grammalecte-fr-corrector:correct-french-text",
       "@nino-mau/wallpaper-switcher:wallpapers",
-      "@nino-mau/zen-bookmarks:search-bookmarks",
-      "applications:t3code"
+      "@nino-mau/zen-bookmarks:search-bookmarks"
    ],
    "providers": {
       "@Gelei/store.vicinae.bluetooth": {
