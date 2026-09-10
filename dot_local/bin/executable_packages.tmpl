@@ -4,15 +4,22 @@ set -euo pipefail
 
 PACKAGES=()
 CATEGORIES=(
-{{ if eq .chezmoi.os "linux" }}{{ range $category, $_ := .packages.linux.paru }}    "{{ $category }}"
-{{ end }}{{ else if eq .chezmoi.os "darwin" }}{{ range $category, $_ := .packages.darwin }}    "{{ $category }}"
-{{ end }}{{ end }})
+    "dev"
+    "essentials"
+    "games"
+    "gui"
+    "nerd-fonts"
+    "other"
+    "terminal-essentials"
+    "tui"
+    "utils"
+)
 
 usage() {
     cat <<EOF
 Usage: $(basename "$0") CATEGORY
-       $(basename "$0") all
-       $(basename "$0") list [CATEGORY|all]
+       $(basename "$0") all [--except CATEGORY]
+       $(basename "$0") list [CATEGORY|all [--except CATEGORY]]
 
 Install a package category or every configured package.
 
@@ -47,13 +54,34 @@ add_packages() {
 
 add_category() {
     case "$1" in
-{{ if eq .chezmoi.os "linux" }}{{ range $category, $items := .packages.linux.paru }}        "{{ $category }}")
-            add_packages{{ range $items }} "{{ . }}"{{ end }}
+        "dev")
+            add_packages "just" "mise" "docker" "docker-compose" "docker-buildx"
             ;;
-{{ end }}{{ else if eq .chezmoi.os "darwin" }}{{ range $category, $items := .packages.darwin }}        "{{ $category }}")
-            add_packages{{ range $items }} "{{ . }}"{{ end }}
+        "essentials")
+            add_packages "git" "noctalia" "fish" "bun" "fnm-bin" "keyd" "earlyoom" "tailscale" "greetd" "unzip" "hyprpolkitagent" "neovim-nightly-bin" "vim" "chezmoi" "tree-sitter-cli" "python" "wl-clipboard" "fd" "ripgrep" "jq" "rsync"
             ;;
-{{ end }}{{ end }}        *)
+        "games")
+            add_packages "steam" "wine" "protonup-qt-bin" "lutris"
+            ;;
+        "gui")
+            add_packages "mpv" "vicinae-bin" "vesktop-bin" "qbittorrent" "ghostty" "eddie-ui" "loupe" "nautilus"
+            ;;
+        "nerd-fonts")
+            add_packages "ttf-googlesanscode-nerd" "ttf-recursive-nerd" "ttf-jetbrains-mono" "ttf-opensans" "ttf-firacode-nerd" "maplemono-nf-unhinted"
+            ;;
+        "other")
+            add_packages "eddie-cli"
+            ;;
+        "terminal-essentials")
+            add_packages "eza" "zoxide" "fzf" "fastfetch" "tmux" "bat" "starship" "tmuxp"
+            ;;
+        "tui")
+            add_packages "lazygit" "lazydocker" "btop" "yazi" "pi-coding-agent" "opencode" "claude-code" "openai-codex" "gdu" "sysz"
+            ;;
+        "utils")
+            add_packages "timg" "ie-r" "inotify-tools" "wev" "wtype" "tesseract" "codexbar-cli" "vivify"
+            ;;
+        *)
             return 1
             ;;
     esac
@@ -61,11 +89,20 @@ add_category() {
 
 select_packages() {
     local selection="$1"
+    local excluded="${2:-}"
     local category
 
+    if [[ -n "$excluded" && "$selection" != "all" ]]; then
+        fail "--except can only be used with all"
+    fi
+
     if [[ "$selection" == "all" ]]; then
+        if [[ -n "$excluded" && ! " ${CATEGORIES[*]} " =~ " ${excluded} " ]]; then
+            fail "unknown category: $excluded"
+        fi
+
         for category in "${CATEGORIES[@]}"; do
-            add_category "$category"
+            [[ "$category" == "$excluded" ]] || add_category "$category"
         done
     elif ! add_category "$selection"; then
         fail "unknown category: $selection"
@@ -78,15 +115,17 @@ list_categories() {
 
 list_packages() {
     local selection="$1"
+    local excluded="${2:-}"
 
-    select_packages "$selection"
+    select_packages "$selection" "$excluded"
     printf '%s\n' "${PACKAGES[@]}"
 }
 
 install_packages() {
     local selection="$1"
+    local excluded="${2:-}"
 
-{{ if eq .chezmoi.os "linux" }}    select_packages "$selection"
+    select_packages "$selection" "$excluded"
 
     if ! command -v paru >/dev/null 2>&1; then
         command -v pacman >/dev/null 2>&1 || fail "paru and pacman are not installed"
@@ -96,23 +135,7 @@ install_packages() {
 
     printf 'Installing %d packages from %s...\n' "${#PACKAGES[@]}" "$selection"
     paru -S --needed -- "${PACKAGES[@]}"
-{{ else if eq .chezmoi.os "darwin" }}    if [[ "$selection" == "all" ]]; then
-        fail "all is unavailable on macOS: manual, dmg, and pkg entries have no installer metadata"
-    fi
-
-    select_packages "$selection"
-
-    if [[ "$selection" != "port" ]]; then
-        printf 'Packages in %s:\n' "$selection" >&2
-        printf '  %s\n' "${PACKAGES[@]}" >&2
-        fail "$selection packages require manual installation"
-    fi
-
-    command -v port >/dev/null 2>&1 || fail "MacPorts is not installed"
-    printf 'Installing %d packages from %s...\n' "${#PACKAGES[@]}" "$selection"
-    sudo port install "${PACKAGES[@]}"
-{{ else }}    fail "unsupported operating system"
-{{ end }}}
+}
 
 main() {
     [[ $# -gt 0 ]] || { usage; exit 1; }
@@ -123,16 +146,24 @@ main() {
             usage
             ;;
         list)
-            [[ $# -le 2 ]] || fail "list accepts at most one category"
             if [[ $# -eq 1 ]]; then
                 list_categories
-            else
+            elif [[ $# -eq 2 ]]; then
                 list_packages "$2"
+            elif [[ $# -eq 4 && "$2" == "all" && "$3" == "--except" ]]; then
+                list_packages "$2" "$4"
+            else
+                fail "usage: $(basename "$0") list [CATEGORY|all [--except CATEGORY]]"
             fi
             ;;
         *)
-            [[ $# -eq 1 ]] || fail "install one category at a time, or use all"
-            install_packages "$1"
+            if [[ $# -eq 1 ]]; then
+                install_packages "$1"
+            elif [[ $# -eq 3 && "$1" == "all" && "$2" == "--except" ]]; then
+                install_packages "$1" "$3"
+            else
+                fail "usage: $(basename "$0") all [--except CATEGORY]"
+            fi
             ;;
     esac
 }
