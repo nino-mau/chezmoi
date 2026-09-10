@@ -71,6 +71,7 @@ packages:
       - claude-code
       - openai-codex
       - gdu
+      - gh-dash-bin
       - sysz
       utils:
       - timg
