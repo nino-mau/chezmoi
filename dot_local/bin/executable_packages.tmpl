@@ -4,15 +4,9 @@ set -euo pipefail
 
 PACKAGES=()
 CATEGORIES=(
-    "dev"
-    "essentials"
-    "games"
-    "gui"
-    "nerd-fonts"
-    "other"
-    "terminal-essentials"
-    "tui"
-    "utils"
+{{- range $category, $_ := .packages.linux.paru }}
+    {{ quote $category }}
+{{- end }}
 )
 
 usage() {
@@ -54,33 +48,11 @@ add_packages() {
 
 add_category() {
     case "$1" in
-        "dev")
-            add_packages "just" "mise" "docker" "docker-compose" "docker-buildx"
+{{- range $category, $packages := .packages.linux.paru }}
+        {{ quote $category }})
+            add_packages{{ range $packages }} {{ quote . }}{{ end }}
             ;;
-        "essentials")
-            add_packages "git" "noctalia" "fish" "bun" "fnm-bin" "keyd" "earlyoom" "tailscale" "greetd" "unzip" "hyprpolkitagent" "neovim-nightly-bin" "vim" "chezmoi" "tree-sitter-cli" "python" "wl-clipboard" "fd" "ripgrep" "jq" "rsync"
-            ;;
-        "games")
-            add_packages "steam" "wine" "protonup-qt-bin" "lutris"
-            ;;
-        "gui")
-            add_packages "mpv" "vicinae-bin" "vesktop-bin" "qbittorrent" "ghostty" "eddie-ui" "loupe" "nautilus"
-            ;;
-        "nerd-fonts")
-            add_packages "ttf-googlesanscode-nerd" "ttf-recursive-nerd" "ttf-jetbrains-mono" "ttf-opensans" "ttf-firacode-nerd" "maplemono-nf-unhinted"
-            ;;
-        "other")
-            add_packages "eddie-cli"
-            ;;
-        "terminal-essentials")
-            add_packages "eza" "zoxide" "fzf" "fastfetch" "tmux" "bat" "starship" "tmuxp"
-            ;;
-        "tui")
-            add_packages "lazygit" "lazydocker" "btop" "yazi" "pi-coding-agent" "opencode" "claude-code" "openai-codex" "gdu" "sysz"
-            ;;
-        "utils")
-            add_packages "timg" "ie-r" "inotify-tools" "wev" "wtype" "tesseract" "codexbar-cli" "vivify"
-            ;;
+{{- end }}
         *)
             return 1
             ;;
