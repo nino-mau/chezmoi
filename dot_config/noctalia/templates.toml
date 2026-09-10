@@ -54,3 +54,7 @@ post_hook = "bash '{{ config_dir }}/templates/zen-browser/apply.sh'"
 input_path = "templates/zen-browser/zen-userContent.css"
 output_path = "$XDG_CACHE_HOME/noctalia/zen-browser/zen-userContent.css"
 post_hook = "bash '{{ config_dir }}/templates/zen-browser/apply.sh'"
+
+[theme.templates.user.btop]
+input_path = "templates/btop/noctalia.theme"
+output_path = "$XDG_CONFIG_HOME/btop/themes/noctalia.theme"
