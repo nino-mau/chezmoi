@@ -1,0 +1,48 @@
+[Default Applications]
+text/html=zen-browser-twilight.desktop
+x-scheme-handler/http=zen-browser-twilight.desktop
+x-scheme-handler/https=zen-browser-twilight.desktop
+x-scheme-handler/about=zen.desktop
+x-scheme-handler/unknown=zen.desktop
+x-scheme-handler/claude-cli=claude-code-url-handler.desktop
+x-scheme-handler/chrome=zen-browser-twilight.desktop
+application/x-extension-htm=zen-browser-twilight.desktop
+application/x-extension-html=zen-browser-twilight.desktop
+application/x-extension-shtml=zen-browser-twilight.desktop
+application/xhtml+xml=zen-browser-twilight.desktop
+application/x-extension-xhtml=zen-browser-twilight.desktop
+application/x-extension-xht=zen-browser-twilight.desktop
+x-scheme-handler/codex=chatgpt.desktop
+x-scheme-handler/discord=vesktop.desktop
+
+; Terminal
+x-scheme-handler/terminal=com.mitchellh.ghostty.desktop
+inode/directory=yazi.desktop
+
+; Video
+video/mp4=mpv.desktop
+video/mkv=mpv.desktop
+video/webm=mpv.desktop
+
+; Image
+image/jpeg=org.gnome.Loupe.desktop;
+image/png=org.gnome.Loupe.desktop;
+image/gif=org.gnome.Loupe.desktop;
+image/webp=org.gnome.Loupe.desktop;
+image/bmp=org.gnome.Loupe.desktop;
+image/tiff=org.gnome.Loupe.desktop;
+image/svg+xml=org.gnome.Loupe.desktop;
+image/avif=org.gnome.Loupe.desktop;
+image/heic=org.gnome.Loupe.desktop;
+
+[Added Associations]
+x-scheme-handler/http=zen-browser-twilight.desktop;
+x-scheme-handler/https=zen-browser-twilight.desktop;
+x-scheme-handler/chrome=zen-browser-twilight.desktop;
+text/html=zen-browser-twilight.desktop;
+application/x-extension-htm=zen-browser-twilight.desktop;
+application/x-extension-html=zen-browser-twilight.desktop;
+application/x-extension-shtml=zen-browser-twilight.desktop;
+application/xhtml+xml=zen-browser-twilight.desktop;
+application/x-extension-xhtml=zen-browser-twilight.desktop;
+application/x-extension-xht=zen-browser-twilight.desktop;
