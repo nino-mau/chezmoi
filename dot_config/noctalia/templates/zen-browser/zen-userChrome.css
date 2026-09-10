@@ -87,6 +87,7 @@
   --input-text-color: var(--text) !important;
   --lwt-text-color: var(--text) !important;
   --toolbarbutton-icon-fill: var(--text) !important;
+  --button-icon-fill: var(--text) !important;
   --toolbar-field-color: var(--text) !important;
   --toolbar-field-focus-color: var(--text) !important;
   --toolbar-color: var(--text) !important;
@@ -313,6 +314,10 @@ toolbar .toolbarbutton-1 {
       fill: var(--text) !important;
     }
   }
+}
+
+.tab-close-button {
+  color: var(--text) !important;;
 }
 
 /* -------------------------------------------------------------------------- */
