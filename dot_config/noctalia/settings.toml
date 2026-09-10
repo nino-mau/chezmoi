@@ -12,7 +12,7 @@ end = [
   "battery",
   "notifications",
 ]
-font_family = "Maple Mono NF"
+font_family = "RecMonoCasual Nerd Font"
 margin_edge = 16
 margin_ends = 16
 start = ["control-center", "spacer_2", "group:g1", "weather", "bar", "cat"]
@@ -616,6 +616,10 @@ custom_image = "/home/nino/.local/share/icons/custom/cachy-os-colored.svg"
 custom_image_colorize = true
 glyph = ""
 scale = 1.25
+
+[widget.battery]
+display_mode = "graphic"
+show_label = false
 
 [widget.media]
 artist_first = true
