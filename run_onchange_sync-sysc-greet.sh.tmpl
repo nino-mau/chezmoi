@@ -21,6 +21,9 @@ sudo cp -r ~/.config/sysc-greet/fonts/* /usr/share/sysc-greet/fonts/
 # Copy custom theme
 sudo cp ~/.config/sysc-greet/themes/noctalia.toml /usr/share/sysc-greet/themes/noctalia.toml
 
+# Generate custom theme wallpaper
+python3 ~/.config/sysc-greet/generate-wallpapers.py --theme noctalia --output ~/.config/sysc-greet/wallpapers/
+
 # Copy themed wallpapers
 sudo cp -r ~/.config/sysc-greet/wallpapers/* /usr/share/sysc-greet/wallpapers/
 
