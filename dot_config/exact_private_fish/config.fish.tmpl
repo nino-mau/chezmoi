@@ -3,11 +3,6 @@ function fish_mode_prompt
 end
 
 if status is-interactive
-    # Theme
-    {{ if ne .chezmoi.os "darwin" }}
-      fish_theme $HOME/.config/fish/themes/catppuccin.fish
-    {{ end }}
-
     if not set -q TMUX
         clear
         fastfetch
