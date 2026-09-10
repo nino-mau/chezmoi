@@ -4,9 +4,6 @@
 # Triggered when:
 # {{ include "dot_config/sysc-greet/ascii_configs/hyprland.conf" | sha256sum }}
 # {{ include "dot_config/sysc-greet/themes/noctalia.toml" | sha256sum }}
-# {{ range glob "dot_config/sysc-greet/exact_wallpapers/*" }}
-# {{ . }} {{ include . | sha256sum }}
-# {{ end }}
 
 set -e
 
