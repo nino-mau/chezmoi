@@ -2,10 +2,15 @@
 -- Keep every connected monitor enabled. The startup script focuses the
 -- preferred external display when one exists, leaving eDP as fallback.
 hl.monitor({
-	output = "",
+	output = "HDMI-A-2",
 	mode = "preferred",
-	position = "auto",
 	scale = 1,
+})
+
+hl.workspace_rule({
+	workspace = "1",
+	monitor = "HDMI-A-2",
+	default = true,
 })
 
 hl.config({
@@ -60,6 +65,7 @@ hl.config({
 hl.window_rule({
 	name = "kitty-greeter",
 	match = { class = "^(kitty)$" },
+	workspace = "1",
 	fullscreen = true,
 	opacity = "1.0",
 })
@@ -75,6 +81,6 @@ hl.on("hyprland.start", function()
 		"gslapper -f -I /tmp/sysc-greet-wallpaper.sock '*' /usr/share/sysc-greet/wallpapers/sysc-greet-default.png"
 	)
 	hl.exec_cmd(
-		"/etc/greetd/select-greeter-monitor; XDG_CACHE_HOME=/tmp/greeter-cache HOME=/var/lib/greeter kitty --start-as=fullscreen --config=/etc/greetd/kitty.conf /usr/local/bin/sysc-greet && hyprctl dispatch exit"
+		"XDG_CACHE_HOME=/tmp/greeter-cache HOME=/var/lib/greeter kitty --start-as=fullscreen --config=/etc/greetd/kitty.conf /usr/local/bin/sysc-greet && hyprctl dispatch exit"
 	)
 end)
