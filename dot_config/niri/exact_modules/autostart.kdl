@@ -1,5 +1,4 @@
-spawn-at-startup "qs" "-c" "bar"
-spawn-at-startup "awww-daemon"
+spawn-at-startup "noctalia"
 spawn-at-startup "ie-r"
 spawn-at-startup "vicinae" "server"
 spawn-at-startup "grammalecte-server" 
