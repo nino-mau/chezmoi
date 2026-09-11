@@ -476,6 +476,7 @@ type = "button"
 
 [lockscreen_widgets.widget.lockscreen-widget-0000000000000011.settings]
 background = true
+command = "noctalia msg session reboot"
 glyph = "reload"
 variant = "default"
 
@@ -492,6 +493,7 @@ type = "button"
 
 [lockscreen_widgets.widget.lockscreen-widget-0000000000000012.settings]
 background = true
+command = "noctalia msg session logout"
 glyph = "logout"
 variant = "default"
 
@@ -508,7 +510,9 @@ type = "button"
 
 [lockscreen_widgets.widget.lockscreen-widget-0000000000000013.settings]
 background = true
+command = "noctalia msg session shutdown"
 glyph = "shutdown"
+label = ""
 variant = "destructive"
 
 [lockscreen_widgets.widget.lockscreen-widget-0000000000000014]
