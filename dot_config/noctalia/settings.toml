@@ -32,9 +32,6 @@ opacity = 1.0
 padding = 10.0
 widget_spacing = 6
 
-[config.custom_colors]
-teal = "#94e2d5"
-
 [desktop_widgets]
 enabled = false
 

@@ -12,7 +12,7 @@ filekinds:
   socket: { foreground: "{{colors.terminal_normal_white.default.hex}}" }
   special: { foreground: "{{colors.tertiary.default.hex}}" }
   executable: { foreground: "{{colors.terminal_normal_green.default.hex}}" }
-  mount_point: { foreground: "{{colors.teal.default.hex}}" }
+  mount_point: { foreground: "{{colors.terminal_normal_cyan.default.hex}}" }
 
 perms:
   user_read:
@@ -54,7 +54,7 @@ size:
   unit_kilo: { foreground: "{{colors.terminal_bright_cyan.default.hex}}" }
   unit_mega: { foreground: "{{colors.tertiary.default.hex}}" }
   unit_giga: { foreground: "{{colors.tertiary.default.hex}}" }
-  unit_huge: { foreground: "{{colors.teal.default.hex}}" }
+  unit_huge: { foreground: "{{colors.terminal_normal_cyan.default.hex}}" }
 
 users:
   user_you: { foreground: "{{colors.on_surface.default.hex}}" }
@@ -74,7 +74,7 @@ git:
   modified: { foreground: "{{colors.terminal_normal_yellow.default.hex}}" }
   deleted:
     { foreground: "{{colors.terminal_bright_red.default.hex | lighten 10}}" }
-  renamed: { foreground: "{{colors.teal.default.hex}}" }
+  renamed: { foreground: "{{colors.terminal_normal_cyan.default.hex}}" }
   typechange: { foreground: "{{colors.terminal_normal_magenta.default.hex}}" }
   ignored: { foreground: "{{colors.terminal_bright_black.default.hex}}" }
   conflicted: { foreground: "{{colors.terminal_bright_yellow.default.hex}}" }
@@ -97,7 +97,7 @@ file_type:
   image: { foreground: "{{colors.terminal_normal_yellow.default.hex}}" }
   video: { foreground: "{{colors.terminal_normal_red.default.hex}}" }
   music: { foreground: "{{colors.terminal_normal_green.default.hex}}" }
-  lossless: { foreground: "{{colors.teal.default.hex}}" }
+  lossless: { foreground: "{{colors.terminal_normal_cyan.default.hex}}" }
   crypto: { foreground: "{{colors.terminal_bright_black.default.hex}}" }
   document: { foreground: "{{colors.on_surface.default.hex}}" }
   compressed: { foreground: "{{colors.terminal_normal_magenta.default.hex}}" }
@@ -111,7 +111,7 @@ date: { foreground: "{{colors.terminal_normal_yellow.default.hex}}" }
 inode: { foreground: "{{colors.terminal_bright_white.default.hex}}" }
 blocks: { foreground: "{{colors.outline.default.hex}}" }
 header: { foreground: "{{colors.on_surface.default.hex}}" }
-octal: { foreground: "{{colors.teal.default.hex}}" }
+octal: { foreground: "{{colors.terminal_normal_cyan.default.hex}}" }
 flags: { foreground: "{{colors.tertiary.default.hex}}" }
 
 symlink_path: { foreground: "{{colors.terminal_bright_cyan.default.hex}}" }
