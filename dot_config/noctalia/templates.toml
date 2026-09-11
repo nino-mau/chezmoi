@@ -1,6 +1,4 @@
 [theme.templates]
-enable_builtin_templates = true
-enable_community_templates = true
 builtin_ids = [
   "gtk3",
   "gtk4",
@@ -11,6 +9,12 @@ builtin_ids = [
   "kitty",
 ]
 community_ids = ["bat"]
+enable_builtin_templates = true
+enable_community_templates = true
+
+[theme.templates.user.btop]
+input_path = "templates/btop/noctalia.theme"
+output_path = "$XDG_CONFIG_HOME/btop/themes/noctalia.theme"
 
 [theme.templates.user.eza]
 input_path = "$XDG_CONFIG_HOME/noctalia/templates/eza/eza.yml"
@@ -32,6 +36,10 @@ output_path = "$XDG_CONFIG_HOME/hypr/theme.lua"
 input_path = "templates/lazygit/lazygit.yml"
 output_path = "$XDG_CONFIG_HOME/lazygit/theme.yml"
 
+[theme.templates.user.pi-coding-agent]
+input_path = "templates/pi-coding-agent/noctalia.json"
+output_path = "$XDG_CONFIG_HOME/pi/themes/noctalia.json"
+
 [theme.templates.user.sysc-greet]
 input_path = "templates/sysc-greet/noctalia.toml"
 output_path = "$XDG_CONFIG_HOME/sysc-greet/themes/noctalia.toml"
@@ -49,16 +57,3 @@ output_path = "$XDG_CONFIG_HOME/yazi/flavors/noctalia.yazi/tmtheme.xml"
 input_path = "templates/zen-browser/zen-userChrome.css"
 output_path = "$XDG_CACHE_HOME/noctalia/zen-browser/zen-userChrome.css"
 post_hook = "bash '{{ config_dir }}/templates/zen-browser/apply.sh'"
-
-# [theme.templates.user.zen_browser_content]
-# input_path = "templates/zen-browser/zen-userContent.css"
-# output_path = "$XDG_CACHE_HOME/noctalia/zen-browser/zen-userContent.css"
-# post_hook = "bash '{{ config_dir }}/templates/zen-browser/apply.sh'"
-
-[theme.templates.user.btop]
-input_path = "templates/btop/noctalia.theme"
-output_path = "$XDG_CONFIG_HOME/btop/themes/noctalia.theme"
-
-[theme.templates.user.pi-coding-agent]
-input_path = "templates/pi-coding-agent/noctalia.json"
-output_path = "$XDG_CONFIG_HOME/pi/themes/noctalia.json"

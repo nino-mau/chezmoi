@@ -3,6 +3,7 @@ files = ['modules/']
 
 [bar.default]
 background_opacity = 0.64999998547136784
+capsule_thickness = 0.69999998807907104
 center = ["workspaces", "clock"]
 concave_edge_corners = true
 end = [
@@ -19,16 +20,17 @@ font_family = "RecMonoCasual Nerd Font"
 margin_edge = 16
 margin_ends = 16
 start = ["control-center", "spacer_2", "group:g1", "weather", "bar", "cat"]
+thickness = 36
 widget_spacing = 10
 
 [[bar.default.capsule_group]]
 accordion = false
 accordion_direction = "end"
 enabled = true
-fill = "surface_variant"
+fill = "primary"
 id = "g1"
 members = ["audio_visualizer", "media"]
-opacity = 1.0
+opacity = 0.10000000149011612
 padding = 10.0
 widget_spacing = 6
 
@@ -112,25 +114,72 @@ shortcut = "5"
 variant = "destructive"
 
 [theme]
-builtin = "Nord"
+builtin = "Noctalia"
 community_palette = "Atuel"
 custom_palette = "catppuccin_mocha"
 source = "custom"
+
 
 [wallpaper]
 directory = "/home/nino/.local/share/wallpapers/catppuccin"
 
 [wallpaper.default]
-path = "/home/nino/.local/share/wallpapers/catppuccin/clouds-darker.png"
+path = "/home/nino/tmp/lutgen/w78.png"
+
+[wallpaper.last]
+path = "/home/nino/tmp/lutgen/w78.png"
+
+[wallpaper.monitors.DP-1]
+path = "/home/nino/tmp/lutgen/w78.png"
+
+[wallpaper.monitors.DP-2]
+path = "/home/nino/tmp/lutgen/w78.png"
 
 [[wallpaper.favorite]]
-builtin_palette = "Noctalia"
-palette_source = "builtin"
+custom_palette = "catppuccin_mocha"
+palette_source = "custom"
 path = "/home/nino/.local/share/wallpapers/catppuccin/clouds-darker.png"
+theme_mode = "dark"
+
+[[wallpaper.favorite]]
+custom_palette = "catppuccin_mocha"
+palette_source = "custom"
+path = "/home/nino/.local/share/wallpapers/catppuccin/sand-dune.png"
+theme_mode = "dark"
+
+[[wallpaper.favorite]]
+custom_palette = "catppuccin_mocha"
+palette_source = "custom"
+path = "/home/nino/.local/share/wallpapers/catppuccin/festival-before-fight.png"
+theme_mode = "dark"
+
+[[wallpaper.favorite]]
+custom_palette = "catppuccin_mocha"
+palette_source = "custom"
+path = "/home/nino/.local/share/wallpapers/catppuccin/boy-on-windmill-light.png"
+theme_mode = "dark"
+
+[[wallpaper.favorite]]
+custom_palette = "catppuccin_mocha"
+palette_source = "custom"
+path = "/home/nino/.local/share/wallpapers/catppuccin/flowers-pink.png"
+theme_mode = "dark"
+
+[[wallpaper.favorite]]
+custom_palette = "catppuccin_mocha"
+palette_source = "custom"
+path = "/home/nino/.local/share/wallpapers/catppuccin/japanese-fullmoon.png"
+theme_mode = "dark"
+
+[[wallpaper.favorite]]
+custom_palette = "catppuccin_mocha"
+palette_source = "custom"
+path = "/home/nino/.local/share/wallpapers/catppuccin/perfect-blue.png"
 theme_mode = "dark"
 
 [widget.audio_visualizer]
 bands = 3
+font_scale = 0.95000000000000007
 mirrored = true
 width = 35
 
@@ -164,6 +213,8 @@ scale = 1.25
 
 [widget.media]
 artist_first = true
+color = "primary"
+font_scale = 0.95000000000000007
 hide_album_art = true
 hide_when_no_media = true
 max_length = 200
@@ -184,7 +235,7 @@ match_adjacent_spacing = true
 show_label = false
 
 [widget.weather]
-icon_color = "primary"
+icon_color = "tertiary"
 show_condition = false
 
 [widget.widget]
@@ -193,8 +244,9 @@ hide_on_empty = true
 type = "yuuto/arch-updater:widget"
 
 [widget.workspaces]
-empty_color = "outline"
+empty_color = "surface_variant"
+focused_output_only = true
 hide_when_empty = false
-occupied_color = "outline"
+occupied_color = "surface_variant"
 show_labels = false
-urgent_color = "outline"
+urgent_color = "error"
