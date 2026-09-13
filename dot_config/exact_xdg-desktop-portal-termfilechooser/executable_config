@@ -1,6 +1,6 @@
 [filechooser]
 cmd=yazi-wrapper.sh
-default_dir=$HOME
+default_dir=$HOME/Downloads
 env=TERMCMD='ghostty -e'
 ; Uncomment to skip creating destination save files with instructions in them
 ; create_help_file=0
@@ -9,4 +9,4 @@ env=TERMCMD='ghostty -e'
 
 ; Mode must be one of 'suggested', 'default', or 'last'.
 open_mode=suggested
-save_mode=suggested
+save_mode=default
