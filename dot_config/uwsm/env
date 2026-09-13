@@ -8,3 +8,4 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export EZA_CONFIG_DIR="$HOME/.config/eza"
 export CLAUDE_CONFIG_DIR="$HOME/.config/claude"
 export CODEX_HOME="$HOME/.config/codex"
+export GTK_USE_PORTAL=1
