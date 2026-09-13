@@ -117,23 +117,23 @@ variant = "destructive"
 builtin = "Noctalia"
 community_palette = "Atuel"
 custom_palette = "catppuccin_mocha"
+mode = "auto"
 source = "custom"
 
-
 [wallpaper]
-directory = "/home/nino/.local/share/wallpapers/catppuccin"
+directory = "/home/nino/Pictures/Wallpapers"
 
 [wallpaper.default]
-path = "/home/nino/tmp/lutgen/w78.png"
+path = "/home/nino/Pictures/Wallpapers/catppuccin/abstract-3D-cubes.png.png"
 
 [wallpaper.last]
-path = "/home/nino/tmp/lutgen/w78.png"
+path = "/home/nino/Pictures/Wallpapers/catppuccin/abstract-3D-cubes.png.png"
 
 [wallpaper.monitors.DP-1]
-path = "/home/nino/tmp/lutgen/w78.png"
+path = "/home/nino/Pictures/Wallpapers/catppuccin/abstract-3D-cubes.png.png"
 
 [wallpaper.monitors.DP-2]
-path = "/home/nino/tmp/lutgen/w78.png"
+path = "/home/nino/Pictures/Wallpapers/catppuccin/abstract-3D-cubes.png.png"
 
 [[wallpaper.favorite]]
 custom_palette = "catppuccin_mocha"
@@ -176,6 +176,10 @@ custom_palette = "catppuccin_mocha"
 palette_source = "custom"
 path = "/home/nino/.local/share/wallpapers/catppuccin/perfect-blue.png"
 theme_mode = "dark"
+
+[[wallpaper.favorite]]
+path = "/home/nino/Pictures/Wallpapers/catppuccin/abstract-3D-cubes.png.png"
+theme_mode = "auto"
 
 [widget.audio_visualizer]
 bands = 3
