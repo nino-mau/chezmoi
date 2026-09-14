@@ -3,8 +3,10 @@ packages:
     manual:
     - aerospace
     - codexbar
+    - codex
     - vivify
     - borders
+    - MapleMono-NF-unhinted
     dmg:
     - zen-twilight
     - karabiner-elements
@@ -17,10 +19,51 @@ packages:
     pkg:
     - microsoft-teams
     - tailscale
+    - sf-symbols
     port:
+    - bat
+    - btop
+    - bun
+    - chezmoi
+    - claude-code
+    - dust
+    - eza
+    - fastfetch
+    - fd
+    - fish
+    - fnm
+    - fswatch
+    - fzf
+    - gdu
+    - gh
     - git
-    - sketchybar
+    - hyperfine
+    - ImageMagick
+    - just
+    - kitty
+    - lazygit
+    - lua
+    - lua54
+    - mise
     - neovim
+    - opencode
+    - pi-coding-agent
+    - py311-tmuxp
+    - ripgrep
+    - sketchybar
+    - starship
+    - timg
+    - tmux
+    - tokei
+    - tree-sitter-cli
+    - typescript
+    - gh-dash
+    - yarn
+    - zoxide
+    nerd-fonts-script:
+    - Recursive
+    - JetBrainsMono
+    - GoogleSansCode
   linux:
     paru:
       essentials:
