@@ -65,10 +65,14 @@ def build_outputs(merged: TOMLDocument, settings: TOMLDocument) -> dict[str, str
     merged = deepcopy(merged)
     theme = require_table(merged, "theme")
     templates = require_table(theme, "templates")
+    bar = require_table(merged, "bar")
+    widgets = require_table(merged, "widget")
     lockscreen = require_table(merged, "lockscreen_widgets")
     include = require_table(settings, "include")
 
     del theme["templates"]
+    del merged["bar"]
+    del merged["widget"]
     del merged["lockscreen_widgets"]
     if "include" in merged:
         del merged["include"]
@@ -77,8 +81,10 @@ def build_outputs(merged: TOMLDocument, settings: TOMLDocument) -> dict[str, str
     settings_output: dict[str, object] = {"include": include}
     settings_output.update(cast(Mapping[str, object], merged))
     outputs: dict[str, str] = {
-        "configettings.toml": tomlkit.dumps(settings_output),
+        "config.toml": tomlkit.dumps(settings_output),
         "templates.toml": tomlkit.dumps({"theme": {"templates": templates}}),
+        "modules/bar.toml": tomlkit.dumps({"bar": bar}),
+        "modules/widgets.toml": tomlkit.dumps({"widget": widgets}),
         "modules/lockscreen.toml": tomlkit.dumps({"lockscreen_widgets": lockscreen}),
     }
     for name, content in outputs.items():

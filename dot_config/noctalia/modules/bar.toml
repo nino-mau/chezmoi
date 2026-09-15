@@ -1,0 +1,32 @@
+[bar.default]
+background_opacity = 0.64999998547136784
+capsule_thickness = 0.69999998807907104
+center = ["workspaces", "clock"]
+concave_edge_corners = true
+end = [
+  "tray",
+  "widget",
+  "network",
+  "bluetooth",
+  "volume",
+  "brightness",
+  "battery",
+  "notifications",
+]
+font_family = "RecMonoCasual Nerd Font"
+margin_edge = 16
+margin_ends = 16
+start = ["control-center", "spacer_2", "group:g1", "weather", "bar", "cat"]
+thickness = 36
+widget_spacing = 10
+
+[[bar.default.capsule_group]]
+accordion = false
+accordion_direction = "end"
+enabled = true
+fill = "primary"
+id = "g1"
+members = ["audio_visualizer", "media"]
+opacity = 0.10000000149011612
+padding = 10.0
+widget_spacing = 6
