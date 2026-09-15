@@ -104,6 +104,8 @@ packages:
       - ttf-opensans
       - ttf-firacode-nerd
       - maplemono-nf-unhinted
+      fonts:
+      - ttf-recursive
       tui:
       - lazygit
       - lazydocker
