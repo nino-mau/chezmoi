@@ -12,7 +12,7 @@ filekinds:
   socket: { foreground: "#bac2de" }
   special: { foreground: "#cba6f7" }
   executable: { foreground: "#a6e3a1" }
-  mount_point: { foreground: "#85d4d7" }
+  mount_point: { foreground: "#94e2d5" }
 
 perms:
   user_read:
@@ -54,7 +54,7 @@ size:
   unit_kilo: { foreground: "#94e2d5" }
   unit_mega: { foreground: "#cba6f7" }
   unit_giga: { foreground: "#cba6f7" }
-  unit_huge: { foreground: "#85d4d7" }
+  unit_huge: { foreground: "#94e2d5" }
 
 users:
   user_you: { foreground: "#cdd6f4" }
@@ -74,7 +74,7 @@ git:
   modified: { foreground: "#f9e2af" }
   deleted:
     { foreground: "#f8b9cb" }
-  renamed: { foreground: "#85d4d7" }
+  renamed: { foreground: "#94e2d5" }
   typechange: { foreground: "#f5c2e7" }
   ignored: { foreground: "#585b70" }
   conflicted: { foreground: "#f9e2af" }
@@ -97,7 +97,7 @@ file_type:
   image: { foreground: "#f9e2af" }
   video: { foreground: "#f38ba8" }
   music: { foreground: "#a6e3a1" }
-  lossless: { foreground: "#85d4d7" }
+  lossless: { foreground: "#94e2d5" }
   crypto: { foreground: "#585b70" }
   document: { foreground: "#cdd6f4" }
   compressed: { foreground: "#f5c2e7" }
@@ -111,7 +111,7 @@ date: { foreground: "#f9e2af" }
 inode: { foreground: "#a6adc8" }
 blocks: { foreground: "#6c7086" }
 header: { foreground: "#cdd6f4" }
-octal: { foreground: "#85d4d7" }
+octal: { foreground: "#94e2d5" }
 flags: { foreground: "#cba6f7" }
 
 symlink_path: { foreground: "#94e2d5" }
