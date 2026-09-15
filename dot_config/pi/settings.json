@@ -5,7 +5,8 @@
   "packages": [
     "npm:pi-nvim",
     "npm:@juicesharp/rpiv-ask-user-question",
-    "npm:@juicesharp/rpiv-btw"
+    "npm:@juicesharp/rpiv-btw",
+    "npm:pi-package-ovh-ai-chat"
   ],
   "theme": "noctalia",
   "retry": {
