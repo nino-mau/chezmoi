@@ -55,19 +55,21 @@ set -g @nvim_icon ""
 set -g @git_icon ""
 set -g @btop_icon "󰄦"
 set -g @python_icon ""
-set -g @bash_icon ""
+set -g @bash_icon ""
 set -g @ssh_icon ""
+set -g @webpack_icon ""
 set -g @node_icon ""
 set -g @bun_icon ""
 set -g @claude_icon ""
 set -g @cargo_icon ""
 set -g @lua_icon "k"
 set -g @fzf_icon "󱩾"
-set -g @agent_icon "󱜙"
+set -g @agent_icon ""
 set -g @rustc_icon ""
 set -g @docker_icon "󰡨"
 set -g @default_icon ""
 set -g @ruby_icon ""
+set -g @process_icon ""
 
 set -g automatic-rename off
 set -g allow-rename off
@@ -86,9 +88,9 @@ set -g window-status-format '\
 #{?#{==:#{E:@pane_process},docker-compose}, #{@docker_icon} ,\
 #{?#{==:#{E:@pane_process},ruby}, #{@ruby_icon} ,\
 #{?#{==:#{E:@pane_process},python}, #{@python_icon} ,\
-#{?#{==:#{E:@pane_process},bash}, #{@bash_icon} ,\
+#{?#{==:#{E:@pane_process},bash}, #{@process_icon} ,\
 #{?#{==:#{E:@pane_process},ssh}, #{@ssh_icon} ,\
-#{?#{==:#{E:@pane_process},node}, #{@node_icon} ,\
+#{?#{==:#{E:@pane_process},node}, #{@process_icon} ,\
 #{?#{==:#{E:@pane_process},bun}, #{@bun_icon} ,\
 #{?#{==:#{E:@pane_process},cargo}, #{@cargo_icon} ,\
 #{?#{==:#{E:@pane_process},rustc}, #{@rustc_icon} ,\
@@ -99,7 +101,9 @@ set -g window-status-format '\
 #{?#{==:#{E:@pane_process},pi}, #{@agent_icon} ,\
 #{?#{==:#{E:@pane_process},claude}, #{@claude_icon} ,\
 #{?#{==:#{E:@pane_process},brew}, #{@brew_icon} ,\
- #{@default_icon} }}}}}}}}}}}}}}}}}}}}}}}}}}}'
+#{?#{==:#{E:@pane_process},webpack}, #{@process_icon} ,\
+#{?#{==:#{E:@pane_process},caffeinate}, #{@claude_icon} ,\
+ #{@default_icon} }}}}}}}}}}}}}}}}}}}}}}}}}}}}}'
 set -g window-status-current-format '\
 #{?#{==:#{E:@pane_process},zsh}, #{@term_icon} ,\
 #{?#{==:#{E:@pane_process},fish}, #{@term_icon} ,\
@@ -115,9 +119,9 @@ set -g window-status-current-format '\
 #{?#{==:#{E:@pane_process},docker-compose}, #{@docker_icon} ,\
 #{?#{==:#{E:@pane_process},ruby}, #{@ruby_icon} ,\
 #{?#{==:#{E:@pane_process},python}, #{@python_icon} ,\
-#{?#{==:#{E:@pane_process},bash}, #{@bash_icon} ,\
+#{?#{==:#{E:@pane_process},bash}, #{@process_icon} ,\
 #{?#{==:#{E:@pane_process},ssh}, #{@ssh_icon} ,\
-#{?#{==:#{E:@pane_process},node}, #{@node_icon} ,\
+#{?#{==:#{E:@pane_process},node}, #{@process_icon} ,\
 #{?#{==:#{E:@pane_process},bun}, #{@bun_icon} ,\
 #{?#{==:#{E:@pane_process},cargo}, #{@cargo_icon} ,\
 #{?#{==:#{E:@pane_process},rustc}, #{@rustc_icon} ,\
@@ -128,7 +132,9 @@ set -g window-status-current-format '\
 #{?#{==:#{E:@pane_process},pi}, #{@agent_icon} ,\
 #{?#{==:#{E:@pane_process},claude}, #{@claude_icon} ,\
 #{?#{==:#{E:@pane_process},brew}, #{@brew_icon} ,\
- #{@default_icon} }}}}}}}}}}}}}}}}}}}}}}}}}}}'
+#{?#{==:#{E:@pane_process},webpack}, #{@process_icon} ,\
+#{?#{==:#{E:@pane_process},caffeinate}, #{@claude_icon} ,\
+ #{@default_icon} }}}}}}}}}}}}}}}}}}}}}}}}}}}}}'
  
 # window style
 set -g window-status-style "bg=default,fg=#{@thm_surface_2}"
