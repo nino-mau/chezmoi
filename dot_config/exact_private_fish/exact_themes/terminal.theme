@@ -1,7 +1,7 @@
 # name: 'Terminal'
 # Uses the active terminal ANSI palette.
 
-fish_color_quote magenta
+fish_color_quote brmagenta
 fish_color_command blue
 fish_color_redirection blue --bold
 fish_color_end blue
@@ -12,8 +12,8 @@ fish_color_selection normal --bold --background=brblack
 fish_color_search_match normal --background=brblack
 fish_color_history_current --bold
 fish_color_operator blue
-fish_color_escape magenta
-fish_color_cwd magenta
+fish_color_escape brmagenta
+fish_color_cwd brmagenta
 fish_color_cwd_root red
 fish_color_option
 fish_color_valid_path --underline=single
