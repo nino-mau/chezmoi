@@ -1,8 +1,9 @@
 # Relative path	Git origin
 fastapi/full-stack-fastapi-template	https://github.com/fastapi/full-stack-fastapi-template
-neovim/LazyVim	https://github.com/LazyVim/LazyVim
-neovim/NvChad	https://github.com/NvChad/NvChad.git
-neovim/nvchad-ui	https://github.com/NvChad/ui.git
+LazyVim	https://github.com/LazyVim/LazyVim
+nvchad/source	https://github.com/NvChad/NvChad.git
+nvchad/nvui	https://github.com/NvChad/ui.git
+nvchad/base46 https://github.com/NvChad/base46.git
 nuxt/kanri	https://github.com/kanriapp/kanri
 nuxt/nuxt-dashboard-template	https://github.com/nuxt-ui-templates/dashboard
 nuxt/nuxt-ui	https://github.com/nuxt/ui
