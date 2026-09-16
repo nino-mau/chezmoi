@@ -131,6 +131,7 @@ packages:
       dev:
       - just
       - mise
+      - uv
       - docker
       - docker-compose
       - docker-buildx
