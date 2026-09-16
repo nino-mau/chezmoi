@@ -84,7 +84,7 @@ variant = "destructive"
 builtin = "Noctalia"
 community_palette = "Atuel"
 custom_palette = "catppuccin_mocha"
-mode = "auto"
+mode = "dark"
 source = "custom"
 
 [wallpaper]
