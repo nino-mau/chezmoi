@@ -1,13 +1,5 @@
 [theme.templates]
-builtin_ids = [
-  "gtk3",
-  "gtk4",
-  "ghostty",
-  "kcolorscheme",
-  "qt",
-  "starship",
-  "kitty",
-]
+builtin_ids = ["gtk3", "gtk4", "kcolorscheme", "qt", "starship", "kitty"]
 community_ids = ["bat"]
 enable_builtin_templates = true
 enable_community_templates = true
@@ -57,3 +49,9 @@ output_path = "$XDG_CONFIG_HOME/yazi/flavors/noctalia.yazi/tmtheme.xml"
 input_path = "templates/zen-browser/zen-userChrome.css"
 output_path = "$XDG_CACHE_HOME/noctalia/zen-browser/zen-userChrome.css"
 post_hook = "bash '{{ config_dir }}/templates/zen-browser/apply.sh'"
+
+[theme.templates.user.ghostty]
+input_path = "templates/ghostty/ghostty"
+output_path = "$XDG_CONFIG_HOME/ghostty/themes/noctalia"
+post_hook = "bash '{{ config_dir }}/templates/ghostty/apply.sh'"
+undo_hook = "bash '{{ config_dir }}/templates/ghostty/undo.sh'"
