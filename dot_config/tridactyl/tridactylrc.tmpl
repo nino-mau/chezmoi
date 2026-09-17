@@ -8,6 +8,12 @@ set update.nagwait 7
 set update.lastnaggedversion 1.14.0
 set update.checkintervalsecs 86400
 set configversion 2.0
+{{ if eq .chezmoi.os "darwin" -}}
+" set editorcmd open -W -n -a kitty --args -e /opt/local/bin/nvim %f
+set editorcmd open -W -n -a Ghostty --args --quit-after-last-window-closed=true "--initial-command=direct:/opt/local/bin/nvim %f"
+{{ else -}}
+set editorcmd ghostty -e nvim
+{{ end -}}
 
 unbindurl ^https?://.*excalidraw\.com/ <C-v>
 unbindurl ^https?://.*excalidraw\.com/ <C-c>
@@ -20,6 +26,8 @@ bind <C-,> exclaim_quiet /Applications/Twilight.app/Contents/MacOS/zen --new-tab
 {{ else -}}
 bind <C-,> exclaim_quiet zen-twilight --new-tab about:preferences
 {{ end -}}
+bind <C-i> editor
+bind dd tabclose
 bind dd tabclose
 unbind d
 bind K tabprev
@@ -75,8 +83,6 @@ bind $ scrollto 100 x
 bind ^ scrollto 0 x
 bind H back
 bind L forward
-bind <C-o> jumpprev
-bind <C-i> jumpnext
 bind D js tri.excmds.composite('tabprev;', 'tabclose #')
 bind gx0 tabclosealltoleft
 bind gx$ tabclosealltoright
