@@ -9,5 +9,5 @@ The ui and looks come from [nvui](https://github.com/NvChad/ui), while the behav
 
 I keep the source code of both of these on my system, you can use them as reference:
 
-- [ /home/nino/Code/reference/neovim/LazyVim ]
-- [ /home/nino/Code/reference/neovim/nvchad-ui ]
+- [~/Code/reference/neovim/LazyVim]
+- [~/Code/reference/neovim/nvchad-ui]

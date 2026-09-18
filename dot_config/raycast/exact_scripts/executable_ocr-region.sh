@@ -2,7 +2,7 @@
 # @raycast.schemaVersion 1
 # @raycast.title Extract Text OCR
 # @raycast.mode silent
-# @raycast.icon /Users/nino/.config/raycast/scripts/assets/ocr_script_icon.png
+# @raycast.icon ./assets/ocr_script_icon.png
 
 tmp=$(mktemp /tmp/ocr_XXXXXX.png)
 /usr/sbin/screencapture -i "$tmp" || {
@@ -16,7 +16,7 @@ if [ ! -s "$tmp" ]; then
   exit 1
 fi
 
-text=$(/Users/nino/.local/bin/vision-ocr "$tmp" 2>&1)
+text=$("$HOME/.local/bin/vision-ocr" "$tmp" 2>&1)
 ocr_exit=$?
 rm -f "$tmp"
 

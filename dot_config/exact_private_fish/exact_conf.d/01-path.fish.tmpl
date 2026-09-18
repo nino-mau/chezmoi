@@ -6,9 +6,6 @@ fish_add_path $HOME/.local/bin
 # opencode
 fish_add_path $HOME/.opencode/bin
 
-# uv
-fish_add_path "/home/nino/.local/share/../bin"
-
 # pnpm
 set -gx PNPM_HOME "$HOME/.local/share/pnpm"
 if not string match -q -- "*$PNPM_HOME*" "$PATH"
@@ -25,7 +22,7 @@ end
 {{ if eq .chezmoi.os "darwin" -}}
 set -gx BUN_INSTALL "$HOME/.bun"
 fish_add_path $BUN_INSTALL/bin
-fish_add_path "/Users/nino/.bun/bin"
+fish_add_path "$HOME/.bun/bin"
 {{ else -}}
 # programs installed with bun 
 fish_add_path "/home/nino/.cache/.bun/bin"
