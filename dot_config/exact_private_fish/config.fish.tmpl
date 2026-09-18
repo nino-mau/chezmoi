@@ -2,7 +2,17 @@
 function fish_mode_prompt
 end
 
+source $__fish_config_dir/modules/env.fish
+source $__fish_config_dir/modules/path.fish
+
 if status is-interactive
+    # Load Theme
+    fish_config theme choose terminal
+
+    source $__fish_config_dir/modules/init.fish
+    source $__fish_config_dir/modules/keybindings.fish
+    source $__fish_config_dir/modules/alias.fish
+
     if not set -q TMUX
         clear
         fastfetch
