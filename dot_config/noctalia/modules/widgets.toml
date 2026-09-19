@@ -79,5 +79,6 @@ empty_color = "outline"
 focused_output_only = true
 hide_when_empty = false
 occupied_color = "outline"
+show_icons = false
 show_labels = false
 urgent_color = "error"
