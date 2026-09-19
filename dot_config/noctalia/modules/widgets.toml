@@ -1,7 +1,7 @@
 [widget.audio_visualizer]
-bands = 3
+bands = 11
 font_scale = 0.95000000000000007
-mirrored = true
+mirrored = false
 width = 35
 
 [widget.bar]
@@ -15,6 +15,7 @@ display_mode = "graphic"
 show_label = false
 
 [widget.cat]
+enabled = false
 input_devices = ["/dev/input/event*"]
 type = "noctalia/bongocat:cat"
 
@@ -32,6 +33,9 @@ custom_image_colorize = true
 glyph = ""
 scale = 1.25
 
+[widget.cpu]
+show_value = false
+
 [widget.media]
 artist_first = true
 color = "primary"
@@ -39,13 +43,19 @@ font_scale = 0.95000000000000007
 hide_album_art = true
 hide_when_no_media = true
 max_length = 200
-title_scroll = "on_hover"
+title_scroll = "none"
 
 [widget.network]
 show_vpn_label = true
 
+[widget.ram]
+show_value = false
+
 [widget.spacer_2]
 type = "spacer"
+
+[widget.temp]
+show_value = false
 
 [widget.tray]
 drawer = true
@@ -56,7 +66,7 @@ match_adjacent_spacing = true
 show_label = false
 
 [widget.weather]
-icon_color = "tertiary"
+icon_color = "secondary"
 show_condition = false
 
 [widget.widget]
@@ -65,9 +75,9 @@ hide_on_empty = true
 type = "yuuto/arch-updater:widget"
 
 [widget.workspaces]
-empty_color = "surface_variant"
+empty_color = "outline"
 focused_output_only = true
 hide_when_empty = false
-occupied_color = "surface_variant"
+occupied_color = "outline"
 show_labels = false
 urgent_color = "error"

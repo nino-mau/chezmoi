@@ -30,7 +30,13 @@ flatpak_enabled = false
 notify_on_updates = false
 
 [plugins]
-enabled = ["noctalia/bongocat", "yuuto/arch-updater"]
+enabled = [
+  "noctalia/bongocat",
+  "yuuto/arch-updater",
+  "dotnetrob/cat",
+  "salemsayed/codexbar-meter",
+  "noctalia/wallhaven",
+]
 
 [shell]
 clipboard_enabled = false
@@ -91,16 +97,16 @@ source = "custom"
 directory = "/home/nino/Pictures/Wallpapers"
 
 [wallpaper.default]
-path = "/home/nino/Pictures/Wallpapers/catppuccin/abstract-3D-cubes.png.png"
+path = "/home/nino/Pictures/Wallpapers/catppuccin/pixel-city-view.jpg"
 
 [wallpaper.last]
-path = "/home/nino/Pictures/Wallpapers/catppuccin/abstract-3D-cubes.png.png"
+path = "/home/nino/Pictures/Wallpapers/catppuccin/pixel-city-view.jpg"
 
 [wallpaper.monitors.DP-1]
-path = "/home/nino/Pictures/Wallpapers/catppuccin/abstract-3D-cubes.png.png"
+path = "/home/nino/Pictures/Wallpapers/catppuccin/pixel-city-view.jpg"
 
 [wallpaper.monitors.DP-2]
-path = "/home/nino/Pictures/Wallpapers/catppuccin/abstract-3D-cubes.png.png"
+path = "/home/nino/Pictures/Wallpapers/catppuccin/pixel-city-view.jpg"
 
 [[wallpaper.favorite]]
 custom_palette = "catppuccin_mocha"
