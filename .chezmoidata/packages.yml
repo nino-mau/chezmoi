@@ -151,3 +151,4 @@ packages:
       - lutris
       other:
       - eddie-cli
+      - millennium-bin
