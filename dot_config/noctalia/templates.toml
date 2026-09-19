@@ -1,6 +1,6 @@
 [theme.templates]
 builtin_ids = ["gtk3", "gtk4", "kcolorscheme", "qt", "starship", "kitty"]
-community_ids = ["bat"]
+community_ids = ["bat", "steam"]
 enable_builtin_templates = true
 enable_community_templates = true
 
