@@ -1,0 +1,12 @@
+#!/bin/sh
+
+system_profiler SPBluetoothDataType -json |
+  jq -r '
+    .SPBluetoothDataType[0].device_connected[]? |
+    to_entries[] |
+    select(.value.device_minorType | test("Headphones|Speaker"; "i")) |
+    .value.device_address
+  ' |
+  while read -r addr; do
+    blueutil --disconnect "$addr"
+  done
