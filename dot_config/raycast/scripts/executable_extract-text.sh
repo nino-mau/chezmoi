@@ -1,8 +1,8 @@
 #!/bin/bash
 # @raycast.schemaVersion 1
-# @raycast.title Extract Text OCR
+# @raycast.title Extract Text
 # @raycast.mode silent
-# @raycast.icon ./assets/ocr_script_icon.png
+# @raycast.icon ./assets/extract-text.png
 
 tmp=$(mktemp /tmp/ocr_XXXXXX.png)
 /usr/sbin/screencapture -i "$tmp" || {
