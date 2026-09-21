@@ -1,5 +1,7 @@
 packages:
   darwin:
+    cargo:
+    - tv
     manual:
     - aerospace
     - codexbar
