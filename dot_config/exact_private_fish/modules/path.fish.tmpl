@@ -18,11 +18,16 @@ if test -d "$FNM_PATH"
     set PATH "$FNM_PATH" $PATH
 end
 
-# bun
 {{ if eq .chezmoi.os "darwin" -}}
+# Macports
+fish_add_path --prepend /opt/local/bin /opt/local/sbin
+
+# Cargo
+fish_add_path "$HOME/.cargo/bin"
+
+# Bun
 set -gx BUN_INSTALL "$HOME/.bun"
 fish_add_path $BUN_INSTALL/bin
-fish_add_path "$HOME/.bun/bin"
 {{ else -}}
 # programs installed with bun 
 fish_add_path "/home/nino/.cache/.bun/bin"
