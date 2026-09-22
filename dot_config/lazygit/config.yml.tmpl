@@ -13,7 +13,11 @@ customCommands:
   - key: "C"
     context: "files"
     description: "Generate commit message with Opencode"
+    {{ if eq .chezmoi.os "darwin" -}}
+    command: "fnm exec --using 22 -- pi --model openai-codex/gpt-5.6-luna:minimal -p '/cmsg'"
+    {{ else -}}
     command: "pi --model openai-codex/gpt-5.6-luna:minimal -p '/cmsg'"
+    {{ end -}}
     output: log
   - key: "U"
     context: "files"
