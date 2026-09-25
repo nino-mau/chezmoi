@@ -54,3 +54,7 @@ output_path = "$XDG_CONFIG_HOME/yazi/flavors/noctalia.yazi/tmtheme.xml"
 [theme.templates.user.zen]
 input_path = "templates/zen/colors.css"
 output_path = "$XDG_CONFIG_HOME/zen-chrome/colors.css"
+
+[theme.templates.user.neovim]
+input_path = "templates/neovim/noctalia.lua"
+output_path = "$XDG_CONFIG_HOME/nvim/lua/themes/noctalia.lua"
