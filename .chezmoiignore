@@ -52,5 +52,6 @@ scrapJJKTranscript/
 .config/eza/theme.yml
 .config/lazygit/theme.yml
 .config/fzf/fzfrc
+.config/zen-chrome/colors.css
 {{ end }}
 

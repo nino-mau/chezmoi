@@ -51,7 +51,6 @@ post_hook = "bash '{{ config_dir }}/templates/yazi/apply.sh'"
 input_path = "templates/yazi/yazi.tmTheme"
 output_path = "$XDG_CONFIG_HOME/yazi/flavors/noctalia.yazi/tmtheme.xml"
 
-[theme.templates.user.zen_browser_chrome]
-input_path = "templates/zen-browser/zen-userChrome.css"
-output_path = "$XDG_CACHE_HOME/noctalia/zen-browser/zen-userChrome.css"
-post_hook = "bash '{{ config_dir }}/templates/zen-browser/apply.sh'"
+[theme.templates.user.zen]
+input_path = "templates/zen/colors.css"
+output_path = "$XDG_CONFIG_HOME/zen-chrome/colors.css"

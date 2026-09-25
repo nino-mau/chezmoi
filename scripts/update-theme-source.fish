@@ -5,7 +5,7 @@ set -l themes \
     "$HOME/.config/eza/theme.yml" "dot_config/eza/theme.yml" \
     "$HOME/.config/fzf/fzfrc" dot_config/fzf/fzfrc \
     "$HOME/.config/lazygit/theme.yml" "dot_config/lazygit/theme.yml" \
-    "$HOME/.cache/noctalia/zen-browser/zen-userChrome.css" "dot_config/zen-chrome/userChrome.css"
+    "$HOME/.config/zen-chrome/colors.css" "dot_config/zen-chrome/colors.css"
 
 for index in (seq 1 2 (count $themes))
     set -l live_path $themes[$index]
