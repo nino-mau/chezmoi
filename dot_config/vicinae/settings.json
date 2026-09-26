@@ -56,11 +56,6 @@
             }
          }
       },
-      "@c4n4m1/store.vicinae.zoxide-recent-directories": {
-         "preferences": {
-            "application": "nvim"
-         }
-      },
       "@dru89/store.raycast.obsidian-bookmarks": {
          "preferences": {
             "vaultPath": "/home/nino/.obsidian/Main",
