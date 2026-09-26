@@ -34,6 +34,10 @@ output_path = "$XDG_CONFIG_HOME/hypr/theme.lua"
 input_path = "templates/lazygit/lazygit.yml"
 output_path = "$XDG_CONFIG_HOME/lazygit/theme.yml"
 
+[theme.templates.user.neovim]
+input_path = "templates/neovim/noctalia.lua"
+output_path = "$XDG_CONFIG_HOME/nvim/lua/themes/noctalia.lua"
+
 [theme.templates.user.pi-coding-agent]
 input_path = "templates/pi-coding-agent/noctalia.json"
 output_path = "$XDG_CONFIG_HOME/pi/themes/noctalia.json"
@@ -54,7 +58,3 @@ output_path = "$XDG_CONFIG_HOME/yazi/flavors/noctalia.yazi/tmtheme.xml"
 [theme.templates.user.zen]
 input_path = "templates/zen/colors.css"
 output_path = "$XDG_CONFIG_HOME/zen-chrome/colors.css"
-
-[theme.templates.user.neovim]
-input_path = "templates/neovim/noctalia.lua"
-output_path = "$XDG_CONFIG_HOME/nvim/lua/themes/noctalia.lua"

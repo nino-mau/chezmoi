@@ -20,7 +20,7 @@ position = "bottom_center"
 position_vertical = "center_right"
 
 [osd.kinds]
-media = false
+media = true
 
 [plugin_settings."yuuto/arch-updater"]
 aur_helper = "paru"
@@ -40,7 +40,7 @@ enabled = [
 
 [shell]
 clipboard_enabled = false
-font_family = "Maple Mono NF"
+font_family = "RecMonoLinear Nerd Font"
 lang = "en"
 password_style = "random"
 telemetry_enabled = true
