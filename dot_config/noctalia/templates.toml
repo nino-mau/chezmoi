@@ -58,3 +58,7 @@ output_path = "$XDG_CONFIG_HOME/yazi/flavors/noctalia.yazi/tmtheme.xml"
 [theme.templates.user.zen]
 input_path = "templates/zen/colors.css"
 output_path = "$XDG_CONFIG_HOME/zen-chrome/colors.css"
+
+[theme.templates.user.television]
+input_path = "templates/television/noctalia.toml"
+output_path = "$XDG_CONFIG_HOME/television/themes/noctalia.toml"

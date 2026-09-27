@@ -1,0 +1,27 @@
+# general
+border_fg = "{{ colors.outline_variant.default.hex }}"
+text_fg = "{{ colors.terminal_foreground.default.hex }}"
+dimmed_text_fg = "{{ colors.on_surface_variant.default.hex }}"
+
+# input
+input_text_fg = "{{ colors.primary.default.hex }}"
+result_count_fg = "{{ colors.primary.default.hex }}"
+
+# results
+result_name_fg = "{{ colors.terminal_foreground.default.hex }}"
+result_line_number_fg = "{{ colors.primary.default.hex }}"
+result_value_fg = "{{ colors.on_surface_variant.default.hex }}"
+selection_fg = "{{ colors.terminal_selection_fg.default.hex }}"
+selection_bg = "{{ colors.surface_variant.default.hex }}"
+match_fg = "{{ colors.terminal_normal_red.default.hex }}"
+
+# preview
+preview_title_fg = "{{ colors.primary.default.hex }}"
+
+# modes
+channel_mode_fg = "{{ colors.background.default.hex }}"
+channel_mode_bg = "{{ colors.primary.default.hex }}"
+remote_control_mode_fg = "{{ colors.background.default.hex }}"
+remote_control_mode_bg = "{{ colors.secondary.default.hex }}"
+action_picker_mode_fg = "{{ colors.background.default.hex }}"
+action_picker_mode_bg = "{{ colors.tertiary.default.hex }}"
