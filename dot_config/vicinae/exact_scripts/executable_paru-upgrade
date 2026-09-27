@@ -1,3 +1,4 @@
+#!/usr/bin/env bash   
 # @vicinae.schemaVersion 1
 # @vicinae.exec ["/bin/bash"]
 # @vicinae.title Upgrade
