@@ -186,7 +186,8 @@
             },
             "logout": {
                "preferences": {
-                  "confirm": false
+                  "confirm": false,
+                  "customProgram": "noctalia msg session logout"
                }
             },
             "power-off": {
@@ -197,7 +198,13 @@
             },
             "reboot": {
                "preferences": {
-                  "confirm": false
+                  "confirm": false,
+                  "customProgram": "noctalia msg session reboot"
+               }
+            },
+            "sleep": {
+               "preferences": {
+                  "confirm": true
                }
             }
          }
