@@ -1,0 +1,7 @@
+#!/usr/bin/env bash   
+# @vicinae.schemaVersion 1
+# @vicinae.exec ["/bin/bash"]
+# @vicinae.title Noctalia Settings
+# @vicinae.mode silent
+# @vicinae.icon /usr/share/icons/hicolor/scalable/apps/noctalia.svg
+noctalia msg settings-open
