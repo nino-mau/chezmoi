@@ -132,7 +132,7 @@ cmd-down = 'focus-monitor --wrap-around down'
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
 cmd-h = 'focus left'
 cmd-j = 'focus down'
-cmd-shift-k = 'focus up'
+cmd-k = 'focus up'
 cmd-l = 'focus right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
