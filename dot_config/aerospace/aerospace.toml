@@ -192,9 +192,9 @@ if.app-id = 'com.mitchellh.ghostty'
 run = [
   'move-node-to-workspace 1',
   '''exec-and-forget
-count=$(aerospace list-windows --workspace 1 --app-bundle-id com.mitchellh.ghostty --count)
+count=$($HOME/.local/bin/aerospace list-windows --workspace 1 --app-bundle-id com.mitchellh.ghostty --count)
 if [ "$count" -eq 3 ]; then
-  aerospace join-with --window-id "$AEROSPACE_WINDOW_ID" left
+  $HOME/.local/bin/aerospace join-with --window-id "$AEROSPACE_WINDOW_ID" left
 fi
 ''',
 ]
