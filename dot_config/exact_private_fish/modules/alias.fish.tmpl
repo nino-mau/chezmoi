@@ -25,7 +25,7 @@ alias i="sudo port install"
 alias r="sudo port uninstall"
 alias upgrade="sudo port selfupdate && sudo port -bp upgrade outdated"
 abbr -a ps "port search" # Search packages
-abbr -a pl "port installed requested" # List explicitly installed packages
+abbr -a pl "port echo requested and active" # List explicitly installed packages
 {{ else -}}
 alias i="paru -S"
 alias r="paru -R"
