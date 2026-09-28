@@ -17,6 +17,8 @@ packages:
         url: https://github.com/subframe7536/maple-font/releases/latest/download/MapleMono-NF-unhinted.zip
       - name: ArrowType-Recursive
         url: https://github.com/arrowtype/recursive/releases/latest/download/ArrowType-Recursive-1.085.zip
+      - name: "Xcode 16.4"
+        url: https://developer.apple.com/download/all/?q=Xcode%2016.4
     dmg:
       - zen-twilight
       - karabiner-elements
@@ -32,8 +34,10 @@ packages:
       - sf-symbols
     port:
       - bat
+      - blueutil
       - btop
       - bun
+      - cargo
       - chezmoi
       - claude-code
       - dust
@@ -62,6 +66,8 @@ packages:
       - ripgrep
       - sketchybar
       - starship
+      - sleepwatcher
+      - rsync
       - timg
       - tmux
       - tokei
