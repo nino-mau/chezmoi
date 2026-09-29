@@ -1,85 +1,85 @@
 packages:
   darwin:
     cargo:
-      - tv
+      - "tv"
     manual:
-      - name: aerospace
+      - name: "aerospace"
         url: null
-      - name: codexbar
+      - name: "codexbar"
         url: null
-      - name: codex
+      - name: "codex"
         url: null
-      - name: vivify
+      - name: "vivify"
         url: null
-      - name: borders
+      - name: "borders"
         url: null
-      - name: MapleMono-NF-unhinted
-        url: https://github.com/subframe7536/maple-font/releases/latest/download/MapleMono-NF-unhinted.zip
-      - name: ArrowType-Recursive
-        url: https://github.com/arrowtype/recursive/releases/latest/download/ArrowType-Recursive-1.085.zip
+      - name: "MapleMono-NF-unhinted"
+        url: "https://github.com/subframe7536/maple-font/releases/latest/download/MapleMono-NF-unhinted.zip"
+      - name: "ArrowType-Recursive"
+        url: "https://github.com/arrowtype/recursive/releases/latest/download/ArrowType-Recursive-1.085.zip"
       - name: "Xcode 16.4"
-        url: https://developer.apple.com/download/all/?q=Xcode%2016.4
+        url: "https://developer.apple.com/download/all/?q=Xcode%2016.4"
     dmg:
-      - zen-twilight
-      - karabiner-elements
-      - ghostty
-      - raycast
-      - port
-      - helium
-      - obsidian
-      - kitty
+      - "zen-twilight"
+      - "karabiner-elements"
+      - "ghostty"
+      - "raycast"
+      - "port"
+      - "helium"
+      - "obsidian"
+      - "kitty"
     pkg:
-      - microsoft-teams
-      - tailscale
-      - sf-symbols
+      - "microsoft-teams"
+      - "tailscale"
+      - "sf-symbols"
     port:
-      - bat
-      - blueutil
-      - btop
-      - bun
-      - cargo
-      - chezmoi
-      - claude-code
-      - dust
-      - eza
-      - fastfetch
-      - fd
-      - fish
-      - fnm
-      - fswatch
-      - fzf
-      - gdu
-      - gh
-      - git
-      - hyperfine
-      - ImageMagick
-      - just
-      - kitty
-      - lazygit
-      - lua
-      - lua54
-      - mise
-      - neovim
-      - opencode
-      - pi-coding-agent
-      - py311-tmuxp
-      - ripgrep
-      - sketchybar
-      - starship
-      - sleepwatcher
-      - rsync
-      - timg
-      - tmux
-      - tokei
-      - tree-sitter-cli
-      - typescript
-      - gh-dash
-      - yarn
-      - zoxide
+      - "bat"
+      - "blueutil"
+      - "btop"
+      - "bun"
+      - "cargo"
+      - "chezmoi"
+      - "claude-code"
+      - "dust"
+      - "eza"
+      - "fastfetch"
+      - "fd"
+      - "fish"
+      - "fnm"
+      - "fswatch"
+      - "fzf"
+      - "gdu"
+      - "gh"
+      - "git"
+      - "hyperfine"
+      - "ImageMagick"
+      - "just"
+      - "kitty"
+      - "lazygit"
+      - "lua"
+      - "lua54"
+      - "mise"
+      - "neovim"
+      - "opencode"
+      - "pi-coding-agent"
+      - "py311-tmuxp"
+      - "ripgrep"
+      - "sketchybar"
+      - "starship"
+      - "sleepwatcher"
+      - "rsync"
+      - "timg"
+      - "tmux"
+      - "tokei"
+      - "tree-sitter-cli"
+      - "typescript"
+      - "gh-dash"
+      - "yarn"
+      - "zoxide"
     nerd-fonts-script:
-      - Recursive
-      - JetBrainsMono
-      - GoogleSansCode
+      - "Recursive"
+      - "JetBrainsMono"
+      - "GoogleSansCode"
   linux:
     paru:
       essentials:
