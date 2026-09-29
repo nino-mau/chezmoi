@@ -2,23 +2,24 @@ packages:
   darwin:
     cargo:
       - "tv"
+    curl:
+      - name: "codex"
+        command: "curl -fsSL https://chatgpt.com/codex/install.sh | sh"
     manual:
       - name: "aerospace"
-        url: null
+        url: "https://github.com/nikitabobko/AeroSpace/releases/download/v0.21.3-Beta/AeroSpace-v0.21.3-Beta.zip"
       - name: "codexbar"
-        url: null
-      - name: "codex"
-        url: null
+        url: "https://github.com/steipete/CodexBar/releases/download/v0.69.0/CodexBar-macos-universal-0.69.0.zip"
       - name: "vivify"
-        url: null
+        url: "https://github.com/jannis-baum/Vivify/releases/download/v0.15.0/vivify-macos-x86.tar.gz"
       - name: "borders"
-        url: null
+        url: "https://github.com/FelixKratz/JankyBorders/archive/refs/tags/v1.9.0.tar.gz"
       - name: "MapleMono-NF-unhinted"
         url: "https://github.com/subframe7536/maple-font/releases/latest/download/MapleMono-NF-unhinted.zip"
       - name: "ArrowType-Recursive"
         url: "https://github.com/arrowtype/recursive/releases/latest/download/ArrowType-Recursive-1.085.zip"
       - name: "Xcode 16.4"
-        url: "https://developer.apple.com/download/all/?q=Xcode%2016.4"
+        url: "https://download.developer.apple.com/Developer_Tools/Xcode_16.4/Xcode_16.4.xip"
     dmg:
       - "zen-twilight"
       - "karabiner-elements"
@@ -27,7 +28,6 @@ packages:
       - "port"
       - "helium"
       - "obsidian"
-      - "kitty"
     pkg:
       - "microsoft-teams"
       - "tailscale"
