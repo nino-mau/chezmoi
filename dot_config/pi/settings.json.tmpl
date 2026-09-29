@@ -1,12 +1,12 @@
 {
-  "lastChangelogVersion": "0.85.1",
+  "lastChangelogVersion": "0.87.1",
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.6-sol",
   "packages": [
     "npm:pi-nvim",
     "npm:@juicesharp/rpiv-ask-user-question",
-    "npm:@juicesharp/rpiv-btw"
-    {{ if eq .chezmoi.os "darwin" -}},"npm:pi-package-ovh-ai-chat"{{ end -}}
+    "npm:@juicesharp/rpiv-btw"{{ if eq .chezmoi.os "darwin" }},
+    "npm:pi-package-ovh-ai-chat"{{ end }}
   ],
   "theme": "noctalia",
   "retry": {
