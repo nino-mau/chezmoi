@@ -6,11 +6,11 @@ requirements = ["fd"]
 [source]
 command = [
   { name = "Default", run = "fd -t d" },
-  { name = "Hidden",  run = "fd -t d --hidden" },
+  { name = "Hidden", run = "fd -t d --hidden" },
 ]
 
 [preview]
-command = "ls -la --color=always '{}'"
+command = "eza --all --long --icons --sort=time --group-directories-first '{}'"
 
 [keybindings]
 shortcut = "f2"
