@@ -1,6 +1,9 @@
 [include]
 files = ['modules/']
 
+[audio]
+enable_sounds = false
+
 [desktop_widgets]
 enabled = false
 
