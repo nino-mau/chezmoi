@@ -46,6 +46,10 @@ output_path = "$XDG_CONFIG_HOME/pi/themes/noctalia.json"
 input_path = "templates/sysc-greet/noctalia.toml"
 output_path = "$XDG_CONFIG_HOME/sysc-greet/themes/noctalia.toml"
 
+[theme.templates.user.television]
+input_path = "templates/television/noctalia.toml"
+output_path = "$XDG_CONFIG_HOME/television/themes/noctalia.toml"
+
 [theme.templates.user.yazi]
 input_path = "templates/yazi/yazi.toml"
 output_path = "$XDG_CONFIG_HOME/yazi/flavors/noctalia.yazi/flavor.toml"
@@ -58,7 +62,3 @@ output_path = "$XDG_CONFIG_HOME/yazi/flavors/noctalia.yazi/tmtheme.xml"
 [theme.templates.user.zen]
 input_path = "templates/zen/colors.css"
 output_path = "$XDG_CONFIG_HOME/zen-chrome/colors.css"
-
-[theme.templates.user.television]
-input_path = "templates/television/noctalia.toml"
-output_path = "$XDG_CONFIG_HOME/television/themes/noctalia.toml"
