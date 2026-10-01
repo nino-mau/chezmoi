@@ -1,0 +1,34 @@
+[metadata]
+name = "paru-search"
+description = "Search packages with paru"
+requirements = ["paru", "awk"]
+
+[source]
+# Command need to be passed with --source-command
+# Example: 
+# tv paru-search --exact --source-command "paru -Ss test --color=always | awk '/^[^[:space:]]/'"
+command = ""
+ansi = true
+output = "paru -Si {split:/:1|split: :0}"
+no_sort = false
+
+[preview]
+command = "paru -Si {strip_ansi|split:/:1|split: :0} 2>/dev/null"
+
+[keybindings]
+enter = "actions:install"
+
+[actions.install]
+description = "Install the package"
+command = "paru -S '{strip_ansi|split:/:1|split: :0}'"
+mode = "execute"
+
+[actions.copy]
+description = "Copy package name"
+command = "wl-copy '{strip_ansi|split:/:1|split: :0}'"
+mode = "execute"
+
+[actions.type]
+description = "Type package"
+command = "wtype 'paru -S {strip_ansi|split:/:1|split: :0}'"
+mode = "execute"
