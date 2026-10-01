@@ -1,0 +1,33 @@
+[metadata]
+name = "paru-list"
+description = "List installed packages with paru"
+requirements = ["paru", "awk"]
+
+[source]
+command = [
+  { name = "Default", run = "paru -Qe --color=always" },
+  { name = "All", run = "paru -Q --color=always" },
+]
+output = "{strip_ansi|split: :0}"
+ansi = true
+
+[preview]
+command = "paru -Qi {strip_ansi|split: :0} 2>/dev/null"
+
+[keybindings]
+enter = "actions:copy"
+
+[actions.remove]
+description = "Remove the package"
+command = "paru -R '{strip_ansi|split:/:1|split: :0}'"
+mode = "execute"
+
+[actions.copy]
+description = "Copy package name"
+command = "wl-copy '{strip_ansi|split:/:1|split: :0}'"
+mode = "execute"
+
+[actions.type]
+description = "Type package"
+command = "wtype 'paru -S {strip_ansi|split:/:1|split: :0}'"
+mode = "execute"
