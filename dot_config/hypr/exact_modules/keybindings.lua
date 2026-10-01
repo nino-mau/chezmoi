@@ -41,7 +41,7 @@ bind("SUPER + Q", hl.dsp.exec_cmd(programs.terminal), "Open terminal")
 bind("SUPER + B", hl.dsp.exec_cmd(programs.browser), "Open browser")
 
 -- Vicinae menu bindings
-bind("SUPER + 0", hl.dsp.exec_cmd(programs.menu), "Open launcher menu")
+-- bind("SUPER + 0", hl.dsp.exec_cmd(programs.menu), "Open launcher menu")
 bind("SUPER + equal", hl.dsp.exec_cmd(programs.clipboard_menu), "Open clipboard history")
 bind("SUPER + apostrophe", hl.dsp.exec_cmd(programs.commit_menu), "Open commit message menu")
 bind("SUPER + E", hl.dsp.exec_cmd(programs.emoji_menu), "Open emoji menu")

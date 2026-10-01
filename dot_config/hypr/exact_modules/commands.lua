@@ -17,6 +17,4 @@ return {
 	wallpapers_menu = "vicinae 'vicinae://launch/@nino-mau/wallpaper-switcher/wallpapers'",
 
 	fullscreen_screenshot = "noctalia msg screenshot-fullscreen",
-	-- Walker menus
-	menu = "nc -U /run/user/1000/walker/walker.sock",
 }
