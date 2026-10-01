@@ -51,7 +51,7 @@ bind("SUPER + slash", hl.dsp.exec_cmd(programs.wallpapers_menu), "Open wallpaper
 bind("SUPER + space", hl.dsp.exec_cmd(programs.vicinae), "Toggle Vicinae")
 
 -- Take screenshot
-bind("SUPER + SHIFT + S", hl.dsp.exec_cmd("~/.local/bin/screenshot-focused.sh"), "Take focused window screenshot")
+bind("SUPER + SHIFT + S", hl.dsp.exec_cmd(programs.fullscreen_screenshot), "Take focused window screenshot")
 
 bind("SUPER + M", hl.dsp.exec_cmd(programs.session_menu), "Open session menu")
 
