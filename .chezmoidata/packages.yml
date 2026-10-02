@@ -61,7 +61,7 @@ packages:
       - "mise"
       - "neovim"
       - "opencode"
-      - "pi-coding-agent"
+      - "pi-bin"
       - "py311-tmuxp"
       - "ripgrep"
       - "sketchybar"
